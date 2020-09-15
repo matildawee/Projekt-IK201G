@@ -9,24 +9,50 @@ header{
     height: 10%;
     width: 100%;
     background-color: rgb(179, 179, 179);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
 }
 
 #header-title{
-    display:grid;
+    grid-area: "headerTitle";
+    display: grid;
     place-items:center;
     font-family:'Roboto', sans-serif; 
     font-size: 2em;
 }
 
 #header-logo{
-    margin: 10%;
-    padding: 1em;
-    width: 10%;
-    height: 90%;
-    border: black solid;
+    grid-area: "headerLogo";
+    display: grid;
+    text-align: start;
+    place-items:center;
+    margin: 4%;
+    padding: 0;
+    width: auto;
+    height: 60%;
+    /* border: black solid; */
+}
+
+#header-navigation{
+    
+}
+
+#nav-button{
+
+}
+
+footer{
+    height: 10%;
+    width: 100%;
+    background-color: rgb(179, 179, 179);
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 /* Desktop page: */
 @media screen and (min-width: 768px) { 
+    
 
 }
