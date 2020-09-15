@@ -1,21 +1,21 @@
 
 $(document).ready(function() {
 
-    $('main').load('start.html');
+    $('#page-content').load('start.html');
 
     $('#home').click(function (event) {
         event.preventDefault();
-        $('main').load('start.html');
+        $('#page-content').load('start.html');
     });
 
     $('#portfolio').click(function (event) {
         event.preventDefault();
-        $('main').load('portfolio.html');
+        $('#page-content').load('portfolio.html');
     });
 
     $('#aboutUs').click(function (event) {
         event.preventDefault();
-        $('main').load('aboutUs.html');
+        $('#page-content').load('aboutUs.html');
     });
 
 });
