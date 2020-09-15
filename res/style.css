@@ -59,12 +59,12 @@ footer{
     align-items: center;
 }
 
-.fas, .fab, .far{ /*Adding style to class fas and fab */
+.fas, .fab, .far{ /*Adding style to class fas, fab and far */
     margin: 0.6em;
     color: rgb(78, 78, 78);   
 }
 
-.fas:hover, .fab:hover, .far:hover{ /*Changing color and cursor when hover over class fas and fab */
+.fas:hover, .fab:hover, .far:hover{ /*Changing color and cursor when hover over class fas, fab and far */
     color: rgb(0, 0, 0);
     cursor: pointer;
 }
