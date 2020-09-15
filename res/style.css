@@ -8,7 +8,7 @@ html, body {
 header{
     height: 10%;
     width: 100%;
-    background-color: rgb(179, 179, 179);
+    background-color: rgb(238, 238, 238);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: auto;
@@ -50,14 +50,65 @@ header{
 footer{
     height: 10%;
     width: 100%;
-    background-color: rgb(179, 179, 179);
+    background-color: rgb(238, 238, 238);
     position: absolute;
     bottom: 0;
     left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fas, .fab{ /*Adding style to class fas and fab */
+    margin: 0.6em;
+    color: rgb(78, 78, 78);   
+}
+
+.fas:hover, .fab:hover{ /*Changing color and cursor when hover over class fas and fab */
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+
+.desktopMenu {
+    display: none;
+}
+.menuBtn {
+    display: none;
 }
 
 /* Desktop page: */
 @media screen and (min-width: 768px) { 
+
+    .desktopMenu {
+        display: block;
+        width: 50%;
+        height: auto;
+        margin: 2% 27%;
+        position: absolute;
+        font-family:'Roboto', sans-serif; 
+        font-size: 2em;
+        color: black;
+    }
+
+    .menuBtn { 
+        display: contents;
+        width: 3em; 
+        height: auto; 
+        padding: 0; 
+        margin: 0 1em;  
+        top: 0; 
+        left: 0; 
+        text-align: center;
+        color: black;
+    }
+
+    #header-title{
+        display: none;
+    }    
     
+
+
+
 
 }
