@@ -69,6 +69,10 @@ footer{
     cursor: pointer;
 }
 
+.fas, .far, .fab{
+    font-size: 2em;
+}
+
 
 .desktopMenu {
     display: none;
