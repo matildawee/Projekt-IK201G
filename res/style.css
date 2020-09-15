@@ -8,5 +8,25 @@ html, body {
 header{
     height: 10%;
     width: 100%;
+    background-color: rgb(179, 179, 179);
 }
 
+#header-title{
+    display:grid;
+    place-items:center;
+    font-family:'Roboto', sans-serif; 
+    font-size: 2em;
+}
+
+#header-logo{
+    margin: 10%;
+    padding: 1em;
+    width: 10%;
+    height: 90%;
+    border: black solid;
+}
+
+/* Desktop page: */
+@media screen and (min-width: 768px) { 
+
+}
