@@ -3,6 +3,7 @@ html, body {
     height: 100%;
     padding: 0;
     margin: 0;
+    font-family:'Roboto', sans-serif; 
 }  
 
 header{
@@ -18,7 +19,6 @@ header{
     grid-area: "headerTitle";
     display: grid;
     place-items:center;
-    font-family:'Roboto', sans-serif; 
     font-size: 2em;
 }
 
@@ -64,16 +64,16 @@ footer{
     align-items: center;
 }
 
-.fas, .fab, .far{ /*Adding style to class fas and fab */
+.fas, .fab, .far{ /*Adding style to class fas, fab and far */
     margin: 0.6em;
-    color: rgb(78, 78, 78);   
+    color: rgb(78, 78, 78); 
+    font-size: 2.5em;  
 }
 
-.fas:hover, .fab:hover, .far:hover{ /*Changing color and cursor when hover over class fas and fab */
+.fas:hover, .fab:hover, .far:hover{ /*Changing color and cursor when hover over class fas, fab and far */
     color: rgb(0, 0, 0);
     cursor: pointer;
 }
-
 
 .desktopMenu {
     display: none;
@@ -112,7 +112,35 @@ footer{
         display: none;
     }    
     
+    .fas, .fab, .far{ /*Adding style to class fas, fab and far */ 
+        font-size: 2em;  
+    }
 
+    .footer_left{
+        width:20%;
+        margin: 0 0 0 0;
+        float: left; 
+        text-align: center;
+    }
+    
+    .footer_center{
+        width:60%;
+        float:left;
+        display: grid;
+        place-items:center;
+        
+    }
+    
+    .footer_center > p{
+        margin: 1.5em;
+    }
+    
+    .footer_right{
+        width:20%;
+        margin: 0 0 0 0;
+        float: right;
+        text-align: center;
+    }
 
 
 
