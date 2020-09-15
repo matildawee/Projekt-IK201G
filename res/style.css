@@ -42,6 +42,11 @@ header{
 
 }
 
+.nav-line{
+    display: block;
+    width: 25px;
+}
+
 footer{
     height: 10%;
     width: 100%;
