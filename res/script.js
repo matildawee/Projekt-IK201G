@@ -1,22 +1,21 @@
 /* This JavaScript need jQuery to run */
 $(document).ready(function() {
 
-    $('#page-content').load('start.html');
+    $('#page-content').load('../pages/start.html');
 
     $('#home').click(function (event) {
         event.preventDefault();
-        $('#page-content').load('start.html');
+        $('#page-content').load('../pages/start.html');
     });
 
     $('#portfolio').click(function (event) {
         event.preventDefault();
-        $('#page-content').load('portfolio.html');
+        $('#page-content').load('../pages/portfolio.html');
     });
 
-    $('#aboutUs').click(function (event) {
+    $('#about').click(function (event) {
         event.preventDefault();
-        $('#page-content').load('aboutUs.html');
+        $('#page-content').load('../pages/about.html');
     });
 
 });
-
