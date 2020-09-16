@@ -34,13 +34,13 @@ header{
     /* border: black solid; */
 }
 
-#header-navigation{
+/* #header-navigation{
     
 }
 
 #nav-button{
 
-}
+} */
 
 .nav-line{
     display: block;
@@ -151,7 +151,5 @@ footer{
         float: right;
         text-align: center;
     }
-
-
 
 }
