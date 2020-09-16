@@ -1,4 +1,4 @@
-
+/* This JavaScript need jQuery to run */
 $(document).ready(function() {
 
     $('#page-content').load('start.html');
