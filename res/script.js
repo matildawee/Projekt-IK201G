@@ -18,4 +18,9 @@ $(document).ready(function() {
         $('#page-content').load('./pages/about.html');
     });
 
+    $('#contact').click(function (event) {
+        event.preventDefault();
+        $('#page-content').load('./pages/contact.html');
+    });
+
 });
