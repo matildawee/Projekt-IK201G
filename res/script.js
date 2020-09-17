@@ -32,7 +32,10 @@ $(document).ready(function() {
       document.querySelector('.navBarLink-toggle')
         .addEventListener('click', classToggle);
 
+    /* <~~~~~ knapparna på startsidan ~~~~~~ */    
+
     $('#startProjects').click(function (event) {
+        console.log("hej knapptryckare");
         event.preventDefault();
         $('#page-content').load('./pages/portfolio.html');
     });
@@ -42,5 +45,17 @@ $(document).ready(function() {
         $('#page-content').load('./pages/about.html');
     });
 
+    /* ~~~~~~ knapparna på startsidan ~~~~~~> */  
 
-});
+
+    /* portfoliotest */
+    // $('#autoWidth').lightSlider({
+    //     autoWidth:true,
+    //     loop:true,
+    //     onSliderLoad: function() {
+    //         $('#autoWidth').removeClass('cS-hidden');
+    //     } 
+    // });  
+
+
+ });
