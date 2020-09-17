@@ -62,7 +62,7 @@ main{
 #welcome > h1{
     margin: 0 2em;
     height: auto;
-    font-size: 6em;
+    font-size: 4em;
     font-weight: bold;
     letter-spacing: 0.1em;
     color: white;
@@ -99,7 +99,10 @@ main{
     color:#DDDDDD;
     border-color:#DDDDDD;
     background-color:#dddddd25;
-    }8.welcome-buttons > a:active{
+    cursor: pointer;
+}
+
+.welcome-buttons > a:active{
     color:#BBBBBB;
     border-color:#BBBBBB;
     background-color: rgba(187, 187, 187, 0.384);
@@ -219,6 +222,7 @@ footer{
         margin: 0 0 0 0;
         float: left; 
         text-align: center;
+
     }
     
     .footer_center{
@@ -269,4 +273,19 @@ footer{
       .navBarLink-toggle {
         display: none;
       }
-  }
+
+      #welcome > h1{
+        margin: 0 2em;
+        height: auto;
+        font-size: 6em;
+        font-weight: bold;
+        letter-spacing: 0.1em;
+        color: white;
+        text-transform: uppercase;
+        display: grid;
+        justify-content:center; 
+        place-items: center;   
+    }
+}
+      
+     
