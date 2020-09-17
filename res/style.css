@@ -10,9 +10,11 @@ header{
     height: auto;
     width: 100%;
     background-color: rgb(238, 238, 238);
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    /* display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: auto;
+    grid-auto-rows: auto; */
 }
 
 #header-title{
@@ -117,21 +119,12 @@ main{
 }
 
 footer{
-    /* height: 10%; */
     width: 100%;
+    height: 10%;
     background-color: rgb(238, 238, 238);
-    /* position: absolute;
-    bottom: 0;
-    left: 0;
     display: flex;
     justify-content: center;
-    align-items: center; */
-
-    /* position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 4.5rem; */
-    
+    align-items: center;    
     grid-row-start: 2;
     grid-row-end: 3;
 }
@@ -158,7 +151,7 @@ footer{
   flex-direction: column;
 }
 
-.navBar {
+header {
     flex-direction: column;
     width: 100%;      
   }
@@ -178,7 +171,36 @@ footer{
     cursor: pointer;
    } 
 
-  
+   /*    ~~~~ här är portfoliogrejer ~~~~   */
+
+   .portfolio-main{
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    float: left;
+    justify-content: center;
+    place-items: center;
+    }
+
+   div.subPortfolio { 
+       width: 20%; 
+       height: auto; 
+       padding: 0; 
+       margin: 4% 0 0 4%; 
+       background-color: rgb(209, 209, 209); 
+       text-align: center; 
+       float: left;
+    }
+
+.project-img{
+    width: 80%;
+    height: auto;
+    margin: 1.5em 1.5em 0 1.5em;
+}
+
+   /*    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */
 
 
 /* Desktop page: */
@@ -216,27 +238,29 @@ footer{
     .fas, .fab, .far{ /*Adding style to class fas, fab and far */ 
         font-size: 2em;  
     }
+    footer{
+        height: 10%;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
 
     .footer_left{
         width:20%;
         margin: 0 0 0 0;
         float: left; 
         text-align: center;
-
     }
-    
     .footer_center{
         width:60%;
+        margin: 0 0 0 0;
         float:left;
         display: grid;
         place-items:center;
-        
+
     }
-    
     .footer_center > p{
-        margin: 1.5em;
+        /* margin: 1.5em; */
     }
-    
     .footer_right{
         width:20%;
         margin: 0 0 0 0;
@@ -244,12 +268,8 @@ footer{
         text-align: center;
     }
 
-    .navBarItems,
-    .navBar {
-      flex-direction: row;
-    }
-     .navBar {
-        display: flex;
+     header {
+        flex-direction: row;
         padding: 0;
         width: 100%;    
       }
@@ -262,12 +282,15 @@ footer{
     
       .navBarLink-brand{
           width: 25vw;
+          display: flex;
+          justify-content: center;
       }
       
       .navBarItems {
         display: flex;
         justify-content: center;
         place-items: center;
+        flex-direction: row;
       }
       
       .navBarLink-toggle {
