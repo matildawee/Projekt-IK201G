@@ -6,48 +6,96 @@ html, body {
     font-family:'Roboto', sans-serif; 
 }  
 
-header{
-    height: auto;
-    width: 100%;
-    background-color: rgb(238, 238, 238);
+
+/* ~~~~~~~~~~~~~~ Navigering start ~~~~~~~~~~~~~~ */
+.navBar {
     display: flex;
-    flex-direction: column;
-    /* display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: auto; */
-}
+    padding: 0.5em;
+    font-family: sans-serif;
+  }
+  
+  .navBarLinks {
+    list-style-type: none;
+    padding: 0;
+  }
 
-#header-title{
-    grid-area: "headerTitle";
-    display: grid;
-    place-items:center;
-    font-size: 2em;
-}
+  .navBarLinks > li{
+    display: inline;
+    padding: 0.9em;
+  }
+  
+  .navBarItems {
+    display: flex;
+    margin: auto;
+    align-items: center;
+  }
+  
+  .navBarEmpty-right {
+    width: 200px;
+  }
+  
+  .navBarLink-toggle {
+    display: none;
+  }
 
-#header-logo{
+  #header-logo{
     grid-area: "headerLogo";
     display: grid;
     text-align: start;
+    align-items: center;
     place-items:center;
-    margin: 4%;
+    float: left;
     padding: 0;
     width: 200px;
     height: auto;
     /* border: black solid; */
 }
+    #header-title{
+        font-weight: bolder;
+        visibility: hidden;
+    }
+  
+  @media only screen and (max-width: 768px) {
+    .navBarItems,
+    .navBar {
+      flex-direction: column;
+    }
+      
+  .navBarItems {
+      display:none;
+    }
 
-/* #header-navigation{
-    
-}
+    .navBarLinks > li{
+        display: inline;
+        padding: 1em;
+        text-align: center;
+      }
+      
+  .navBarItems-right {
+      margin-left:0;
+    }
+      
+  .navBarToggleShow {
+      display: flex;
+    }
 
-#nav-button{
-
-} */
-
-/* .nav-line{
-    display: block;
-    width: 25px;
-} */
+    #header-title{
+        visibility: visible;
+        text-align: center;
+        display: block;
+        float: center;
+        place-items: center;
+        margin-right: 30vw;
+    }
+      
+  .navBarLink-toggle {
+      align-self: flex-end;
+      display: initial;
+      position: absolute;
+      cursor: pointer;
+     } 
+  }
+/* ~~~~~~~~~~~~~~ Navigering slut ~~~~~~~~~~~~~~ */
 
 main{
     height: 80%;
@@ -140,36 +188,6 @@ footer{
     cursor: pointer;
 }
 
-.desktopMenu {
-    display: none;
-}
-.menuBtn {
-    padding: 1em;
-}
-
-header {
-    flex-direction: column;
-    width: 100%;      
-  }
-    
-.navBarItems {
-    display: none;
-    padding: 1em; 
-    flex-direction: column;
-  }
-    
-.navBarToggleShow {
-    display: flex;
-    place-items: center; 
-    }
-    
-.navBarLink-toggle {
-    align-self: flex-end;
-    display: initial;
-    position: absolute;
-    cursor: pointer;
-    margin: 2em; 
-   } 
 
    /*    <~~~ PORTFOLIO ~~~~   */
 
@@ -207,37 +225,9 @@ div.subPortfolio {
 
     /*    ~~~~ PORTFOLIO ~~~>   */
 }
+
 /* Desktop page: */
 @media screen and (min-width: 768px) { 
-
-    .desktopMenu {
-        display: block;
-        width: 100%;
-        height: auto;
-        margin: 1em 0;
-        position: absolute;
-        font-family:'Roboto', sans-serif; 
-        font-size: 2em;
-        color: black;
-        place-items:center;
-        float:left;
-    }
-
-    .menuBtn { 
-        display: contents;
-        width: 3em; 
-        height: auto; 
-        padding: 0; 
-        margin: 0 1em;  
-        top: 0; 
-        left: 0; 
-        text-align: center;
-        color: black;
-    }
-
-    #header-title{
-        display: none;
-    }    
     
     .fas, .fab, .far{ /*Adding style to class fas, fab and far */ 
         font-size: 2em;  
@@ -264,38 +254,6 @@ div.subPortfolio {
     }
     .footer_right{
         width:20%;
-        margin: 0 0 0 0;
-        float: right;
-        text-align: center;
-    }
-
-     header {
-        flex-direction: row;
-        padding: 0;
-        width: 100%;    
-      }
-      
-      .navBarLink {
-        padding-right: 2em;
-        width: 4em;
-        
-      }
-    
-      .navBarLink-brand{
-          width: 25vw;
-          display: flex;
-          justify-content: center;
-      }
-      
-      .navBarItems {
-        display: flex;
-        justify-content: center;
-        place-items: center;
-        flex-direction: row;
-      }
-      
-      .navBarLink-toggle {
-        display: none;
         margin: 0 0 0 0;
         float: right;
         text-align: center;
