@@ -135,7 +135,7 @@ main{
     text-decoration:none;
     text-transform:uppercase;
     font-weight:600;
-    color:#ffffff;
+    color: #FFFFFF;
     border-color: rgb(255, 255, 255);
     text-align: center;
     transition: all 0.15s;
@@ -172,6 +172,7 @@ footer{
     align-items: center;    
     grid-row-start: 2;
     grid-row-end: 3;
+    text-align: center;
 }
 
 .fas, .fab, .far{ /*Adding style to class fas, fab and far */
@@ -183,6 +184,9 @@ footer{
 .fas:hover, .fab:hover, .far:hover{ /*Changing color and cursor when hover over class fas, fab and far */
     color: rgb(0, 0, 0);
     cursor: pointer;
+}
+.fa-github{
+    font-size: 1em;
 }
 
 
@@ -229,6 +233,9 @@ div.subPortfolio {
     .fas, .fab, .far{ /*Adding style to class fas, fab and far */ 
         font-size: 2em;  
     }
+    .fa-github{
+        font-size: 1em;
+    }
     footer{
         height: 10%;
         grid-row-start: 2;
@@ -247,7 +254,7 @@ div.subPortfolio {
         float:left;
         display: grid;
         place-items:center;
-
+        text-align: center;
     }
     .footer_right{
         width:20%;
