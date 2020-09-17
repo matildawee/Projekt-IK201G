@@ -1,40 +1,34 @@
-html, body {
+html, body{
     width: 100%;
     height: 100%;
     padding: 0;
     margin: 0;
     font-family:'Roboto', sans-serif; 
-}  
+}
 
-
-/* ~~~~~~~~~~~~~~ Navigering start ~~~~~~~~~~~~~~ */
-.navBar {
+/*    <~~~ start NAVIGATION end ~~~~   */
+.navBar{
     display: flex;
     padding: 0.5em;
     font-family: sans-serif;
-  }
-  
-  .navBarLinks {
+}
+.navBarLinks{
     list-style-type: none;
     padding: 0;
-  }
-
-  .navBarLinks > li{
+}
+.navBarLinks > li{
     display: inline;
     padding: 0.9em;
-  }
-  
-  .navBarItems {
+}
+.navBarItems{
     display: flex;
     margin: auto;
     align-items: center;
-  }
-  
-  .navBarEmpty-right {
+}
+.navBarEmpty-right{
     width: 200px;
-  }
-  
-  .navBarLink-toggle {
+}
+.navBarLink-toggle{
     display: none;
 }
 #header-logo{
@@ -46,37 +40,32 @@ html, body {
     padding: 0;
     width: 200px;
     height: auto;
-    /* border: black solid; */
 }
-    #header-title{
-        font-weight: bolder;
-        visibility: hidden;
-    }
-  
-  @media only screen and (max-width: 768px) {
-    .navBarItems,
-    .navBar {
-      flex-direction: column;
-    }
-      
-  .navBarItems {
-      display:none;
-    }
+#header-title{
+    font-weight: bolder;
+    visibility: hidden;
+}
 
+/* Nav-mobile */
+@media only screen and (max-width: 768px) {
+    
+    .navBarItems, .navBar{
+        flex-direction: column;
+    }
+    .navBarItems{
+        display:none;
+    }
     .navBarLinks > li{
         display: inline;
         padding: 1em;
         text-align: center;
-      }
-      
-  .navBarItems-right {
-      margin-left:0;
     }
-      
-  .navBarToggleShow {
-      display: flex;
+    .navBarItems-right{
+        margin-left:0;
     }
-
+    .navBarToggleShow{
+        display: flex;
+    }
     #header-title{
         visibility: visible;
         text-align: center;
@@ -84,15 +73,16 @@ html, body {
         place-items: center;
         margin-right: 30vw;
     }
-      
-  .navBarLink-toggle {
-      align-self: flex-end;
-      display: initial;
-      position: absolute;
-      cursor: pointer;
-     } 
-  }
-/* ~~~~~~~~~~~~~~ Navigering slut ~~~~~~~~~~~~~~ */
+    .navBarLink-toggle{
+        align-self: flex-end;
+        display: initial;
+        position: absolute;
+        cursor: pointer;
+    }
+
+}
+/*    ~~~~ NAVIGATION end ~~~>   */
+
 
 main{
     height: 80%;
@@ -102,10 +92,10 @@ main{
     background-size: 100% 100%;
 }
 
+
 #welcome{
     width: 100%;
 }
-
 #welcome > h1{
     margin: 0 2em;
     height: auto;
@@ -141,20 +131,17 @@ main{
     transition: all 0.15s;
     background-color: rgba(255, 255, 255, 0.257);
     }
-    
 .welcome-buttons > a:hover{
     color:#DDDDDD;
     border-color:#DDDDDD;
     background-color:#dddddd25;
     cursor: pointer;
 }
-
 .welcome-buttons > a:active{
     color:#BBBBBB;
     border-color:#BBBBBB;
     background-color: rgba(187, 187, 187, 0.384);
     }
-
 #page-content{
     width: 100%;
     height: 100%;
@@ -163,6 +150,8 @@ main{
     place-items: center;
 }
 
+
+/*    <~~~ start FOOTER ~~~~   */
 footer{
     width: 100%;
     height: 10%;
@@ -174,13 +163,11 @@ footer{
     grid-row-end: 3;
     text-align: center;
 }
-
 .fas, .fab, .far{ /*Adding style to class fas, fab and far */
     margin: 0.6em;
     color: rgb(78, 78, 78); 
     font-size: 2.5em;  
 }
-
 .fas:hover, .fab:hover, .far:hover{ /*Changing color and cursor when hover over class fas, fab and far */
     color: rgb(0, 0, 0);
     cursor: pointer;
@@ -188,10 +175,10 @@ footer{
 .fa-github{
     font-size: 1em;
 }
+/*    ~~~~ FOOTER end ~~~>   */
 
 
-   /*    <~~~ PORTFOLIO ~~~~   */
-
+/*    <~~~ start PORTFOLIO ~~~~   */
 .portfolio-main{
     width: 100%;
     height: auto;
@@ -223,9 +210,9 @@ div.subPortfolio {
 }
 .fa-arrow-left:hover, .fa-arrow-right:hover{
     color:#cececeaf;
-
-    /*    ~~~~ PORTFOLIO ~~~>   */
 }
+/*    ~~~~ PORTFOLIO end ~~~>   */
+
 
 /* Desktop page: */
 @media screen and (min-width: 768px) { 
@@ -241,7 +228,6 @@ div.subPortfolio {
         grid-row-start: 2;
         grid-row-end: 3;
     }
-
     .footer_left{
         width:20%;
         margin: 0 0 0 0;
@@ -262,8 +248,7 @@ div.subPortfolio {
         float: right;
         text-align: center;
     }
-
-      #welcome > h1{
+    #welcome > h1{
         margin: 0 2em;
         height: auto;
         font-size: 6em;
@@ -275,6 +260,5 @@ div.subPortfolio {
         justify-content:center; 
         place-items: center;   
     }
+
 }
-      
-     
