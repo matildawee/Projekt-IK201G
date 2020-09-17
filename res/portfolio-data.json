@@ -5,35 +5,35 @@
           "title": "Projekt 1",
           "date": "2020-01-01 - 2021-01-01",
           "description": "Det här är projekt 1",
-          "image": "../img/projekt.jpg"
+          "image": "./img/projekt.jpg"
         },
         {
             "id": "p2",
             "title": "Projekt 2",
             "date": "2020-02-02 - 2021-02-02",
             "description": "Det här är projekt 2",
-            "image": "../img/projekt.jpg"
+            "image": "./img/projekt.jpg"
         },
         {
             "id": "p3",
             "title": "Projekt 3",
             "date": "2020-03-03 - 2021-03-03",
             "description": "Det här är projekt 3",
-            "image": "../img/projekt.jpg"
+            "image": "./img/projekt.jpg"
         },
         {
             "id": "p4",
             "title": "Projekt 4",
             "date": "2020-04-04 - 2021-04-04",
             "description": "Det här är projekt 4",
-            "image": "../img/projekt.jpg"
+            "image": "./img/projekt.jpg"
         },
         {
             "id": "p5",
             "title": "Projekt 5",
             "date": "2020-05-05 -2021-05-05",
             "description": "Det här är projekt 5",
-            "image": "../img/projekt.jpg"
+            "image": "./img/projekt.jpg"
         }
         
     ]
