@@ -36,10 +36,8 @@ html, body {
   
   .navBarLink-toggle {
     display: none;
-  }
-
-  #header-logo{
-    grid-area: "headerLogo";
+}
+#header-logo{
     display: grid;
     text-align: start;
     align-items: center;
@@ -83,7 +81,6 @@ html, body {
         visibility: visible;
         text-align: center;
         display: block;
-        float: center;
         place-items: center;
         margin-right: 30vw;
     }
@@ -140,7 +137,7 @@ main{
     font-weight:600;
     color:#ffffff;
     border-color: rgb(255, 255, 255);
-    text-align:cenrgb(255, 255, 255);
+    text-align: center;
     transition: all 0.15s;
     background-color: rgba(255, 255, 255, 0.257);
     }
