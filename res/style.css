@@ -54,31 +54,37 @@ main{
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
+
 #welcome{
     width: 100%;
-    height: 100%;
-    display: grid;
-    justify-content:center;
-    /* border:rgb(207, 39, 39) solid; */
+    border: 5px solid rgb(0, 4, 255);
 }
+
 #welcomeh1{
+    margin: 0 2em;
     height: auto;
     font-size: 4em;
     font-weight: bold;
     color: white;
     text-transform: uppercase;
     display: grid;
-    justify-content:center;    
-    border:rgb(39, 70, 207) solid;
-}
- .buttons{
-    /* border:rgb(45, 207, 39) solid; */
+    justify-content:center; 
+    place-items: center;   
 } 
+.buttons{
+    width: 100%;
+    /* border: 5px solid red; */
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    text-align: center;
+}
 a.button2{
+    width: 40%;
     display:inline-block;
-    padding:0.5em 3em;
-    border:0.16em solid #FFFFFF;
+    padding: 0.5em 1em;
     margin:0 0.3em 0.3em 0;
+    border:0.16em solid #FFFFFF;
     box-sizing: border-box;
     text-decoration:none;
     text-transform:uppercase;
@@ -103,7 +109,11 @@ a.button2:active{
     }
 
 #page-content{
+    width: 100%;
     height: 100%;
+    display: grid;
+    justify-content:center;
+    place-items: center;
 }
 
 footer{
@@ -144,31 +154,30 @@ footer{
     padding: 1em;
 }
 
-.navBar {
-    display: flex;
-    padding: 0;
-    width: 100%;    
-  }
-  
-  .navBarLink {
-    padding-right: 2em;
-    width: 4em;
-    
-  }
+.navBarItems{
+  flex-direction: column;
+}
 
-  .navBarLink-brand{
-      width: 25vw;
+.navBar {
+    flex-direction: column;
+    width: 100%;      
   }
-  
-  .navBarItems {
+    
+.navBarItems {
+    display:none;
+  }
+    
+.navBarToggleShow {
     display: flex;
-    justify-content: center;
-    place-items: center;
   }
-  
-  .navBarLink-toggle {
-    display: none;
-  }
+    
+.navBarLink-toggle {
+    align-self: flex-end;
+    display: initial;
+    position: absolute;
+    cursor: pointer;
+   } 
+
   
 
 
@@ -234,28 +243,33 @@ footer{
         text-align: center;
     }
 
-    
-
-}
-/* ny navigering */
-@media only screen and (max-width: 768px) {
+    .navBarItems,
+    .navBar {
+      flex-direction: row;
+    }
      .navBar {
-      flex-direction: column;
-      width: 100%;      
-    }
+        display: flex;
+        padding: 0;
+        width: 100%;    
+      }
       
-  .navBarItems {
-      display:none;
-    }
+      .navBarLink {
+        padding-right: 2em;
+        width: 4em;
+        
+      }
+    
+      .navBarLink-brand{
+          width: 25vw;
+      }
       
-  .navBarToggleShow {
-      display: flex;
-    }
+      .navBarItems {
+        display: flex;
+        justify-content: center;
+        place-items: center;
+      }
       
-  .navBarLink-toggle {
-      align-self: flex-end;
-      display: initial;
-      position: absolute;
-      cursor: pointer;
-     } 
+      .navBarLink-toggle {
+        display: none;
+      }
   }
