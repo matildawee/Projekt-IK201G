@@ -32,4 +32,15 @@ $(document).ready(function() {
       document.querySelector('.navBarLink-toggle')
         .addEventListener('click', classToggle);
 
+    $('#startProjects').click(function (event) {
+        event.preventDefault();
+        $('#page-content').load('./pages/portfolio.html');
+    });
+
+    $('#startUs').click(function (event) {
+        event.preventDefault();
+        $('#page-content').load('./pages/about.html');
+    });
+
+
 });
