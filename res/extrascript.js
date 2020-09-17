@@ -1,14 +1,19 @@
-/* <~~~~~ knapparna på startsidan ~~~~~~ */    
 
-$('#startProjects').click(function (event) {
-    console.log("hej knapptryckare");
-    event.preventDefault();
-    $('#page-content').load('./pages/portfolio.html');
-});
+    /* <~~~~~ knapparna på startsidan ~~~~~~ */    
 
-$('#startUs').click(function (event) {
-    event.preventDefault();
-    $('#page-content').load('./pages/about.html');
-});
+    $('#startProjects').click(function (event) {
+        console.log("hej knapptryckare");
+        event.preventDefault();
+        $('#page-content').load('./pages/portfolio.html');
 
-/* ~~~~~~ knapparna på startsidan ~~~~~~> */  
+ 
+    });
+
+    $('#startUs').click(function (event) {
+        event.preventDefault();
+        $('#page-content').load('./pages/about.html');
+    });
+
+    /* ~~~~~~ knapparna på startsidan ~~~~~~> */  
+
+

@@ -32,7 +32,7 @@ $(document).ready(function() {
       document.querySelector('.navBarLink-toggle')
         .addEventListener('click', classToggle);
 
-    /* <~~~~~ knapparna på startsidan ~~~~~~ */    
+    /* <~~~~~ knapparna på startsidan - dessa knappar finns också i extrascript ~~~~~~ */    
 
     $('#startProjects').click(function (event) {
         console.log("hej knapptryckare");
