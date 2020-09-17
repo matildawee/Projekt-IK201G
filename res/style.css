@@ -34,13 +34,13 @@ header{
     /* border: black solid; */
 }
 
-#header-navigation{
+/* #header-navigation{
     
 }
 
 #nav-button{
 
-}
+} */
 
 .nav-line{
     display: block;
@@ -53,8 +53,10 @@ main{
     background-image: url('../img/background.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    
+}
 
+#page-content{
+    height: auto;
 }
 
 footer{
@@ -146,7 +148,5 @@ footer{
         float: right;
         text-align: center;
     }
-
-
 
 }

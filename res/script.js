@@ -1,14 +1,26 @@
-
+/* This JavaScript need jQuery to run */
 $(document).ready(function() {
 
-    $('main').load('start.html');
-
+    $('#page-content').load('./pages/start.html');
 
     $('#home').click(function (event) {
-    event.preventDefault();
-    $('main').load('start.html');
+        event.preventDefault();
+        $('#page-content').load('./pages/start.html');
+    });
+
+    $('#portfolio').click(function (event) {
+        event.preventDefault();
+        $('#page-content').load('./pages/portfolio.html');
+    });
+
+    $('#about').click(function (event) {
+        event.preventDefault();
+        $('#page-content').load('./pages/about.html');
+    });
+
+    $('#contact').click(function (event) {
+        event.preventDefault();
+        $('#page-content').load('./pages/contact.html');
     });
 
 });
-
-//aaaaa
