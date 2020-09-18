@@ -34,6 +34,13 @@
             "date": "2020-05-05 -2021-05-05",
             "description": "Det här är projekt 5",
             "image": "./img/projekt.jpg"
+        },
+        {
+            "id": "p6",
+            "title": "Projekt 6",
+            "date": "2020-06-06 -2021-06-06",
+            "description": "Det här är projekt 6",
+            "image": "./img/projekt.jpg"
         }
         
     ]

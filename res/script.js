@@ -1,7 +1,7 @@
 /* This JavaScript need jQuery to run */
 $(document).ready(function() {
 
-    $('#page-content').load('./pages/start.html');
+    $('#page-content').load('./pages/contact.html');
 
     $('#home').click(function (event) {
         event.preventDefault();
@@ -11,6 +11,14 @@ $(document).ready(function() {
     $('#portfolio').click(function (event) {
         event.preventDefault();
         $('#page-content').load('./pages/portfolio.html');
+
+        // laddar in projekten
+        $.getJSON(
+            'res/portfolio-data.json',
+            function (data) {
+                displayPortfolio(data.projects);
+            }
+        );
     });
 
     $('#about').click(function (event) {
