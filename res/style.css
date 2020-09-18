@@ -214,24 +214,18 @@ footer{
 
 
 /*    <~~~ start PORTFOLIO ~~~~   */
-.portfolio-main{
+.portfolio-box{
     width: 100%;
     height: auto;
     margin: 0;
     padding: 0;
-    display: flex;;
-    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
     place-items: center;
+    border: 5px solid rgb(89, 0, 255); 
 }
-.portfolio-box{
-    width: 90%;
-    height: auto;
-    margin: 0;
-    padding: 0;
-    display: flex;;
-    justify-content: center;
-    place-items: center;
-}
+
+
 div.subPortfolio { 
     width: 20%; 
     height: auto; 
@@ -239,7 +233,10 @@ div.subPortfolio {
     margin: 4% 1% 4% 1%; 
     background-color: rgb(209, 209, 209); 
     text-align: center; 
-    float: left;
+    border-radius: 2%;
+    border: 5px solid rgb(0, 255, 85); 
+ 
+
 }
 .project-img{
     width: 80%;
@@ -282,7 +279,7 @@ div.subPortfolio {
     background-color: rgb(209, 209, 209);
     margin: 0 1em;
     padding: 0.5em;
-    border-radius: 1%;
+    border-radius: 2%;
     font-size: 0.9em;
 }
 .developer-img{
