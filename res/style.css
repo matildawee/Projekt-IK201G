@@ -9,7 +9,7 @@ html, body{
 .navBar{
     display: flex;
     padding: 0.5em;
-    font-family: sans-serif;
+    flex-direction: column;
 }
 .navBarLinks{
     list-style-type: none;
@@ -17,19 +17,35 @@ html, body{
 }
 .navBarLinks > li{
     display: inline;
-    padding: 0.9em;
+    padding: 1em;
+    /* text-align: center; */
 }
 .navBarItems{
-    display: flex;
+    display: none;
     margin: auto;
     align-items: center;
+    /* flex-direction: column; */
 }
-.navBarEmpty-right{
-    width: 200px;
+
+.navBarItems-right{
+    margin-left:0;
 }
-.navBarLink-toggle{
-    display: none;
+
+
+.navBarToggleShow{
+    display: flex;
 }
+
+
+#header-title{
+    visibility: visible;
+    text-align: center;
+    display: block;
+    place-items: center;
+    margin-right: 30vw;
+    font-weight: bolder;
+}
+
 #header-logo{
     display: grid;
     text-align: start;
@@ -40,47 +56,66 @@ html, body{
     width: 200px;
     height: auto;
 }
+
+.navBarLink-toggle{
+    align-self: flex-end;
+    display: initial;
+    position: absolute;
+    cursor: pointer;
+}
+
+
+/*Nav-desktop*/
+
+@media screen and (min-width: 768px) { 
+
+.navbar, .navBarItems{
+    flex-direction: row;
+}
+ .navBarItems{
+    display: block;
+    margin: 0;
+    text-align: center;
+ }
+
+ .navBarLinks > li{
+     padding: 0.9em;
+     margin: 0; 
+     width: auto; 
+ }
+
+ .navBarToggleShow{
+    display: none;
+}
+
 #header-title{
-    font-weight: bolder;
+    display: none;
     visibility: hidden;
 }
 
-
-
-/* Nav-mobile */
-@media screen and (max-width: 768px) { 
-    
-    .navBarItems, .navBar{
-        flex-direction: column;
-    }
-    .navBarItems{
-        display:none;
-    }
-    .navBarLinks > li{
-        display: inline;
-        padding: 1em;
-        text-align: center;
-    }
-    .navBarItems-right{
-        margin-left:0;
-    }
-    .navBarToggleShow{
-        display: flex;
-    }
-    #header-title{
-        visibility: visible;
-        text-align: center;
-        display: block;
-        place-items: center;
-        margin-right: 30vw;
-    }
-    .navBarLink-toggle{
-        align-self: flex-end;
-        display: initial;
-        position: absolute;
-        cursor: pointer;
-    }
+.navBarLink-toggle{
+    display: none;
 }
+
+.navBarLink-brand{
+    display: flex; 
+    width: auto;
+    align-self: flex-start;
+}
+
+.navbarLink {
+    width: auto;
+
+}
+
+.navBarEmpty-right{
+    width: 200px;
+    /* display: flex;
+    align-self: flex-end; */
+}
+
+}
+
 
 /*    ~~~~ NAVIGATION end ~~~>   */
 
