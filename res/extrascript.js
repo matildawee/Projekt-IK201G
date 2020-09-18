@@ -2,7 +2,6 @@
     /* <~~~~~ knapparna på startsidan ~~~~~~ */    
 
     $('#startProjects').click(function (event) {
-        console.log("hej knapptryckare");
         event.preventDefault();
         $('#page-content').load('./pages/portfolio.html');
 
@@ -19,9 +18,19 @@
 
     /* <~~~~~ hämtar portfolio json ~~~~~~ */    
 
-    function displayPortfolio(portfolios) {
-        $.each(portfolioss, function (ind, portfolio) {
-            var row = $(
+    $('#testknapp').click(function () {
+        console.log("hej knapptryckare");
+        $.getJSON(
+            'res/portfolio-data.json',
+            function (data) {
+                displayPortfolio(data.portfolios);
+            }
+        );
+    });
+
+    function displayPortfolio(projects) {
+        $.each(projects, function (ind, portfolio) {
+            var square = $(
                 // '<tr>' +
                 //     '<td>' + portfolio.title + '</td>' +
                 //     '<td>' + portfolio.date + '</td>' +
@@ -38,10 +47,10 @@
 
                 
             );
-            row.find('button').click(function () {
-                addToBasket(book);
-            });
-            $('#listOfBooks').append(row);
+
+            $('.portfolio-main').append(square);
+
+
         });
     
     }
