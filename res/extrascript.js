@@ -35,9 +35,8 @@
     //         }
     //     );
     // });
-var projectList = {};
+
     function displayPortfolio(projects) {
-        projectList.projects = new Array();
         $.each(projects, function (ind, portfolio) {
             // if (ind % 4 == 0){
             //     var square = $('<div id="div">')
@@ -51,13 +50,11 @@ var projectList = {};
                     //'<a href="' + portfolio.??? + '">Läs mer</a>' +
                 '</div>'
             );
-            projectList.projects.push({square});
-            
             
             $('.portfolio-box').append(square);
-            //$('#listOfBla').append(square);
+
         });
-        console.log(projectList);
+        
     };
     
     /* ~~~~~~ hämtar portfolio json ~~~~~~> */ 
