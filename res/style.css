@@ -6,7 +6,6 @@ html, body{
     font-family:'Roboto', sans-serif; 
 }
 
-/*    <~~~ start NAVIGATION end ~~~~   */
 .navBar{
     display: flex;
     padding: 0.5em;
@@ -46,8 +45,10 @@ html, body{
     visibility: hidden;
 }
 
+
+
 /* Nav-mobile */
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 768px) { 
     
     .navBarItems, .navBar{
         flex-direction: column;
@@ -79,8 +80,8 @@ html, body{
         position: absolute;
         cursor: pointer;
     }
-
 }
+
 /*    ~~~~ NAVIGATION end ~~~>   */
 
 
@@ -214,6 +215,22 @@ div.subPortfolio {
 /*    ~~~~ PORTFOLIO end ~~~>   */
 
 
+/*    ~~~~ ABOUT US start ~~~>   */
+.about-submain{
+    width: 20%;
+    background-color:  rgb(209, 209, 209) 
+}
+.developer-img{
+    width: 20%;
+}
+.developer-header{
+    margin: 0;
+    padding: 0;
+}
+
+/*    ~~~~ ABOUT US end ~~~>   */
+
+
 /* Desktop page: */
 @media screen and (min-width: 768px) { 
     
@@ -260,5 +277,11 @@ div.subPortfolio {
         justify-content:center; 
         place-items: center;   
     }
+    /*    ~~~~ NAVIGATION start ~~~>   */
+    
+
+    
+    /*    ~~~~ NAVIGATION end ~~~>   */
+
 
 }
