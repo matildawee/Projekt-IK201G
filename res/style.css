@@ -146,7 +146,7 @@ main{
     text-align: center;
     transition: all 0.15s;
     background-color: rgba(255, 255, 255, 0.257);
-    }
+}
 .welcome-buttons > a:hover{
     color:#DDDDDD;
     border-color:#DDDDDD;
@@ -157,7 +157,7 @@ main{
     color:#BBBBBB;
     border-color:#BBBBBB;
     background-color: rgba(187, 187, 187, 0.384);
-    }
+}
 #page-content{
     width: 100%;
     height: 100%;
@@ -208,8 +208,6 @@ footer{
     place-items: center;
     border: 5px solid rgb(89, 0, 255); 
 }
-
-
 div.subPortfolio { 
     width: 20%; 
     height: auto; 
@@ -219,8 +217,6 @@ div.subPortfolio {
     text-align: center; 
     border-radius: 2%;
     border: 5px solid rgb(0, 255, 85); 
- 
-
 }
 .project-img{
     width: 80%;
@@ -245,7 +241,6 @@ div.subPortfolio {
     height: 100%;
     text-align: center;
     place-items: center;
-    
 }
 
 .about-submain{
@@ -255,9 +250,7 @@ div.subPortfolio {
     place-items: center;
     justify-content: center;
     text-align: center;
-    
 }
-
 .about-developer{
     width: 40%;
     background-color: rgb(209, 209, 209);
@@ -276,13 +269,10 @@ div.subPortfolio {
     margin: 0;
     padding: 0;
 }
-
 .about-main > h1{
     margin: 0;
     text-align: center;
-    
 }
-
 .about-developer > h1{
     font-size: 1.5em;
 }
@@ -294,33 +284,27 @@ div.subPortfolio {
 .contactPage{
     display: flex;
 }
-
 .contactPage > div {
     background-color: rgba(34, 34, 34, 0.541);
     margin: 0.5em;
     padding: 0.5em;
     width: 50%;
-  }
-
+}
 .contactLabel{
     color: #FFFFFF;
 }
-
 .contactInfo{
     display: flex;
 }
-
 .contactForm{
     width: 90%;
     margin-bottom: 1em;
 }
-
 .contactInfo > div {
     background-color: rgba(255, 255, 255, 0.7);
     margin: 0.5em;
     padding: 0.5em;
-  }
-
+}
 #contactSubmit {
     width: 22%;
     display:inline-block;
@@ -337,7 +321,6 @@ div.subPortfolio {
     transition: all 0.15s;
     background-color: rgba(255, 255, 255, 0.257);
 }
-
     /* Gör inget ännu nedan */
 .contactSubmit > input:hover{
     color:#DDDDDD;
@@ -345,14 +328,12 @@ div.subPortfolio {
     background-color:#dddddd25;
     cursor: pointer;
 }
-
 /* Gör inget ännu nedan */
 .contactSubmit > input:active{
     color:#BBBBBB;
     border-color:#BBBBBB;
     background-color: rgba(187, 187, 187, 0.384);
-    }
-
+}
 
 /* .contactLeft{
     background: rgba(41, 236, 15, 0.801);  
@@ -380,8 +361,7 @@ div.subPortfolio {
 /* Desktop page: */
 @media screen and (min-width: 768px) { 
 
-    /*  <~~~ start NAVIGATION desktop ~~~~   */
-    
+    /*  <~~~ start NAVIGATION desktop ~~~~   */    
     nav{
         visibility: visible;
         display: inline-block;
