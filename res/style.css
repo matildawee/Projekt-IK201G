@@ -6,116 +6,83 @@ html, body{
     font-family:'Roboto', sans-serif; 
 }
 
+/*    <~~~ start NAVIGATION ~~~~   */
+
 .navBar{
-    display: flex;
-    padding: 0.5em;
-    flex-direction: column;
+    width: 100%;
+    display: inline-block;
+    min-height: 55px;
+    background: #BBBBBB;
+    justify-content: center;
 }
-.navBarLinks{
+nav > ul{
     list-style-type: none;
     padding: 0;
-}
-.navBarLinks > li{
-    display: inline;
-    padding: 1em;
-    /* text-align: center; */
-}
-.navBarItems{
-    display: none;
-    margin: auto;
-    align-items: center;
-    /* flex-direction: column; */
-}
-
-.navBarItems-right{
-    margin-left:0;
-}
-
-
-.navBarToggleShow{
-    display: flex;
-}
-
-
-#header-title{
-    visibility: visible;
+    margin: 0 auto;
+    overflow: auto;
     text-align: center;
-    display: block;
-    place-items: center;
-    margin-right: 30vw;
-    font-weight: bolder;
 }
-
-#header-logo{
-    display: grid;
-    text-align: start;
-    align-items: center;
-    place-items:center;
-    float: left;
-    padding: 0;
-    width: 200px;
-    height: auto;
+nav > ul > li{
+    display: inline-block;
 }
-
-.navBarLink-toggle{
-    align-self: flex-end;
-    display: initial;
-    position: absolute;
+nav > ul > li > a{
+    display: inline-block;
+    padding: 1.1em;
+    text-align: center;
+}
+nav > ul > li > a:hover{
     cursor: pointer;
+    background: #333;
+    color: #fff
 }
-
-
-/*Nav-desktop*/
-
-@media screen and (min-width: 768px) { 
-
-.navbar, .navBarItems{
-    flex-direction: row;
-}
- .navBarItems{
-    display: block;
-    margin: 0;
-    text-align: center;
- }
-
- .navBarLinks > li{
-     padding: 0.9em;
-     margin: 0; 
-     width: auto; 
- }
-
- .navBarToggleShow{
-    display: none;
-}
-
-#header-title{
+nav{
     display: none;
     visibility: hidden;
+    margin: 0 auto;
+    width: 100%;
 }
-
+.navBar-right{
+    display: block;
+    float: right;
+    width: 28%;
+    height: auto;
+}
+.navBar-left{
+    display: inline-block;
+    width: 28%;
+}
+.navBarToggleShow{
+    display: inline-block;
+    visibility: visible;
+}
+.navBar-center{
+    width: 43%;
+    visibility: visible;
+    display: inline-block;
+    vertical-align: text-bottom;
+    margin: 0.5em 0;
+    text-align: center;
+}
+.navBar-center > h1{
+    display: inline-block;
+    margin: 0 auto;
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+}
+#header-logo{
+    display: inline-block;
+    width: 95%;
+    height: auto;
+    margin: 0.2em;
+    cursor: pointer;
+}
 .navBarLink-toggle{
-    display: none;
+    display: block;
+    margin: 0.5em 0.5em;
+    float: right;
+    padding: 1em;
 }
-
-.navBarLink-brand{
-    display: flex; 
-    width: auto;
-    align-self: flex-start;
-}
-
-.navbarLink {
-    width: auto;
-
-}
-
-.navBarEmpty-right{
-    width: 200px;
-    /* display: flex;
-    align-self: flex-end; */
-}
-
-}
-
 
 /*    ~~~~ NAVIGATION end ~~~>   */
 
@@ -198,15 +165,18 @@ footer{
     grid-row-end: 3;
     text-align: center;
 }
-.fas, .fab, .far{ /*Adding style to class fas, fab and far */
+/* Adding style to class fas, fab and far */
+.fas, .fab, .far{ 
     margin: 0.6em;
     color: rgb(78, 78, 78); 
     font-size: 2.5em;  
 }
-.fas:hover, .fab:hover, .far:hover{ /*Changing color and cursor when hover over class fas, fab and far */
+/* Changing color and cursor when hover over class fas, fab and far */
+.fas:hover, .fab:hover, .far:hover{
     color: rgb(0, 0, 0);
     cursor: pointer;
 }
+/* Adding GitHub icon font-size */
 .fa-github{
     font-size: 1em;
 }
@@ -390,16 +360,45 @@ div.subPortfolio {
     text-align: center;
 } */
 
-
-
 /*    ~~~~ CONTACT end ~~~>   */
+
 
 /* Desktop page: */
 @media screen and (min-width: 768px) { 
+
+    /*  <~~~ start NAVIGATION desktop ~~~~   */
     
-    .fas, .fab, .far{ /*Adding style to class fas, fab and far */ 
+    nav{
+        visibility: visible;
+        display: inline-block;
+        margin: 0 auto;
+        width: 60%;
+    }
+    .navBar-left{
+        width: 20%;
+    }
+    .navBar-center{
+        display: none;
+        visibility: hidden;
+    }
+    .navBar-right{
+        display: none;
+        visibility: hidden;
+        width: 20%;
+    }
+    #header-logo{
+        width: 200px;
+    }
+    
+    /*    ~~~~ desktop NAVIGATION end ~~~>   */
+    
+    /*    <~~~ start FOOTER desktop ~~~~     */
+    
+    /* Adding style to class fas, fab and far */ 
+    .fas, .fab, .far{
         font-size: 2em;  
     }
+    /* Adding GitHub icon font-size */
     .fa-github{
         font-size: 1em;
     }
@@ -428,6 +427,9 @@ div.subPortfolio {
         float: right;
         text-align: center;
     }
+
+    /*    ~~~~ desktop FOOTER end ~~~>   */
+
     #welcome > h1{
         margin: 0 2em;
         height: auto;
@@ -440,11 +442,5 @@ div.subPortfolio {
         justify-content:center; 
         place-items: center;   
     }
-    /*    ~~~~ NAVIGATION start ~~~>   */
-    
-
-    
-    /*    ~~~~ NAVIGATION end ~~~>   */
-
 
 }
