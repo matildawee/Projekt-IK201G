@@ -6,16 +6,19 @@ $(document).ready(function() {
     $('#home').click(function (event) {
         event.preventDefault();
         $('#page-content').load('./pages/start.html');
+        $('#navBar-pageTitle').html('Home');
     });
 
     $('#header-logo').click(function (event) {
         event.preventDefault();
         $('#page-content').load('./pages/start.html');
+        $('#navBar-pageTitle').html('Home');
     });
 
     $('#portfolio').click(function (event) {
         event.preventDefault();
         $('#page-content').load('./pages/portfolio.html');
+        $('#navBar-pageTitle').html('Portfolio');
 
         // laddar in projekten
         $.getJSON(
@@ -29,20 +32,22 @@ $(document).ready(function() {
     $('#about').click(function (event) {
         event.preventDefault();
         $('#page-content').load('./pages/about.html');
+        $('#navBar-pageTitle').html('About');
     });
 
     $('#contact').click(function (event) {
         event.preventDefault();
         $('#page-content').load('./pages/contact.html');
+        $('#navBar-pageTitle').html('Contact');
     });
 
     function classToggle() {
         const navs = document.querySelectorAll('nav')
         
-        navs.forEach(nav => nav.classList.toggle('navBarToggleShow'));
+        navs.forEach(nav => nav.classList.toggle('navBar-toggleShow'));
       }
       
-      document.querySelector('.navBarLink-toggle')
+      document.querySelector('.navButton-toggle')
         .addEventListener('click', classToggle);
 
     /* <~~~~~ knapparna på startsidan - dessa knappar finns också i extrascript ~~~~~~ */    

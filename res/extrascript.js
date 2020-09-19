@@ -4,6 +4,7 @@
     $('#startProjects').click(function (event) {
         event.preventDefault();
         $('#page-content').load('./pages/portfolio.html');
+        $('#navBar-pageTitle').html('Portfolio');
 
         // laddar in projekten    
         $.getJSON(
@@ -19,6 +20,7 @@
     $('#startUs').click(function (event) {
         event.preventDefault();
         $('#page-content').load('./pages/about.html');
+        $('#navBar-pageTitle').html('About');
     });
 
     /* ~~~~~~ knapparna på startsidan ~~~~~~> */  
