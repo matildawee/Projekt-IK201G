@@ -8,6 +8,11 @@ $(document).ready(function() {
         $('#page-content').load('./pages/start.html');
     });
 
+    $('#header-logo').click(function (event) {
+        event.preventDefault();
+        $('#page-content').load('./pages/start.html');
+    });
+
     $('#portfolio').click(function (event) {
         event.preventDefault();
         $('#page-content').load('./pages/portfolio.html');
@@ -32,7 +37,7 @@ $(document).ready(function() {
     });
 
     function classToggle() {
-        const navs = document.querySelectorAll('.navBarItems')
+        const navs = document.querySelectorAll('nav')
         
         navs.forEach(nav => nav.classList.toggle('navBarToggleShow'));
       }
