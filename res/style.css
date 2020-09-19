@@ -99,7 +99,7 @@ main{
     width: 100%;
 }
 #welcome > h1{
-    margin: 0 2em;
+    margin: 0 auto;
     height: auto;
     font-size: 4em;
     font-weight: bold;
@@ -118,7 +118,7 @@ main{
     text-align: center;
 }
 .welcome-buttons > a{
-    width: 22%;
+    width: 40%;
     display:inline-block;
     padding: 0.5em 0;
     margin:0 0.3em 0.3em 0;
@@ -431,7 +431,7 @@ div.subPortfolio {
     /*    ~~~~ desktop FOOTER end ~~~>   */
 
     #welcome > h1{
-        margin: 0 2em;
+        margin: 0 auto;
         height: auto;
         font-size: 6em;
         font-weight: bold;
