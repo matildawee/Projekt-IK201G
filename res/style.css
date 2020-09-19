@@ -41,22 +41,19 @@ nav{
     margin: 0 auto;
     width: 100%;
 }
-.navBar-right{
-    display: block;
-    float: right;
-    width: 28%;
-    height: auto;
-}
 .navBar-left{
     display: inline-block;
     width: 28%;
 }
-.navBar-toggleShow{
+#header-logo{
     display: inline-block;
-    visibility: visible;
+    width: 95%;
+    height: auto;
+    margin: 0.2em;
+    cursor: pointer;
 }
 .navBar-center{
-    width: 43%;
+    width: 40%;
     visibility: visible;
     display: inline-block;
     vertical-align: text-bottom;
@@ -70,12 +67,11 @@ nav{
     text-align: center;
     font-weight: bold;
 }
-#header-logo{
-    display: inline-block;
-    width: 95%;
+.navBar-right{
+    display: block;
+    float: right;
+    width: 28%;
     height: auto;
-    margin: 0.2em;
-    cursor: pointer;
 }
 .navButton-toggle{
     height: 44px;
@@ -97,6 +93,10 @@ nav{
     border-radius: 1px;
     margin: 5px 0;
 }
+.navBar-show{
+    display: inline-block;
+    visibility: visible;
+}
 
 /*    ~~~~ NAVIGATION end ~~~>   */
 
@@ -108,10 +108,9 @@ main{
     background-size: 100% 100%;
 }
 
-
 #welcome{
     width: 100%;
-    margin-top: 15%;
+    margin-top: 15em;
 }
 #welcome > h1{
     margin: 0 auto;
@@ -133,7 +132,7 @@ main{
     text-align: center;
 }
 .welcome-buttons > a{
-    width: 25%;
+    width: 10em;
     display:inline-block;
     padding: 0.5em 0;
     margin: 0.2em;
@@ -424,7 +423,7 @@ div.subPortfolio {
         font-size: 6em;
     }
     .welcome-buttons > a{
-        width: 20%;
+        width: 15em;
     }
 
 }

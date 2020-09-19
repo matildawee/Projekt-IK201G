@@ -44,7 +44,7 @@ $(document).ready(function() {
     function classToggle() {
         const navs = document.querySelectorAll('nav')
         
-        navs.forEach(nav => nav.classList.toggle('navBar-toggleShow'));
+        navs.forEach(nav => nav.classList.toggle('navBar-show'));
       }
       
       document.querySelector('.navButton-toggle')
