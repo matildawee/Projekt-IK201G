@@ -40,12 +40,13 @@
 
     function displayPortfolio(projects) {
 
-        var divlista;
+        var divlista = new Array();
+        var divindex = 0;
 
-        var startdiv = "<div id=stordiv>";
+        var startdiv = "<div id='stordiv'>";
         var slutdiv = "</div>";
         
-        var helaGrejen = "<div id=stordiv>";
+        var helaGrejen = "<div id='stordiv'>";
 
         $.each(projects, function (ind, portfolio) {
             
@@ -61,30 +62,35 @@
 
             helaGrejen += square;
 
-            console.log(ind);
-            console.log(square);
+            
+            if (ind > 0 && (ind + 1) % 4 == 0){
 
-            if (ind > 0 && ind+1 % 4 == 0){
 
                 //var startdiv = $('<div id="stordiv' + ind + '">');                
                 //var helaDiven = startdiv + square + '</div>';
 
                 helaGrejen += slutdiv;
-                divlista[ind] = helaGrejen;
+                divlista[divindex] = helaGrejen;
 
-                console.log(helaGrejen);
-
-                //helaGrejen = startdiv;
+                //console.log(helaGrejen);
+                
+                divindex++;
+                helaGrejen = startdiv;
             
                 
             }; 
            
             //$('.portfolio-box').append(square);
-
         });
+        if (ind = 0){
+            divlista = '';
+        };
+        if ((ind + 1) % 4 != 0){
+            helaGrejen += slutdiv;
+            divlista[divindex] = helaGrejen;           
+        };
 
         console.log(divlista);
-        
     };
     
     /* ~~~~~~ hämtar portfolio json ~~~~~~> */ 
