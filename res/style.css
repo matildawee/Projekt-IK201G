@@ -112,6 +112,36 @@ nav{
     visibility: visible;
 }
 
+/* Dropdown-start */
+.navDropdownContent{
+    display: none;
+    position: absolute;
+    background-color: rgb(238, 238, 238);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    width: auto;
+    min-width: 7em;
+}
+.navDropdownContent a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+.navDropdownContent a:hover {
+    background-color: #333;
+    color: #fff;
+}
+.navDropdownContent:hover .navHaveDropdown {
+    background-color: #333;
+    color: #fff;
+}
+.navHaveDropdown:hover .navDropdownContent {
+    display: block;
+}
+/* Dropdown-end */
+
 /*    ~~~~ NAVIGATION end ~~~>   */
 
 /*    ~~~~ HOME start ~~~>   */
@@ -188,7 +218,7 @@ footer{
     text-align: center;
 }
 
-.fas, .fab, .far{ 
+.fa-envelope, .fa-phone, .fa-instagram, .fa-facebook-f{ 
     margin: 0.6em;
     color: rgb(78, 78, 78); 
     font-size: 1.5em;  
@@ -474,7 +504,7 @@ div.subPortfolio {
     /*    <~~~ FOOTER desktop start ~~~~     */
     
     /* Adding style to class fas, fab and far */ 
-    .fas, .fab, .far{
+    .fa-envelope, .fa-phone, .fa-instagram, .fa-facebook-f{ 
         font-size: 2em;  
     }
     /* Adding GitHub icon font-size */
