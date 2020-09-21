@@ -1,4 +1,3 @@
-
     /* <~~~~~ knapparna på startsidan ~~~~~~ */    
 
     function loadPage(clickedId, pageUrl, pageTitle){
@@ -34,6 +33,8 @@
                 displayAbout(data.person);
             }
         );
+
+        $("#personDiv").hide();
     });
 
     /* ~~~~~~ knapparna på startsidan ~~~~~~> */  
@@ -112,6 +113,7 @@
     
     /* <~~~~~ hämtar oss json ~~~~~~ */ 
 
+
     function displayAbout(person) {
         $.each(person, function (ind, employee) {
             
@@ -126,16 +128,18 @@
 
         $('#about-submain').append(personSquare);
         });
+
+        //$("#personDiv").hide();
     };
 
 
     $('.about-developer').click(function (event) {
         event.preventDefault();
-        
+
         //$('#page-content').load('./pages/about.html');
         //$('#navBar-pageTitle').html('About');
 
-        //'#personDiv'.
+        $("#personDiv").show();
 
         // ladda in info om utvecklare?
         // $.getJSON(
