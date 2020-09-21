@@ -361,7 +361,6 @@ div.subPortfolio {
     font-size: 0.9em;
 }
 .contactInfo > div {
-    /* background: rgba(255, 255, 255, 0.7); */
     margin: 0;
     padding: 0.5em;
     width: 33%;
@@ -369,53 +368,42 @@ div.subPortfolio {
 }
 .contactInfo > div > h3{
     margin: 0;
+    font-size: 0.9em;
 }
 .contactInfo > div > p{
     font-size: 0.9em;
 }
 #contactSubmit {
     width: 8em;
-    display:inline-block;
+    display: block;
     padding: 0.5em 0;
-    margin:0 0.3em 0.3em 0;
-    border:0.16em solid #FFFFFF;
+    margin: 1em 0.3em 2em 0;
+    border: 0.16em solid #FFFFFF;
     box-sizing: border-box;
-    text-decoration:none;
-    text-transform:uppercase;
-    font-weight:600;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
     color: #FFFFFF;
     border-color: rgb(255, 255, 255);
     text-align: center;
     transition: all 0.15s;
     background: rgba(255, 255, 255, 0.257);
 }
-    /* Gör inget ännu nedan */
-.contactSubmit > input:hover{
+#contactSubmit:hover{
     color:#DDDDDD;
     border-color:#DDDDDD;
     background:#dddddd25;
     cursor: pointer;
 }
-/* Gör inget ännu nedan */
-.contactSubmit > input:active{
+#contactSubmit:active{
     color:#BBBBBB;
     border-color:#BBBBBB;
     background: rgba(187, 187, 187, 0.384);
 }
 .contactMap{
     text-align: center;
-    /* padding: 0.5em;  */
+    margin-top: 1.2em; 
 }
-
-/* .contactRight{
-    background: rgba(182, 96, 15, 0.795); 
-    width: 30%;
-    flex-wrap: nowrap;
-    display: inline-flex;
-    place-items: right;
-    justify-content: right;
-    text-align: center;
-}  */
 
 /*    ~~~~ CONTACT end ~~~>   */
 
@@ -526,6 +514,9 @@ div.subPortfolio {
     .contactRight {
         padding: 1em 2em 0.5em 1.5em;
         margin: 1em 5em 1em 1em;
+    }
+    #contactSubmit {
+        margin: 2em 0.3em 0.3em 0;
     }
     
 
