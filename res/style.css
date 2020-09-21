@@ -240,17 +240,21 @@ div.subPortfolio {
 /*    ~~~~ ABOUT US start ~~~>   */
 
 .about-description{
-    width: 40%;
-    margin: 3% 30%;
+    width: 90%;
+    margin: 3%;
+    padding: 2%;
     text-align: justify;
     justify-content: center;
+    background: rgba(34, 34, 34, 0.541);
+    color: white;
 }
 .about-description > h1{
     text-align: center;
 }
 .about-main{
-    width: 40%;
-    margin: 0 30%; 
+    width: 90%;
+    margin: 0 3%;
+    padding: 2%; 
     height: 100%;
     text-align: center;
     justify-content: center;
@@ -265,19 +269,21 @@ div.subPortfolio {
     text-align: center;
     font-size: 2em;
 }
-.about-submain{
+#about-submain{
     width: 100%;
     margin: 0 0 3% 0;
     display: flex;
     justify-content: center;
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
 }
 .about-developer{
-    width: 23%;
+    width: 40%;
     margin: 1% 0;
     padding: 1% 0;
     border-radius: 2%;
     font-size: 0.9em;
+    text-align: center;
 }
 .about-developer:hover{
     cursor: pointer;
@@ -308,10 +314,6 @@ div.subPortfolio {
 
 
 /*    ~~~~ ABOUT US end ~~~>   */
-
-/*    ~~~~ ABOUT ME start ~~~>   */
-
-/*    ~~~~ ABOUT ME end ~~~>   */
 
 /*    <~~~ start CONTACT ~~~~   */
 #contactTitle{
@@ -434,6 +436,22 @@ div.subPortfolio {
     }
     
     /*    ~~~~ NAVIGATION desktop end ~~~>   */
+
+    /*    ~~~~ ABOUT US desktop start ~~~>   */
+
+.about-description{
+    width: 40%;
+    margin: 3% 28%;
+}
+.about-main{
+    width: 40%;
+    margin: 0 28%;
+}
+.about-developer{
+    width: 23%;
+}
+
+/*    ~~~~ ABOUT US desktop end ~~~>   */
     
     /*    <~~~ FOOTER desktop start ~~~~     */
     
