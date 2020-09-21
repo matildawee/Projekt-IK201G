@@ -96,11 +96,11 @@ nav{
     float: right;
     padding: 3px 6px;
     background: transparent;
-    border: 3px solid #fff;
+    border: 3px solid #555;
     border-radius: 8px;
 }
 .navButton-Line{
-    background: white;
+    background:#555;
     display: block;
     width: 26px;
     height: 3px;
@@ -380,6 +380,7 @@ div.subPortfolio {
 }
 #contactSubmit {
     width: 8em;
+    height: 3em; 
     display: block;
     padding: 0.5em 0;
     margin: 1em 0.3em 2em 0;
@@ -408,6 +409,15 @@ div.subPortfolio {
 .contactMap{
     text-align: center;
     margin-top: 1.2em; 
+}
+
+#contactError{
+    width: 100%; 
+    margin: 0; 
+    padding: 0; 
+    text-align: center; 
+    display: flex; 
+    color: red;
 }
 
 /*    ~~~~ CONTACT end ~~~>   */

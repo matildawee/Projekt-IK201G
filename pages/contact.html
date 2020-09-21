@@ -4,16 +4,20 @@
     <div class="contactLeft">
         <form>
             <label for="name" class="contactLabel">Name:</label><br />
-            <input type="text" id="contactName" class="contactForm" name="name" onfocus="this.value=''" value="Firstname Lastname"/><br />
+            <input type="text" id="contactName" class="contactForm" name="name" placeholder="Firstname Lastname"/><br />
             <label for="phone" class="contactLabel">Phone:</label><br />
-            <input type="text" id="contactPhone" class="contactForm" name="phone" onfocus="this.value=''" value="+46712345678" /><br />
+            <input type="text" id="contactPhone" class="contactForm" name="phone" placeholder="+46712345678" /><br />
             <label for="email" class="contactLabel">E-mail:</label><br />
-            <input type="text" id="contactEmail" class="contactForm" name="email" onfocus="this.value=''" value="mail@domain.com" /><br />
+            <input type="text" id="contactEmail" class="contactForm" name="email" placeholder="mail@domain.com" /><br />
             <label for="subject" class="contactLabel">Subject:</label><br />
-            <input type="text" id="contactSubject" class="contactForm" name="subject" onfocus="this.value=''" value="Your subject" /><br />
+            <input type="text" id="contactSubject" class="contactForm" name="subject" placeholder="Your subject" /><br />
             <label for="message" class="contactLabel">Message:</label><br />
-            <textarea id="contactMessage" rows="6" class="contactForm" onfocus="this.value=''" name="message">Enter your message here...</textarea><br />
-            <button id="contactSubmit" type="submit" value="Submit">Submit</button>
+            <textarea id="contactMessage" rows="6" class="contactForm" name="message" placeholder="Enter your message here..."></textarea><br />
+            <div style="display:flex"><button id="contactSubmit" type="submit" value="Submit">Submit</button>
+               
+                <p id="contactError">Wrong format on name<br/>
+                Wrong format on phone<br/>
+                Wrong format on e-mail</p></div>
         </form>
     </div>
 
