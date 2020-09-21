@@ -349,7 +349,6 @@ div.subPortfolio {
     font-size: 0.9em;
 }
 .contactInfo > div {
-    /* background: rgba(255, 255, 255, 0.7); */
     margin: 0;
     padding: 0.5em;
     width: 33%;
@@ -378,15 +377,13 @@ div.subPortfolio {
     transition: all 0.15s;
     background: rgba(255, 255, 255, 0.257);
 }
-    /* Gör inget ännu nedan */
-.contactSubmit > input:hover{
+#contactSubmit:hover{
     color:#DDDDDD;
     border-color:#DDDDDD;
     background:#dddddd25;
     cursor: pointer;
 }
-/* Gör inget ännu nedan */
-.contactSubmit > input:active{
+#contactSubmit:active{
     color:#BBBBBB;
     border-color:#BBBBBB;
     background: rgba(187, 187, 187, 0.384);
@@ -395,16 +392,6 @@ div.subPortfolio {
     text-align: center;
     margin-top: 1.2em; 
 }
-
-/* .contactRight{
-    background: rgba(182, 96, 15, 0.795); 
-    width: 30%;
-    flex-wrap: nowrap;
-    display: inline-flex;
-    place-items: right;
-    justify-content: right;
-    text-align: center;
-}  */
 
 /*    ~~~~ CONTACT end ~~~>   */
 
