@@ -8,6 +8,7 @@ $(document).ready(function() {
         $('#navBar-pageTitle').html(pageTitle);
         $('.menuBtn').removeClass('activePage');
         $(clickedId).addClass('activePage');
+        // classToggle();
     }
 
     $('#home').click(function (event) {
@@ -52,8 +53,8 @@ $(document).ready(function() {
     });
 
     function classToggle() {
+        // $("nav").slideToggle();
         const navs = document.querySelectorAll('nav')
-        
         navs.forEach(nav => nav.classList.toggle('navBar-show'));
       }
       
