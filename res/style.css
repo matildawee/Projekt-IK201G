@@ -255,18 +255,19 @@ div.subPortfolio {
     text-align: center;
     justify-content: center;
     transition: all 0.15s;
-    background: rgba(255, 255, 255, 0.226);
+    background: rgba(34, 34, 34, 0.541);
     color: white;
 }
 .about-main > h1{
     width: 100%;
     padding: 0;
-    margin: 1%;
+    margin: 0;
     text-align: center;
     font-size: 2em;
 }
 .about-submain{
     width: 100%;
+    margin: 0 0 3% 0;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -295,7 +296,6 @@ div.subPortfolio {
     margin: 0 0 0 0;
     border-radius: 50%;
 }
-
 .about-developer > h1{
     font-size: 1.5em;
     margin: 0;
@@ -305,8 +305,13 @@ div.subPortfolio {
     margin: 0;
     padding: 0;
 }
+
+
 /*    ~~~~ ABOUT US end ~~~>   */
 
+/*    ~~~~ ABOUT ME start ~~~>   */
+
+/*    ~~~~ ABOUT ME end ~~~>   */
 
 /*    <~~~ start CONTACT ~~~~   */
 #contactTitle{

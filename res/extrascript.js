@@ -94,3 +94,6 @@
     };
     
     /* ~~~~~~ hämtar portfolio json ~~~~~~> */ 
+
+    /*    ~~~~ ABOUT US  ~~~>   */
+    
