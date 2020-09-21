@@ -355,20 +355,21 @@ div.subPortfolio {
 }
 .contactInfo > div > h3{
     margin: 0;
+    font-size: 0.9em;
 }
 .contactInfo > div > p{
     font-size: 0.9em;
 }
 #contactSubmit {
     width: 8em;
-    display:inline-block;
+    display: block;
     padding: 0.5em 0;
-    margin:0 0.3em 0.3em 0;
-    border:0.16em solid #FFFFFF;
+    margin: 1em 0.3em 2em 0;
+    border: 0.16em solid #FFFFFF;
     box-sizing: border-box;
-    text-decoration:none;
-    text-transform:uppercase;
-    font-weight:600;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
     color: #FFFFFF;
     border-color: rgb(255, 255, 255);
     text-align: center;
@@ -390,7 +391,7 @@ div.subPortfolio {
 }
 .contactMap{
     text-align: center;
-    /* padding: 0.5em;  */
+    margin-top: 1.2em; 
 }
 
 /* .contactRight{
@@ -492,6 +493,9 @@ div.subPortfolio {
     .contactRight {
         padding: 1em 2em 0.5em 1.5em;
         margin: 1em 5em 1em 1em;
+    }
+    #contactSubmit {
+        margin: 2em 0.3em 0.3em 0;
     }
     
 
