@@ -7,7 +7,7 @@
           "title": "Developer",
           "email": "example@example.com",
           "telephone": "+4670000000",
-          "portrait": "./img/portrait-woman.jpg",
+          "image": "./img/portrait-woman.jpg",
           "java": "100%",
           "html": "50%",
           "javascript": "20%",
@@ -22,7 +22,7 @@
             "title": "Developer",
             "email": "example@example.com",
             "telephone": "+4670000000",
-            "portrait": "./img/portrait-woman.jpg",
+            "image": "./img/portrait-woman.jpg",
             "java": "100%",
             "html": "50%",
             "javascript": "20%",
@@ -37,7 +37,7 @@
             "title": "Developer",
             "email": "example@example.com",
             "telephone": "+4670000000",
-            "portrait": "./img/portrait-man.jpg",
+            "image": "./img/portrait-man.jpg",
             "java": "100%",
             "html": "50%",
             "javascript": "20%",
@@ -52,7 +52,7 @@
             "title": "Developer",
             "email": "example@example.com",
             "telephone": "+4670000000",
-            "portrait": "./img/portrait-man.jpg",
+            "image": "./img/portrait-man.jpg",
             "java": "100%",
             "html": "50%",
             "javascript": "20%",
@@ -60,6 +60,5 @@
             "sql": "80%",
             "photoshop": "0%"
           }
-        
     ]
 }

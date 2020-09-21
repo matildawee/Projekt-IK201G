@@ -33,6 +33,14 @@ $(document).ready(function() {
         event.preventDefault();
         $('#page-content').load('./pages/about.html');
         $('#navBar-pageTitle').html('About');
+
+        // laddar in utvecklarna
+        $.getJSON(
+            'res/about-data.json',
+            function (data) {
+                displayAbout(data.person);
+            }
+        );
     });
 
     $('#contact').click(function (event) {

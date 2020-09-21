@@ -21,6 +21,14 @@
         event.preventDefault();
         $('#page-content').load('./pages/about.html');
         $('#navBar-pageTitle').html('About');
+
+        // laddar in utvecklarna
+        $.getJSON(
+            'res/about-data.json',
+            function (data) {
+                displayAbout(data.person);
+            }
+        );
     });
 
     /* ~~~~~~ knapparna på startsidan ~~~~~~> */  
@@ -91,10 +99,45 @@
 
         console.log(divlista);
         $('#portfolio-box').append(divlista[0]);
-
     };
-    
-    /* ~~~~~~ hämtar portfolio json ~~~~~~> */ 
 
-    /*    ~~~~ ABOUT US  ~~~>   */
+
+    /* ~~~~~~ hämtar portfolio json ~~~~~> */ 
+
     
+    /* <~~~~~ hämtar oss json ~~~~~~ */ 
+
+    function displayAbout(person) {
+        $.each(person, function (ind, employee) {
+            
+                        
+            var personSquare = $(
+                '<div class="about-developer" id="persondiv' + ind + '">' + 
+                '<img src="' + employee.image + '" title="developer" alt="developer">' +
+                    '<h1>' + employee.firstname + '</h1>' +
+                    '<p>' + employee.title + '</p>'+
+                '</div>'
+            );        
+
+        $('#about-submain').append(personSquare);
+        });
+    };
+
+
+    $('#persondiv1').click(function (event) {
+        event.preventDefault();
+        //$('#page-content').load('./pages/about.html');
+        //$('#navBar-pageTitle').html('About');
+
+        //'#personDiv'.
+
+        // ladda in info om utvecklare?
+        // $.getJSON(
+        //     'res/about-data.json',
+        //     function (data) {
+        //         displayAbout(data.person);
+        //     }
+        // );
+    });
+
+    /* ~~~~~ hämtar oss json ~~~~~> */ 
