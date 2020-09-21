@@ -1,4 +1,3 @@
-
     /* <~~~~~ knapparna på startsidan ~~~~~~ */    
 
     $('#startProjects').click(function (event) {

@@ -21,7 +21,7 @@ html, body{
     width: 100%;
     display: inline-block;
     min-height: 55px;
-    background: #BBBBBB;
+    background: rgb(238, 238, 238);
     justify-content: center;
 }
 nav > ul{
