@@ -54,7 +54,7 @@
         var divindex = 0;
         
         var startdiv = "<div id='stordiv'>";
-        va        r slutdiv = "</div>";
+        var slutdiv = "</div>";
         var helaGrejen = "<div id='stordiv'>";
 
         $.each(projects, function (ind, portfolio) {          
