@@ -63,7 +63,7 @@ nav{
     display: inline-block;
     width: 95%;
     height: auto;
-    margin: 0.2em;
+    margin: 0.2em 1em;
     cursor: pointer;
 }
 .navBar-center{

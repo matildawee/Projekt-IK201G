@@ -52,6 +52,8 @@
     //     );
     // });
 
+    $(portfolio).ready
+    
     function displayPortfolio(projects) {
 
         var divlista = new Array();
