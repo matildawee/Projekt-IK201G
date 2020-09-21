@@ -3,22 +3,26 @@ $(document).ready(function() {
 
     $('#page-content').load('./pages/start.html');
 
+    function loadPage(clickedId, pageUrl, pageTitle){
+        $('#page-content').load(pageUrl);
+        $('#navBar-pageTitle').html(pageTitle);
+        $('.menuBtn').removeClass('activePage');
+        $(clickedId).addClass('activePage');
+    }
+
     $('#home').click(function (event) {
         event.preventDefault();
-        $('#page-content').load('./pages/start.html');
-        $('#navBar-pageTitle').html('Home');
+        loadPage('#home','./pages/start.html','Home');
     });
 
     $('#header-logo').click(function (event) {
         event.preventDefault();
-        $('#page-content').load('./pages/start.html');
-        $('#navBar-pageTitle').html('Home');
+        loadPage('#home','./pages/start.html','Home');
     });
 
     $('#portfolio').click(function (event) {
         event.preventDefault();
-        $('#page-content').load('./pages/portfolio.html');
-        $('#navBar-pageTitle').html('Portfolio');
+        loadPage('#portfolio','./pages/portfolio.html','Portfolio');
 
         // laddar in projekten
         $.getJSON(
@@ -31,8 +35,7 @@ $(document).ready(function() {
 
     $('#about').click(function (event) {
         event.preventDefault();
-        $('#page-content').load('./pages/about.html');
-        $('#navBar-pageTitle').html('About');
+        loadPage('#about','./pages/about.html','About us');
 
         // laddar in utvecklarna
         $.getJSON(
@@ -45,8 +48,7 @@ $(document).ready(function() {
 
     $('#contact').click(function (event) {
         event.preventDefault();
-        $('#page-content').load('./pages/contact.html');
-        $('#navBar-pageTitle').html('Contact');
+        loadPage('#contact','./pages/contact.html','Contact');
     });
 
     function classToggle() {

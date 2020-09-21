@@ -1,10 +1,16 @@
 
     /* <~~~~~ knapparna på startsidan ~~~~~~ */    
 
+    function loadPage(clickedId, pageUrl, pageTitle){
+        $('#page-content').load(pageUrl);
+        $('#navBar-pageTitle').html(pageTitle);
+        $('.menuBtn').removeClass('activePage');
+        $(clickedId).addClass('activePage');
+    }
+
     $('#startProjects').click(function (event) {
         event.preventDefault();
-        $('#page-content').load('./pages/portfolio.html');
-        $('#navBar-pageTitle').html('Portfolio');
+        loadPage('#portfolio','./pages/portfolio.html','Portfolio');
 
         // laddar in projekten    
         $.getJSON(
@@ -19,8 +25,7 @@
 
     $('#startUs').click(function (event) {
         event.preventDefault();
-        $('#page-content').load('./pages/about.html');
-        $('#navBar-pageTitle').html('About');
+        loadPage('#about','./pages/about.html','About us');
 
         // laddar in utvecklarna
         $.getJSON(
