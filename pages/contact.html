@@ -1,16 +1,16 @@
 
-        <h1>Contact</h1>
+        <h1 id="contactTitle">Contact</h1>
 <div class="contactPage">
     <div class="contactLeft">
         <form>
             <label for="name" class="contactLabel">Name:</label><br />
-            <input type="text" id="contactName" class="contactForm" name="name" value="Firstname Lastname"/><br />
+            <input type="text" id="contactName" class="contactForm" name="name" onfocus="this.value=''" value="Firstname Lastname"/><br />
             <label for="email" class="contactLabel">E-mail:</label><br />
-            <input type="text" id="contactEmail" class="contactForm" name="email" value="mail@domain.com" /><br />
+            <input type="text" id="contactEmail" class="contactForm" name="email" onfocus="this.value=''" value="mail@domain.com" /><br />
             <label for="subject" class="contactLabel">Subject:</label><br />
-            <input type="text" id="contactSubject" class="contactForm" name="subject" value="Your subject" /><br />
+            <input type="text" id="contactSubject" class="contactForm" name="subject" onfocus="this.value=''" value="Your subject" /><br />
             <label for="message" class="contactLabel">Message:</label><br />
-            <textarea id="contactMessage" rows="8" class="contactForm" name="message">Enter your message here...</textarea><br />
+            <textarea id="contactMessage" rows="8" class="contactForm" onfocus="this.value=''" name="message">Enter your message here...</textarea><br />
             <br />
             <input id="contactSubmit" type="submit" value="Submit" />
         </form>

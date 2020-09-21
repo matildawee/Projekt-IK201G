@@ -1,7 +1,7 @@
 /* This JavaScript need jQuery to run */
 $(document).ready(function() {
 
-    $('#page-content').load('./pages/start.html');
+    $('#page-content').load('./pages/contact.html');
 
     $('#home').click(function (event) {
         event.preventDefault();
@@ -62,6 +62,9 @@ $(document).ready(function() {
         event.preventDefault();
         $('#page-content').load('./pages/about.html');
     });
+
+
+
 
     /* ~~~~~~ knapparna på startsidan ~~~~~~> */  
 
