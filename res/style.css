@@ -239,34 +239,50 @@ div.subPortfolio {
 
 /*    ~~~~ ABOUT US start ~~~>   */
 
-#about-description{
+.about-description{
+    width: 40%;
+    margin: 3% 30%;
+    text-align: justify;
+    justify-content: center;
+}
+.about-description > h1{
     text-align: center;
 }
 .about-main{
-    width: 100%;
+    width: 40%;
+    margin: 0 30%; 
     height: 100%;
     text-align: center;
     justify-content: center;
-    margin-top: 15em;
-
+    transition: all 0.15s;
+    background: rgba(255, 255, 255, 0.226);
     color: white;
 }
 .about-submain{
-    width: 50%;  
-    margin: 0 25%; 
+    width: 100%;
     display: flex;
     justify-content: center;
     text-align: center;
-    transition: all 0.15s;
-    background: rgba(255, 255, 255, 0.257);
+
     
 }
 .about-developer{
-    width: 20%;
-    margin: 1em 0;
-    padding: 0;
+    width: 23%;
+    margin: 1% 0;
+    padding: 1% 0;
     border-radius: 2%;
     font-size: 0.9em;
+}
+.about-developer:hover{
+    cursor: pointer;
+    color:#DDDDDD;
+    border-color:#DDDDDD;
+    background:#dddddd25;
+}
+.about-developer > a:active{
+    color:#BBBBBB;
+    border-color:#BBBBBB;
+    background: rgba(187, 187, 187, 0.384);
 }
 .about-developer > img{
     width: 70%;
@@ -280,6 +296,7 @@ div.subPortfolio {
     margin: 1%;
     text-align: center;
     font-size: 2em;
+    color: black;
 }
 .about-developer > h1{
     font-size: 1.5em;
