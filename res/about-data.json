@@ -1,0 +1,65 @@
+{
+    "person": [
+        {
+          "id": "p1",
+          "firstname": "Matilda",
+          "lastname": "Wennberg",
+          "title": "Developer",
+          "email": "example@example.com",
+          "telephone": "+4670000000",
+          "portrait": "./img/portrait-woman.jpg",
+          "java": "100%",
+          "html": "50%",
+          "javascript": "20%",
+          "css": "50%",
+          "sql": "80%",
+          "photoshop": "0%"
+        },
+        {
+            "id": "p2",
+            "firstname": "Selda",
+            "lastname": "Garabedian",
+            "title": "Developer",
+            "email": "example@example.com",
+            "telephone": "+4670000000",
+            "portrait": "./img/portrait-woman.jpg",
+            "java": "100%",
+            "html": "50%",
+            "javascript": "20%",
+            "css": "50%",
+            "sql": "80%",
+            "photoshop": "0%"
+          },
+          {
+            "id": "p3",
+            "firstname": "Oskar",
+            "lastname": "Bendrik",
+            "title": "Developer",
+            "email": "example@example.com",
+            "telephone": "+4670000000",
+            "portrait": "./img/portrait-man.jpg",
+            "java": "100%",
+            "html": "50%",
+            "javascript": "20%",
+            "css": "50%",
+            "sql": "80%",
+            "photoshop": "0%"
+          },
+          {
+            "id": "p4",
+            "firstname": "Jonas",
+            "lastname": "Arvidson",
+            "title": "Developer",
+            "email": "example@example.com",
+            "telephone": "+4670000000",
+            "portrait": "./img/portrait-man.jpg",
+            "java": "100%",
+            "html": "50%",
+            "javascript": "20%",
+            "css": "50%",
+            "sql": "80%",
+            "photoshop": "0%"
+          }
+        
+    ]
+}

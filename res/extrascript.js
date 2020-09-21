@@ -49,8 +49,7 @@
         var helaGrejen = "<div id='stordiv'>";
 
         $.each(projects, function (ind, portfolio) {
-            
-            
+                        
             var square = $(
                 '<div class="subPortfolio">' + 
                 '<img class="project-img" src="' + portfolio.image + '" title="Project" alt="Project">' +
@@ -62,9 +61,9 @@
 
             helaGrejen += square;
 
+            //$('#portfolio-box').append(square);
             
             if (ind > 0 && (ind + 1) % 4 == 0){
-
 
                 //var startdiv = $('<div id="stordiv' + ind + '">');                
                 //var helaDiven = startdiv + square + '</div>';
@@ -75,22 +74,27 @@
                 //console.log(helaGrejen);
                 
                 divindex++;
-                helaGrejen = startdiv;
-            
+                helaGrejen = startdiv;        
                 
-            }; 
-           
-            //$('.portfolio-box').append(square);
+            };            
+            
         });
+
         if (ind = 0){
             divlista = '';
         };
+        
         if ((ind + 1) % 4 != 0){
             helaGrejen += slutdiv;
             divlista[divindex] = helaGrejen;           
         };
 
         console.log(divlista);
+        $('#portfolio-box').append(divlista[0]);
+
     };
     
     /* ~~~~~~ hämtar portfolio json ~~~~~~> */ 
+
+    /*    ~~~~ ABOUT US  ~~~>   */
+    
