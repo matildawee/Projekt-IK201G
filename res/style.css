@@ -308,15 +308,23 @@ div.subPortfolio {
 /*    ~~~~ ABOUT US end ~~~>   */
 
 
-/*    <~~~ CONTACT start ~~~~   */
+/*    <~~~ start CONTACT ~~~~   */
+#contactTitle{
+    text-align: center;
+}
 .contactPage{
     display: flex;
 }
 .contactPage > div {
     background: rgba(34, 34, 34, 0.541);
     margin: 0.5em;
-    padding: 0.5em;
     width: 50%;
+}
+.contactLeft{
+    padding: 1em 2em 0.5em 1.5em;
+}    
+.contactRight {
+    padding: 0.5em;
 }
 .contactLabel{
     color: #FFFFFF;
@@ -325,15 +333,20 @@ div.subPortfolio {
     display: flex;
 }
 .contactForm{
-    width: 90%;
+    width: 100%;
     margin-bottom: 1em;
     font-family: inherit;
+    opacity: 75%
 }
 .contactInfo > div {
-    background: rgba(255, 255, 255, 0.7);
-    margin: 0.5em;
+    /* background: rgba(255, 255, 255, 0.7); */
+    margin: 0;
     padding: 0.5em;
     width: 33%;
+    color: #fff;
+}
+.contactInfo > div > h3{
+    margin: 0;
 }
 #contactSubmit {
     width: 22%;
@@ -364,18 +377,12 @@ div.subPortfolio {
     border-color:#BBBBBB;
     background: rgba(187, 187, 187, 0.384);
 }
-
-/* .contactLeft{
-    background: rgba(41, 236, 15, 0.801);  
-    display: inline-flex;
-    width: 30%;
-    place-items: left;
-    justify-content: left;
-    flex-wrap: nowrap;
-    text-align: left;
+.contactMap{
+    text-align: center;
+    padding: 0.5em; 
 }
 
-.contactRight{
+/* .contactRight{
     background: rgba(182, 96, 15, 0.795); 
     width: 30%;
     flex-wrap: nowrap;
@@ -383,7 +390,7 @@ div.subPortfolio {
     place-items: right;
     justify-content: right;
     text-align: center;
-} */
+}  */
 
 /*    ~~~~ CONTACT end ~~~>   */
 
