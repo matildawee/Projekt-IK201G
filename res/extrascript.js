@@ -124,8 +124,9 @@
     };
 
 
-    $('#persondiv1').click(function (event) {
+    $('.about-developer').click(function (event) {
         event.preventDefault();
+        
         //$('#page-content').load('./pages/about.html');
         //$('#navBar-pageTitle').html('About');
 
