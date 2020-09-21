@@ -41,6 +41,8 @@ $(document).ready(function() {
                 displayAbout(data.person);
             }
         );
+
+        $("#personDiv").hide();
     });
 
     $('#contact').click(function (event) {

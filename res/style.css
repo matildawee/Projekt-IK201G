@@ -241,8 +241,9 @@ div.subPortfolio {
 
 .about-description{
     width: 90%;
-    margin: 3%;
-    padding: 2%;
+    margin: 2%;
+    padding: 2% 3%;
+    /* padding: 1em 2em; */
     text-align: justify;
     justify-content: center;
     background: rgba(34, 34, 34, 0.541);
@@ -253,8 +254,8 @@ div.subPortfolio {
 }
 .about-main{
     width: 90%;
-    margin: 0 3%;
-    padding: 2%; 
+    margin: 2%;
+    padding: 2% 3%; 
     height: 100%;
     text-align: center;
     justify-content: center;
@@ -310,6 +311,17 @@ div.subPortfolio {
 .about-developer > p{
     margin: 0;
     padding: 0;
+}
+
+#personDiv {
+    background-color: black;
+    width: 80%;
+    height: 80%;
+    margin: 10%;
+}
+
+.personText{
+    color: white;
 }
 
 
@@ -441,10 +453,14 @@ div.subPortfolio {
 .about-description{
     width: 40%;
     margin: 3% 28%;
+    padding: 1% 2%;
+    /* margin: 2em auto; */
 }
 .about-main{
     width: 40%;
     margin: 0 28%;
+    padding: 1% 2%;
+    /* margin: 2em auto; */
 }
 .about-developer{
     width: 23%;
