@@ -30,7 +30,6 @@
             function (data) {
                 displayAbout(data.person);
             });
-        $("#personDiv").hide();
     });
 
     /* ~~~~~~ knapparna på startsidan ~~~~~~> */  
@@ -112,7 +111,7 @@
     function displayAbout(person) {
         $.each(person, function (ind, employee) {                        
             var personSquare = $(
-                '<div class="about-developer" id="persondiv' + ind + '">' + 
+                '<div class="about-developer" id="personId' + ind + '">' + 
                 '<img src="' + employee.image + '" title="developer" alt="developer">' +
                     '<h1>' + employee.firstname + '</h1>' +
                     '<p>' + employee.title + '</p>'+
@@ -136,17 +135,35 @@
         //$('#page-content').load('./pages/about.html');
         //$('#navBar-pageTitle').html('About');
 
- 
-
-        // ladda in info om utvecklare?
-        // $.getJSON(
-        //     'res/about-data.json',
-        //     function (data) {
-        //         displayAbout(data.person);
-        //     }
-        // );
+        //ladda in info om utvecklare?
+        $.getJSON(
+            'res/about-data.json',
+            function (data, id) {
+                getDeveloper(data.person);
+            }
+        );
     });
 
+    function getDeveloper(person, id) {
+        $.each(person, function (ind, employee) { 
+                                   
+            
+                if (employee.id=id)
+                {
+                    var developerSquare = $(
+                    '<div class="about-developer" id="personId' + ind + '">' + 
+                    '<img src="' + employee.image + '" title="developer" alt="developer">' +
+                        '<h1>' + employee.firstname + '</h1>' +
+                        '<p>' + employee.title + '</p>'+
+                    '</div>'
+                    );
+                    
+                    $('#personDiv').append(developerSquare);
+                
+                    
+                };
+        });
+    };
 
 
     /* ~~~~~ hämtar oss json ~~~~~> */ 
