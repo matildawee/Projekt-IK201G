@@ -258,13 +258,18 @@ div.subPortfolio {
     background: rgba(255, 255, 255, 0.226);
     color: white;
 }
+.about-main > h1{
+    width: 100%;
+    padding: 0;
+    margin: 1%;
+    text-align: center;
+    font-size: 2em;
+}
 .about-submain{
     width: 100%;
     display: flex;
     justify-content: center;
     text-align: center;
-
-    
 }
 .about-developer{
     width: 23%;
@@ -290,14 +295,7 @@ div.subPortfolio {
     margin: 0 0 0 0;
     border-radius: 50%;
 }
-.about-main > h1{
-    width: 100%;
-    padding: 0;
-    margin: 1%;
-    text-align: center;
-    font-size: 2em;
-    color: black;
-}
+
 .about-developer > h1{
     font-size: 1.5em;
     margin: 0;
