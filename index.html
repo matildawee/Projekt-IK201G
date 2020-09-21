@@ -13,9 +13,9 @@
         <header>
             <div class="navBar">
                 <div class="navBar-left">
-                    <img id="header-logo" title="Project AB - Homepage" alt="Logo" src="./img/logo.jpg" />
+                    <img id="header-logo" title="Project AB - Homepage" alt="Logo" src="./img/logo-white.jpg" />
                 </div>
-                <!-- <div class="navBar-center"><h1 id="navBar-pageTitle">Home</h1></div> -->
+                <div class="navBar-center"><h1 id="navBar-pageTitle">Home</h1></div>
                 <div class="navBar-right">
                     <button type="button" title="Show menu" class="navButton-toggle">
                         <span class="navButton-Line"></span>
@@ -25,9 +25,18 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a id="home" class="menuBtn activePage">Home</a></li>
+                        <li><a id="home" class="menuBtn">Home</a></li>
                         <li><a id="portfolio" class="menuBtn">Portfolio</a></li>
-                        <li><a id="about" class="menuBtn">About us</a></li>
+                        <li class="navHaveDropdown"><a id="about" class="menuBtn">About us <i class="fas fa-caret-down"></i></a>
+                            <div class="navDropdownContent">
+                                <a>Matilda</a>
+                                <a>Selda</a>
+                                <a>Jonas</a>
+                                <a>Oskar</a>
+                            </div>
+
+                            <!--Källa som: https://www.w3schools.com/css/tryit.asp?filename=trycss_dropdown_navbar -->
+                        </li>
                         <li><a id="contact" class="menuBtn">Contact</a></li>
                     </ul>
                 </nav>
@@ -52,12 +61,11 @@
                 </p>
             </div>
             <div class="footer_right">
-                <a href="https://www.instagram.com/" target="_blank"><span class="fab fa-instagram"></span></a>
-                <a href="https://www.facebook.com/" target="_blank"><span class="fab fa-facebook-f"> </span></a>
+                <a href="https://www.instagram.com/"><span class="fab fa-instagram"></span></a>
+                <a href="https://www.facebook.com/"><span class="fab fa-facebook-f"> </span></a>
             </div>
         </footer>
                 
         <script src="./res/script.js"></script>
-        <script src="./res/extrascript.js"></script>
     </body>
 </html>
