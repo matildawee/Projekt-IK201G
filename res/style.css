@@ -44,6 +44,11 @@ nav > ul > li > a:hover{
     background: #333;
     color: #fff
 }
+.activePage{
+    cursor: pointer;
+    background: #333;
+    color: #fff
+}
 nav{
     display: none;
     visibility: hidden;
