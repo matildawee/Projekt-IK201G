@@ -40,9 +40,9 @@
 
     function displayPortfolio(projects) {
         $.each(projects, function (ind, portfolio) {
-            // if (ind % 4 == 0){
-            //     var square = $('<div id="div">')
-            // }; 
+            if (ind % 4 == 0){
+                var start = $('<div id="div">')
+            }; 
             
             var square = $(
                 '<div class="subPortfolio">' + 
@@ -52,6 +52,8 @@
                     //'<a href="' + portfolio.??? + '">Läs mer</a>' +
                 '</div>'
             );
+
+
             
             $('.portfolio-box').append(square);
 

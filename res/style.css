@@ -172,13 +172,10 @@ main{
 /*    <~~~ start FOOTER ~~~~   */
 footer{
     width: 100%;
-    /* height: 10%; */
     background: rgb(238, 238, 238);
     display: flex;
     justify-content: center;
     align-items: center;    
-    /* grid-row-start: 2;
-    grid-row-end: 3; */
     text-align: center;
 }
 /* Adding style to class fas, fab and far */
@@ -207,23 +204,22 @@ footer{
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    place-items: center;
-    /* border: 5px solid rgb(89, 0, 255);  */
+    justify-content: center;
 }
 div.subPortfolio { 
     width: 20%; 
     height: auto; 
     padding: 0; 
-    margin: 4% 1%; 
+    margin: 1% 1%; 
     background: rgb(209, 209, 209); 
     text-align: center; 
     border-radius: 2%;
-    border: 5px solid rgb(0, 255, 85); 
 }
 .project-img{
     width: 80%;
     height: auto;
     margin: 1.5em 1.5em 0 1.5em;
+    border-radius: 2%;
 }
 .fa-arrow-left, .fa-arrow-right{
     color: rgb(255, 255, 255);
@@ -242,16 +238,17 @@ div.subPortfolio {
     width: 100%;
     height: 100%;
     text-align: center;
-    place-items: center;
+    justify-content: center;
+    border: 5px solid red;
 }
 
 .about-submain{
     width: 50%;  
     margin: 0 25%; 
     display: flex;
-    place-items: center;
     justify-content: center;
     text-align: center;
+    border: 5px solid rgb(238, 255, 0);
 }
 .about-developer{
     width: 40%;
@@ -260,6 +257,7 @@ div.subPortfolio {
     padding: 0.5em;
     border-radius: 2%;
     font-size: 0.9em;
+    border: 5px solid rgb(51, 255, 0);
 }
 .developer-img{
     width: 70%;
@@ -301,11 +299,13 @@ div.subPortfolio {
 .contactForm{
     width: 90%;
     margin-bottom: 1em;
+    font-family: inherit;
 }
 .contactInfo > div {
     background: rgba(255, 255, 255, 0.7);
     margin: 0.5em;
     padding: 0.5em;
+    width: 33%;
 }
 #contactSubmit {
     width: 22%;
