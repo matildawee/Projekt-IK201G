@@ -18,8 +18,6 @@
                 displayPortfolio(data.projects);
             }
         );
-
- 
     });
 
     $('#startUs').click(function (event) {
@@ -31,9 +29,7 @@
             'res/about-data.json',
             function (data) {
                 displayAbout(data.person);
-            }
-        );
-
+            });
         $("#personDiv").hide();
     });
 
@@ -52,20 +48,16 @@
     //     );
     // });
 
-    $(portfolio).ready
-    
     function displayPortfolio(projects) {
 
         var divlista = new Array();
         var divindex = 0;
-
-        var startdiv = "<div id='stordiv'>";
-        var slutdiv = "</div>";
         
+        var startdiv = "<div id='stordiv'>";
+        va        r slutdiv = "</div>";
         var helaGrejen = "<div id='stordiv'>";
 
-        $.each(projects, function (ind, portfolio) {
-                        
+        $.each(projects, function (ind, portfolio) {          
             var square = $(
                 '<div class="subPortfolio">' + 
                 '<img class="project-img" src="' + portfolio.image + '" title="Project" alt="Project">' +
@@ -116,10 +108,9 @@
     /* <~~~~~ hämtar oss json ~~~~~~ */ 
 
 
+
     function displayAbout(person) {
-        $.each(person, function (ind, employee) {
-            
-                        
+        $.each(person, function (ind, employee) {                        
             var personSquare = $(
                 '<div class="about-developer" id="persondiv' + ind + '">' + 
                 '<img src="' + employee.image + '" title="developer" alt="developer">' +
@@ -133,15 +124,19 @@
 
         //$("#personDiv").hide();
     };
+   
 
-
-    $('.about-developer').click(function (event) {
+    $('.about-main').find("div").click(function (event) {
         event.preventDefault();
-
+        $(this).find("img");
+        var id = (event.target.id);
+        
+        console.log(id);
+        
         //$('#page-content').load('./pages/about.html');
         //$('#navBar-pageTitle').html('About');
 
-        $("#personDiv").show();
+ 
 
         // ladda in info om utvecklare?
         // $.getJSON(
@@ -151,5 +146,7 @@
         //     }
         // );
     });
+
+
 
     /* ~~~~~ hämtar oss json ~~~~~> */ 
