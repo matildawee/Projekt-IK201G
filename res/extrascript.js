@@ -39,10 +39,17 @@
     // });
 
     function displayPortfolio(projects) {
+
+        var divlista = new Array();
+        var divindex = 0;
+
+        var startdiv = "<div id='stordiv'>";
+        var slutdiv = "</div>";
+        
+        var helaGrejen = "<div id='stordiv'>";
+
         $.each(projects, function (ind, portfolio) {
-            if (ind % 4 == 0){
-                var start = $('<div id="div">')
-            }; 
+            
             
             var square = $(
                 '<div class="subPortfolio">' + 
@@ -53,12 +60,37 @@
                 '</div>'
             );
 
+            helaGrejen += square;
 
             
-            $('.portfolio-box').append(square);
+            if (ind > 0 && (ind + 1) % 4 == 0){
 
+
+                //var startdiv = $('<div id="stordiv' + ind + '">');                
+                //var helaDiven = startdiv + square + '</div>';
+
+                helaGrejen += slutdiv;
+                divlista[divindex] = helaGrejen;
+
+                //console.log(helaGrejen);
+                
+                divindex++;
+                helaGrejen = startdiv;
+            
+                
+            }; 
+           
+            //$('.portfolio-box').append(square);
         });
-        
+        if (ind = 0){
+            divlista = '';
+        };
+        if ((ind + 1) % 4 != 0){
+            helaGrejen += slutdiv;
+            divlista[divindex] = helaGrejen;           
+        };
+
+        console.log(divlista);
     };
     
     /* ~~~~~~ hämtar portfolio json ~~~~~~> */ 

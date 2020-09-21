@@ -7,7 +7,15 @@ html, body{
     background: rgb(238, 238, 238);
 }
 
-/*    <~~~ start NAVIGATION ~~~~   */
+#page-content{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    justify-content:center;
+    place-items: center;
+}
+
+/*    <~~~ NAVIGATION start ~~~~   */
 
 .navBar{
     width: 100%;
@@ -101,6 +109,8 @@ nav{
 
 /*    ~~~~ NAVIGATION end ~~~>   */
 
+/*    ~~~~ HOME start ~~~>   */
+
 main{
     min-height: 80%;
     width: 100%;
@@ -160,16 +170,10 @@ main{
     border-color:#BBBBBB;
     background: rgba(187, 187, 187, 0.384);
 }
-#page-content{
-    width: 100%;
-    height: 100%;
-    display: inline-block;
-    justify-content:center;
-    place-items: center;
-}
 
+/*    ~~~~ HOME end ~~~>   */
 
-/*    <~~~ start FOOTER ~~~~   */
+/*    <~~~ FOOTER start ~~~~   */
 footer{
     width: 100%;
     background: rgb(238, 238, 238);
@@ -178,13 +182,13 @@ footer{
     align-items: center;    
     text-align: center;
 }
-/* Adding style to class fas, fab and far */
+
 .fas, .fab, .far{ 
     margin: 0.6em;
     color: rgb(78, 78, 78); 
     font-size: 1.5em;  
 }
-/* Changing color and cursor when hover over class fas, fab and far */
+
 .fas:hover, .fab:hover, .far:hover{
     color: rgb(0, 0, 0);
     cursor: pointer;
@@ -196,7 +200,7 @@ footer{
 /*    ~~~~ FOOTER end ~~~>   */
 
 
-/*    <~~~ start PORTFOLIO ~~~~   */
+/*    <~~~ PORTFOLIO start ~~~~   */
 .portfolio-box{
     width: 100%;
     height: auto;
@@ -234,49 +238,75 @@ div.subPortfolio {
 
 
 /*    ~~~~ ABOUT US start ~~~>   */
+
+.about-description{
+    width: 40%;
+    margin: 3% 30%;
+    text-align: justify;
+    justify-content: center;
+}
+.about-description > h1{
+    text-align: center;
+}
 .about-main{
-    width: 100%;
+    width: 40%;
+    margin: 0 30%; 
     height: 100%;
     text-align: center;
     justify-content: center;
-    border: 5px solid red;
+    transition: all 0.15s;
+    background: rgba(255, 255, 255, 0.226);
+    color: white;
 }
-
 .about-submain{
-    width: 50%;  
-    margin: 0 25%; 
+    width: 100%;
     display: flex;
     justify-content: center;
     text-align: center;
-    border: 5px solid rgb(238, 255, 0);
+
+    
 }
 .about-developer{
-    width: 40%;
-    background: rgb(209, 209, 209);
-    margin: 0 1em;
-    padding: 0.5em;
+    width: 23%;
+    margin: 1% 0;
+    padding: 1% 0;
     border-radius: 2%;
     font-size: 0.9em;
-    border: 5px solid rgb(51, 255, 0);
 }
-.developer-img{
+.about-developer:hover{
+    cursor: pointer;
+    color:#DDDDDD;
+    border-color:#DDDDDD;
+    background:#dddddd25;
+}
+.about-developer > a:active{
+    color:#BBBBBB;
+    border-color:#BBBBBB;
+    background: rgba(187, 187, 187, 0.384);
+}
+.about-developer > img{
     width: 70%;
     height: auto;
-    margin: 1em 0 0 0;
+    margin: 0 0 0 0;
     border-radius: 50%;
 }
-.developer-header{
-    margin: 0;
-    padding: 0;
-}
 .about-main > h1{
-    margin: 0;
+    width: 100%;
+    padding: 0;
+    margin: 1%;
     text-align: center;
+    font-size: 2em;
+    color: black;
 }
 .about-developer > h1{
     font-size: 1.5em;
+    margin: 0;
+    padding: 0;
 }
-
+.about-developer > p{
+    margin: 0;
+    padding: 0;
+}
 /*    ~~~~ ABOUT US end ~~~>   */
 
 
@@ -370,7 +400,7 @@ div.subPortfolio {
 /* Desktop page: */
 @media screen and (min-width: 768px) { 
 
-    /*  <~~~ start NAVIGATION desktop ~~~~   */    
+    /*  <~~~ NAVIGATION desktop start~~~~   */    
     nav{
         visibility: visible;
         display: inline-block;
@@ -393,9 +423,9 @@ div.subPortfolio {
         width: 200px;
     }
     
-    /*    ~~~~ desktop NAVIGATION end ~~~>   */
+    /*    ~~~~ NAVIGATION desktop end ~~~>   */
     
-    /*    <~~~ start FOOTER desktop ~~~~     */
+    /*    <~~~ FOOTER desktop start ~~~~     */
     
     /* Adding style to class fas, fab and far */ 
     .fas, .fab, .far{
@@ -426,7 +456,7 @@ div.subPortfolio {
         text-align: center;
     }
 
-    /*    ~~~~ desktop FOOTER end ~~~>   */
+    /*    ~~~~ FOOTER desktop end ~~~>   */
 
     #welcome > h1{
         font-size: 6em;
