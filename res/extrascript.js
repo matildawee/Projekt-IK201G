@@ -65,37 +65,25 @@
                     //'<a href="' + portfolio.??? + '">Läs mer</a>' +
                 '</div>'
             );
-
             helaGrejen += square;
-
             //$('#portfolio-box').append(square);
-            
             if (ind > 0 && (ind + 1) % 4 == 0){
-
                 //var startdiv = $('<div id="stordiv' + ind + '">');                
                 //var helaDiven = startdiv + square + '</div>';
-
                 helaGrejen += slutdiv;
                 divlista[divindex] = helaGrejen;
-
                 //console.log(helaGrejen);
-                
                 divindex++;
                 helaGrejen = startdiv;        
-                
             };            
-            
         });
-
         if (ind = 0){
             divlista = '';
         };
-        
         if ((ind + 1) % 4 != 0){
             helaGrejen += slutdiv;
             divlista[divindex] = helaGrejen;           
         };
-
         console.log(divlista);
         $('#portfolio-box').append(divlista[0]);
     };
@@ -112,9 +100,9 @@
         $.each(person, function (ind, employee) {                        
             var personSquare = $(
                 '<div class="about-developer" id="personId' + ind + '">' + 
-                '<img src="' + employee.image + '" title="developer" alt="developer">' +
-                    '<h1>' + employee.firstname + '</h1>' +
-                    '<p>' + employee.title + '</p>'+
+                '<img id="personId' + ind + '" src="' + employee.image + '" title="developer" alt="developer">' +
+                    '<h1 id="personId' + ind + '">' + employee.firstname + '</h1>' +
+                    '<p id="personId' + ind + '">' + employee.title + '</p>'+
                 '</div>'
             );        
 
@@ -127,43 +115,47 @@
 
     $('.about-main').find("div").click(function (event) {
         event.preventDefault();
-        $(this).find("img");
+        // $(this).find("img");
         var id = (event.target.id);
-        
+        $(".person-content").show();
+        $(".persondiv").show();
         console.log(id);
         
-        //$('#page-content').load('./pages/about.html');
-        //$('#navBar-pageTitle').html('About');
 
         //ladda in info om utvecklare?
         $.getJSON(
             'res/about-data.json',
-            function (data, id) {
-                getDeveloper(data.person);
+            function (data) {
+                getDeveloper(data.person, id);
             }
         );
     });
 
     function getDeveloper(person, id) {
         $.each(person, function (ind, employee) { 
-                                   
             
-                if (employee.id=id)
+                if (employee.id == id)
                 {
                     var developerSquare = $(
-                    '<div class="about-developer" id="personId' + ind + '">' + 
-                    '<img src="' + employee.image + '" title="developer" alt="developer">' +
-                        '<h1>' + employee.firstname + '</h1>' +
-                        '<p>' + employee.title + '</p>'+
-                    '</div>'
+                        //'<div class="persondiv">' +
+                        '<div class="person-content" id="personId' + ind + '">' + 
+                        '<img src="' + employee.image + '" title="developer" alt="developer">' +
+                            '<h1>' + employee.firstname + '</h1>' +
+                            '<p>' + employee.title + '</p>'+
+                        //'</div>' + 
+                        '</div>'
                     );
-                    
-                    $('#personDiv').append(developerSquare);
-                
-                    
+                $('.persondiv').html(developerSquare);                    
                 };
         });
     };
 
+    $('.about-personal').find(".persondiv").click(function (event) {
+        event.preventDefault();
+        console.log("persondiveeeeen");
 
+        $(".person-content").hide();
+        $(".persondiv").hide();
+
+    });
     /* ~~~~~ hämtar oss json ~~~~~> */ 

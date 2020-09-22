@@ -298,6 +298,7 @@ div.subPortfolio {
     transition: all 0.15s;
     background: rgba(34, 34, 34, 0.541);
     color: white;
+
 }
 .about-main > h1{
     width: 100%;
@@ -321,6 +322,7 @@ div.subPortfolio {
     border-radius: 2%;
     font-size: 0.9em;
     text-align: center;
+ 
 }
 .about-developer:hover{
     cursor: pointer;
@@ -349,8 +351,7 @@ div.subPortfolio {
     padding: 0;
 }
 
-#personDiv {
-    /* display: none; */
+.persondiv {
     width: 100%;
     height: 100%; 
     position: fixed;
@@ -360,22 +361,19 @@ div.subPortfolio {
     background-color: rgba(0, 0, 0, 0.432);
     justify-content:center;
     place-items: center;
+    display: none;
     
 }
 .person-content{
-    background: rgba(160, 29, 29, 0.849);
+    background: rgba(160, 29, 29, 0.562);
     width: 80%;
     height: 80%;
     margin: 5% 10%;
+    position: fixed;
     z-index: 2;
     justify-content: center;
     text-align: center;
 }
-
-#close-person{
-    
-}
-
 
 /*    ~~~~ ABOUT US end ~~~>   */
 
