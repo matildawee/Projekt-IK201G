@@ -488,13 +488,10 @@ div.subPortfolio {
     margin-top: 1.2em; 
 }
 
-#contactError{
-    width: 100%; 
-    margin: 0; 
-    padding: 0; 
-    text-align: center; 
-    display: flex; 
-    color: red;
+.contactError{
+    background: red; 
+    color:white;
+    float:right;
 }
 
 /*    ~~~~ CONTACT end ~~~>   */
