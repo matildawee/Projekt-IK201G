@@ -37,7 +37,7 @@ nav > ul > li{
 }
 nav > ul > li > a{
     display: inline-block;
-    padding: 1.1em;
+    padding: 0.8em;
     text-align: center;
 }
 nav > ul > li > a:hover{
