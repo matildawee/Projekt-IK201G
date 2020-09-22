@@ -196,8 +196,8 @@
                                 '</div>' +
 
                                 '<br/>' +
-                                '<p>Email: ' + employee.email + '</p>'+
-                                '<p>Phone: ' + employee.telephone + '</p>'+
+                                '<p>' + employee.email + '</p>' +
+                                '<p>' + employee.telephone + '</p>' +
                             '</div>' +
                         '</div>'
                     );

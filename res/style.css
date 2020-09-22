@@ -411,6 +411,7 @@ div.subPortfolio {
 .person-content-right > hr{
     width: 90%;
     margin: 2% 0;
+    color: rgb(0, 0, 0);
 }
 
 .person-content-right{
@@ -445,9 +446,10 @@ div.subPortfolio {
 }
 .skill-meter{
     width: 90%;
-    border: 2px solid black;
     color: white;
     font-weight: bold;
+    background-color: rgba(138, 133, 133, 0.507);
+    /* border-radius: 2%; */
 }
 .java-skills{
     background-color: #4CAF50;
@@ -462,7 +464,7 @@ div.subPortfolio {
     text-align: right;
 }
 .css-skills{
-    background-color: #e5f321;
+    background-color: #5f5e5e;
     text-align: right;
 }
 .sql-skills{
