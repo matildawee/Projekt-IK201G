@@ -138,13 +138,21 @@
                 {
                     var developerSquare = $(
                         '<div class="person-content" id="personId' + ind + '">' + 
-                        '<span class="fas fa-times" id="close-person"></span>' +
-                        '<img src="' + employee.image + '" title="developer" alt="developer">' +
-                            '<h1>' + employee.firstname + '</h1>' +
-                            '<p>' + employee.title + '</p>'+
+                            '<div class="person-content-left">' +
+                            '<span class="fas fa-times" id="close-person"></span>' +
+                            '<img src="' + employee.image + '" title="developer" alt="developer">' +
+                                '<h2>' + employee.firstname + ' ' + employee.lastname + '</h2>' +
+                                '<h3>' + employee.title + '</h3>'+
+                                '<h3>Contact</h3>'+
+                                '<p>' + employee.email + '</p>'+
+                                '<p>' + employee.telephone + '</p>'+
+                            '</div>' +
+                            '<div class="person-content-right">' +
+                                '<p>skillz</p>' +
+                            '</div>' +
                         '</div>'
                     );
-                $('.persondiv').html(developerSquare);                    
+                $('.persondiv').html(developerSquare);             
                 };
         });
     };
@@ -158,17 +166,21 @@
 
     // });
 
-    // 
-    $('.about-personal').find('#close-person').click(function (event) {
-    //$('#close-person').click(function (event) {
 
-
-    // $(this).find("img");
+    $(".about-personal").on("click", "#close-person", function(event){
         event.preventDefault();
-        console.log("hej knapp");
-
         $(".person-content").hide();
         $(".persondiv").hide();
 
+        $('.persondiv').html('');
+    });
+
+    $(".about-personal").on("click", ".persondiv", function(event){
+        if(event.target.id=="thePersondiv"){
+            event.preventDefault();
+            $(".person-content").hide();
+            $(".persondiv").hide();
+        };
+        $('.persondiv').html('');
     });
     /* ~~~~~ hämtar oss json ~~~~~> */ 
