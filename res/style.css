@@ -116,7 +116,7 @@ nav{
     animation-duration: 0.5s;
     animation-timing-function: linear;
     animation-delay: 0s;
-    animation-iteration-count: unset;
+    animation-iteration-count: 1;
     animation-direction: alternate;
     animation-fill-mode: none;
     animation-play-state: running;
@@ -177,6 +177,7 @@ main{
 #welcome{
     width: 100%;
     margin-top: 10em;
+    opacity: 0; 
 }
 #welcome > h1{
     margin: 0 auto;

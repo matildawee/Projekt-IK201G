@@ -1,5 +1,9 @@
     /* <~~~~~ knapparna på startsidan ~~~~~~ */    
 
+    $(document).ready(function(){
+        $("#welcome").animate({opacity: '1'}, 1500);
+    });
+
     function loadPage(clickedId, pageUrl, pageTitle){
         $('#page-content').load(pageUrl);
         $('#navBar-pageTitle').html(pageTitle);
