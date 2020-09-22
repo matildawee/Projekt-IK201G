@@ -176,7 +176,7 @@ main{
 
 #welcome{
     width: 100%;
-    margin-top: 15em;
+    margin-top: 10em;
 }
 #welcome > h1{
     margin: 0 auto;
@@ -507,13 +507,10 @@ div.subPortfolio {
     margin-top: 1.2em; 
 }
 
-#contactError{
-    width: 100%; 
-    margin: 0; 
-    padding: 0; 
-    text-align: center; 
-    display: flex; 
-    color: red;
+.contactError{
+    background: red; 
+    color:white;
+    float:right;
 }
 
 /*    ~~~~ CONTACT end ~~~>   */
