@@ -1,0 +1,20 @@
+{
+    "contacts": [
+        {
+            "messageID": "m1",
+            "name": "Jonas",
+            "phone": "07312345678",
+            "email": "info@jonas.se",
+            "subject": "En rubrik",
+            "message": "Mitt lilla meddelande..."
+        },
+        {
+            "messageID": "m2",
+            "name": "",
+            "phone": "",
+            "email": "",
+            "subject": "",
+            "message": ""
+        }
+    ]
+}
