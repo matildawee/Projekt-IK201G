@@ -383,8 +383,8 @@ div.subPortfolio {
 .person-content{
     background: rgba(207, 204, 204, 0.850);
     width: 80%;
-    height: 82%;
-    margin: 2% 7%;
+    height: 70%;
+    margin: 4% 7%;
     padding: 3%;
     position: fixed;
     z-index: 2;
@@ -396,34 +396,81 @@ div.subPortfolio {
 .person-content-left{
     width: 40%;
     height: auto;
-    border: 2px solid red;
-
+    margin: 1% 0 1% 4%;
+}
+.person-content-right > h2, .person-content-right > h3, .person-content-right > p{
+    padding: 0;
+    margin: 0;
+    width: 90%;
 }
 
-.person-content-left > h2, .person-content-left > h3, .person-content-left > p{
-    padding: 1%;
-    margin: 0;
+.person-content-right > h2{
+    text-align: center;
+}
+.person-content-right > hr{
+    width: 90%;
+    margin: 2% 0;
 }
 
 .person-content-right{
     width: 60%;
     height: auto;
-    border: 2px solid rgb(25, 0, 255);
+    margin: 1% 4% 1% 0;
     right: 0px;
     top: 0px;
+    text-align: justify;
 }
-
 #close-person{
     position: absolute;
     top: 0;
     left: 0;
 }
-
 .fa-times{ 
     margin: 0.2em 0.3em;
     padding: 0;
     color: rgb(78, 78, 78); 
     font-size: 2em;  
+}
+.skills{
+    padding: 0;
+    margin: 0;
+}
+.skills > p{
+    padding: 0;
+    margin: 2% 0 0 0; 
+    font-weight: bold;
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+}
+.skill-meter{
+    width: 90%;
+    border: 2px solid black;
+    color: white;
+    font-weight: bold;
+}
+.java-skills{
+    background-color: #4CAF50;
+    text-align: right;
+}
+.html-skills{
+    background-color: #2196F3;
+    text-align: right;
+}
+.javascript-skills{
+    background-color: #f321bf;
+    text-align: right;
+}
+.css-skills{
+    background-color: #e5f321;
+    text-align: right;
+}
+.sql-skills{
+    background-color: #f44336;
+    text-align: right;
+}
+.photoshop-skills{
+    background-color: #e78402;
+    text-align: right;
 }
 
 /*    ~~~~ ABOUT US end ~~~>   */

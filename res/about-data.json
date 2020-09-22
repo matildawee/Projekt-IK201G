@@ -10,12 +10,12 @@
           "telephone": "+4670000000",
           "portrait": "./img/portrait-woman.jpg",
           "portraitBig": "./img/woman.jpg",
-          "java": "100%",
+          "java": "70%",
           "html": "50%",
           "javascript": "20%",
           "css": "50%",
-          "sql": "80%",
-          "photoshop": "0%"
+          "sql": "10%",
+          "photoshop": "60%"
         },
         {
             "id": "personId1",

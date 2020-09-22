@@ -142,30 +142,75 @@
                                 '<span class="fas fa-times" id="close-person"></span>' +
                                 '<img src="' + employee.portraitBig + '" title="developer" alt="developer">' +                                
                             '</div>' +
-                            '<div class="person-content-right">' +
-                                '<h2>' + employee.firstname + ' ' + employee.lastname + '</h2>' +
-                                '<h3>' + employee.title + '</h3>'+
-                                '<h3>Contact</h3>'+
-                                '<p>' + employee.email + '</p>'+
-                                '<p>' + employee.telephone + '</p>'+
-                                '<p>skillz</p>' +
+                            '<div class="person-content-right">' + 
+                                '<h2>Hi, my name is ' + employee.firstname + ' ' + employee.lastname + 
+                                ' and I'+ "'" + 'm a '+ employee.title + '</h2>' + '<hr/>' +
+                                '<p>Timely Comics bytte sedan namn till Atlas Comics 1950 och' +
+                                'till Marvel Comics 1960. Riktigt stora blev de först på 1960-talet,' +
+                                ' när de utvecklade den så kallade Marvelstilen för superhjältar.' +
+                                ' Marvelstilen innebär att de klassiska superhjälte-historierna om' +
+                                ' hjältedåd och heroiska insatser blandas upp med en fortlöpande såpopera' +
+                                ' om superhjältarnas privatliv och psykologiska konflikter</p>' + 
+                                
+                                '<div class="skills">' +        
+                                    '<p>JAVA: </p>' +  
+                                    '<div class="skill-meter">' +
+                                        '<div class="java-skills">' +
+                                        '&nbsp;&nbsp;' + employee.java + '&nbsp;&nbsp;' +
+                                        '</div>' +                                        
+                                    '</div>' +
+                                    '<p>HTML: </p>' +  
+                                    '<div class="skill-meter">' +
+                                        '<div class="html-skills">' +
+                                        '&nbsp;&nbsp;' + employee.html + '&nbsp;&nbsp;' +    
+                                        '</div>' +                                       
+                                    '</div>' +
+                                    '<p>JAVASCRIPT: </p>' + 
+                                    '<div class="skill-meter">' +
+                                        '<div class="javascript-skills">' +
+                                        '&nbsp;&nbsp;' + employee.javascript + '&nbsp;&nbsp;' +
+                                        '</div>' +                                       
+                                    '</div>' +
+                                    '<p>CSS: </p>' + 
+                                    '<div class="skill-meter">' +
+                                        '<div class="css-skills">' +
+                                        '&nbsp;&nbsp;' + employee.css + '&nbsp;&nbsp;' +
+                                        '</div>' +                                       
+                                    '</div>' +
+                                    '<p>SQL: </p>' + 
+                                    '<div class="skill-meter">' +
+                                        '<div class="sql-skills">' +
+                                        '&nbsp;&nbsp;' + employee.sql + '&nbsp;&nbsp;' +
+                                        '</div>' +                                       
+                                    '</div>' +
+                                    '<p>PHOTOSHOP: </p>' + 
+                                    '<div class="skill-meter">' +
+                                        '<div class="photoshop-skills">' +
+                                        '&nbsp;&nbsp;' + employee.photoshop + '&nbsp;&nbsp;' +
+                                        '</div>' +                                       
+                                    '</div>' +
+                                '</div>' +
+
+                                '<br/>' +
+                                '<p>Email: ' + employee.email + '</p>'+
+                                '<p>Phone: ' + employee.telephone + '</p>'+
                             '</div>' +
                         '</div>'
                     );
-                $('.persondiv').html(developerSquare);             
+                
+                    console.log(employee.html);
+                
+                $('.persondiv').html(developerSquare);
+
+                $(".java-skills").css({"width": employee.java});   
+                $(".html-skills").css({"width": employee.html}); 
+                $(".javascript-skills").css({"width": employee.javascript});   
+                $(".css-skills").css({"width": employee.css});  
+                $(".sql-skills").css({"width": employee.sql});   
+                $(".photoshop-skills").css({"width": employee.photoshop});   
                 };
         });
     };
-
-    // $('.about-personal').find(".persondiv").click(function (event) {
-    //     event.preventDefault();
-    //     console.log("persondiveeeeen");
-
-    //     $(".person-content").hide();
-    //     $(".persondiv").hide();
-
-    // });
-
 
     $(".about-personal").on("click", "#close-person", function(event){
         event.preventDefault();
