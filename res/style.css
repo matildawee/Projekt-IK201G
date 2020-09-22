@@ -177,6 +177,7 @@ main{
 #welcome{
     width: 100%;
     margin-top: 10em;
+    opacity: 0; 
 }
 #welcome > h1{
     margin: 0 auto;
