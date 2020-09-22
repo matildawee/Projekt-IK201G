@@ -394,7 +394,7 @@ div.subPortfolio {
     float: left;
 }
 .person-content-left{
-    width: 30%;
+    width: 40%;
     height: auto;
     border: 2px solid red;
 
@@ -406,7 +406,7 @@ div.subPortfolio {
 }
 
 .person-content-right{
-    width: 70%;
+    width: 60%;
     height: auto;
     border: 2px solid rgb(25, 0, 255);
     right: 0px;

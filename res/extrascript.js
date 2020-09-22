@@ -100,7 +100,7 @@
         $.each(person, function (ind, employee) {                        
             var personSquare = $(
                 '<div class="about-developer" id="personId' + ind + '">' + 
-                '<img id="personId' + ind + '" src="' + employee.image + '" title="developer" alt="developer">' +
+                '<img id="personId' + ind + '" src="' + employee.portrait + '" title="developer" alt="developer">' +
                     '<h1 id="personId' + ind + '">' + employee.firstname + '</h1>' +
                     '<p id="personId' + ind + '">' + employee.title + '</p>'+
                 '</div>'
@@ -139,15 +139,15 @@
                     var developerSquare = $(
                         '<div class="person-content" id="personId' + ind + '">' + 
                             '<div class="person-content-left">' +
-                            '<span class="fas fa-times" id="close-person"></span>' +
-                            '<img src="' + employee.image + '" title="developer" alt="developer">' +
+                                '<span class="fas fa-times" id="close-person"></span>' +
+                                '<img src="' + employee.portraitBig + '" title="developer" alt="developer">' +                                
+                            '</div>' +
+                            '<div class="person-content-right">' +
                                 '<h2>' + employee.firstname + ' ' + employee.lastname + '</h2>' +
                                 '<h3>' + employee.title + '</h3>'+
                                 '<h3>Contact</h3>'+
                                 '<p>' + employee.email + '</p>'+
                                 '<p>' + employee.telephone + '</p>'+
-                            '</div>' +
-                            '<div class="person-content-right">' +
                                 '<p>skillz</p>' +
                             '</div>' +
                         '</div>'
@@ -169,18 +169,21 @@
 
     $(".about-personal").on("click", "#close-person", function(event){
         event.preventDefault();
+        $('.persondiv').html('');
         $(".person-content").hide();
         $(".persondiv").hide();
 
-        $('.persondiv').html('');
+        
     });
 
-    $(".about-personal").on("click", ".persondiv", function(event){
+    $(".about-personal").on("click", "#thePersondiv", function(event){
         if(event.target.id=="thePersondiv"){
             event.preventDefault();
+            $('.persondiv').html('');
             $(".person-content").hide();
             $(".persondiv").hide();
         };
-        $('.persondiv').html('');
+        
     });
+
     /* ~~~~~ hämtar oss json ~~~~~> */ 
