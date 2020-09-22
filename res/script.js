@@ -54,7 +54,8 @@ $(document).ready(function() {
 
     function classToggle() {
         // $("nav").slideToggle();
-        const navs = document.querySelectorAll('nav')
+        // $("nav").animate({'height': 'toggle'}, 'slow');
+        const navs = document.querySelectorAll('nav');
         navs.forEach(nav => nav.classList.toggle('navBar-show'));
       }
       
