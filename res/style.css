@@ -365,14 +365,28 @@ div.subPortfolio {
     
 }
 .person-content{
-    background: rgba(160, 29, 29, 0.562);
+    background: rgba(207, 204, 204, 0.850);
     width: 80%;
     height: 80%;
     margin: 5% 10%;
+    padding: 2%;
     position: fixed;
     z-index: 2;
     justify-content: center;
     text-align: center;
+}
+
+#close-person{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.fa-times{ 
+    margin: 0.2em 0.3em;
+    padding: 0;
+    color: rgb(78, 78, 78); 
+    font-size: 2em;  
 }
 
 /*    ~~~~ ABOUT US end ~~~>   */

@@ -137,12 +137,11 @@
                 if (employee.id == id)
                 {
                     var developerSquare = $(
-                        //'<div class="persondiv">' +
                         '<div class="person-content" id="personId' + ind + '">' + 
+                        '<span class="fas fa-times" id="close-person"></span>' +
                         '<img src="' + employee.image + '" title="developer" alt="developer">' +
                             '<h1>' + employee.firstname + '</h1>' +
                             '<p>' + employee.title + '</p>'+
-                        //'</div>' + 
                         '</div>'
                     );
                 $('.persondiv').html(developerSquare);                    
@@ -150,9 +149,23 @@
         });
     };
 
-    $('.about-personal').find(".persondiv").click(function (event) {
+    // $('.about-personal').find(".persondiv").click(function (event) {
+    //     event.preventDefault();
+    //     console.log("persondiveeeeen");
+
+    //     $(".person-content").hide();
+    //     $(".persondiv").hide();
+
+    // });
+
+    // 
+    $('.about-personal').find('#close-person').click(function (event) {
+    //$('#close-person').click(function (event) {
+
+
+    // $(this).find("img");
         event.preventDefault();
-        console.log("persondiveeeeen");
+        console.log("hej knapp");
 
         $(".person-content").hide();
         $(".persondiv").hide();
