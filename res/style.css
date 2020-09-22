@@ -111,6 +111,24 @@ nav{
 .navBar-show{
     display: inline-block;
     visibility: visible;
+    /* animation: openNavBar 1s linear 0s 1 alternate; 
+    blev lättare att skriva ut allt nedan:*/
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: openNavBar;
+}
+
+@keyframes openNavBar{
+    0%  {opacity: 0%; }
+    25%  {opacity: 25%; }
+    50%  {opacity: 50%; }
+    75%  {opacity: 75%; }
+  100%  {opacity: 100%; }
 }
 
 /* Dropdown-start */
@@ -475,6 +493,12 @@ div.subPortfolio {
 
     /*  <~~~ NAVIGATION desktop start~~~~   */    
     nav{
+        visibility: visible;
+        display: inline-block;
+        margin: 0 auto;
+        width: 60%;
+    }
+    .navDesktop{
         visibility: visible;
         display: inline-block;
         margin: 0 auto;
