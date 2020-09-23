@@ -24,6 +24,8 @@
         var id = (event.target.id);
         $(".persondiv").show();
         $(".person-content").show();
+
+        $("body").css({"overflow": "hidden"});
         
         // Loads persons from about-data.json
         $.getJSON(
@@ -112,6 +114,7 @@
         $('.persondiv').html('');
         $(".person-content").hide();
         $(".persondiv").hide(); 
+        $("body").css({"overflow": "scroll"});
     });
 
     $(".about-personal").on("click", "#thePersondiv", function(event){
@@ -120,5 +123,6 @@
             $('.persondiv').html('');
             $(".person-content").hide();
             $(".persondiv").hide();
+            $("body").css({"overflow": "scroll"});
         }; 
     });
