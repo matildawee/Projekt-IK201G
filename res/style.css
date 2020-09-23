@@ -289,6 +289,10 @@ div.subPortfolio {
     text-align: center; 
     border-radius: 2%;
 }
+.subPortfolio:hover{
+    transform: scale(1.05); 
+    cursor: pointer;
+}
 #portfolioGroup{
     display: flex;
     justify-content: center;
@@ -312,6 +316,99 @@ div.subPortfolio {
     color:#cececeaf;
 }
 /*    ~~~~ PORTFOLIO end ~~~>   */
+
+
+/* TESEEEEEST */
+.projectdiv {
+    width: 100%;
+    height: 100%; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.432);
+    justify-content:center;
+    place-items: center;
+    display: none;
+}
+.portfolio-box {
+    width: 100%;
+    height: 100%; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.432);
+    justify-content:center;
+    place-items: center;
+    display: none;
+}
+.project-content{
+    background: rgba(255, 255, 255, 0.900);
+    width: 100%;
+    height: auto;
+    position: fixed;
+    padding: 0;
+    margin:0;
+    z-index: 2;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll; 
+    max-height:100%;
+}
+
+.project-image{
+    width: 80%;
+    height: auto;
+    margin: 5% 10%;
+    display: flex;
+    justify-content: center;
+}
+/* .person-content-left{
+    width: 100%;
+    height: auto;
+    margin: 2%;
+    display: flex;
+    justify-content: center;
+    /* border: 2px solid rgb(184, 26, 15);
+} */
+.project-content-right > h2, .project-content-right > h3, .project-content-right > p{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+.project-content-right > h2{
+    text-align: center;
+}
+.project-content-right > hr{
+    width: 60%;
+    color: rgb(0, 0, 0);
+}
+.project-content-right{
+    width: 80%;
+    height: auto;
+    margin: 1% 0 1% 1%;
+    padding: 1% 4%;
+    right: 0px;
+    top: 0px;
+    text-align: justify;
+    justify-content: center;
+}
+#close-project{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.fa-times{ 
+    margin: 0.1em 0.3em;
+    padding: 0;
+    color: rgb(78, 78, 78); 
+    font-size: 2em;  
+}
+
+
 
 
 /*    ~~~~ ABOUT US start ~~~>   */
@@ -639,7 +736,7 @@ div.subPortfolio {
 
     .about-description{
         width: 40%;
-        margin: 6% 28%;
+        margin: 3% 28%;
         padding: 1% 2%;
     }
     .about-main{

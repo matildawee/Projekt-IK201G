@@ -1,84 +1,86 @@
 {
     "projects": [
         {
-          "id": "p1",
+          "projectId": "p1",
           "title": "Projekt 1",
           "date": "2020-01-01 - 2021-01-01",
           "description": "Det här är projekt 1",
-          "image": "./img/projekt.jpg"
+          "image": "./img/projekt.jpg",
+          "image2": "./img/stortprojekt.jpg"
         },
         {
-            "id": "p2",
+            "projectId": "p2",
             "title": "Projekt 2",
             "date": "2020-02-02 - 2021-02-02",
             "description": "Det här är projekt 2 det gick väldigt bra bla bla bla blaaaaaaaaaaaaa bla ännu mer texttttttttttttttttt teeeeeeeeexxxxtttttttt teeeeeeeeexxxxtttttttt teeeeeeeeexxxxtttttttt teeeeeeeeexxxxtttttttt",
-            "image": "./img/stortprojekt.jpg"
+            "image": "./img/projekt.jpg",
+            "image2": "./img/stortprojekt.jpg"
         },
         {
-            "id": "p3",
+            "projectId": "p3",
             "title": "Projekt 3",
             "date": "2020-03-03 - 2021-03-03",
             "description": "Det här är projekt 3 vi gjorde massa grejer",
             "image": "./img/bigproject.jpg"
         },
         {
-            "id": "p4",
+            "projectId": "p4",
             "title": "Projekt 4",
             "date": "2020-04-04 - 2021-04-04",
             "description": "Det här är projekt 4",
             "image": "./img/smallproject.png"
         },
         {
-            "id": "p5",
+            "projectId": "p5",
             "title": "Projekt 5",
             "date": "2020-05-05 -2021-05-05",
             "description": "Vi skapade nån sajt",
             "image": "./img/facebookproject.jpg"
         },
         {
-            "id": "p6",
+            "projectId": "p6",
             "title": "Projekt 6",
             "date": "2020-06-06 -2021-06-06",
             "description": "Det här är projekt 6",
             "image": "./img/projekt.jpg"
         },
         {
-            "id": "p7",
+            "projectId": "p7",
             "title": "Projekt 7",
             "date": "2020-05-77 -2021-05-77",
             "description": "Det här är projekt 7",
             "image": "./img/projekt.jpg"
         },
         {
-            "id": "p8",
+            "projectId": "p8",
             "title": "Projekt 8",
             "date": "2020-08-88 -2021-0888",
             "description": "Det här är projekt 8",
             "image": "./img/projekt.jpg"
         },
         {
-            "id": "p9",
+            "projectId": "p9",
             "title": "Projekt 9",
             "date": "2020-0999 -2021-99999",
             "description": "Det här är projekt 9",
             "image": "./img/projekt.jpg"
         },
         {
-            "id": "p10",
+            "projectId": "p10",
             "title": "Projekt 10",
             "date": "2020-0999 -2021-99999",
             "description": "Det här är projekt 10",
             "image": "./img/projekt.jpg"
         },
         {
-            "id": "p11",
+            "projectId": "p11",
             "title": "Projekt 11",
             "date": "2020-0999 -2021-99999",
             "description": "Det här är projekt 11",
             "image": "./img/projekt.jpg"
         },
         {
-            "id": "p12",
+            "projectId": "p12",
             "title": "Projekt 12",
             "date": "2020-0999 -2021-99999",
             "description": "Det här är projekt 12",
