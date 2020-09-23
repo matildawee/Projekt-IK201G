@@ -378,7 +378,7 @@ div.subPortfolio {
     display: none;
 }
 .person-content{
-    background: rgba(207, 204, 204, 0.850);
+    background: rgba(207, 204, 204, 1);
     width: 100%;
     height: auto;
     position: fixed;
@@ -390,11 +390,13 @@ div.subPortfolio {
     display: flex;
     flex-wrap: wrap;
     /* border: 2px solid red; */
+    overflow-y: scroll; 
+    max-height:100%;
 }
 .person-portrait{
-    width: 90%;
+    width: 80%;
     height: auto;
-    margin: 5%;
+    margin: 5% 10%;
     display: flex;
     justify-content: center;
     /* border: 2px solid red;  */
@@ -423,7 +425,7 @@ div.subPortfolio {
     width: 80%;
     height: auto;
     margin: 1% 0 1% 1%;
-    padding: 0 4%;
+    padding: 1% 4%;
     right: 0px;
     top: 0px;
     text-align: justify;
@@ -454,7 +456,7 @@ div.subPortfolio {
     letter-spacing: 0.1em;
 }
 .skill-meter{
-    width: 90%;
+    width:100%;
     color: white;
     font-weight: bold;
     background-color: rgba(138, 133, 133, 0.507);
@@ -644,7 +646,7 @@ div.subPortfolio {
     display: none;
 }
 .person-content{
-    background: rgba(207, 204, 204, 0.850);
+    background: rgba(207, 204, 204, 0.900);
     width: 70%;
     height: auto;
     margin: 4% 15%;
@@ -656,6 +658,7 @@ div.subPortfolio {
     display: flex;
     float: left;
     flex-wrap: nowrap;
+    overflow-y: auto;
 }
 .person-portrait{
     width: 90%;
@@ -679,7 +682,7 @@ div.subPortfolio {
     width: 100%;
 }
 .person-content-right > hr{
-    width: 70%;
+    width: 80%;
     margin: 2% 15%;
     color: rgb(0, 0, 0);
 }

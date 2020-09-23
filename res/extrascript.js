@@ -149,12 +149,7 @@
                             '<div class="person-content-right">' + 
                                 '<h2> ' + employee.firstname + ' ' + employee.lastname + 
                                 ' - ' + employee.title + '</h2>' + '<hr/>' +
-                                '<p>Timely Comics bytte sedan namn till Atlas Comics 1950 och' +
-                                'till Marvel Comics 1960. Riktigt stora blev de först på 1960-talet,' +
-                                ' när de utvecklade den så kallade Marvelstilen för superhjältar.' +
-                                ' Marvelstilen innebär att de klassiska superhjälte-historierna om' +
-                                ' hjältedåd och heroiska insatser blandas upp med en fortlöpande såpopera' +
-                                ' om superhjältarnas privatliv och psykologiska konflikter</p>' + 
+                                '<p>' + employee.description +'</p>' + 
                                 
                                 '<div class="skills">' +        
                                     '<p>JAVA: </p>' +  
