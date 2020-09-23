@@ -13,6 +13,7 @@ $(document).ready(function() {
             result.text("Not a valid name");
             result.css("background", "red");
           }
+
           return false;
     });
 
@@ -67,11 +68,11 @@ $(document).ready(function() {
         result.text("");
       
         if (validate(textToValidate, "#contactMessage")) {
-          result.text("OK");
-          result.css("background", "green");
+            result.text("OK");
+            result.css("background", "green");
         } else {
-          result.text("Write a message");
-          result.css("background", "red");
+            result.text("Write a message");
+            result.css("background", "red");
         }
         return false; 
     });
@@ -122,4 +123,25 @@ $(document).ready(function() {
     //   $("#validate").on("keyup", validate);
 
 /* End Contact validate */
+
 });
+
+/* Start Contact save to JSON */
+
+
+$( window ).unload(function() {
+
+    var name = $('#contactName').val();
+    console.log(name);
+
+const contactMessage = {
+    "name": name,
+    "phone": "07312345678",
+    "email": "info@jonas.se",
+    "subject": "En rubrik",
+    "message": "Mitt lilla meddelande..."
+}
+
+});
+
+/* End Contact save to JSON */
