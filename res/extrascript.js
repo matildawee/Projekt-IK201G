@@ -51,54 +51,107 @@
     //     );
     // });
 
-    function displayPortfolio(projects) {
+    // function displayPortfolio(projects) {
 
-        var divlista = new Array();
-        var divindex = 0;
+    //     var divlista = [];
+    //     var divindex = 0;
+    //     var index = 0;
         
-        var startdiv = "<div id='stordiv'>";
-        var slutdiv = "</div>";
-        var helaGrejen = "<div id='stordiv'>";
+    //     var startdiv = "<div id='stordiv'>";
+    //     var slutdiv = "</div>";
+    //     var helaGrejen = "<div id='stordiv'>";
 
-        $.each(projects, function (ind, portfolio) {          
-            var square = $(
-                '<div class="subPortfolio">' + 
-                '<img class="project-img" src="' + portfolio.image + '" title="Project" alt="Project">' +
-                    '<h1>' + portfolio.title + '</h1>' +
-                    '<p>' + portfolio.description + '</p>'+
-                    //'<a href="' + portfolio.??? + '">Läs mer</a>' +
-                '</div>'
-            );
-            helaGrejen += square;
-            //$('#portfolio-box').append(square);
-            if (ind > 0 && (ind + 1) % 4 == 0){
-                //var startdiv = $('<div id="stordiv' + ind + '">');                
-                //var helaDiven = startdiv + square + '</div>';
-                helaGrejen += slutdiv;
-                divlista[divindex] = helaGrejen;
-                //console.log(helaGrejen);
-                divindex++;
-                helaGrejen = startdiv;        
-            };            
-        });
-        if (ind = 0){
-            divlista = '';
-        };
-        if ((ind + 1) % 4 != 0){
-            helaGrejen += slutdiv;
-            divlista[divindex] = helaGrejen;           
-        };
-        console.log(divlista);
-        $('#portfolio-box').append(divlista[0]);
-    };
+    //     $.each(projects, function (ind, portfolio) {          
+    //         var square = 
+    //             '<div class="subPortfolio">' + 
+    //             '<img class="project-img" src="' + portfolio.image + '" title="Project" alt="Project">' +
+    //                 '<h1>' + portfolio.title + '</h1>' +
+    //                 '<p>' + portfolio.description + '</p>' +
+    //             '</div>';
+            
+    //         //console.log(square);
+
+    //         helaGrejen += square;
+
+    //         //$('#portfolio-box').append(square);
+
+    //         if (ind > 0 && (ind + 1) % 4 == 0){
+    //             helaGrejen += slutdiv;
+    //             divlista[divindex] = helaGrejen;
+    //             //console.log(helaGrejen);
+    //             divindex++;
+    //             helaGrejen = startdiv;        
+    //         };       
+    //         index++;     
+    //     });
+    //     console.log(index);
+    //     if (index == 0){
+    //         divlista = '';
+    //     };
+    //     if ((index + 1) % 4 != 0){
+    //         helaGrejen += slutdiv;
+    //         divlista[divindex] = helaGrejen;           
+    //     };
+        
+    //     console.log(divlista);
+    //     $('#portfolio-box').html(divlista[0]);
+    // };
+
+    // var showindex = 0;
+
+    // $('#testknapp').click(function () {
+    //     console.log("hej knapptryckare");
+        
+    //     showindex++;
+
+    //     if (showindex > divlista.length){
+    //         showindex = 0;
+    //     }
+
+
+    //     $('#portfolio-box').html(divlista[showindex]);
+        
+    // });
+
+
+
+    // function displayPortfolio(projects) {
+
+    //     //var divList = new Array();
+    //     var divContent = new Array();
+
+    //     $.each(projects, function (ind, portfolio) {          
+                
+    //         divContent[ind]=
+    //         '<div class="subPortfolio">'
+    //         + '<img class="project-img" src="' + portfolio.image + '" title="Project" alt="Project">'
+    //         +'<h1>' + portfolio.title + '</h1>'
+    //         +'<p>' + portfolio.description + '</p>'
+    //         + '</div>'
+
+    //         //divList[ind] = divContent;
+
+    //     });
+    //     //console.log(divContent);
+    //     //console.log("hej");
+
+    //     var i=0;
+    //     var iPlus4=4;
+
+    //     while (i<iPlus4){
+    //         console.log(divContent);
+    //         $('#portfolio-box').append(divContent[i]);
+
+    //         i++;
+    //     };
+    // };
 
 
     /* ~~~~~~ hämtar portfolio json ~~~~~> */ 
 
+
     
     /* <~~~~~ hämtar oss json ~~~~~~ */ 
-
-
 
     function displayAbout(person) {
         $.each(person, function (ind, employee) {                        
