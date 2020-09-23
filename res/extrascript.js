@@ -144,7 +144,7 @@
                         '<div class="person-content" id="personId' + ind + '">' + 
                             '<div class="person-content-left">' +
                                 '<span class="fas fa-times" id="close-person"></span>' +
-                                '<img src="' + employee.portraitBig + '" title="developer" alt="developer">' +                                
+                                '<img class="person-portrait" src="' + employee.portraitBig + '" title="developer" alt="developer">' +                                
                             '</div>' +
                             '<div class="person-content-right">' + 
                                 '<h2> ' + employee.firstname + ' ' + employee.lastname + 
