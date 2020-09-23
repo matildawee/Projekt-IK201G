@@ -1,7 +1,7 @@
 /* This JavaScript need jQuery to run */
 $(document).ready(function() {
 
-    $('#page-content').load('./pages/start.html');
+    $('#page-content').load('./pages/portfolio.html');
 
     function loadPage(clickedId, pageUrl, pageTitle){
         $('#page-content').load(pageUrl);

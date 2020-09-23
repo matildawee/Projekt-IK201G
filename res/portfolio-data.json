@@ -62,6 +62,27 @@
             "date": "2020-0999 -2021-99999",
             "description": "Det här är projekt 9",
             "image": "./img/projekt.jpg"
+        },
+        {
+            "id": "p10",
+            "title": "Projekt 10",
+            "date": "2020-0999 -2021-99999",
+            "description": "Det här är projekt 9",
+            "image": "./img/projekt.jpg"
+        },
+        {
+            "id": "p11",
+            "title": "Projekt 11",
+            "date": "2020-0999 -2021-99999",
+            "description": "Det här är projekt 9",
+            "image": "./img/projekt.jpg"
+        },
+        {
+            "id": "p12",
+            "title": "Projekt 12",
+            "date": "2020-0999 -2021-99999",
+            "description": "Det här är projekt 9",
+            "image": "./img/projekt.jpg"
         }
         
     ]
