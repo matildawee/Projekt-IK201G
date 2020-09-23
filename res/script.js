@@ -26,12 +26,12 @@ $(document).ready(function() {
         loadPage('#portfolio','./pages/portfolio.html','Portfolio');
 
         // laddar in projekten
-        $.getJSON(
-            'res/portfolio-data.json',
-            function (data) {
-                displayPortfolio(data.projects);
-            }
-        );
+    //     $.getJSON(
+    //         'res/portfolio-data.json',
+    //         function (data) {
+    //             displayPortfolio(data.projects);
+    //         }
+    //     );
     });
 
     $('#about').click(function (event) {
