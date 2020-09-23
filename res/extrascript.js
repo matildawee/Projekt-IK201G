@@ -147,8 +147,8 @@
                                 '<img src="' + employee.portraitBig + '" title="developer" alt="developer">' +                                
                             '</div>' +
                             '<div class="person-content-right">' + 
-                                '<h2>Hi, my name is ' + employee.firstname + ' ' + employee.lastname + 
-                                ' and I'+ "'" + 'm a '+ employee.title + '</h2>' + '<hr/>' +
+                                '<h2> ' + employee.firstname + ' ' + employee.lastname + 
+                                ' - ' + employee.title + '</h2>' + '<hr/>' +
                                 '<p>Timely Comics bytte sedan namn till Atlas Comics 1950 och' +
                                 'till Marvel Comics 1960. Riktigt stora blev de först på 1960-talet,' +
                                 ' när de utvecklade den så kallade Marvelstilen för superhjältar.' +

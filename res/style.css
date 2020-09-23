@@ -328,7 +328,6 @@ div.subPortfolio {
     margin: 0 0 3% 0;
     display: flex;
     justify-content: center;
-    display: flex;
     flex-wrap: wrap;
 }
 .about-developer{
@@ -380,54 +379,59 @@ div.subPortfolio {
 }
 .person-content{
     background: rgba(207, 204, 204, 0.850);
-    width: 80%;
-    height: 70%;
-    margin: 4% 7%;
-    padding: 3%;
+    width: 100%;
+    height: 100%;
     position: fixed;
+    padding: 0;
+    margin:0;
     z-index: 2;
-    justify-content: left;
-    text-align: left;
+    justify-content: center;
+    text-align: center;
     display: flex;
-    float: left;
+    flex-wrap: wrap;
+}
+.person-content > img{
+    height: 10px;
 }
 .person-content-left{
-    width: 40%;
+    width: 100%;
     height: auto;
-    margin: 1% 0 1% 4%;
-    border: 2px solid rgb(184, 26, 15);
+    margin: 2%;
+    display: flex;
+    justify-content: center;
+    /* border: 2px solid rgb(184, 26, 15); */
 }
 .person-content-right > h2, .person-content-right > h3, .person-content-right > p{
     padding: 0;
     margin: 0;
-    width: 90%;
+    width: 100%;
 }
-
 .person-content-right > h2{
     text-align: center;
 }
 .person-content-right > hr{
-    width: 90%;
-    margin: 2% 0;
+    width: 60%;
     color: rgb(0, 0, 0);
 }
 
 .person-content-right{
-    width: 60%;
+    width: 80%;
     height: auto;
-    margin: 1% 4% 1% 0;
+    margin: 1% 0 1% 0;
+    padding: 0 4%;
     right: 0px;
     top: 0px;
     text-align: justify;
-    border: 2px solid rgb(54, 184, 15);
+    justify-content: center;
+    /* border: 2px solid rgb(54, 184, 15); */
 }
 #close-person{
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
 }
 .fa-times{ 
-    margin: 0.2em 0.3em;
+    margin: 0.1em 0.3em;
     padding: 0;
     color: rgb(78, 78, 78); 
     font-size: 2em;  
@@ -435,7 +439,7 @@ div.subPortfolio {
 .skills{
     padding: 0;
     margin: 0;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
 }
 .skills > p{
     padding: 0;
@@ -620,6 +624,95 @@ div.subPortfolio {
     .about-developer{
         width: 23%;
     }
+
+/* TA INTE BORT DETTA */
+.persondiv {
+    width: 100%;
+    height: 100%; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.432);
+    justify-content:center;
+    place-items: center;
+    display: none;
+}
+.person-content{
+    background: rgba(207, 204, 204, 0.850);
+    width: 70%;
+    height: 70%;
+    margin: 4% 15%;
+    padding: 2%;
+    position: fixed;
+    z-index: 2;
+    justify-content: left;
+    text-align: left;
+    display: flex;
+    float: left;
+    flex-wrap: nowrap;
+}
+.person-content-left{
+    width: 40%;
+    height: auto;
+    margin: 2%;
+    display: flex;
+    justify-content: center;
+    
+    border: 2px solid rgb(184, 26, 15);
+}
+.person-content-right > h2, .person-content-right > h3, .person-content-right > p{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+.person-content-right > hr{
+    width: 70%;
+    margin: 2% 15%;
+    color: rgb(0, 0, 0);
+}
+.person-content-right{
+    width: 80%;
+    height: auto;
+    margin: 2%;
+    padding: 0;
+    right: 0px;
+    top: 0px;
+    text-align: justify;
+    justify-content: center;
+}
+#close-person{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.fa-times{ 
+    margin: 0.1em 0.3em;
+    padding: 0;
+    color: rgb(78, 78, 78); 
+    font-size: 2em;  
+}
+.skills{
+    width: 100%;
+    padding: 0;
+    margin: 2% 0 0 0;
+}
+.skills > p{
+    padding: 1% 0;
+    margin: 0; 
+    font-weight: bold;
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+}
+.skill-meter{
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    background-color: rgba(138, 133, 133, 0.507);
+    /* border-radius: 2%; */
+}
+/* -------------------------------*/
+
 
     /*    ~~~~ ABOUT US desktop end ~~~>   */
     
