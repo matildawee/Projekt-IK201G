@@ -249,10 +249,23 @@ footer{
 .fa-github{
     font-size: 1em;
 }
+.footer_center > p > a{
+    color: rgb(0, 0, 0);
+}
+
 /*    ~~~~ FOOTER end ~~~>   */
 
 
 /*    <~~~ PORTFOLIO start ~~~~   */
+
+.portfolioMain{
+    display: flex;
+}
+.portfolioLeft, .portfolioRight{
+    justify-content: center;
+    align-items: center;   
+    margin: 15% 1%;
+}
 .portfolio-box{
     width: 100%;
     height: auto;
@@ -260,7 +273,7 @@ footer{
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center;  
 }
 div.subPortfolio { 
     width: 20%; 
@@ -273,6 +286,9 @@ div.subPortfolio {
 }
 #portfolioGroup{
     display: flex;
+    justify-content: center;
+    /* align-items: center;    */
+    margin-top: 5%;
 }
 .project-img{
     width: 80%;
@@ -285,6 +301,7 @@ div.subPortfolio {
     transition: all 0.15s;
     cursor: pointer;
     opacity: 0.5;
+    font-size: 3em;
 }
 .fa-arrow-left:hover, .fa-arrow-right:hover{
     color:#cececeaf;
