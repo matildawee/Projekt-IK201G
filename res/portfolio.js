@@ -64,7 +64,7 @@ $(document).ready(function() {
     
     };
 
-    $('#testknapp').click(function () {
+    $('#arrowRight').click(function () {
         
         showIndex++;
 
@@ -76,7 +76,7 @@ $(document).ready(function() {
         
     });
 
-    $('#testknapp-minus').click(function () {
+    $('#arrowLeft').click(function () {
         
         showIndex--;
 
