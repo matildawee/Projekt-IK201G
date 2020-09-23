@@ -2,88 +2,50 @@ $(document).ready(function() {
 /* Start Contact validate */
 
     $("#contactName").blur(function() {
-        var result = $("#contactErrorName");
-        var textToValidate = $("#contactName").val();
-        result.text("");
-
-        if (validate(textToValidate, "name")) {
-            result.text("OK");
-            result.css("background", "green");
-          } else {
-            result.text("Not a valid name");
-            result.css("background", "red");
-          }
-
-          return false;
+        validateOkOrError("#contactName");
     });
 
     $("#contactPhone").blur(function() {
-        var result = $("#contactErrorPhone");
-        var textToValidate = $("#contactPhone").val();
-        result.text("");
-
-        if (validate(textToValidate, "mobilePhone")) {
-            result.text("OK");
-            result.css("background", "green");
-          } else {
-            result.text("Not a valid phone");
-            result.css("background", "red");
-          }
-          return false;
+        validateOkOrError("#contactPhone");
     });
 
     $("#contactEmail").blur(function () {
-        var result = $("#contactErrorEmail");
-        var textToValidate = $("#contactEmail").val();
-        result.text("");
-      
-        if (validate(textToValidate, "eMail")) {
-          result.text("OK");
-          result.css("background", "green");
-        } else {
-          result.text("Not a valid email");
-          result.css("background", "red");
-        }
-        return false; 
+        validateOkOrError("#contactEmail");
     });
 
     $("#contactSubject").blur(function () {
-        var result = $("#contactErrorSubject");
-        var textToValidate = $("#contactSubject").val();
-        result.text("");
-      
-        if (validate(textToValidate, "#contactSubject")) {
-          result.text("OK");
-          result.css("background", "green");
-        } else {
-          result.text("Write a subject");
-          result.css("background", "red");
-        }
-        return false; 
+        validateOkOrError("#contactSubject"); 
     });
 
     $("#contactMessage").blur(function () {
-        var result = $("#contactErrorMessage");
-        var textToValidate = $("#contactMessage").val();
-        result.text("");
-      
-        if (validate(textToValidate, "#contactMessage")) {
-            result.text("OK");
-            result.css("background", "green");
-        } else {
-            result.text("Write a message");
-            result.css("background", "red");
-        }
-        return false; 
+        validateOkOrError("#contactMessage");
     });
+
+    //Exempel indata: validateOkOrError("#contactName") för att skicka in label och span idn för namn
+    function validateOkOrError(contactLabelId) {
+        var textToValidate = $(contactLabelId).val(); //Exempel indata "#contactMessage" , samt val() = value
+        var result = $(contactLabelId+"Error"); //"#contactMessageError"
+        
+        result.removeClass("contactError");
+        result.removeClass("contactOk");
+        result.text("");
+
+        if (validate(textToValidate, contactLabelId)) {
+            result.text("OK");
+            result.addClass("contactOk");
+        } else {
+            result.text("Unvalid");
+            result.addClass("contactError");
+        }
+    }
 
     function validate(value, type) {
         var regEx = ""
-        if (type=="eMail"){
+        if (type=="#contactEmail"){
             regEx = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        } else if (type=="mobilePhone") {
+        } else if (type=="#contactPhone") {
             regEx = /^((((0{2}?)|(\+){1})46)|0)7[\d]{8}/;
-        } else if (type=="name") {
+        } else if (type=="#contactName") {
             //regEx kollar a-ö,A-Ö,mellanslag och minst 3 tecken. 
             regEx = /[a-zA-ZåäöÅÄÖ+ ]{3,}/;
         } else if (type=="#contactSubject") {

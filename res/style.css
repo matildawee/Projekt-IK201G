@@ -588,11 +588,15 @@ div.subPortfolio {
     text-align: center;
     margin-top: 1.2em; 
 }
-
 .contactError{
-    background: red; 
-    color:white;
+    color:rgb(255, 104, 104);
     float:right;
+    font-weight: bold;
+}
+.contactOk{ 
+    color:rgb(0, 255, 0);
+    float:right;
+    font-weight: bold;
 }
 
 /*    ~~~~ CONTACT end ~~~>   */
