@@ -266,6 +266,11 @@ footer{
     align-items: center;   
     margin: 15% 1%;
 }
+.portfolioRight{
+    float: right;
+    position: relative;
+    right: 0%;
+}
 .portfolio-box{
     width: 100%;
     height: auto;

@@ -66,6 +66,9 @@ $(document).ready(function() {
 
     $('#arrowRight').click(function () {
         
+        //$('#portfolio-box').fadeout();
+        //$("#portfolio-box").delay( 100 ).fadeIn( 100 );
+        //$("#portfolio-box").find("#portfolioGroup").fadeOut( 200 ).delay( 400 ).fadeIn( 200 );
         showIndex++;
 
         if (showIndex == divList.length){
@@ -73,6 +76,7 @@ $(document).ready(function() {
         }
 
         $('#portfolio-box').html(divList[showIndex]);
+        //$('#portfolio-box').fadein();
         
     });
 

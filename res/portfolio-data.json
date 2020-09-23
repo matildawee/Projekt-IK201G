@@ -12,28 +12,28 @@
             "title": "Projekt 2",
             "date": "2020-02-02 - 2021-02-02",
             "description": "Det här är projekt 2 det gick väldigt bra bla bla bla blaaaaaaaaaaaaa bla ännu mer texttttttttttttttttt teeeeeeeeexxxxtttttttt teeeeeeeeexxxxtttttttt teeeeeeeeexxxxtttttttt teeeeeeeeexxxxtttttttt",
-            "image": "./img/projekt.jpg"
+            "image": "./img/stortprojekt.jpg"
         },
         {
             "id": "p3",
             "title": "Projekt 3",
             "date": "2020-03-03 - 2021-03-03",
             "description": "Det här är projekt 3 vi gjorde massa grejer",
-            "image": "./img/projekt.jpg"
+            "image": "./img/bigproject.jpg"
         },
         {
             "id": "p4",
             "title": "Projekt 4",
             "date": "2020-04-04 - 2021-04-04",
             "description": "Det här är projekt 4",
-            "image": "./img/projekt.jpg"
+            "image": "./img/smallproject.png"
         },
         {
             "id": "p5",
             "title": "Projekt 5",
             "date": "2020-05-05 -2021-05-05",
-            "description": "Det här är projekt 5",
-            "image": "./img/projekt.jpg"
+            "description": "Vi skapade nån sajt",
+            "image": "./img/facebookproject.jpg"
         },
         {
             "id": "p6",
@@ -67,21 +67,21 @@
             "id": "p10",
             "title": "Projekt 10",
             "date": "2020-0999 -2021-99999",
-            "description": "Det här är projekt 9",
+            "description": "Det här är projekt 10",
             "image": "./img/projekt.jpg"
         },
         {
             "id": "p11",
             "title": "Projekt 11",
             "date": "2020-0999 -2021-99999",
-            "description": "Det här är projekt 9",
+            "description": "Det här är projekt 11",
             "image": "./img/projekt.jpg"
         },
         {
             "id": "p12",
             "title": "Projekt 12",
             "date": "2020-0999 -2021-99999",
-            "description": "Det här är projekt 9",
+            "description": "Det här är projekt 12",
             "image": "./img/projekt.jpg"
         }
         
