@@ -378,7 +378,7 @@ div.subPortfolio {
     display: none;
 }
 .person-content{
-    background: rgba(207, 204, 204, 1);
+    background: rgba(255, 255, 255, 0.900);
     width: 100%;
     height: auto;
     position: fixed;
@@ -646,7 +646,7 @@ div.subPortfolio {
     display: none;
 }
 .person-content{
-    background: rgba(207, 204, 204, 0.900);
+    background: rgba(255, 255, 255, 0.9);
     width: 70%;
     height: auto;
     margin: 4% 15%;
@@ -659,6 +659,7 @@ div.subPortfolio {
     float: left;
     flex-wrap: nowrap;
     overflow-y: auto;
+ 
 }
 .person-portrait{
     width: 90%;
