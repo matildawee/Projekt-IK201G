@@ -65,7 +65,6 @@ $(document).ready(function() {
     /* <~~~~~ knapparna på startsidan - dessa knappar finns också i extrascript ~~~~~~ */    
 
     $('#startProjects').click(function (event) {
-        console.log("hej knapptryckare");
         event.preventDefault();
         $('#page-content').load('./pages/portfolio.html');
     });
@@ -89,6 +88,5 @@ $(document).ready(function() {
     //         $('#autoWidth').removeClass('cS-hidden');
     //     } 
     // });  
-
 
  });
