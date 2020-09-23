@@ -398,6 +398,7 @@ div.subPortfolio {
     width: 40%;
     height: auto;
     margin: 1% 0 1% 4%;
+    border: 2px solid rgb(184, 26, 15);
 }
 .person-content-right > h2, .person-content-right > h3, .person-content-right > p{
     padding: 0;
@@ -421,6 +422,7 @@ div.subPortfolio {
     right: 0px;
     top: 0px;
     text-align: justify;
+    border: 2px solid rgb(54, 184, 15);
 }
 #close-person{
     position: absolute;
@@ -436,6 +438,7 @@ div.subPortfolio {
 .skills{
     padding: 0;
     margin: 0;
+    border: 2px solid blue;
 }
 .skills > p{
     padding: 0;
