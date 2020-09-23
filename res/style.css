@@ -331,7 +331,7 @@ div.subPortfolio {
 }
 .about-main{
     width: 90%;
-    margin: 2%;
+    margin: 3%;
     padding: 2% 3%; 
     height: 100%;
     text-align: center;
@@ -641,13 +641,11 @@ div.subPortfolio {
         width: 40%;
         margin: 3% 28%;
         padding: 1% 2%;
-        /* margin: 2em auto; */
     }
     .about-main{
         width: 40%;
-        margin: 0 28%;
+        margin: 3% 28%;
         padding: 1% 2%;
-        /* margin: 2em auto; */
     }
     .about-developer{
         width: 23%;
