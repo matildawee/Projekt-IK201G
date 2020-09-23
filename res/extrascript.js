@@ -174,8 +174,9 @@
         event.preventDefault();
         // $(this).find("img");
         var id = (event.target.id);
-        $(".person-content").show();
         $(".persondiv").show();
+        $(".person-content").show();
+        
         console.log(id);
         
 
@@ -190,7 +191,7 @@
 
     function getDeveloper(person, id) {
         $.each(person, function (ind, employee) { 
-            
+           
                 if (employee.id == id)
                 {
                     var developerSquare = $(
