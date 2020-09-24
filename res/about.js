@@ -114,7 +114,7 @@
         $('.persondiv').html('');
         $(".person-content").hide();
         $(".persondiv").hide(); 
-        $("body").css({"overflow-y": "scroll"});
+        $("body").css({"overflow-y": "auto"});
     });
 
     $(".about-personal").on("click", "#thePersondiv", function(event){
@@ -123,6 +123,6 @@
             $('.persondiv').html('');
             $(".person-content").hide();
             $(".persondiv").hide();
-            $("body").css({"overflow-y": "scroll"});
+            $("body").css({"overflow-y": "auto"});
         }; 
     });

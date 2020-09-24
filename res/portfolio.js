@@ -141,7 +141,7 @@ $(".about-project").on("click", "#close-portfolio", function(event){
     $('.projectdiv').html('');
     $(".project-content").hide();
     $(".projectdiv").hide(); 
-    $("body").css({"overflow": "scroll"});
+    $("body").css({"overflow": "auto"});
 });
 
 $(".about-project").on("click", "#theProjectdiv", function(event){
@@ -150,6 +150,6 @@ $(".about-project").on("click", "#theProjectdiv", function(event){
         $('.projectdiv').html('');
         $(".project-content").hide();
         $(".projectdiv").hide(); 
-        $("body").css({"overflow": "scroll"});
+        $("body").css({"overflow": "auto"});
     }; 
 });
