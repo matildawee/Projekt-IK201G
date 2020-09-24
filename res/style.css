@@ -361,7 +361,6 @@ div.subPortfolio {
     margin: 2%;
     padding: 2% 3%;
     text-align: justify;
-    justify-content: center;
     background: rgba(34, 34, 34, 0.541);
     color: white;
 }
@@ -373,9 +372,6 @@ div.subPortfolio {
     margin: 2%;
     padding: 2% 3%; 
     height: 100%;
-    text-align: center;
-    justify-content: center;
-    transition: all 0.15s;
     background: rgba(34, 34, 34, 0.541);
     color: white;
 
@@ -401,7 +397,6 @@ div.subPortfolio {
     border-radius: 2%;
     font-size: 0.9em;
     text-align: center;
- 
 }
 .about-developer:hover{
     cursor: pointer;
@@ -417,7 +412,7 @@ div.subPortfolio {
 .about-developer > img{
     width: 70%;
     height: auto;
-    margin: 0 0 0 0;
+    margin: 0;
     border-radius: 50%;
 }
 .about-developer > h1{
@@ -437,8 +432,6 @@ div.subPortfolio {
     left: 0;
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.432);
-    justify-content:center;
-    place-items: center;
     display: none;
 }
 .person-content{
@@ -450,11 +443,10 @@ div.subPortfolio {
     margin:0;
     z-index: 2;
     justify-content: center;
-    text-align: center;
     display: flex;
     flex-wrap: wrap;
-    overflow-y: scroll; 
-    max-height:100%;
+    overflow-y: auto; 
+    max-height: 100%;
 }
 
 .person-portrait{

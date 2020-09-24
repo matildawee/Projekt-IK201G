@@ -104,6 +104,7 @@ var slideshowInterval = clearInterval(slideshowInterval);
 var images = [];
 
 $(".portfolioMain").on("click", ".subPortfolio", function(event){
+    console.log("Är jag null? " + event);
     event.preventDefault();
     var id = (event.target.id);
 
@@ -169,6 +170,7 @@ function slideshow(){
 }
 
 $(".about-project").on("click", "#close-portfolio", function(event){
+    console.log("Är jag null2? " + event);
     event.preventDefault();
     $('.projectdiv').html('');
     $(".project-content").hide();
