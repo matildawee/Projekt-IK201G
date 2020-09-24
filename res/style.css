@@ -292,11 +292,12 @@ footer{
 div.subPortfolio { 
     width: 80%; 
     height: auto; 
-    padding: 0; 
+    padding: 0.5%; 
     margin: 1em; 
-    background: rgb(209, 209, 209); 
+    background: rgba(255, 255, 255, 0.900);
     text-align: center; 
     border-radius: 2%;
+
 }
 .subPortfolio:hover{
     transform: scale(1.05); 
@@ -318,10 +319,6 @@ div.subPortfolio {
 .fa-arrow-left:hover, .fa-arrow-right:hover{
     color:#cececeaf;
 }
-/*    ~~~~ PORTFOLIO end ~~~>   */
-
-
-/* TESEEEEEST */
 .projectdiv {
     width: 100%;
     height: 100%; 
@@ -330,17 +327,17 @@ div.subPortfolio {
     left: 0;
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.432);
-    justify-content:center;
-    place-items: center;
+    /* justify-content:center;
+    place-items: center; */
     display: none;
 }
 .project-content{
     background: rgba(255, 255, 255, 0.900);
-    width: 80%;
+    width: 70%;
     height: auto;
     position: fixed;
     padding: 0;
-    margin:0;
+    margin: 4% 15%;
     z-index: 2;
     justify-content: center;
     text-align: center;
@@ -348,14 +345,12 @@ div.subPortfolio {
     flex-wrap: wrap;
     overflow-y: scroll; 
     max-height:100%;
-    border: 2px solid red;
 }
 .project-image{
-    width: 50%;
+    width: 500px;
     height: auto;
-    margin: 5%;
+    margin: 5% 0 0 0;
     padding: 0;
-    border: 2px solid rgb(47, 0, 255);
 }
 .project-content-right > h2, .project-content-right > h3, .project-content-right > p{
     width: 100%;
@@ -372,13 +367,12 @@ div.subPortfolio {
 .project-content-right{
     width: 80%;
     height: auto;
-    margin: 0;
-    padding: 1% 4%;
+    margin: 0 10%;
+    padding: 1%;
     right: 0px;
     top: 0px;
     text-align: center;
     justify-content: center;
-    border: 2px solid rgb(81, 255, 0);
 }
 #close-portfolio{
     position: absolute;
@@ -386,7 +380,7 @@ div.subPortfolio {
     right: 0;
 }
 
-
+/*    ~~~~ PORTFOLIO end ~~~>   */
 
 
 
@@ -722,12 +716,28 @@ div.subPortfolio {
         flex-direction: row;
         align-items: stretch;
         margin-top: 5%;
+        flex-wrap: wrap;
     }
     div.subPortfolio { 
         width: 20%; 
         margin: 1%;
+        min-width: 250px;
+        max-height: 400px;
+    }
+    .subPortfolio > p{
+        max-height: 50%;
+        overflow:hidden;
+        white-space: wrap;
+        text-overflow: ellipsis;
+    }
+    .subPortfolio > img{
+        max-width: 250px;
+        max-height: 150px;
+        object-fit: cover;
     }
     /*    ~~~~ PORTFOLIO desktop end ~~~>   */
+
+
 
     /*    ~~~~ ABOUT US desktop start ~~~>   */
 
@@ -758,14 +768,6 @@ div.subPortfolio {
         width: 90%;
         margin: 25% 5% 0 5%;
     }
-    /* .person-content-left{
-        width: 40%;
-        height: auto;
-        margin: 2%;
-        display: flex;
-        justify-content: center;
-        border: 2px solid red;
-    } */
     .person-content-right > hr{
         width: 80%;
         margin: 2% 15%;
