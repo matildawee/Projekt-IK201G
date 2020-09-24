@@ -2,12 +2,12 @@
 <html lang="en">
     <head>
         <title>Project AB</title>
-        <meta charset = "UTF-8" />
+        <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="./img/projectAB_favicon.ico" type="image/x-icon" />
-        <link rel="stylesheet" href="./res/style.css"/>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="./res/style.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
         <script src="https://code.jquery.com/jquery-latest.js"></script>
     </head>
     <body>
@@ -15,56 +15,51 @@
             <div class="navBar">
                 <div class="navBar-left">
                     <img id="header-logo" title="Project AB - Homepage" alt="Logo" src="./img/logo.jpg" />
-                </div>
-                <div class="navBar-center"><h1 id="navBar-pageTitle">Home</h1></div>
+                </div> <!-- /navBar-left -->
+                <div class="navBar-center">
+                    <h1 id="navBar-pageTitle">Home</h1>
+                </div> <!-- /navBar-center -->
                 <div class="navBar-right">
                     <button type="button" title="Show menu" class="navButton-toggle">
                         <span class="navButton-Line"></span>
                         <span class="navButton-Line"></span>
                         <span class="navButton-Line"></span>
                     </button>
-                </div>
+                </div> <!-- /navBar-right -->
                 <nav>
                     <ul>
                         <li><a id="home" class="menuBtn activePage">Home</a></li>
                         <li><a id="portfolio" class="menuBtn">Portfolio</a></li>
-                        <li class="navHaveDropdown"><a id="about" class="menuBtn">About us <i class="fas fa-caret-down"></i></a>
-                            <div class="navDropdownContent">
-                                <a id="personId0">Matilda</a>
-                                <a id="personId1">Selda</a>
-                                <a id="personId2">Jonas</a>
-                                <a id="personId3">Oskar</a>
-                            </div>
-                        </li>
+                        <li><a id="about" class="menuBtn">About us</a></li>
                         <li><a id="contact" class="menuBtn">Contact</a></li>
                     </ul>
                 </nav>
-            </div>
+            </div> <!-- /navBar -->
         </header>
 
         <main>
             <div id="page-content">
-                <!-- page content, goes here with AJAX -->
-            </div>
+                <!-- innehållet på sidan läggs här med hjälp av AJAX -->
+            </div> <!-- /page-content -->
         </main>
 
         <footer>
             <div class="footer_left">
-                <a href="mailto:exempel@exempel.com"><span class="far fa-envelope"></span></a>
-                <a href="tel:+467"><span class="fas fa-phone"></span></a>
-            </div>
+                <a href="mailto:exempel@exempel.com"><i class="far fa-envelope"></i></a> <!-- Mail-ikon -->
+                <a href="tel:+467"><i class="fas fa-phone"></i></a> <!-- Telefon-ikon -->
+            </div> <!-- /footer_left -->
             <div class="footer_center">
                 <p>
                     Website created 2020<br />
-                    <a href="https://github.com/matildawee/Projekt-IK201G/"><i class="fab fa-github"></i>GitHub</a>
+                    <a href="https://github.com/matildawee/Projekt-IK201G/"><i class="fab fa-github"></i>GitHub</a> <!-- GitHub-ikon och länk -->
                 </p>
-            </div>
+            </div> <!-- /footer_center -->
             <div class="footer_right">
-                <a href="https://www.instagram.com/" target="_blank"><span class="fab fa-instagram"></span></a>
-                <a href="https://www.facebook.com/" target="_blank"><span class="fab fa-facebook-f"> </span></a>
-            </div>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a> <!-- Instagram-ikon -->
+                <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"> </i></a> <!-- Facebook-ikon -->
+            </div> <!-- /footer_right -->
         </footer>
-                
+
         <script src="./res/script.js"></script>
     </body>
 </html>

@@ -260,11 +260,12 @@ footer{
 
 .portfolioMain{
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .portfolioLeft, .portfolioRight{
-    justify-content: center;
-    align-items: center;   
-    margin: 15% 1%;
+    margin: 1em 1%;
 }
 .portfolioRight{
     float: right;
@@ -279,12 +280,20 @@ footer{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;  
+    align-items: center;
+}
+#portfolioGroup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
 }
 div.subPortfolio { 
-    width: 20%; 
+    width: 80%; 
     height: auto; 
     padding: 0; 
-    margin: 1% 1%; 
+    margin: 1em; 
     background: rgb(209, 209, 209); 
     text-align: center; 
     border-radius: 2%;
@@ -292,12 +301,6 @@ div.subPortfolio {
 .subPortfolio:hover{
     transform: scale(1.05); 
     cursor: pointer;
-}
-#portfolioGroup{
-    display: flex;
-    justify-content: center;
-    /* align-items: center;    */
-    margin-top: 5%;
 }
 .project-img{
     width: 80%;
@@ -671,7 +674,7 @@ div.subPortfolio {
 /*    ~~~~ CONTACT end ~~~>   */
 
 
-/* Desktop page: */
+/* start of Desktop-page: */
 @media screen and (min-width: 768px) { 
 
     /*  <~~~ NAVIGATION desktop start~~~~   */    
@@ -707,6 +710,24 @@ div.subPortfolio {
     }
     
     /*    ~~~~ NAVIGATION desktop end ~~~>   */
+
+    /*    <~~~ PORTFOLIO desktop start ~~~~   */
+    .portfolioMain{
+        flex-direction: row;
+    }
+    .portfolioLeft, .portfolioRight{
+        margin: 15% 1%;
+    }
+    #portfolioGroup{
+        flex-direction: row;
+        align-items: stretch;
+        margin-top: 5%;
+    }
+    div.subPortfolio { 
+        width: 20%; 
+        margin: 1%;
+    }
+    /*    ~~~~ PORTFOLIO desktop end ~~~>   */
 
     /*    ~~~~ ABOUT US desktop start ~~~>   */
 
@@ -820,7 +841,6 @@ div.subPortfolio {
     #contactSubmit {
         margin: 2em 0.3em 0.3em 0;
     }
-    
-
     /* Contact end */
-}
+
+}/* end of Desktop-page */
