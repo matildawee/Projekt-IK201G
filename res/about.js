@@ -110,11 +110,13 @@
     };
 
     $(".about-personal").on("click", "#close-person", function(event){
+        if(event.target.id=="close-person"){
         event.preventDefault();
         $('.persondiv').html('');
         $(".person-content").hide();
         $(".persondiv").hide(); 
         $("body").css({"overflow-y": "auto"});
+        };
     });
 
     $(".about-personal").on("click", "#thePersondiv", function(event){

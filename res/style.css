@@ -22,38 +22,7 @@ html, body{
     display: inline-block;
     min-height: 55px;
     background: rgb(238, 238, 238);
-    /* justify-content: center; */
-}
-nav > ul{
-    list-style-type: none;
-    width: 100%;
-    padding: 0;
-    margin: 0 auto;
-    overflow: auto;
-    text-align: center;
-}
-nav > ul > li{
-    display: inline-block;
-}
-nav > ul > li > a{
-    display: inline-block;
-    padding: 0.8em;
-    /* text-align: center; */
-}
-nav > ul > li > a:hover{
-    cursor: pointer;
-    background: #333;
-    color: #fff
-}
-.activePage{
-    cursor: pointer;
-    background: #333;
-    color: #fff
-}
-nav{
-    display: none;
-    margin: 0 auto;
-    width: 100%;
+    justify-content: center;
 }
 .navBar-left{
     display: inline-block;
@@ -68,13 +37,12 @@ nav{
 }
 .navBar-center{
     width: 40%;
-    visibility: visible;
     display: inline-block;
     vertical-align: text-bottom;
     margin: 0.5em 0;
     text-align: center;
 }
-.navBar-center > h1{
+#navBar-pageTitle {
     margin: 0 auto;
     font-size: 2em;
     font-weight: bold;
@@ -88,8 +56,8 @@ nav{
 .navButton-toggle{
     height: 44px;
     width: 44px;
-    /* position: relative; */
-    /* display: block; */
+    position: relative;
+    display: block;
     margin: 0.5em 0.5em;
     float: right;
     padding: 3px 6px;
@@ -116,11 +84,42 @@ nav{
     animation-play-state: running;
     animation-name: openNavBar;
 }
-
 @keyframes openNavBar{
     0%  {opacity: 0%; }
   100%  {opacity: 100%; }
 }
+nav{
+    display: none;
+    margin: 0 auto;
+    width: 100%;
+}
+nav > ul{
+    list-style-type: none;
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    overflow: auto;
+    text-align: center;
+}
+nav > ul > li{
+    display: inline-block;
+}
+nav > ul > li > a{
+    display: inline-block;
+    padding: 0.8em;
+    text-align: center;
+}
+nav > ul > li > a:hover{
+    cursor: pointer;
+    background: #333;
+    color: #fff
+}
+.activePage{
+    cursor: pointer;
+    background: #333;
+    color: #fff
+}
+
 
 /*    ~~~~ NAVIGATION end ~~~>   */
 
@@ -373,7 +372,6 @@ div.subPortfolio {
     margin: 2%;
     padding: 2% 3%;
     text-align: justify;
-    justify-content: center;
     background: rgba(34, 34, 34, 0.541);
     color: white;
 }
@@ -385,9 +383,6 @@ div.subPortfolio {
     margin: 2%;
     padding: 2% 3%; 
     height: 100%;
-    text-align: center;
-    justify-content: center;
-    transition: all 0.15s;
     background: rgba(34, 34, 34, 0.541);
     color: white;
 
@@ -413,7 +408,6 @@ div.subPortfolio {
     border-radius: 2%;
     font-size: 0.9em;
     text-align: center;
- 
 }
 .about-developer:hover{
     cursor: pointer;
@@ -429,7 +423,7 @@ div.subPortfolio {
 .about-developer > img{
     width: 70%;
     height: auto;
-    margin: 0 0 0 0;
+    margin: 0;
     border-radius: 50%;
 }
 .about-developer > h1{
@@ -449,8 +443,6 @@ div.subPortfolio {
     left: 0;
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.432);
-    justify-content:center;
-    place-items: center;
     display: none;
 }
 .person-content{
@@ -462,11 +454,10 @@ div.subPortfolio {
     margin:0;
     z-index: 2;
     justify-content: center;
-    text-align: center;
     display: flex;
     flex-wrap: wrap;
-    overflow-y: scroll; 
-    max-height:100%;
+    overflow-y: auto; 
+    max-height: 100%;
 }
 
 .person-portrait{
@@ -663,6 +654,9 @@ div.subPortfolio {
     .navBar-left{
         width: 20%;
     }
+    #header-logo{
+        width: 200px;
+    }
     .navBar-center{
         display: none;
         visibility: hidden;
@@ -671,9 +665,6 @@ div.subPortfolio {
         display: none;
         visibility: hidden;
         width: 20%;
-    }
-    #header-logo{
-        width: 200px;
     }
     nav > ul{
         width: auto;
