@@ -402,7 +402,6 @@ div.subPortfolio {
     width: 90%;
     margin: 2%;
     padding: 2% 3%;
-    /* padding: 1em 2em; */
     text-align: justify;
     justify-content: center;
     background: rgba(34, 34, 34, 0.541);
@@ -413,7 +412,7 @@ div.subPortfolio {
 }
 .about-main{
     width: 90%;
-    margin: 3%;
+    margin: 2%;
     padding: 2% 3%; 
     height: 100%;
     text-align: center;
@@ -641,9 +640,9 @@ div.subPortfolio {
 #contactSubmit {
     width: 8em;
     height: 3em; 
-    display: block;
+    display: inline-block;
     padding: 0.5em 0;
-    margin: 1em 0.3em 2em 0;
+    margin: 1.5em 0;
     border: 0.16em solid #FFFFFF;
     box-sizing: border-box;
     text-decoration: none;
@@ -867,9 +866,15 @@ div.subPortfolio {
         padding: 1em 2em 0.5em 1.5em;
         margin: 1em 5em 1em 1em;
     }
-    #contactSubmit {
-        margin: 2em 0.3em 0.3em 0;
+    /* #contactSubmit {
+        margin-top: 2em;
     }
+    #contactSubmitMessage {
+        margin-top: 2.2em;
+        overflow-wrap: break-word;
+    } */
+    
+    
     /* Contact end */
 
 }/* end of Desktop-page */
