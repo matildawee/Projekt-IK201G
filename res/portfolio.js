@@ -22,7 +22,7 @@ $(document).ready(function() {
 
     $.each(projects, function (i, portfolio) {          
         var aProject = 
-            '<div class="subPortfolio" id="subPortfolioId" id="' + portfolio.id + '">' + 
+            '<div class="subPortfolio" id="' + portfolio.id + '">' + 
             '<img class="project-img" id="' + portfolio.id + '"src="' + portfolio.image + '" title="Project" alt="Project">' +
                 '<h1 id="' + portfolio.id + '">' + portfolio.title + '</h1>' +
                 '<p id="' + portfolio.id + '">' + portfolio.description + '</p>' +
@@ -92,7 +92,7 @@ $(document).ready(function() {
 });
 
 //TESTING!!!!!!
-$(".portfolioMain").on("click", "#subPortfolioId", function(event){
+$(".portfolioMain").on("click", ".subPortfolio", function(event){
     event.preventDefault();
     var id = (event.target.id);
 
@@ -112,10 +112,11 @@ $(".portfolioMain").on("click", "#subPortfolioId", function(event){
 
 function getProject(projects, id) {
     $.each(projects, function (ind, project) {
-            if (project.id == id)
+            if (project.id == id) {
+
             console.log(project.id + " projectid");
             console.log(id + " id");
-            {
+
                 var projectSquare = $(
                     '<div class="project-content" id="' + project.id + '">' + 
                         '<div class="project-content-left">' +
@@ -123,9 +124,10 @@ function getProject(projects, id) {
                             '<img class="project-image" src="' + project.image + '" title="developer" alt="developer">' +                                
                         '</div>' +
                         '<div class="project-content-right">' + 
-                            '<h2> ' + project.title + '</h2>' + '<hr/>' +
+                            '<h2> ' + project.title + '</h2>' + 
+                            '<p>' + project.date + '</p>' +  '<hr/>' +
                             '<p>' + project.description +'</p>' + 
-                            '<p>' + project.date + '</p>' + 
+                            
                         '</div>' +
                             '<br/>' +
                                                        

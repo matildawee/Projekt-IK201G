@@ -12,15 +12,14 @@
             "id": "p2",
             "title": "Projekt 2",
             "date": "2020-02-02 - 2021-02-02",
-            "description": "Det här är projekt 2 det gick väldigt bra bla bla bla blaaaaaaaaaaaaa bla ännu mer texttttttttttttttttt teeeeeeeeexxxxtttttttt teeeeeeeeexxxxtttttttt teeeeeeeeexxxxtttttttt teeeeeeeeexxxxtttttttt",
-            "image": "./img/projekt.jpg",
-            "image2": "./img/stortprojekt.jpg"
+            "description": "Det här är projekt 2 det gick väldigt bra bla bla bla bla lauren ipsson  lauren ipsson lauren ipsson lauren ihej hej hej på dig dig lauren ipsson lauren ipsson lauren ipsson lauren ipsson lauren ipsson lauren ipsson",
+            "image": "./img/stortprojekt.jpg"
         },
         {
             "id": "p3",
             "title": "Projekt 3",
             "date": "2020-03-03 - 2021-03-03",
-            "description": "Det här är projekt 3 vi gjorde massa grejer",
+            "description": "Det här är projekt 3 vi gjorde massa grejer vi gjorde massa grejer vi gjorde massa grejer vi gjorde massa grejer vi gjorde massa grejer",
             "image": "./img/bigproject.jpg"
         },
         {
