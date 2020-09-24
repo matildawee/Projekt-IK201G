@@ -18,8 +18,8 @@
         });
     };
 
-   
-    $('.about-main').find("div").click(function (event) {
+    $(".about-main").on("click", ".about-developer", function(event){
+    // $('#about-submain').find("div").click(function (event) {
         event.preventDefault();
         var id = (event.target.id);
         $(".persondiv").show();
