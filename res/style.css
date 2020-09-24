@@ -268,16 +268,15 @@ div.subPortfolio {
 }
 .fa-play, .fa-pause{ 
     visibility: hidden;
-    font-size: 20px;
-    color: red;
+    font-size: 40px;
+    color: rgba(189, 22, 22, 0.486);
     /* position: absolute; */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -150%);
-    -ms-transform: translate(-50%, -50%);
+    /* -ms-transform: translate(-50%, -50%); */
     border: none;
-    background-color: grey;
-    padding: 1%;
+    /* padding: 1%; */
     cursor: pointer;
     border-radius: 5px;
     text-align: center;    

@@ -102,6 +102,8 @@ var slideshowInterval = clearInterval(slideshowInterval);
 
 var images = [];
 
+var playflag = false;
+
 $(".portfolioMain").on("click", ".subPortfolio", function(event){
     event.preventDefault();
     var id = (event.target.id);
@@ -129,8 +131,8 @@ function getProject(projects, id) {
                         '<div class="project-content-left">' +
                             '<span class="fas fa-times" id="close-portfolio"></span>' +                           
                             '<img class="slideshow-image" id="slideshow" src="' + project.slideshow[0] + '" title="developer" alt="developer">' + 
-                            '<span class="fas fa-pause" id="slideShowPaus"></span>' +
-                            '<span class="fas fa-play" id="slideShowPlay"></span>' +             
+                            '<span class="fas fa-pause" id="slideShowPause"></span>' + 
+                            '<span class="fas fa-play" id="slideShowPlay"></span>' +
                             '</img>' +                  
                         '</div>' +
                         '<div class="project-content-right">' + 
@@ -151,6 +153,7 @@ function getProject(projects, id) {
             
 
             slideshowInterval = setInterval(slideshow, 2000); 
+            playflag = true;
             };
     });
 };
@@ -172,6 +175,7 @@ $(".about-project").on("click", "#close-portfolio", function(event){
     $(".project-content").hide();
     $(".projectdiv").hide(); 
     clearInterval(slideshowInterval); 
+    playflag = true;
     $("body").css({"overflow": "auto"});
 });
 
@@ -181,24 +185,55 @@ $(".about-project").on("click", "#theProjectdiv", function(event){
         $('.projectdiv').html('');
         $(".project-content").hide();
         $(".projectdiv").hide(); 
-        clearInterval(slideshowInterval);  
+        clearInterval(slideshowInterval); 
+        playflag = true; 
         $("body").css({"overflow": "auto"});
     }; 
 });
 $(".about-project").on("mouseover", "#slideshow", function(event){
     //console.log("hovra");
-    $("#slideShowPlay").css({"visibility": "visible"});
+    if (playflag == true){
+        $("#slideShowPause").css({"visibility": "visible"});
+    }
+    else {
+        $("#slideShowPlay").css({"visibility": "visible"});
+    }
+    
+});
+$(".about-project").on("mouseover", "#slideShowPlay", function(event){
+    //console.log("hovra");
+    //$("#slideShowPlay").css({"visibility": "visible"});
+    if (playflag == true){
+        $("#slideShowPause").css({"visibility": "visible"});
+    }
+    else {
+        $("#slideShowPlay").css({"visibility": "visible"});
+    }
+    
+});
+$(".about-project").on("mouseover", "#slideShowPause", function(event){
+    //console.log("hovra");
+    //$("#slideShowPlay").css({"visibility": "visible"});
+    if (playflag == true){
+        $("#slideShowPause").css({"visibility": "visible"});
+    }
+    else {
+        $("#slideShowPlay").css({"visibility": "visible"});
+    }
     
 });
 $(".about-project").on("mouseleave", "#slideshow", function(event){
     //console.log("hovra");
     $("#slideShowPlay").css({"visibility": "hidden"});
+    $("#slideShowPause").css({"visibility": "hidden"});
     
 });
 
-// document.getElementById("slideshow").addEventListener("mouseover", mouseOver);
+$(".about-project").on("click", "slideShowPause", function(event){
+    clearInterval(slideshowInterval); 
+        console.log("tryckte paus va");
+        playflag = false; 
+        $("#slideShowPause").css({"visibility": "hidden"});
+        $("#slideShowPlay").css({"visibility": "visible"});
 
-// function mouseOver() {
-//   //document.getElementById("").style.color = "red";
-//   $(".fas-fa-play").css({"color": "blue"});
-//}
+});
