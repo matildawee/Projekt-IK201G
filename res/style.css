@@ -732,13 +732,22 @@ div.subPortfolio {
         overflow:hidden;
         white-space: wrap;
         text-overflow: ellipsis;
+        margin: 1.5em 1.5em 1.5em 1.5em;
     }
-    .project-content-left > img{
-        height: 350px;
+    .project-content{
+        overflow-y: auto;
     }
-    .subPortfolio > img{
-        max-width: 250px;
-        max-height: 150px;
+
+   .project-image{
+        height: 170px;
+        width: 250px;
+        object-fit: cover;
+        
+    }
+    .slideshow-image{
+        margin: 8% 0 0 0;
+        height: 300px;
+        width: 500px;
         object-fit: cover;
     }
     /*    ~~~~ PORTFOLIO desktop end ~~~>   */

@@ -6,8 +6,7 @@ $(document).ready(function() {
 
     var showIndex = 0;
 
-    var images = [];
-
+    
     
     $.getJSON(
         'res/portfolio-data.json',
@@ -40,7 +39,7 @@ $(document).ready(function() {
             divList[divIndex] = projectGroup;
             divIndex++;
             projectGroup = startDiv;    
-            //för var fjärde div så skapas en slut tag, sen lagras diven i en yttre div
+            //för var fjärde div så skapas en slut-tag, sen lagras 4 divar i en yttre div
         };       
         index++;     
     });
@@ -50,12 +49,18 @@ $(document).ready(function() {
         //tömmer diven ifall inga projekt finns
     };
 
+    console.log(index);
+    console.log((index + 1) % 4);
+
     if ((index + 1) % 4 != 0){
         projectGroup += endDiv;
         divList[divIndex] = projectGroup;    
+        console.log('ja här hamnar vi med');
         //lägger till slut-div-tagg       
     };
     
+    console.log(divList);
+
     if (divList[divList.length-1] == '<div id="portfolioGroup"></div>'){
         divList.splice(divList.length-1,1); 
         //raderar en sista tom div som skapas när antalet projekt är delbart med 4
@@ -114,18 +119,13 @@ $(".portfolioMain").on("click", ".subPortfolio", function(event){
 
 function getProject(projects, id) {
     $.each(projects, function (ind, project) {
-            if (project.id == id) {
-
-            console.log(project.id + " projectid");
-            console.log(id + " id");
-
-                
+            if (project.id == id) {              
                 
                 var projectSquare = $(
                     '<div class="project-content" id="' + project.id + '">' + 
                         '<div class="project-content-left">' +
                             '<span class="fas fa-times" id="close-portfolio"></span>' +
-                            '<img class="project-image" id="slideshow" src="' + project.slideshow[0] + '" title="developer" alt="developer">' +                                
+                            '<img class="slideshow-image" id="slideshow" src="' + project.slideshow[0] + '" title="developer" alt="developer">' +                                
                         '</div>' +
                         '<div class="project-content-right">' + 
                             '<h2> ' + project.title + '</h2>' + 
@@ -140,24 +140,38 @@ function getProject(projects, id) {
                 );
 
             images = project.slideshow;
-
             $('.projectdiv').html(projectSquare);  
+
+            
+
+            setInterval(slideshow, 2000); 
+
+            var slideIndex = 1;
+        
+            function slideshow(){
+                
+                if (slideIndex == images.length){
+                    slideIndex=0;
+                }    
+                document.getElementById('slideshow').src=images[slideIndex];
+                slideIndex++;
+            }
             };
     });
 };
 
-setInterval(slideshow, 2000); 
+// setInterval(slideshow, 2000); 
 
-    var slideIndex = 1;
+//     var slideIndex = 1;
 
-function slideshow(){
+// function slideshow(){
     
-    if (slideIndex == images.length){
-        slideIndex=0;
-    }    
-    document.getElementById('slideshow').src=images[slideIndex];
-    slideIndex++;
-}
+//     if (slideIndex == images.length){
+//         slideIndex=0;
+//     }    
+//     document.getElementById('slideshow').src=images[slideIndex];
+//     slideIndex++;
+// }
 
 $(".about-project").on("click", "#close-portfolio", function(event){
     event.preventDefault();
