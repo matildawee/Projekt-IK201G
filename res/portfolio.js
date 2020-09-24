@@ -22,10 +22,10 @@ $(document).ready(function() {
 
     $.each(projects, function (i, portfolio) {          
         var aProject = 
-            '<div class="subPortfolio" id="' + portfolio.projectId + '">' + 
-            '<img class="project-img" id="' + portfolio.projectId + '"src="' + portfolio.image + '" title="Project" alt="Project">' +
-                '<h1 id="' + portfolio.projectId + '">' + portfolio.title + '</h1>' +
-                '<p id="' + portfolio.projectId + '">' + portfolio.description + '</p>' +
+            '<div class="subPortfolio" id="subPortfolioId" id="' + portfolio.id + '">' + 
+            '<img class="project-img" id="' + portfolio.id + '"src="' + portfolio.image + '" title="Project" alt="Project">' +
+                '<h1 id="' + portfolio.id + '">' + portfolio.title + '</h1>' +
+                '<p id="' + portfolio.id + '">' + portfolio.description + '</p>' +
             '</div>';
         
         //skapar en div per projekt
@@ -92,9 +92,7 @@ $(document).ready(function() {
 });
 
 //TESTING!!!!!!
-
-$('.portfolioMain').find(".subPortfolio").click(function (event) {
-    console.log("knapp fungerar");
+$(".portfolioMain").on("click", "#subPortfolioId", function(event){
     event.preventDefault();
     var id = (event.target.id);
 
@@ -115,19 +113,22 @@ $('.portfolioMain').find(".subPortfolio").click(function (event) {
 function getProject(projects, id) {
     $.each(projects, function (ind, project) {
             if (project.id == id)
+            console.log(project.id + " projectid");
+            console.log(id + " id");
             {
                 var projectSquare = $(
-                    '<div class="project-content" id="projectId' + ind + '">' + 
+                    '<div class="project-content" id="' + project.id + '">' + 
                         '<div class="project-content-left">' +
                             '<span class="fas fa-times" id="close-portfolio"></span>' +
-                            '<img class="project-image" src="' + projects.image + '" title="developer" alt="developer">' +                                
+                            '<img class="project-image" src="' + project.image + '" title="developer" alt="developer">' +                                
                         '</div>' +
                         '<div class="project-content-right">' + 
-                            '<h2> ' + projects.title + '</h2>' + '<hr/>' +
-                            '<p>' + projects.description +'</p>' + 
+                            '<h2> ' + project.title + '</h2>' + '<hr/>' +
+                            '<p>' + project.description +'</p>' + 
+                            '<p>' + project.date + '</p>' + 
                         '</div>' +
                             '<br/>' +
-                            '<p>' + projects.date + '</p>' +                            
+                                                       
                     '</div>'
                 );
             $('.projectdiv').html(projectSquare);  
@@ -135,20 +136,20 @@ function getProject(projects, id) {
     });
 };
 
-// $(".about-personal").on("click", "#close-person", function(event){
-//     event.preventDefault();
-//     $('.persondiv').html('');
-//     $(".person-content").hide();
-//     $(".persondiv").hide(); 
-//     $("body").css({"overflow": "scroll"});
-// });
+$(".about-project").on("click", "#close-portfolio", function(event){
+    event.preventDefault();
+    $('.projectdiv').html('');
+    $(".project-content").hide();
+    $(".projectdiv").hide(); 
+    $("body").css({"overflow": "scroll"});
+});
 
-// $(".about-personal").on("click", "#thePersondiv", function(event){
-//     if(event.target.id=="thePersondiv"){
-//         event.preventDefault();
-//         $('.persondiv').html('');
-//         $(".person-content").hide();
-//         $(".persondiv").hide();
-//         $("body").css({"overflow": "scroll"});
-//     }; 
-//});
+$(".about-project").on("click", "#theProjectdiv", function(event){
+    if(event.target.id=="theProjectdiv"){
+        event.preventDefault();
+        $('.projectdiv').html('');
+        $(".project-content").hide();
+        $(".projectdiv").hide(); 
+        $("body").css({"overflow": "scroll"});
+    }; 
+});
