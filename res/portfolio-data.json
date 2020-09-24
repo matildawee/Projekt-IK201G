@@ -6,7 +6,7 @@
           "date": "2020-01-01 - 2021-01-01",
           "description": "Det här är projekt 1",
           "image": "./img/projekt.jpg",
-          "image2": "./img/stortprojekt.jpg"
+          "slideshow": ["./img/projekt.jpg","./img/stortprojekt.jpg", "./img/bigproject.jpg"]
         },
         {
             "id": "p2",
