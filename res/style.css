@@ -22,38 +22,7 @@ html, body{
     display: inline-block;
     min-height: 55px;
     background: rgb(238, 238, 238);
-    /* justify-content: center; */
-}
-nav > ul{
-    list-style-type: none;
-    width: 100%;
-    padding: 0;
-    margin: 0 auto;
-    overflow: auto;
-    text-align: center;
-}
-nav > ul > li{
-    display: inline-block;
-}
-nav > ul > li > a{
-    display: inline-block;
-    padding: 0.8em;
-    /* text-align: center; */
-}
-nav > ul > li > a:hover{
-    cursor: pointer;
-    background: #333;
-    color: #fff
-}
-.activePage{
-    cursor: pointer;
-    background: #333;
-    color: #fff
-}
-nav{
-    display: none;
-    margin: 0 auto;
-    width: 100%;
+    justify-content: center;
 }
 .navBar-left{
     display: inline-block;
@@ -68,13 +37,12 @@ nav{
 }
 .navBar-center{
     width: 40%;
-    visibility: visible;
     display: inline-block;
     vertical-align: text-bottom;
     margin: 0.5em 0;
     text-align: center;
 }
-.navBar-center > h1{
+#navBar-pageTitle {
     margin: 0 auto;
     font-size: 2em;
     font-weight: bold;
@@ -88,8 +56,8 @@ nav{
 .navButton-toggle{
     height: 44px;
     width: 44px;
-    /* position: relative; */
-    /* display: block; */
+    position: relative;
+    display: block;
     margin: 0.5em 0.5em;
     float: right;
     padding: 3px 6px;
@@ -116,11 +84,42 @@ nav{
     animation-play-state: running;
     animation-name: openNavBar;
 }
-
 @keyframes openNavBar{
     0%  {opacity: 0%; }
   100%  {opacity: 100%; }
 }
+nav{
+    display: none;
+    margin: 0 auto;
+    width: 100%;
+}
+nav > ul{
+    list-style-type: none;
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    overflow: auto;
+    text-align: center;
+}
+nav > ul > li{
+    display: inline-block;
+}
+nav > ul > li > a{
+    display: inline-block;
+    padding: 0.8em;
+    text-align: center;
+}
+nav > ul > li > a:hover{
+    cursor: pointer;
+    background: #333;
+    color: #fff
+}
+.activePage{
+    cursor: pointer;
+    background: #333;
+    color: #fff
+}
+
 
 /*    ~~~~ NAVIGATION end ~~~>   */
 
@@ -643,6 +642,9 @@ div.subPortfolio {
     .navBar-left{
         width: 20%;
     }
+    #header-logo{
+        width: 200px;
+    }
     .navBar-center{
         display: none;
         visibility: hidden;
@@ -651,9 +653,6 @@ div.subPortfolio {
         display: none;
         visibility: hidden;
         width: 20%;
-    }
-    #header-logo{
-        width: 200px;
     }
     nav > ul{
         width: auto;
