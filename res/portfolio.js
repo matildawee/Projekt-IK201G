@@ -6,6 +6,8 @@ $(document).ready(function() {
 
     var showIndex = 0;
 
+    var images = [];
+
     
     $.getJSON(
         'res/portfolio-data.json',
@@ -91,7 +93,7 @@ $(document).ready(function() {
     });
 });
 
-//TESTING!!!!!!
+//About-project...
 $(".portfolioMain").on("click", ".subPortfolio", function(event){
     event.preventDefault();
     var id = (event.target.id);
@@ -117,11 +119,13 @@ function getProject(projects, id) {
             console.log(project.id + " projectid");
             console.log(id + " id");
 
+                
+                
                 var projectSquare = $(
                     '<div class="project-content" id="' + project.id + '">' + 
                         '<div class="project-content-left">' +
                             '<span class="fas fa-times" id="close-portfolio"></span>' +
-                            '<img class="project-image" src="' + project.image + '" title="developer" alt="developer">' +                                
+                            '<img class="project-image" id="slideshow" src="' + project.slideshow[0] + '" title="developer" alt="developer">' +                                
                         '</div>' +
                         '<div class="project-content-right">' + 
                             '<h2> ' + project.title + '</h2>' + 
@@ -132,11 +136,30 @@ function getProject(projects, id) {
                             '<br/>' +
                                                        
                     '</div>'
+                    
                 );
+
+            images = project.slideshow;
+            console.log (project.slideshow);
+            console.log (images);
+
             $('.projectdiv').html(projectSquare);  
             };
     });
 };
+
+setInterval(slideshow, 2000); 
+
+    var slideIndex = 0;
+
+function slideshow(){
+    
+    if (slideIndex == images.length){
+        slideIndex=0;
+    }    
+    document.getElementById('slideshow').src=images[slideIndex];
+    slideIndex++;
+}
 
 $(".about-project").on("click", "#close-portfolio", function(event){
     event.preventDefault();
