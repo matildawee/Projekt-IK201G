@@ -140,8 +140,6 @@ function getProject(projects, id) {
                 );
 
             images = project.slideshow;
-            console.log (project.slideshow);
-            console.log (images);
 
             $('.projectdiv').html(projectSquare);  
             };
@@ -150,7 +148,7 @@ function getProject(projects, id) {
 
 setInterval(slideshow, 2000); 
 
-    var slideIndex = 0;
+    var slideIndex = 1;
 
 function slideshow(){
     
