@@ -665,9 +665,12 @@ div.subPortfolio {
     margin-top: 1.2em; 
 }
 
-.contactError{
-    background: red; 
-    color:white;
+.contactError{ 
+    color:rgb(243, 127, 127);
+    float:right;
+}
+.contactOk{
+    color:rgb(0, 221, 7);
     float:right;
 }
 
