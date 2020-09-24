@@ -297,7 +297,6 @@ div.subPortfolio {
     background: rgba(255, 255, 255, 0.900);
     text-align: center; 
     border-radius: 2%;
-
 }
 .subPortfolio:hover{
     transform: scale(1.05); 
@@ -308,6 +307,21 @@ div.subPortfolio {
     height: auto;
     margin: 1.5em 1.5em 0 1.5em;
     border-radius: 2%;
+}
+.fa-play, .fa-pause{ 
+    font-size: 20px;
+    color: red;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -150%);
+    /* -ms-transform: translate(-50%, -50%); */
+    border: none;
+    background-color: grey;
+    padding: 1%;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
 }
 .fa-arrow-left, .fa-arrow-right{
     color: rgb(255, 255, 255);
@@ -327,8 +341,6 @@ div.subPortfolio {
     left: 0;
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.432);
-    /* justify-content:center;
-    place-items: center; */
     display: none;
 }
 .project-content{

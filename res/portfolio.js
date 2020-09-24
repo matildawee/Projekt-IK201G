@@ -1,3 +1,5 @@
+
+
 $(document).ready(function() {
         
     var divList = [];
@@ -6,7 +8,7 @@ $(document).ready(function() {
 
     var showIndex = 0;
 
-    
+  
     
     $.getJSON(
         'res/portfolio-data.json',
@@ -49,13 +51,10 @@ $(document).ready(function() {
         //tömmer diven ifall inga projekt finns
     };
 
-    console.log(index);
-    console.log((index + 1) % 4);
-
-    if ((index + 1) % 4 != 0){
+    if ((index) % 4 != 0){
         projectGroup += endDiv;
         divList[divIndex] = projectGroup;    
-        console.log('ja här hamnar vi med');
+        console.log('ja här hamnar vi');
         //lägger till slut-div-tagg       
     };
     
@@ -99,6 +98,11 @@ $(document).ready(function() {
 });
 
 //About-project...
+
+var slideshowInterval = clearInterval(slideshowInterval);
+
+var images = [];
+
 $(".portfolioMain").on("click", ".subPortfolio", function(event){
     event.preventDefault();
     var id = (event.target.id);
@@ -125,7 +129,11 @@ function getProject(projects, id) {
                     '<div class="project-content" id="' + project.id + '">' + 
                         '<div class="project-content-left">' +
                             '<span class="fas fa-times" id="close-portfolio"></span>' +
-                            '<img class="slideshow-image" id="slideshow" src="' + project.slideshow[0] + '" title="developer" alt="developer">' +                                
+                            
+                            '<img class="slideshow-image" id="slideshow" src="' + project.slideshow[0] + '" title="developer" alt="developer">' + 
+                            '<span class="fas fa-pause" id="slideShowPaus"></span>' +
+                            '<span class="fas fa-play" id="slideShowPlay"></span>' +             
+                            '</img>' +                  
                         '</div>' +
                         '<div class="project-content-right">' + 
                             '<h2> ' + project.title + '</h2>' + 
@@ -144,40 +152,28 @@ function getProject(projects, id) {
 
             
 
-            setInterval(slideshow, 2000); 
-
-            var slideIndex = 1;
-        
-            function slideshow(){
-                
-                if (slideIndex == images.length){
-                    slideIndex=0;
-                }    
-                document.getElementById('slideshow').src=images[slideIndex];
-                slideIndex++;
-            }
+            slideshowInterval = setInterval(slideshow, 2000); 
             };
     });
 };
 
-// setInterval(slideshow, 2000); 
+var slideIndex = 1;
 
-//     var slideIndex = 1;
-
-// function slideshow(){
+function slideshow(){
     
-//     if (slideIndex == images.length){
-//         slideIndex=0;
-//     }    
-//     document.getElementById('slideshow').src=images[slideIndex];
-//     slideIndex++;
-// }
+    if (slideIndex == images.length){
+        slideIndex=0;
+    }    
+    document.getElementById('slideshow').src=images[slideIndex];
+    slideIndex++;
+}
 
 $(".about-project").on("click", "#close-portfolio", function(event){
     event.preventDefault();
     $('.projectdiv').html('');
     $(".project-content").hide();
     $(".projectdiv").hide(); 
+    clearInterval(slideshowInterval); 
     $("body").css({"overflow": "auto"});
 });
 
@@ -187,6 +183,13 @@ $(".about-project").on("click", "#theProjectdiv", function(event){
         $('.projectdiv').html('');
         $(".project-content").hide();
         $(".projectdiv").hide(); 
+        clearInterval(slideshowInterval);  
         $("body").css({"overflow": "auto"});
     }; 
 });
+
+document.getElementById("slideshow").addEventListener("mouseover", mouseOver);
+
+function mouseOver() {
+  document.getElementById("demo").style.color = "red";
+}
