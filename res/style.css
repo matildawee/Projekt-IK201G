@@ -266,21 +266,29 @@ div.subPortfolio {
     margin: 1.5em 1.5em 0 1.5em;
     border-radius: 2%;
 }
+
+.btn-img:hover img {
+    opacity: 0.8;
+}
+.project-content-left{
+    position:relative;
+    width: 100%;
+}
 .fa-play, .fa-pause{ 
     visibility: hidden;
     font-size: 40px;
-    color: rgba(189, 22, 22, 0.486);
-    /* position: absolute; */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -150%);
-    /* -ms-transform: translate(-50%, -50%); */
-    border: none;
-    /* padding: 1%; */
+    color: rgba(238, 230, 230, 0.800);
+    position: absolute;
+    top: 53%; /* Får ej knapparna i mitten!!!! */
+    left: 48%;
+    margin: 0;
+    padding:0;
     cursor: pointer;
     border-radius: 5px;
-    text-align: center;    
 }
+.fa-play:hover, .fa-pause:hover{
+    color: rgba(255, 255, 255, 0.700);
+} 
 .fa-arrow-left, .fa-arrow-right{
     color: rgb(255, 255, 255);
     transition: all 0.15s;
@@ -290,6 +298,10 @@ div.subPortfolio {
 }
 .fa-arrow-left:hover, .fa-arrow-right:hover{
     color:#cececeaf;
+}
+.slideshow-image:hover{
+    background-color: black;
+    opacity: 0.8;
 }
 .projectdiv {
     width: 100%;

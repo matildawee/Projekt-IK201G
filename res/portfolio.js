@@ -130,10 +130,11 @@ function getProject(projects, id) {
                     '<div class="project-content" id="' + project.id + '">' + 
                         '<div class="project-content-left">' +
                             '<span class="fas fa-times" id="close-portfolio"></span>' +                           
-                            '<img class="slideshow-image" id="slideshow" src="' + project.slideshow[0] + '" title="developer" alt="developer">' + 
-                            '<span class="fas fa-pause" id="slideShowPause"></span>' + 
-                            '<span class="fas fa-play" id="slideShowPlay"></span>' +
-                            '</img>' +                  
+                            //'<div class="slideshowDiv">' +
+                                '<img class="slideshow-image" id="slideshow" src="' + project.slideshow[0] + '" title="developer" alt="developer">' + 
+                                '<span class="fas fa-pause" id="slideShowPause"></span>' + 
+                                '<span class="fas fa-play" id="slideShowPlay"></span>' + 
+                            //'</div>' +                
                         '</div>' +
                         '<div class="project-content-right">' + 
                             '<h2> ' + project.title + '</h2>' + 
@@ -198,6 +199,9 @@ $(".about-project").on("mouseover", "#slideshow", function(event){
     else {
         $("#slideShowPlay").css({"visibility": "visible"});
     }
+
+    $(".slideshow-image").css({"background-color": "black"});
+    $(".slideshow-image").css({"opacity": "0.8"});
     
 });
 $(".about-project").on("mouseover", "#slideShowPlay", function(event){
@@ -209,6 +213,9 @@ $(".about-project").on("mouseover", "#slideShowPlay", function(event){
     else {
         $("#slideShowPlay").css({"visibility": "visible"});
     }
+
+    $(".slideshow-image").css({"background-color": "black"});
+    $(".slideshow-image").css({"opacity": "0.8"});
     
 });
 $(".about-project").on("mouseover", "#slideShowPause", function(event){
@@ -220,20 +227,32 @@ $(".about-project").on("mouseover", "#slideShowPause", function(event){
     else {
         $("#slideShowPlay").css({"visibility": "visible"});
     }
+
+    $(".slideshow-image").css({"background-color": none});
+    $(".slideshow-image").css({"opacity": "1"});
     
 });
 $(".about-project").on("mouseleave", "#slideshow", function(event){
     //console.log("hovra");
     $("#slideShowPlay").css({"visibility": "hidden"});
     $("#slideShowPause").css({"visibility": "hidden"});
+
+    $(".slideshow-image").css({"background-color": none});
+    $(".slideshow-image").css({"opacity": "1"});
     
 });
 
-$(".about-project").on("click", "slideShowPause", function(event){
+$(".about-project").on("click", "#slideShowPause", function(event){
     clearInterval(slideshowInterval); 
-        console.log("tryckte paus va");
-        playflag = false; 
-        $("#slideShowPause").css({"visibility": "hidden"});
-        $("#slideShowPlay").css({"visibility": "visible"});
+    console.log("tryckte paus va");
+    playflag = false; 
+    $("#slideShowPause").css({"visibility": "hidden"});
+    $("#slideShowPlay").css({"visibility": "visible"});
+});
 
+$(".about-project").on("click", "#slideShowPlay", function(event){
+    slideshowInterval = setInterval(slideshow, 2000); 
+    playflag = true;
+    $("#slideShowPause").css({"visibility": "visible"});
+    $("#slideShowPlay").css({"visibility": "hidden"});
 });
