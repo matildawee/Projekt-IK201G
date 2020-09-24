@@ -309,19 +309,20 @@ div.subPortfolio {
     border-radius: 2%;
 }
 .fa-play, .fa-pause{ 
+    visibility: hidden;
     font-size: 20px;
     color: red;
-    position: absolute;
+    /* position: absolute; */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -150%);
-    /* -ms-transform: translate(-50%, -50%); */
+    -ms-transform: translate(-50%, -50%);
     border: none;
     background-color: grey;
     padding: 1%;
     cursor: pointer;
     border-radius: 5px;
-    text-align: center;
+    text-align: center;    
 }
 .fa-arrow-left, .fa-arrow-right{
     color: rgb(255, 255, 255);

@@ -54,7 +54,6 @@ $(document).ready(function() {
     if ((index) % 4 != 0){
         projectGroup += endDiv;
         divList[divIndex] = projectGroup;    
-        console.log('ja här hamnar vi');
         //lägger till slut-div-tagg       
     };
     
@@ -128,8 +127,7 @@ function getProject(projects, id) {
                 var projectSquare = $(
                     '<div class="project-content" id="' + project.id + '">' + 
                         '<div class="project-content-left">' +
-                            '<span class="fas fa-times" id="close-portfolio"></span>' +
-                            
+                            '<span class="fas fa-times" id="close-portfolio"></span>' +                           
                             '<img class="slideshow-image" id="slideshow" src="' + project.slideshow[0] + '" title="developer" alt="developer">' + 
                             '<span class="fas fa-pause" id="slideShowPaus"></span>' +
                             '<span class="fas fa-play" id="slideShowPlay"></span>' +             
@@ -187,9 +185,20 @@ $(".about-project").on("click", "#theProjectdiv", function(event){
         $("body").css({"overflow": "auto"});
     }; 
 });
+$(".about-project").on("mouseover", "#slideshow", function(event){
+    //console.log("hovra");
+    $("#slideShowPlay").css({"visibility": "visible"});
+    
+});
+$(".about-project").on("mouseleave", "#slideshow", function(event){
+    //console.log("hovra");
+    $("#slideShowPlay").css({"visibility": "hidden"});
+    
+});
 
-document.getElementById("slideshow").addEventListener("mouseover", mouseOver);
+// document.getElementById("slideshow").addEventListener("mouseover", mouseOver);
 
-function mouseOver() {
-  document.getElementById("demo").style.color = "red";
-}
+// function mouseOver() {
+//   //document.getElementById("").style.color = "red";
+//   $(".fas-fa-play").css({"color": "blue"});
+//}
