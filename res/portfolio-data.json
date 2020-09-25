@@ -6,7 +6,7 @@
           "date": "2020-01-01 - 2021-01-01",
           "description": "Det här är projekt 1",
           "image": "./img/projekt.jpg",
-          "slideshow": ["./img/projekt.jpg","./img/stortprojekt.jpg", "./img/hugeproject.jpg"]
+          "slideshow": ["./img/projekt.jpg","./img/stortprojekt.jpg", "./img/forskare.jpg", "./img/satisfiedcustomers.jpg" ]
         },
         {
             "id": "p2",
@@ -14,7 +14,7 @@
             "date": "2020-02-02 - 2021-02-02",
             "description": "Det här är projekt 2 det gick väldigt bra bla bla bla bla lauren ipsson  lauren ipsson lauren ipsson lauren ihej hej hej på dig dig lauren ipsson lauren ipsson lauren ipsson lauren ipsson lauren ipsson lauren ipsson",
             "image": "./img/stortprojekt.jpg" ,
-            "slideshow": ["./img/projekt.jpg","./img/spaceproject.jpg", "./img/progress.jpg", "./img/succe.jpg"]
+            "slideshow": ["./img/projekt.jpg", "./img/progress.jpg", "./img/spaceproject.jpg", "./img/succe.jpg"]
         },
         {
             "id": "p3",
@@ -22,15 +22,15 @@
             "date": "2020-03-03 - 2021-03-03",
             "description": "Det här är projekt 3 vi gjorde massa grejer vi gjorde massa grejer",
             "image": "./img/hugeproject.jpg",
-            "slideshow": ["./img/people.jpg","./img/stortprojekt.jpg", "./img/celebrate.jpg"]
+            "slideshow": ["./img/people.jpg", "./img/stortprojekt.jpg", "./img/redovisning.jpg", "./img/celebrate.jpg"]
         },
         {
             "id": "p4",
             "title": "Projekt 4",
             "date": "2020-04-04 - 2021-04-04",
-            "description": "Det här är projekt 4",
+            "description": "Det här är projekt 4, vi skapade nån grej ingen big deal vi skapade nån grej ingen big deal vi skapade nån grej ingen big deal vi skapade nån grej ingen big deal åhh nej här kommer overflow som inte doldes åhh nej här blev det overflow som inte doldes ",
             "image": "./img/smallproject.png",
-            "slideshow": ["./img/projekt.jpg","./img/stortprojekt.jpg", "./img/hugeproject.jpg"]
+            "slideshow": ["./img/projekt.jpg", "./img/stortprojekt.jpg", "./img/vikomframtilldetta.jpg"]
         },
         {
             "id": "p5",
@@ -38,7 +38,7 @@
             "date": "2020-05-05 - 2021-05-05",
             "description": "Vi skapade nån sajt och det var kuuuuuul",
             "image": "./img/facebookproject.jpg",
-            "slideshow": ["./img/projekt.jpg","./img/stortprojekt.jpg", "./img/hugeproject.jpg"]
+            "slideshow": ["./img/projekt.jpg","./img/maskin.jpg", "./img/konferens.jpg"]
         },
         {
             "id": "p6",

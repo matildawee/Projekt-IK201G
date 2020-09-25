@@ -693,6 +693,7 @@ div.subPortfolio {
         overflow:hidden;
         white-space: wrap;
         text-overflow: ellipsis;
+        /* word-wrap: hidden; */
         margin: 1.5em 1.5em 1.5em 1.5em;
     }
     .project-content{
