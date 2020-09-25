@@ -1,15 +1,4 @@
-    /* <~~~~~ knapparna på startsidan ~~~~~~ */    
-    $('#startUs').click(function (event) {
-        event.preventDefault();
-        loadPage('#about','./pages/about.html','About us');
 
-        // laddar in utvecklarna
-        $.getJSON(
-            'res/about-data.json',
-            function (data) {
-                displayAbout(data.person);
-            });
-    });
     $(document).ready(function(){
         $("#welcome").animate({opacity: '1'}, 1500);
     });
@@ -20,6 +9,19 @@
         $('.menuBtn').removeClass('activePage');
         $(clickedId).addClass('activePage');
     }
+
+        /* <~~~~~ knapparna på startsidan ~~~~~~ */    
+        $('#startUs').click(function (event) {
+            event.preventDefault();
+            loadPage('#about','./pages/about.html','About us');
+    
+            // laddar in utvecklarna
+            $.getJSON(
+                'res/about-data.json',
+                function (data) {
+                    displayAbout(data.person);
+                });
+        });
 
     $('#startProjects').click(function (event) {
         event.preventDefault();
@@ -153,21 +155,21 @@
     
     /* <~~~~~ hämtar oss json ~~~~~~ */ 
 
-    // function displayAbout(person) {
-    //     $.each(person, function (ind, employee) {                        
-    //         var personSquare = $(
-    //             '<div class="about-developer" id="personId' + ind + '">' + 
-    //             '<img id="personId' + ind + '" src="' + employee.portrait + '" title="developer" alt="developer">' +
-    //                 '<h1 id="personId' + ind + '">' + employee.firstname + '</h1>' +
-    //                 '<p id="personId' + ind + '">' + employee.title + '</p>'+
-    //             '</div>'
-    //         );        
+    function displayAbout(person) {
+        $.each(person, function (ind, employee) {                        
+            var personSquare = $(
+                '<div class="about-developer" id="personId' + ind + '">' + 
+                '<img id="personId' + ind + '" src="' + employee.portrait + '" title="developer" alt="developer">' +
+                    '<h1 id="personId' + ind + '">' + employee.firstname + '</h1>' +
+                    '<p id="personId' + ind + '">' + employee.title + '</p>'+
+                '</div>'
+            );        
 
-    //     $('#about-submain').append(personSquare);
-    //     });
+        $('#about-submain').append(personSquare);
+        });
 
-    //     //$("#personDiv").hide();
-    // };
+        //$("#personDiv").hide();
+    };
    
 
     // $('.about-main').find("div").click(function (event) {

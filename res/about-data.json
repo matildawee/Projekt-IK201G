@@ -10,12 +10,12 @@
           "telephone": "+46701740605",
           "portrait": "./img/portrait-woman.jpg",
           "portraitBig": "./img/woman.jpg",
-          "java": "70%",
-          "html": "50%",
-          "javascript": "20%",
-          "css": "50%",
-          "sql": "10%",
-          "photoshop": "60%"
+          "java": "80%",
+          "html": "60%",
+          "javascript": "50%",
+          "css": "60%",
+          "sql": "70%",
+          "photoshop": "0%"
         },
         {
             "id": "personId1",

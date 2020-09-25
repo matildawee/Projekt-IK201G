@@ -1,5 +1,3 @@
-
-
 $(document).ready(function() {
         
     var divList = [];
@@ -105,14 +103,13 @@ var images = [];
 var playflag = false;
 
 $(".portfolioMain").on("click", ".subPortfolio", function(event){
-    console.log("Är jag null? " + event);
     event.preventDefault();
     var id = (event.target.id);
 
     $(".projectdiv").show();
     $(".project-content").show();
 
-    $("body").css({"overflow": "hidden"});
+    $("body").css({"overflow-y": "auto"});
     
     // Loads persons from about-data.json
     $.getJSON(
@@ -129,7 +126,7 @@ function getProject(projects, id) {
                 
                 var projectSquare = $(
                     '<div class="project-content" id="' + project.id + '">' + 
-                        '<div class="project-content-left">' +
+                        '<div class="project-content-top">' +
                             '<span class="fas fa-times" id="close-portfolio"></span>' +                           
                             //'<div class="slideshowDiv">' +
                                 '<img class="slideshow-image" id="slideshow" src="' + project.slideshow[0] + '" title="developer" alt="developer">' + 
@@ -137,7 +134,7 @@ function getProject(projects, id) {
                                 '<span class="fas fa-play" id="slideShowPlay"></span>' + 
                             //'</div>' +                
                         '</div>' +
-                        '<div class="project-content-right">' + 
+                        '<div class="project-content-bottom">' + 
                             '<h2> ' + project.title + '</h2>' + 
                             '<p>' + project.date + '</p>' +  '<hr/>' +
                             '<p>' + project.description +'</p>' + 
@@ -172,7 +169,6 @@ function slideshow(){
 }
 
 $(".about-project").on("click", "#close-portfolio", function(event){
-    console.log("Är jag null2? " + event);
     event.preventDefault();
     $('.projectdiv').html('');
     $(".project-content").hide();
@@ -195,7 +191,6 @@ $(".about-project").on("click", "#theProjectdiv", function(event){
 });
 
 $(".about-project").on("mouseover", "#slideshow", function(event){
-    console.log("hovra på");
     if (playflag == true){
         $("#slideShowPause").css({"visibility": "visible"});
     }
@@ -207,7 +202,6 @@ $(".about-project").on("mouseover", "#slideshow", function(event){
     $(".slideshow-image").css({"opacity": "0.8"});    
 });
 $(".about-project").on("mouseover", "#slideShowPlay", function(event){
-    //console.log("hovra");
     if (playflag == true){
         $("#slideShowPause").css({"visibility": "visible"});
     }
@@ -220,7 +214,6 @@ $(".about-project").on("mouseover", "#slideShowPlay", function(event){
     
 });
 $(".about-project").on("mouseover", "#slideShowPause", function(event){
-    //console.log("hovra");
     if (playflag == true){
         $("#slideShowPause").css({"visibility": "visible"});
     }
@@ -233,7 +226,6 @@ $(".about-project").on("mouseover", "#slideShowPause", function(event){
     
 });
 $(".about-project").on("mouseleave", "#slideshow", function(event){
-    console.log("hovra av");
     $("#slideShowPlay").css({"visibility": "hidden"});
     $("#slideShowPause").css({"visibility": "hidden"});
 
@@ -243,8 +235,7 @@ $(".about-project").on("mouseleave", "#slideshow", function(event){
 });
 
 $(".about-project").on("click", "#slideShowPause", function(event){
-    clearInterval(slideshowInterval); 
-    console.log("tryckte paus va");
+    clearInterval(slideshowInterval);
     playflag = false; 
     $("#slideShowPause").css({"visibility": "hidden"});
     $("#slideShowPlay").css({"visibility": "visible"});

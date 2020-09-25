@@ -319,20 +319,19 @@ div.subPortfolio {
     text-align: center;
     display: flex;
     flex-wrap: wrap;
-    overflow-y: auto;
+    overflow-y: auto; 
 }
-
 .slideshow-image{
     width: 80%;
-    margin: 6% 5% 0;
-    max-height: 350px;
-    min-height: 350px; 
-    min-width: 540px;
+    margin: 10% 5% 0;
+    max-height: 100%;
+    min-height: 50%;
     object-fit: cover;
 }
-.project-content-left{
+.project-content-top{
     position:relative;
     width: 100%;
+    height: auto;
 }
 .fa-play, .fa-pause{ 
     visibility: hidden;
@@ -341,27 +340,17 @@ div.subPortfolio {
     position: absolute;
     top: 50%; /* Får ej knapparna i mitten!!!! */
     left: 50%;
+    transform: translate(-50%, -50%);
+    /* -ms-transform: translate(-50%, -50%); */
     margin: 0;
-    padding:0;
+    padding: 0;
     cursor: pointer;
     border-radius: 5px;
 }
 .fa-play:hover, .fa-pause:hover{
     color: rgba(255, 255, 255, 0.700);
 } 
-.project-content-right > h2, .project-content-right > h3, .project-content-right > p{
-    width: 100%;
-    padding: 0;
-    margin: 0;
-}
-.project-content-right > h2{
-    text-align: center;
-}
-.project-content-right > hr{
-    width: 60%;
-    color: rgb(0, 0, 0);
-}
-.project-content-right{
+.project-content-bottom{
     width: 80%;
     height: auto;
     margin: 0 10%;
@@ -371,6 +360,19 @@ div.subPortfolio {
     text-align: center;
     justify-content: center;
 }
+.project-content-bottom > h2, .project-content-bottom > h3, .project-content-bottom > p{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+.project-content-bottom > h2{
+    text-align: center;
+}
+.project-content-bottom > hr{
+    width: 60%;
+    color: rgb(0, 0, 0);
+}
+
 #close-portfolio{
     position: absolute;
     top: 0;
@@ -770,7 +772,6 @@ div.subPortfolio {
         text-align: left;
         float: left;
         flex-wrap: nowrap;
-        overflow-y: auto;
     }
     .person-portrait{
         width: 90%;
@@ -783,6 +784,9 @@ div.subPortfolio {
     .person-content-right{
         margin: 2%;
         padding: 0;
+    }
+    .person-content-right > p {
+        margin:2%
     }
     .skills{
         width: 100%;

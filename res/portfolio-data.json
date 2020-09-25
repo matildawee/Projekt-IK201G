@@ -46,15 +46,15 @@
             "date": "2020-06-06 - 2021-06-06",
             "description": "Det här är projekt 6",
             "image": "./img/projects.jpg",
-            "slideshow": ["./img/projekt.jpg","./img/stortprojekt.jpg", "./img/hugeproject.jpg"]
+            "slideshow": ["./img/projekt.jpg","./img/konferens.jpg", "./img/hugeproject.jpg"]
         },
         {
             "id": "p7",
             "title": "Projekt 7",
             "date": "2020-05-77 - 2021-05-77",
             "description": "Det här är projekt 7",
-            "image": "./img/projekt.jpg",
-            "slideshow": ["./img/projekt.jpg","./img/stortprojekt.jpg", "./img/hugeproject.jpg"]
+            "image": "./img/maskin.jpg",
+            "slideshow": ["./img/maskin.jpg","./img/stortprojekt.jpg", "./img/hugeproject.jpg"]
         },
         {
             "id": "p8",
@@ -62,7 +62,7 @@
             "date": "2020-08-08 - 2021-08 08",
             "description": "Det här är projekt 8",
             "image": "./img/projekt.jpg",
-            "slideshow": ["./img/projekt.jpg","./img/stortprojekt.jpg", "./img/hugeproject.jpg"]
+            "slideshow": ["./img/stortprojekt.jpg", "./img/hugeproject.jpg"]
         },
         {
             "id": "p9",
@@ -70,7 +70,7 @@
             "date": "2020-09-09 - 2021-09-09",
             "description": "Det här är projekt 9",
             "image": "./img/projekt.jpg",
-            "slideshow": ["./img/projekt.jpg","./img/stortprojekt.jpg", "./img/hugeproject.jpg"]
+            "slideshow": ["./img/projekt.jpg","./img/stortprojekt.jpg", "./img/vikomframtilldetta.jpg"]
         },
         {
             "id": "p10",
@@ -78,15 +78,15 @@
             "date": "2020-09-09 - 2021-09-09",
             "description": "Det här är projekt 10",
             "image": "./img/projekt.jpg",
-            "slideshow": ["./img/projekt.jpg","./img/stortprojekt.jpg", "./img/hugeproject.jpg"]
+            "slideshow": ["./img/projekt.jpg","./img/stortprojekt.jpg"]
         },
         {
             "id": "p11",
             "title": "Projekt 11",
             "date": "2020-09-09 - 2021-09-09",
             "description": "Det här är projekt 11",
-            "image": "./img/projekt.jpg",
-            "slideshow": ["./img/projekt.jpg","./img/stortprojekt.jpg", "./img/hugeproject.jpg"]
+            "image": "./img/stortprojekt.jpg",
+            "slideshow": ["./img/stortprojekt.jpg", "./img/hugeproject.jpg"]
         }
         
     ]
