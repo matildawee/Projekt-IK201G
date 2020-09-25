@@ -204,8 +204,7 @@ $(".about-project").on("mouseover", "#slideshow", function(event){
     }
 
     $(".slideshow-image").css({backgroundColor: "black"});
-    $(".slideshow-image").css({"opacity": "0.5"});
-    
+    $(".slideshow-image").css({"opacity": "0.8"});    
 });
 $(".about-project").on("mouseover", "#slideShowPlay", function(event){
     //console.log("hovra");
@@ -229,7 +228,7 @@ $(".about-project").on("mouseover", "#slideShowPause", function(event){
         $("#slideShowPlay").css({"visibility": "visible"});
     }
 
-    $(".slideshow-image").css({"background-color": "black)"});
+    $(".slideshow-image").css({"background-color": "black"});
     $(".slideshow-image").css({"opacity": "0.8"});
     
 });
