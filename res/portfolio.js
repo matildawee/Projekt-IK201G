@@ -193,8 +193,9 @@ $(".about-project").on("click", "#theProjectdiv", function(event){
         $("body").css({"overflow": "auto"});
     }; 
 });
+
 $(".about-project").on("mouseover", "#slideshow", function(event){
-    //console.log("hovra");
+    console.log("hovra på");
     if (playflag == true){
         $("#slideShowPause").css({"visibility": "visible"});
     }
@@ -202,13 +203,12 @@ $(".about-project").on("mouseover", "#slideshow", function(event){
         $("#slideShowPlay").css({"visibility": "visible"});
     }
 
-    $(".slideshow-image").css({"background-color": "black"});
-    $(".slideshow-image").css({"opacity": "0.8"});
+    $(".slideshow-image").css({backgroundColor: "black"});
+    $(".slideshow-image").css({"opacity": "0.5"});
     
 });
 $(".about-project").on("mouseover", "#slideShowPlay", function(event){
     //console.log("hovra");
-    //$("#slideShowPlay").css({"visibility": "visible"});
     if (playflag == true){
         $("#slideShowPause").css({"visibility": "visible"});
     }
@@ -222,7 +222,6 @@ $(".about-project").on("mouseover", "#slideShowPlay", function(event){
 });
 $(".about-project").on("mouseover", "#slideShowPause", function(event){
     //console.log("hovra");
-    //$("#slideShowPlay").css({"visibility": "visible"});
     if (playflag == true){
         $("#slideShowPause").css({"visibility": "visible"});
     }
@@ -230,16 +229,16 @@ $(".about-project").on("mouseover", "#slideShowPause", function(event){
         $("#slideShowPlay").css({"visibility": "visible"});
     }
 
-    $(".slideshow-image").css({"background-color": none});
-    $(".slideshow-image").css({"opacity": "1"});
+    $(".slideshow-image").css({"background-color": "black)"});
+    $(".slideshow-image").css({"opacity": "0.8"});
     
 });
 $(".about-project").on("mouseleave", "#slideshow", function(event){
-    //console.log("hovra");
+    console.log("hovra av");
     $("#slideShowPlay").css({"visibility": "hidden"});
     $("#slideShowPause").css({"visibility": "hidden"});
 
-    $(".slideshow-image").css({"background-color": none});
+    $(".slideshow-image").css({"background-color": "rgba(0, 0, 0, 0)"});
     $(".slideshow-image").css({"opacity": "1"});
     
 });
