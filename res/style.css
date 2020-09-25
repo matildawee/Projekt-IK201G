@@ -323,7 +323,7 @@ div.subPortfolio {
 }
 .slideshow-image{
     width: 80%;
-    margin: 10% 5% 0;
+    margin: 10% 1% 0;
     max-height: 100%;
     min-height: 50%;
     object-fit: cover;
@@ -351,25 +351,24 @@ div.subPortfolio {
     color: rgba(255, 255, 255, 0.700);
 } 
 .project-content-bottom{
-    width: 80%;
+    width: 100%;
     height: auto;
-    margin: 0 10%;
-    padding: 1%;
-    right: 0px;
-    top: 0px;
+    margin: 0;
+    padding: 0;
     text-align: center;
     justify-content: center;
 }
 .project-content-bottom > h2, .project-content-bottom > h3, .project-content-bottom > p{
-    width: 100%;
+    width: 60%;
     padding: 0;
-    margin: 0;
+    margin: 0 20%;
 }
 .project-content-bottom > h2{
     text-align: center;
 }
 .project-content-bottom > hr{
     width: 60%;
+    margin: 1% 20%;
     color: rgb(0, 0, 0);
 }
 
