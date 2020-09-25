@@ -1,5 +1,15 @@
     /* <~~~~~ knapparna på startsidan ~~~~~~ */    
+    $('#startUs').click(function (event) {
+        event.preventDefault();
+        loadPage('#about','./pages/about.html','About us');
 
+        // laddar in utvecklarna
+        $.getJSON(
+            'res/about-data.json',
+            function (data) {
+                displayAbout(data.person);
+            });
+    });
     $(document).ready(function(){
         $("#welcome").animate({opacity: '1'}, 1500);
     });
@@ -24,17 +34,7 @@
         // );
     });
 
-    $('#startUs').click(function (event) {
-        event.preventDefault();
-        loadPage('#about','./pages/about.html','About us');
 
-        // laddar in utvecklarna
-        $.getJSON(
-            'res/about-data.json',
-            function (data) {
-                displayAbout(data.person);
-            });
-    });
 
     /* ~~~~~~ knapparna på startsidan ~~~~~~> */  
 
