@@ -99,12 +99,15 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
 
     
     /*    <~~~ Portfolio-Page start ~~~~   */
+
+    //Deklarerar variabler som används i funktioner för portfoliosidan
     var divList = [];
     var divIndex = 0;
     var index = 0;
     var playflag = false;
     var showIndex = 0;
 
+    // Laddar in project från portfolio-data.json
     $.getJSON(
         'res/portfolio-data.json',
         function (data) {
@@ -112,19 +115,25 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         }
     );
 
-    // Creates one div for each project in portfolio.js
+    //Här skapas divar som i sig innehåller upp till 4 divar, en per projekt. Detta lagras i en array
+    
     function displayPortfolio(projects) { 
 
     var startDiv = '<div id="portfolioGroup">';
     var endDiv = '</div>';
-    var projectGroup = startDiv;
 
+    //startar den yttre diven med startdiv-taggen
+    var projectGroup = startDiv;
+    
+    //loopar igenom projekten och lägger varje projekt i en inre div
     $.each(projects, function (i, portfolio) {
 
         if (portfolio.description.length > 170) {
             portfolio.description = portfolio.description.substring(0, 170) + "...";
           };
-                
+           
+          
+        //skapar div för varje projekt
         var aProject = 
             '<div class="subPortfolio" id="' + portfolio.id + '">' + 
             '<img class="project-img" id="' + portfolio.id + '"src="' + portfolio.image + '" title="Project" alt="Project">' +
@@ -132,36 +141,43 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
                 '<p id="' + portfolio.id + '">' + portfolio.description + '</p>' +
             '</div>';
 
+        //adderar varje enskilt projekt-div till en variabel som innehåller alla dessa
         projectGroup += aProject;
 
+        //för var fjärde div så adderas en slutdiv-tag för de fyra senast skapade projekt-divarna
+        //sedan läggs de i en array. Exempel på array-rad med två projekt: <div><div>*ett projekt*</div><div>*ett till projekt*</div></div>
+        //sedan påbörjas en ny, tom yttre div
         if (i > 0 && (i + 1) % 4 == 0){
             projectGroup += endDiv;
             divList[divIndex] = projectGroup;
             divIndex++;
             projectGroup = startDiv;    
-            //för var fjärde div så skapas en slut-tag, sen lagras 4 divar i en yttre div
+            
         };       
         index++;     
     });
 
+    //Tömmer arrayen om inga projekt finns
     if (index == 0){
-        divList = '';
-        //tömmer diven ifall inga projekt finns
+        divList = '';      
     };
 
+    //Lägger till slut-div-tagg (detta sker ifall each-loopen har brutit på ett tal som inte är delbart med 4, isåfall har ingen sluttag skapats i loopen)
     if ((index) % 4 != 0){
         projectGroup += endDiv;
-        divList[divIndex] = projectGroup;    
-        //lägger till slut-div-tagg       
+        divList[divIndex] = projectGroup;          
     };
 
+    //Raderar en sista tom div som skapas när antalet projekt är delbart med 4
     if (divList[divList.length-1] == '<div id="portfolioGroup"></div>'){
         divList.splice(divList.length-1,1); 
-        //raderar en sista tom div som skapas när antalet projekt är delbart med 4
     }
+    
+    //lägger in den första div-gruppen på sajten
     $('#portfolio-box').html(divList[0]);
     };
 
+    //Visar nästa div-grupp när knappen klickas
     $('#arrowRight').click(function () {
         showIndex++;
 
@@ -171,6 +187,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         $('#portfolio-box').html(divList[showIndex]);
     });
 
+    //Visar föregående div-grupp när knappen klickas
     $('#arrowLeft').click(function () {
         
         showIndex--;
@@ -182,6 +199,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         $('#portfolio-box').html(divList[showIndex]);
     });
 
+    //Här är funktionen för att trycka på de olika projekten för att få upp mer info
     $(".portfolioMain").on("click", ".subPortfolio", function(event){
         event.preventDefault();
         var id = (event.target.id);
@@ -200,8 +218,10 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         );
     });
     
+    //Skapar en div för det valda projektet med data från portfolio-data.json
     function getProject(projects, id) {
         $.each(projects, function (ind, project) {
+            //loopas igenom, när det valda id:t hittas i filen så skapas en ruta med info
                 if (project.id == id) {              
                     
                     var projectSquare = $(
@@ -218,19 +238,16 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
                                 '<h2> ' + project.title + '</h2>' + 
                                 '<p>' + project.date + '</p>' +  '<hr/>' +
                                 '<p>' + project.description +'</p>' + 
-                                
                             '</div>' +
-                                '<br/>' +
-                                                           
+                                '<br/>' +                           
                         '</div>'
-                        
                     );
     
                 images = project.slideshow;
                 $('.projectdiv').html(projectSquare);  
                 $("body").css({"overflow": "hidden"});
                 
-    
+                //Startar intervall för bildspel
                 slideshowInterval = setInterval(slideshow, 2000); 
                 playflag = true;
                 };
@@ -238,7 +255,8 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
     };
 
     var slideIndex = 1;
-
+    
+    //Loopar igenom slideshow-arrayen i portfolio-data.json och visar bildspel
     function slideshow(){
         
         if (slideIndex == images.length){
@@ -248,6 +266,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         slideIndex++;
     }
 
+    //Stänger projectdiv och project-content samt avslutar bildspel när knapp klickas
     $(".about-project").on("click", "#close-portfolio", function(event){
         event.preventDefault();
         $('.projectdiv').html('');
@@ -258,6 +277,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         $("body").css({"overflow": "auto"});
     });
 
+    //Stänger projectdiv och project-content samt avslutar bildspel när man klickar utanför rutan
     $(".about-project").on("click", "#theProjectdiv", function(event){
         if(event.target.id=="theProjectdiv"){
             event.preventDefault();
@@ -270,6 +290,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         }; 
     });
 
+    //Visar paus- eller play-knapp när man drar muspekaren över bilden
     $(".about-project").on("mouseover", "#slideshow", function(event){
         if (playflag == true){
             $("#slideShowPause").css({"visibility": "visible"});
@@ -280,6 +301,8 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
 
         $(".slideshow-image").css({"filter": "brightness(75%)"});  
     });
+
+    //Visar play-knapp när man drar muspelaren över play-knappen
     $(".about-project").on("mouseover", "#slideShowPlay", function(event){
         if (playflag == true){
             $("#slideShowPause").css({"visibility": "visible"});
@@ -291,6 +314,8 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         $(".slideshow-image").css({"filter": "brightness(75%)"});
         
     });
+    
+    //Visar paus-knapp när man drar muspelaren över paus-knappen
     $(".about-project").on("mouseover", "#slideShowPause", function(event){
         if (playflag == true){
             $("#slideShowPause").css({"visibility": "visible"});
@@ -302,6 +327,8 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         $(".slideshow-image").css({"filter": "brightness(75%)"});
         
     });
+    
+    //Gömmer play- eller paus-knapp när muspekaren lämnar bilden
     $(".about-project").on("mouseleave", "#slideshow", function(event){
         $("#slideShowPlay").css({"visibility": "hidden"});
         $("#slideShowPause").css({"visibility": "hidden"});
@@ -310,6 +337,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         
     });
 
+    //Pausar bildspel, gömmer paus-knapp samt visar play-knapp
     $(".about-project").on("click", "#slideShowPause", function(event){
         clearInterval(slideshowInterval);
         playflag = false; 
@@ -317,6 +345,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         $("#slideShowPlay").css({"visibility": "visible"});
     });
 
+    //Pausar bildspel, gömmer play-knapp samt visar paus-knapp
     $(".about-project").on("click", "#slideShowPlay", function(event){
         slideshowInterval = setInterval(slideshow, 2000); 
         playflag = true;
