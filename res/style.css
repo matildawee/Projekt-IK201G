@@ -78,7 +78,7 @@ html, body{
     animation-delay: 0s;
     animation-iteration-count: 1;
     animation-direction: alternate;
-    animation-fill-mode: none;
+    animation-fill-mode: forwards;
     animation-play-state: running;
     animation-name: openNavBar;
 }
