@@ -303,7 +303,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         $(".slideshow-image").css({"filter": "brightness(75%)"});  
 
         var screenWidth = window.innerWidth;
-
+        //vid mobilvy så fade:ar knapparna bort efter 3 sekunder
         if (screenWidth<769){
             setTimeout(hideButton, 3000); 
         };
@@ -321,31 +321,19 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
             $(".slideshow-image").css({"filter": "brightness(75%)"});  
     
             var screenWidth = window.innerWidth;
-
+            //vid mobilvy så fade:ar knapparna bort efter 3 sekunder
             if (screenWidth<769){
                 setTimeout(hideButton, 3000); 
             };
         });
 
 
-    //Visar paus- eller play-knapp när man drar muspekaren över bilden
-    // $(".about-project").on("mousemove", "#slideshow", function(event){
-    //     if (playflag == true){
-    //         $("#slideShowPause").css({"visibility": "visible"});
-    //     }
-    //     else {
-    //         $("#slideShowPlay").css({"visibility": "visible"});
-    //     }
-
-    //     $(".slideshow-image").css({"filter": "brightness(75%)"});  
-
-    //     setTimeout(hideButton, 3000); 
-    // });
-
+    //gömmer knapparna
     function hideButton() {     
       
         $("#slideShowPlay").css({"visibility": "hidden"});      
         $("#slideShowPause").css({"visibility": "hidden"});
+        //$("#slideShowPlay").fadeOut(1000);
         //$("#slideShowPause").fadeOut(1000);
 
         $(".slideshow-image").css({"filter": "brightness(100%)"});

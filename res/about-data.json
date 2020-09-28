@@ -44,12 +44,12 @@
             "telephone": "+46701740616",
             "portrait": "./img/portraits/man-thumbnail.jpg",
             "portraitBig": "./img/portraits/man.jpg",
-            "java": "100%",
-            "html": "50%",
-            "javascript": "20%",
-            "css": "50%",
-            "sql": "80%",
-            "photoshop": "0%"
+            "java": "80%",
+            "html": "70%",
+            "javascript": "70%",
+            "css": "30%",
+            "sql": "70%",
+            "photoshop": "1%"
           },
           {
             "id": "personId3",
