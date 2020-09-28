@@ -289,11 +289,11 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         }; 
     });
 
-    var mouseX;
-    var mouseY; 
+    var screenWidth = window.innerWidth;
+    console.log(screenWidth);
 
     //Visar paus- eller play-knapp när man drar muspekaren över bilden
-    $(".about-project").on("mousemove", "#slideshow", function(event){
+    $(".about-project").on("mouseover", "#slideshow", function(event){
 
         if (playflag == true){
             $("#slideShowPause").css({"visibility": "visible"});
@@ -304,22 +304,12 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
 
         $(".slideshow-image").css({"filter": "brightness(75%)"});  
 
-        setTimeout(hideButton, 3000); 
+        if (screenWidth<769){
+            console.log("wuuu");
+            setTimeout(hideButton, 3000); 
+        };
     });
 
-    $(".about-project").on("mouseout", "#slideshow", function(event){
-
-        if (playflag == true){
-            $("#slideShowPause").css({"visibility": "hidden"});
-        }
-        else {
-            $("#slideShowPlay").css({"visibility": "hidden"});
-        }
-
-        $(".slideshow-image").css({"filter": "brightness(75%)"});  
-
-        setTimeout(hideButton, 3000); 
-    });
 
     //Visar paus- eller play-knapp när man drar muspekaren över bilden
     // $(".about-project").on("mousemove", "#slideshow", function(event){
