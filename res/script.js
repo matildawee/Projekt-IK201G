@@ -8,20 +8,22 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         $("#Contact-Page").hide();
     }
 
+    hidePageSections();
     $("#Home-Page").show();
 
     // $('#page-content').load('./pages/start.html');
 
     function loadPage(clickedId, pageUrl, pageTitle){
+        hidePageSections();
         $('#navBar-pageTitle').html(pageTitle);
-        $(clickedId + '-Page').show();
+        $('#' + clickedId + '-Page').show();
         // $('#page-content').load(pageUrl);
         $('.menuBtn').removeClass('activePage');
         $('#'+clickedId).addClass('activePage');
         // classToggle();
     }
 
-    $('#home').click(function (event) {
+    $('#Home').click(function (event) {
         event.preventDefault();
         loadPage('Home');
     });
@@ -31,20 +33,12 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         loadPage('Home');
     });
 
-    $('#portfolio').click(function (event) {
+    $('#Portfolio').click(function (event) {
         event.preventDefault();
         loadPage('Portfolio');
-
-        // laddar in projekten
-    //     $.getJSON(
-    //         'res/portfolio-data.json',
-    //         function (data) {
-    //             displayPortfolio(data.projects);
-    //         }
-    //     );
     });
 
-    $('#about').click(function (event) {
+    $('#About').click(function (event) {
         event.preventDefault();
         loadPage('About');
 
@@ -57,7 +51,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         );
     });
 
-    $('#contact').click(function (event) {
+    $('#Contact').click(function (event) {
         event.preventDefault();
         loadPage('Contact');
     });
