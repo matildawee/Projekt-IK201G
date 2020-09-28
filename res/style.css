@@ -6,7 +6,6 @@ html, body{
     font-family:'Roboto', sans-serif; 
     background: rgb(238, 238, 238);
 }
-
 #page-content{
     width: 100%;
     height: 100%;
@@ -267,7 +266,6 @@ div.subPortfolio {
 .fa-arrow-left:hover, .fa-arrow-right:hover{
     color:#cececeaf;
 }
-
 /* ---------------- ANVÄNDS DESSA???? -------------------
  .project-image{
     width: 500px;
@@ -625,11 +623,10 @@ div.subPortfolio {
 }
 /*    ~~~~ CONTACT page end ~~~>   */
 
-
 /*    <~~~~ DESKTOP layout start ~~~   */
 @media screen and (min-width: 768px) { 
 
-    /*  <~~~ NAVIGATION desktop start~~~~   */    
+    /*    <~~~~ HEADER NAVIGATION desktop start~~~    */    
     nav{
         visibility: visible;
         display: inline-block;
@@ -717,7 +714,6 @@ div.subPortfolio {
     /*    ~~~~ PORTFOLIO desktop end ~~~>   */
 
     /*    ~~~~ ABOUT US desktop start ~~~>   */
-
     .about-description{
         width: 40%;
         margin: 3% 28%;
