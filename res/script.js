@@ -277,6 +277,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
     var divList = [];
     var divIndex = 0;
     var index = 0;
+    var playflag = false;
 
     var showIndex = 0;
 
@@ -366,6 +367,61 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         $('#portfolio-box').html(divList[showIndex]);
         
     });
+
+    $(".portfolioMain").on("click", ".subPortfolio", function(event){
+        event.preventDefault();
+        var id = (event.target.id);
+    
+        $(".projectdiv").show();
+        $(".project-content").show();
+    
+        $("body").css({"overflow-y": "auto"});
+        
+        // Loads persons from about-data.json
+        $.getJSON(
+            'res/portfolio-data.json',
+            function (data) {
+                getProject(data.projects, id);
+            }
+        );
+    });
+    
+    function getProject(projects, id) {
+        $.each(projects, function (ind, project) {
+                if (project.id == id) {              
+                    
+                    var projectSquare = $(
+                        '<div class="project-content" id="' + project.id + '">' + 
+                            '<div class="project-content-top">' +
+                                '<span class="fas fa-times" id="close-portfolio"></span>' +                           
+                                //'<div class="slideshowDiv">' +
+                                    '<img class="slideshow-image" id="slideshow" src="' + project.slideshow[0] + '" title="developer" alt="developer">' + 
+                                    '<span class="fas fa-pause" id="slideShowPause"></span>' + 
+                                    '<span class="fas fa-play" id="slideShowPlay"></span>' + 
+                                //'</div>' +                
+                            '</div>' +
+                            '<div class="project-content-bottom">' + 
+                                '<h2> ' + project.title + '</h2>' + 
+                                '<p>' + project.date + '</p>' +  '<hr/>' +
+                                '<p>' + project.description +'</p>' + 
+                                
+                            '</div>' +
+                                '<br/>' +
+                                                           
+                        '</div>'
+                        
+                    );
+    
+                images = project.slideshow;
+                $('.projectdiv').html(projectSquare);  
+    
+                
+    
+                slideshowInterval = setInterval(slideshow, 2000); 
+                playflag = true;
+                };
+        });
+    };
 
         
     var slideIndex = 1;
