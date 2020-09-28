@@ -382,11 +382,11 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
                         '<div class="project-content" id="' + project.id + '">' + 
                             '<div class="project-content-top">' +
                                 '<span class="fas fa-times" id="close-portfolio"></span>' +                           
-                                //'<div class="slideshowDiv">' +
+                                '<div class="slideshowDiv">' +
                                     '<img class="slideshow-image" id="slideshow" src="' + project.slideshow[0] + '" title="developer" alt="developer">' + 
                                     '<span class="fas fa-pause" id="slideShowPause"></span>' + 
                                     '<span class="fas fa-play" id="slideShowPlay"></span>' + 
-                                //'</div>' +                
+                                '</div>' +                
                             '</div>' +
                             '<div class="project-content-bottom">' + 
                                 '<h2> ' + project.title + '</h2>' + 
