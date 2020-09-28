@@ -244,7 +244,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
     
                 images = project.slideshow;
                 $('.projectdiv').html(projectSquare);  
-                $("body").css({"overflow": "hidden"});
+                $("body").css({"overflow": "hidden"}); 
                 
                 //Startar intervall för bildspel
                 slideshowInterval = setInterval(slideshow, 2000); 

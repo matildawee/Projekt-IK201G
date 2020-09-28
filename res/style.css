@@ -277,7 +277,7 @@ div.subPortfolio {
 /*    <~~~ PROJECT info start ~~~~   */
 .projectdiv {
     width: 100%;
-    height: 100%; 
+    height: 100%;
     position: fixed;
     top: 0;
     left: 0;
@@ -288,7 +288,7 @@ div.subPortfolio {
 .project-content{
     background: rgba(255, 255, 255, 0.900);
     width: 100%;
-    height: 100%;
+    max-height: 81%; 
     position: fixed;
     padding: 0;
     margin: 0;
@@ -717,7 +717,6 @@ div.subPortfolio {
     }
     .project-content{
         width: 70%;
-        height: auto;
         margin: 4% 15%;
     }
     .slideshow-image{
@@ -742,6 +741,7 @@ div.subPortfolio {
     }
     .person-content{
         width: 70%;
+        max-height: 75%; 
         margin: 4% 15%;
         padding: 2%;
         justify-content: left;
