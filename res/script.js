@@ -127,8 +127,8 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
                 
         var aProject = 
             '<div class="subPortfolio" id="' + portfolio.id + '">' + 
-            '<img class="project-img" id="' + portfolio.id + '"src="' + portfolio.image + '" title="Project" alt="Project">' +
-                '<h1 id="' + portfolio.id + '">' + portfolio.title + '</h1>' +
+            '<img class="project-img" id="' + portfolio.id + '"src="' + portfolio.image + '" title="Project" alt="Project" />' +
+                '<h2 id="' + portfolio.id + '">' + portfolio.title + '</h2>' +
                 '<p id="' + portfolio.id + '">' + portfolio.description + '</p>' +
             '</div>';
 
@@ -209,7 +209,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
                             '<div class="project-content-top">' +
                                 '<span class="fas fa-times" id="close-portfolio"></span>' +                           
                                 '<div class="slideshowDiv">' +
-                                    '<img class="slideshow-image" id="slideshow" src="' + project.slideshow[0] + '" title="developer" alt="developer">' + 
+                                    '<img class="slideshow-image" id="slideshow" src="' + project.slideshow[0] + '" title="developer" alt="developer" />' + 
                                     '<span class="fas fa-pause" id="slideShowPause"></span>' + 
                                     '<span class="fas fa-play" id="slideShowPlay"></span>' + 
                                 '</div>' +                
@@ -335,7 +335,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
                 var personSquare = (
                     '<div class="about-developer" id="personId' + ind + '">' + 
                     '<img id="personId' + ind + '" src="' + employee.portrait + '" title="developer" alt="developer">' +
-                        '<h1 id="personId' + ind + '">' + employee.firstname + '</h1>' +
+                        '<h2 id="personId' + ind + '">' + employee.firstname + '</h2>' +
                         '<p id="personId' + ind + '">' + employee.title + '</p>'+
                     '</div>'
                 );        
