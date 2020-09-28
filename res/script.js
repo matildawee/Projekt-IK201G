@@ -1,27 +1,32 @@
 /* This JavaScript need jQuery to run */
 $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har laddat klart. 
 
-    function hidePageSections() {
+    function hidePageSections() { //funktion som döljer alla sidor
         $("#Home-Page").hide();
         $("#Portfolio-Page").hide();
         $("#About-Page").hide();
         $("#Contact-Page").hide();
     }
 
-    hidePageSections();
-    $("#Home-Page").show();
-    $("#Home-Page").animate({opacity: '1'}, 1500);
+    hidePageSections(); //vid första laddning av webbsidan, döljs alla sidor med funktionen ovan
+    $("#Home-Page").show(); //visar startsida vid första laddning
+    $("#Home-Page").animate({opacity: '1'}, 1500); //animera fram "Welcome" vid första laddning
 
+    /*    <~~~ Navigering start ~~~~   */
 
-    function loadPage(clickedId, pageUrl, pageTitle){
-        hidePageSections();
-        $('#navBar-pageTitle').html(pageTitle);
+    //funktion som anropas när man klickar på olika navigeringslänkar, döljer alla sidor, uppdaterar vilken sida som är aktiv just nu,
+    //visar och uppdaterar Page-Title i mobilvyn visar och döljer navbar i mobilvyn
+    function loadPage(clickedId){ 
+        hidePageSections(); 
         $('#' + clickedId + '-Page').show();
         $('.menuBtn').removeClass('activePage');
         $('#'+clickedId).addClass('activePage');
+
+        $('#navBar-pageTitle').html(clickedId);
         classToggle();
     }
 
+    //funktion som anropas när man klickar på Home
     $('#Home').click(function (event) {
         event.preventDefault();
         loadPage('Home');
@@ -29,6 +34,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         $("#Home-Page").animate({opacity: '1'}, 1500);
     });
 
+    //funktion som anropas när man klickar på loggan
     $('#header-logo').click(function (event) {
         event.preventDefault();
         loadPage('Home');
@@ -36,16 +42,18 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         $("#Home-Page").animate({opacity: '1'}, 1500);
     });
 
+    //funktion som anropas när man klickar på Portfolio
     $('#Portfolio').click(function (event) {
         event.preventDefault();
         loadPage('Portfolio');
     });
 
+    //funktion som anropas när man klickar på About us
     $('#About').click(function (event) {
         event.preventDefault();
         loadPage('About');
 
-        // laddar in utvecklarna
+        //laddar in utvecklarna
         $.getJSON(
             'res/about-data.json',
             function (data) {
@@ -54,42 +62,41 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         );
     });
 
+    //funktion som anropas när man klickar på Contact
     $('#Contact').click(function (event) {
         event.preventDefault();
         loadPage('Contact');
     });
 
+    //funktion som lägger till respektive tar bort navBar-show när man klickar på navButton-toggle
     function classToggle() {
-        // $("nav").slideToggle();
-        // $("nav").animate({'height': 'toggle'}, 'slow');
         const navs = document.querySelectorAll('nav');
         navs.forEach(nav => nav.classList.toggle('navBar-show'));
-      }
+    }
       
-      document.querySelector('.navButton-toggle')
-        .addEventListener('click', classToggle);
+    //anropar funktionen ovanför
+    document.querySelector('#navButton-toggle').addEventListener('click', classToggle);
 
-    /* <~~~~~ knapparna på startsidan - dessa knappar finns också i extrascript ~~~~~~ */    
+    /*    ~~~~ Navigering end ~~~>   */
 
+
+    /*    <~~~ Home-Page start ~~~~   */
+
+    //funktion som visar Portfolio när man klickat på knappen på Startsidan
     $('#startProjects').click(function (event) {
         event.preventDefault();
         loadPage('Portfolio');
     });
 
+    //funktion som visar About us när man klickat på knappen på Startsidan
     $('#startUs').click(function (event) {
         event.preventDefault();
         loadPage('About');
     });
 
+    /*    ~~~~ Home-Page end ~~~>   */
 
-
-
-    /* ~~~~~~ knapparna på startsidan ~~~~~~> */  
-
-
-    /* start Contact.js */
-
-        /* Start Contact load from JSON */
+    /*    <~~~ Contact-Page start ~~~~   */
         
             // Hämtar det sparade JSON-objectet: "savedJsonObject" , som en string vi gör om till ett JSON-object med JSON.parse() och sparar i variablen "localSavedJsonObject".
             var localSavedJsonObject = JSON.parse(localStorage.getItem('savedJsonObject'));
@@ -123,14 +130,11 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
                     if (getJsonMessage.contactMessage != ""){
                         validateOkOrError("#contactMessage");
                     }
-                } //slut på IF-sats som kollar om getJsonMessage
-            }; //slut på Funktionen loadMessageToForm(getJsonMessage)
+                } 
+            }; 
         
             // console.log(localSavedJsonObject); //kommentera bort denna rad om ni vill se hela sparade JSON-objectet i loggen när sidan contact laddas.
-        
-        /* End Contact load from JSON */
-        
-        /* Start Contact validate */
+
         
             $("#contactName").blur(function() { //När focus tappas av rutan med id "#contactName"
                 validateOkOrError("#contactName"); //Ska valideringsfunktionen köras på "#contactName"
@@ -176,7 +180,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
                     $('#contactSubmitMessage').removeClass("contactError contactOk").addClass("contactError"); //Tar bort css klasserna: "contactError" och "contactOk" , sedan lägger till endast "contactError". 
                 } //slut på IF-sats som kollar valideringar
                 event.preventDefault(); //Ignorerar Default med preventDefault() , så inte sidan ska laddas om. 
-            }); //Slut på funktionen #contactSubmit.click
+            }); 
         
             //Tömmer alla input-fält
             function clearContactForm(){
@@ -213,8 +217,8 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
                 } else { //Annars om det är data i input-fältet och den inte validerat OK, så skrivs det ut "Unvalid".
                     result.text("Unvalid"); //Skriver ut "Unvalid" som error meddelande på samma span-error idt
                     result.addClass("contactError"); //Lägger till css klassen .contactError på t.ex. #contactNameError
-                } //slut på IF-satsen ovan. 
-            } //slut på Funktionen validateOkOrError()
+                } 
+            } 
         
             //Funktion för att validera med regular expression:
             function validate(inputId, value) {
@@ -241,11 +245,10 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
                 return regEx.test(value);
             }
         
-        /* End Contact validate */
+
         
-        /* Start Contact save to JSON */
-        
-        function saveToJSON() {
+        //funktion som sparar värdena från alla inputs till localStorage som JSON på användarens enhet
+        function saveToJSON() { 
             var name = $('#contactName').val();
             var phone = $('#contactPhone').val();
             var email = $('#contactEmail').val();
@@ -263,14 +266,10 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
             //Lagrar ned messageJsonObject i localStorage med namnet: "savedJsonObject" på användarens dator. 
             localStorage.setItem('savedJsonObject', JSON.stringify(messageJsonObject));
         }
-        /* End Contact save to JSON */
-        
-        
 
-    /* end Contact.js */
+    /*    ~~~~ Contact-Page end ~~~>   */
 
-
-    /*    <~~~ PORTFOLIO.JS start ~~~~   */
+    /*    <~~~ Portfolio-Page start ~~~~   */
     var divList = [];
     var divIndex = 0;
     var index = 0;
@@ -503,11 +502,10 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         $("#slideShowPlay").css({"visibility": "hidden"});
     });
 
-    /*    ~~~ PORTFOLIO.JS end ~~~~>   */
+    /*    ~~~ Portfolio-Page end ~~~~>   */
 
 
-    /* start of about-page */
-    
+    /*    <~~~ About-Page start ~~~~   */
 
         function displayAbout(person) {
             var allDevelopers = "";
@@ -636,6 +634,6 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
             }; 
         });
 
-    /* end of about.js */
+     /*    ~~~ About-Page end ~~~~>   */
 
  });

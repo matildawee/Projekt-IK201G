@@ -51,7 +51,7 @@ html, body{
     width: 28%;
     height: auto;
 }
-.navButton-toggle{
+#navButton-toggle{
     height: 44px;
     width: 44px;
     position: relative;
