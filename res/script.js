@@ -26,11 +26,15 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
     $('#Home').click(function (event) {
         event.preventDefault();
         loadPage('Home');
+        $("#welcome").css({"opacity": "0"});
+        $("#welcome").animate({opacity: '1'}, 1500);
     });
 
     $('#header-logo').click(function (event) {
         event.preventDefault();
         loadPage('Home');
+        $("#welcome").css({"opacity": "0"});
+        $("#welcome").animate({opacity: '1'}, 1500);
     });
 
     $('#Portfolio').click(function (event) {
