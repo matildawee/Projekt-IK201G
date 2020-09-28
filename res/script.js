@@ -1,29 +1,39 @@
 /* This JavaScript need jQuery to run */
 $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har laddat klart. 
 
-    $('#page-content').load('./pages/start.html');
+    function hidePageSections() {
+        $("#Home-Page").hide();
+        $("#Portfolio-Page").hide();
+        $("#About-Page").hide();
+        $("#Contact-Page").hide();
+    }
+
+    $("#Home-Page").show();
+
+    // $('#page-content').load('./pages/start.html');
 
     function loadPage(clickedId, pageUrl, pageTitle){
-        $('#page-content').load(pageUrl);
         $('#navBar-pageTitle').html(pageTitle);
+        $(clickedId + '-Page').show();
+        // $('#page-content').load(pageUrl);
         $('.menuBtn').removeClass('activePage');
-        $(clickedId).addClass('activePage');
+        $('#'+clickedId).addClass('activePage');
         // classToggle();
     }
 
     $('#home').click(function (event) {
         event.preventDefault();
-        loadPage('#home','./pages/start.html','Home');
+        loadPage('Home');
     });
 
     $('#header-logo').click(function (event) {
         event.preventDefault();
-        loadPage('#home','./pages/start.html','Home');
+        loadPage('Home');
     });
 
     $('#portfolio').click(function (event) {
         event.preventDefault();
-        loadPage('#portfolio','./pages/portfolio.html','Portfolio');
+        loadPage('Portfolio');
 
         // laddar in projekten
     //     $.getJSON(
@@ -36,7 +46,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
 
     $('#about').click(function (event) {
         event.preventDefault();
-        loadPage('#about','./pages/about.html','About us');
+        loadPage('About');
 
         // laddar in utvecklarna
         $.getJSON(
@@ -49,7 +59,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
 
     $('#contact').click(function (event) {
         event.preventDefault();
-        loadPage('#contact','./pages/contact.html','Contact');
+        loadPage('Contact');
     });
 
     function classToggle() {
@@ -66,12 +76,13 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
 
     $('#startProjects').click(function (event) {
         event.preventDefault();
-        $('#page-content').load('./pages/portfolio.html');
+        loadPage('Portfolio');
     });
 
     $('#startUs').click(function (event) {
         event.preventDefault();
-        $('#page-content').load('./pages/about.html');
+        loadPage('About');
+        // $('#page-content').load('./pages/about.html');
     });
 
 
@@ -455,12 +466,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
 
     /* start of about.js */
     
-        function loadPage(clickedId, pageUrl, pageTitle){
-            $('#page-content').load(pageUrl);
-            $('#navBar-pageTitle').html(pageTitle);
-            $('.menuBtn').removeClass('activePage');
-            $(clickedId).addClass('activePage');
-        }
+
         function displayAbout(person) {
             $.each(person, function (ind, employee) {                        
                 var personSquare = $(
@@ -592,17 +598,10 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         $("#welcome").animate({opacity: '1'}, 1500);
         
 
-        function loadPage(clickedId, pageUrl, pageTitle){
-            $('#page-content').load(pageUrl);
-            $('#navBar-pageTitle').html(pageTitle);
-            $('.menuBtn').removeClass('activePage');
-            $(clickedId).addClass('activePage');
-        }
-
             /* <~~~~~ knapparna på startsidan ~~~~~~ */    
             $('#startUs').click(function (event) {
                 event.preventDefault();
-                loadPage('#about','./pages/about.html','About us');
+                loadPage('About');
         
                 // laddar in utvecklarna
                 $.getJSON(
@@ -614,7 +613,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
 
         $('#startProjects').click(function (event) {
             event.preventDefault();
-            loadPage('#portfolio','./pages/portfolio.html','Portfolio');
+            loadPage('Portfolio');
 
         });
 
