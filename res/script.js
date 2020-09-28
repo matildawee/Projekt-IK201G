@@ -36,10 +36,16 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         $("#Home-Page").animate({opacity: '1'}, 1500);
     });
 
-    //funktion som anropas när man klickar på loggan
+    //funktion som anropas när man klickar på loggan, dock mera hårdkodad.
     $('#header-logo').click(function (event) {
         event.preventDefault();
-        loadPage('Home');
+        hidePageSections(); 
+        $('#Home-Page').show();
+        $('.menuBtn').removeClass('activePage');
+        $('#Home').addClass('activePage');
+
+        $('#navBar-pageTitle').html('Home');
+        $('nav').removeClass('navBar-show');
         $("#Home-Page").css({"opacity": "0"});
         $("#Home-Page").animate({opacity: '1'}, 1500);
     });
