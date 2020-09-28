@@ -154,8 +154,6 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         divList[divIndex] = projectGroup;    
         //lägger till slut-div-tagg       
     };
-    
-    console.log(divList);
 
     if (divList[divList.length-1] == '<div id="portfolioGroup"></div>'){
         divList.splice(divList.length-1,1); 
