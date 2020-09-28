@@ -40,7 +40,7 @@
         <main>
 
             <section id="Home-Page" class="page-content">
-                <h1> Welcome</h1>
+                <h2>Welcome</h2>
                 <div class="welcome-buttons">
                     <a id="startProjects">Our projects</a>
                     <a id="startUs">This is us</a>
@@ -53,7 +53,14 @@
                         <i id="arrowLeft" class="fas fa-arrow-left"></i>
                     </div> <!-- /portfolioLeft -->
                 
-                    <div id="portfolio-box"></div>
+                    <div id="portfolio-box"> 
+                        <!-- Alla projekt kommer att laddas in i denna div från script.js -->
+                        <div class="subPortfolio">
+                            <img class="project-img" src="./img/stortprojekt.jpg" title="Project" alt="Project" />
+                            <h2>Ett projekt</h2>
+                            <p>Projekten kommer att hamna här</p>
+                        </div>
+                    </div>
                 
                     <div class="about-project">
                         <div class="projectdiv" id="theProjectdiv"></div> <!-- Vad gör vi här? - 
@@ -69,7 +76,7 @@
 
             <section id="About-Page" class="page-content">
                 <div class="about-description">
-                    <h1>This is us</h1>
+                    <h2>This is us</h2>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod 
                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
@@ -80,7 +87,7 @@
                     </p>
                 </div> <!-- /about-description -->
                 <div class="about-main">
-                    <h1>Our team</h1>
+                    <h2>Our team</h2>
                     <p>Read more about our awsome team members below.</p>
                     <div id="about-submain"></div>
                 </div> <!-- /about-main -->
