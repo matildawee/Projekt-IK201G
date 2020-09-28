@@ -299,6 +299,10 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         }
 
         $(".slideshow-image").css({"filter": "brightness(75%)"});  
+
+        // setTimeout(function() {
+        //     $('#slideShowPlay').fadeOut();}, 2000);
+        // });
     });
 
     //Visar play-knapp när man drar muspelaren över play-knappen
