@@ -305,13 +305,13 @@ div.subPortfolio {
     text-align: center;
     display: flex;
     flex-wrap: wrap;
-    overflow-y: auto; 
+    overflow-y: auto;
 }
 .slideshow-image{
     width: auto;
     max-width: 80%;
     margin: 10% 1% 0;
-    height: 400px;
+    height: 200px;
     object-fit: cover;
 }
 .project-content-top{
@@ -680,11 +680,7 @@ div.subPortfolio {
         width: 20%; 
         margin: 1%;
         min-width: 250px;
-        /* max-height: 400px; */
     }
-
-    /* Denna behöver ses över - texten wrapar inte korrekt? Hur blir detta om bilderna är
-       olika stora? */
     .subPortfolio > p{
         margin: 0% 5%;
     }
@@ -692,7 +688,6 @@ div.subPortfolio {
         width: 80%;
         height: 150px;
     }
-
     .project-content{
         width: 70%;
         height: auto;
@@ -700,6 +695,7 @@ div.subPortfolio {
     }
     .slideshow-image{
         margin: 5% 0 2% 0;
+        height: 400px;
     }
     /*    ~~~~ PORTFOLIO desktop end ~~~>   */
 
@@ -807,3 +803,12 @@ div.subPortfolio {
     /*    ~~~~ CONTACT desktop end ~~~>   */
 
 }/*    ~~~~ DESKTOP layout end ~~~>   */
+
+@media screen and (max-height: 550px) and (min-width: 768px) {
+    .project-content{
+            margin: 0% 15%;
+    }
+    .person-content{
+        margin: 0% 15%;
+    }
+} 
