@@ -575,7 +575,7 @@ div.subPortfolio {
     margin: 0;
     padding: 0.5em;
     width: 33%;
-    color: #fff;
+    color: #ffffff;
 }
 .contactInfo > div > h3{
     margin: 0;
@@ -583,6 +583,9 @@ div.subPortfolio {
 }
 .contactInfo > div > p{
     font-size: 0.9em;
+}
+.contactEmail > p > a{
+    color:#FFFFFF; 
 }
 #contactSubmit {
     width: 8em;
