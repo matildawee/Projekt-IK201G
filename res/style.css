@@ -15,8 +15,7 @@ html, body{
     /* place-items: center; */
 }
 
-/*    <~~~ NAVIGATION start ~~~~   */
-
+/*    <~~~ HEADER NAVIGATION start ~~~~   */
 .navBar{
     width: 100%;
     display: inline-block;
@@ -119,12 +118,35 @@ nav > ul > li > a:hover{
     background: #333;
     color: #fff
 }
+/*    ~~~~ HEADER NAVIGATION end ~~~>   */
 
+/*    <~~~ FOOTER start ~~~~   */
+footer{
+    width: 100%;
+    background: rgb(238, 238, 238);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.fa-envelope, .fa-phone, .fa-instagram, .fa-facebook-f{ 
+    margin: 0.6em;
+    color: rgb(78, 78, 78); 
+    font-size: 1.5em;  
+}
+.fas:hover, .fab:hover, .far:hover{
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+/* Adding GitHub icon font-size */
+.fa-github{
+    font-size: 1em;
+}
+.footer_center > p > a{
+    color: rgb(0, 0, 0);
+}
+/*    ~~~~ FOOTER end ~~~>   */
 
-/*    ~~~~ NAVIGATION end ~~~>   */
-
-/*    ~~~~ HOME start ~~~>   */
-
+/*    ~~~~ HOME page start ~~~>   */
 main{
     min-height: 80%;
     width: 100%;
@@ -132,7 +154,6 @@ main{
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
-
 #welcome{
     width: 100%;
     margin-top: 10em;
@@ -180,41 +201,9 @@ main{
     border-color:#BBBBBB;
     background: rgba(187, 187, 187, 0.384);
 }
+/*    ~~~~ HOME page end ~~~>   */
 
-/*    ~~~~ HOME end ~~~>   */
-
-/*    <~~~ FOOTER start ~~~~   */
-footer{
-    width: 100%;
-    background: rgb(238, 238, 238);
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-
-.fa-envelope, .fa-phone, .fa-instagram, .fa-facebook-f{ 
-    margin: 0.6em;
-    color: rgb(78, 78, 78); 
-    font-size: 1.5em;  
-}
-
-.fas:hover, .fab:hover, .far:hover{
-    color: rgb(0, 0, 0);
-    cursor: pointer;
-}
-/* Adding GitHub icon font-size */
-.fa-github{
-    font-size: 1em;
-}
-.footer_center > p > a{
-    color: rgb(0, 0, 0);
-}
-
-/*    ~~~~ FOOTER end ~~~>   */
-
-
-/*    <~~~ PORTFOLIO start ~~~~   */
-
+/*    <~~~ PORTFOLIO page start ~~~~   */
 .portfolioMain{
     display: flex;
     flex-direction: column;
@@ -279,8 +268,6 @@ div.subPortfolio {
     color:#cececeaf;
 }
 
-
-
 /* ---------------- ANVÄNDS DESSA???? -------------------
  .project-image{
     width: 500px;
@@ -292,11 +279,7 @@ div.subPortfolio {
     opacity: 0.8;
 } ------------------------------------------------------*/
 
-
-
-/*    <~~~ PROJECT ABOUT start ~~~~   */
-
-
+/*    <~~~ PROJECT info start ~~~~   */
 .projectdiv {
     width: 100%;
     height: 100%; 
@@ -339,10 +322,9 @@ div.subPortfolio {
     font-size: 40px;
     color: rgba(238, 230, 230, 0.800);
     position: absolute;
-    top: 50%; /* Får ej knapparna i mitten!!!! */
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* -ms-transform: translate(-50%, -50%); */
     margin: 0;
     padding: 0;
     cursor: pointer;
@@ -372,20 +354,15 @@ div.subPortfolio {
     margin: 1% 20%;
     color: rgb(0, 0, 0);
 }
-
 #close-portfolio{
     position: absolute;
     top: 0;
     right: 0;
 }
-/*    <~~~ PROJECT ABOUT end ~~~~   */
-
+/*    <~~~ PROJECT info end ~~~~   */
 /*    ~~~~ PORTFOLIO end ~~~>   */
 
-
-
-/*    ~~~~ ABOUT US start ~~~>   */
-
+/*    ~~~~ ABOUT US page start ~~~>   */
 .about-description{
     width: 90%;
     margin: 2%;
@@ -404,7 +381,6 @@ div.subPortfolio {
     height: 100%;
     background: rgba(34, 34, 34, 0.541);
     color: white;
-
 }
 .about-main > h1{
     width: 100%;
@@ -478,7 +454,6 @@ div.subPortfolio {
     overflow-y: auto; 
     max-height: 100%;
 }
-
 .person-portrait{
     width: 80%;
     height: auto;
@@ -560,10 +535,9 @@ div.subPortfolio {
     background-color: #e78402;
     text-align: right;
 }
+/*    ~~~~ ABOUT US page end ~~~>   */
 
-/*    ~~~~ ABOUT US end ~~~>   */
-
-/*    <~~~ start CONTACT ~~~~   */
+/*    <~~~ CONTACT page start ~~~~   */
 #contactTitle{
     text-align: center;
     display: none; 
@@ -641,7 +615,6 @@ div.subPortfolio {
     text-align: center;
     margin-top: 1.2em; 
 }
-
 .contactError{ 
     color:rgb(243, 127, 127);
     float:right;
@@ -650,11 +623,10 @@ div.subPortfolio {
     color:rgb(0, 221, 7);
     float:right;
 }
+/*    ~~~~ CONTACT page end ~~~>   */
 
-/*    ~~~~ CONTACT end ~~~>   */
 
-
-/* start of Desktop-page: */
+/*    <~~~~ DESKTOP layout start ~~~   */
 @media screen and (min-width: 768px) { 
 
     /*  <~~~ NAVIGATION desktop start~~~~   */    
@@ -688,7 +660,6 @@ div.subPortfolio {
     nav > ul{
         width: auto;
     }
-    
     /*    ~~~~ NAVIGATION desktop end ~~~>   */
 
     /*    <~~~ PORTFOLIO desktop start ~~~~   */
@@ -713,7 +684,6 @@ div.subPortfolio {
 
     /* Denna behöver ses över - texten wrapar inte korrekt? Hur blir detta om bilderna är
        olika stora? */
-
     .subPortfolio > p{
         margin: 0% 5%;
         /* max-height: 50%;  */
@@ -744,10 +714,7 @@ div.subPortfolio {
         width: 50%;
         margin: 7% 0 2% 0;
     }
-
     /*    ~~~~ PORTFOLIO desktop end ~~~>   */
-
-
 
     /*    ~~~~ ABOUT US desktop start ~~~>   */
 
@@ -797,7 +764,6 @@ div.subPortfolio {
         margin: 0; 
     }
     /*    ~~~~ ABOUT US desktop end ~~~>   */
-
     
     /*    <~~~ FOOTER desktop start ~~~~     */
     .fa-envelope, .fa-phone, .fa-instagram, .fa-facebook-f{ 
@@ -825,15 +791,16 @@ div.subPortfolio {
     }
     /*    ~~~~ FOOTER desktop end ~~~>   */
     
-
+    /*    <~~~ HOME desktop start ~~~~     */    
     #welcome > h1{
         font-size: 6em;
     }
     .welcome-buttons > a{
         width: 15em;
     }
+    /*    ~~~~ HOME desktop end ~~~>   */
 
-    /* Contact start */
+    /*    <~~~ CONTACT desktop start ~~~~     */
     #contactTitle{
         display: block; 
     }
@@ -852,7 +819,6 @@ div.subPortfolio {
         padding: 1em 2em 0.5em 1.5em;
         margin: 1em 5em 1em 1em;
     }   
-    
-    /* Contact end */
+    /*    ~~~~ CONTACT desktop end ~~~>   */
 
-}/* end of Desktop-page */
+}/*    ~~~~ DESKTOP layout end ~~~>   */
