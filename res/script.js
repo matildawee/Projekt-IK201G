@@ -10,6 +10,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
 
     hidePageSections();
     $("#Home-Page").show();
+    $("#welcome").animate({opacity: '1'}, 1500);
 
     // $('#page-content').load('./pages/start.html');
 
@@ -462,20 +463,23 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
     /* end of portfolio.js */
 
 
-    /* start of about.js */
+    /* start of about-page */
     
 
         function displayAbout(person) {
+            var allDevelopers = "";
             $.each(person, function (ind, employee) {                        
-                var personSquare = $(
+                var personSquare = (
                     '<div class="about-developer" id="personId' + ind + '">' + 
                     '<img id="personId' + ind + '" src="' + employee.portrait + '" title="developer" alt="developer">' +
                         '<h1 id="personId' + ind + '">' + employee.firstname + '</h1>' +
                         '<p id="personId' + ind + '">' + employee.title + '</p>'+
                     '</div>'
                 );        
-            $('#about-submain').append(personSquare);
+                    
+                allDevelopers+=personSquare;
             });
+            $('#about-submain').html(allDevelopers);
         };
 
         $(".about-main").on("click", ".about-developer", function(event){
@@ -590,50 +594,5 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         });
 
     /* end of about.js */
-
-
-    /* start of extrascript.js */
-        $("#welcome").animate({opacity: '1'}, 1500);
-        
-
-            /* <~~~~~ knapparna på startsidan ~~~~~~ */    
-            $('#startUs').click(function (event) {
-                event.preventDefault();
-                loadPage('About');
-        
-                // laddar in utvecklarna
-                $.getJSON(
-                    'res/about-data.json',
-                    function (data) {
-                        displayAbout(data.person);
-                    });
-            });
-
-        $('#startProjects').click(function (event) {
-            event.preventDefault();
-            loadPage('Portfolio');
-
-        });
-
-
-
-        /* <~~~~~ hämtar oss json ~~~~~~ */ 
-
-        function displayAbout(person) {
-            $.each(person, function (ind, employee) {                        
-                var personSquare = $(
-                    '<div class="about-developer" id="personId' + ind + '">' + 
-                    '<img id="personId' + ind + '" src="' + employee.portrait + '" title="developer" alt="developer">' +
-                        '<h1 id="personId' + ind + '">' + employee.firstname + '</h1>' +
-                        '<p id="personId' + ind + '">' + employee.title + '</p>'+
-                    '</div>'
-                );        
-    
-            $('#about-submain').append(personSquare);
-            });
-    
-            //$("#personDiv").hide();
-        };
-    /* end of extrascript.js */
 
  });
