@@ -6,7 +6,6 @@ html, body{
     font-family:'Roboto', sans-serif; 
     background: rgb(238, 238, 238);
 }
-
 #page-content{
     width: 100%;
     height: 100%;
@@ -15,8 +14,7 @@ html, body{
     /* place-items: center; */
 }
 
-/*    <~~~ NAVIGATION start ~~~~   */
-
+/*    <~~~ HEADER NAVIGATION start ~~~~   */
 .navBar{
     width: 100%;
     display: inline-block;
@@ -119,12 +117,35 @@ nav > ul > li > a:hover{
     background: #333;
     color: #fff
 }
+/*    ~~~~ HEADER NAVIGATION end ~~~>   */
 
+/*    <~~~ FOOTER start ~~~~   */
+footer{
+    width: 100%;
+    background: rgb(238, 238, 238);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.fa-envelope, .fa-phone, .fa-instagram, .fa-facebook-f{ 
+    margin: 0.6em;
+    color: rgb(78, 78, 78); 
+    font-size: 1.5em;  
+}
+.fas:hover, .fab:hover, .far:hover{
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+/* Adding GitHub icon font-size */
+.fa-github{
+    font-size: 1em;
+}
+.footer_center > p > a{
+    color: rgb(0, 0, 0);
+}
+/*    ~~~~ FOOTER end ~~~>   */
 
-/*    ~~~~ NAVIGATION end ~~~>   */
-
-/*    ~~~~ HOME start ~~~>   */
-
+/*    ~~~~ HOME page start ~~~>   */
 main{
     min-height: 80%;
     width: 100%;
@@ -132,7 +153,6 @@ main{
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
-
 #welcome{
     width: 100%;
     margin-top: 10em;
@@ -180,41 +200,10 @@ main{
     border-color:#BBBBBB;
     background: rgba(187, 187, 187, 0.384);
 }
-
-/*    ~~~~ HOME end ~~~>   */
-
-/*    <~~~ FOOTER start ~~~~   */
-footer{
-    width: 100%;
-    background: rgb(238, 238, 238);
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-
-.fa-envelope, .fa-phone, .fa-instagram, .fa-facebook-f{ 
-    margin: 0.6em;
-    color: rgb(78, 78, 78); 
-    font-size: 1.5em;  
-}
-
-.fas:hover, .fab:hover, .far:hover{
-    color: rgb(0, 0, 0);
-    cursor: pointer;
-}
-/* Adding GitHub icon font-size */
-.fa-github{
-    font-size: 1em;
-}
-.footer_center > p > a{
-    color: rgb(0, 0, 0);
-}
-
-/*    ~~~~ FOOTER end ~~~>   */
+/*    ~~~~ HOME page end ~~~>   */
 
 
-/*    <~~~ PORTFOLIO start ~~~~   */
-
+/*    <~~~ PORTFOLIO page start ~~~~   */
 .portfolioMain{
     display: flex;
     flex-direction: column;
@@ -278,9 +267,6 @@ div.subPortfolio {
 .fa-arrow-left:hover, .fa-arrow-right:hover{
     color:#cececeaf;
 }
-
-
-
 /* ---------------- ANVÄNDS DESSA???? -------------------
  .project-image{
     width: 500px;
@@ -294,9 +280,7 @@ div.subPortfolio {
 
 
 
-/*    <~~~ PROJECT ABOUT start ~~~~   */
-
-
+/*    <~~~ PROJECT INFO start ~~~~   */
 .projectdiv {
     width: 100%;
     height: 100%; 
@@ -378,14 +362,11 @@ div.subPortfolio {
     top: 0;
     right: 0;
 }
-/*    <~~~ PROJECT ABOUT end ~~~~   */
+/*    <~~~ PROJECT info end ~~~~   */
 
-/*    ~~~~ PORTFOLIO end ~~~>   */
+/*    ~~~~ PORTFOLIO page end ~~~>   */
 
-
-
-/*    ~~~~ ABOUT US start ~~~>   */
-
+/*    ~~~~ ABOUT US page start ~~~>   */
 .about-description{
     width: 90%;
     margin: 2%;
@@ -404,7 +385,6 @@ div.subPortfolio {
     height: 100%;
     background: rgba(34, 34, 34, 0.541);
     color: white;
-
 }
 .about-main > h1{
     width: 100%;
@@ -560,10 +540,9 @@ div.subPortfolio {
     background-color: #e78402;
     text-align: right;
 }
+/*    ~~~~ ABOUT US page end ~~~>   */
 
-/*    ~~~~ ABOUT US end ~~~>   */
-
-/*    <~~~ start CONTACT ~~~~   */
+/*    <~~~ CONTACT page start ~~~~   */
 #contactTitle{
     text-align: center;
     display: none; 
@@ -650,14 +629,13 @@ div.subPortfolio {
     color:rgb(0, 221, 7);
     float:right;
 }
+/*    ~~~~ CONTACT page end ~~~>   */
 
-/*    ~~~~ CONTACT end ~~~>   */
 
-
-/* start of Desktop-page: */
+/*    <~~~~ DESKTOP layout start ~~~   */
 @media screen and (min-width: 768px) { 
 
-    /*  <~~~ NAVIGATION desktop start~~~~   */    
+    /*    <~~~~ HEADER NAVIGATION desktop start~~~    */    
     nav{
         visibility: visible;
         display: inline-block;
@@ -688,8 +666,7 @@ div.subPortfolio {
     nav > ul{
         width: auto;
     }
-    
-    /*    ~~~~ NAVIGATION desktop end ~~~>   */
+    /*    ~~~~ HEADER NAVIGATION desktop end ~~~>   */
 
     /*    <~~~ PORTFOLIO desktop start ~~~~   */
     .portfolioMain{
@@ -744,13 +721,9 @@ div.subPortfolio {
         width: 50%;
         margin: 7% 0 2% 0;
     }
-
     /*    ~~~~ PORTFOLIO desktop end ~~~>   */
 
-
-
-    /*    ~~~~ ABOUT US desktop start ~~~>   */
-
+    /*    <~~~~ ABOUT US desktop start ~~~   */
     .about-description{
         width: 40%;
         margin: 3% 28%;
@@ -798,7 +771,6 @@ div.subPortfolio {
     }
     /*    ~~~~ ABOUT US desktop end ~~~>   */
 
-    
     /*    <~~~ FOOTER desktop start ~~~~     */
     .fa-envelope, .fa-phone, .fa-instagram, .fa-facebook-f{ 
         font-size: 2em;  
@@ -824,16 +796,17 @@ div.subPortfolio {
         text-align: center;
     }
     /*    ~~~~ FOOTER desktop end ~~~>   */
-    
 
+    /*    <~~~~ HOME desktop start ~~~   */
     #welcome > h1{
         font-size: 6em;
     }
     .welcome-buttons > a{
         width: 15em;
     }
+    /*    ~~~~ HOME desktop end ~~~>   */
 
-    /* Contact start */
+    /*    <~~~~ CONTACE desktop start ~~~   */
     #contactTitle{
         display: block; 
     }
@@ -851,8 +824,7 @@ div.subPortfolio {
     .contactRight {
         padding: 1em 2em 0.5em 1.5em;
         margin: 1em 5em 1em 1em;
-    }   
-    
-    /* Contact end */
+    }    
+    /*    ~~~~ CONTACT desktop end ~~~>   */
 
-}/* end of Desktop-page */
+}/*    ~~~~ DESKTOP layout end ~~~>   */
