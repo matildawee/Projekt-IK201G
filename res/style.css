@@ -61,6 +61,7 @@ html, body{
     background: transparent;
     border: 3px solid #555;
     border-radius: 8px;
+    cursor: pointer;
 }
 .navButton-Line{
     background:#555;
@@ -158,7 +159,7 @@ main{
     margin-top: 10em;
     opacity: 0; 
 }
-#Home-Page > h1{
+#Home-Page > h2{
     margin: 0 auto;
     height: auto;
     font-size: 4em;
@@ -368,8 +369,9 @@ div.subPortfolio {
     color: white;
     border-radius: 2%;
 }
-.about-description > h1{
+.about-description > h2{
     text-align: center;
+    font-size: 2em; 
 }
 .about-main{
     width: 90%;
@@ -381,7 +383,7 @@ div.subPortfolio {
     text-align: center; 
     border-radius: 2%;
 }
-.about-main > h1{
+.about-main > h2{
     width: 100%;
     padding: 0;
     margin: 0;
@@ -419,7 +421,7 @@ div.subPortfolio {
     margin: 0;
     border-radius: 50%;
 }
-.about-developer > h1{
+.about-developer > h2{
     font-size: 1.5em;
     margin: 0;
     padding: 0;
@@ -773,7 +775,7 @@ div.subPortfolio {
     /*    ~~~~ ABOUT US desktop end ~~~>   */
     
     /*    <~~~ HOME desktop start ~~~~     */    
-    #Home-Page > h1{
+    #Home-Page > h2{
         font-size: 6em;
     }
     .welcome-buttons > a{
