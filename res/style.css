@@ -51,7 +51,7 @@ html, body{
     width: 28%;
     height: auto;
 }
-.navButton-toggle{
+#navButton-toggle{
     height: 44px;
     width: 44px;
     position: relative;
@@ -377,12 +377,12 @@ div.subPortfolio {
     height: 100%;
     background: rgba(34, 34, 34, 0.641);
     color: white;
+    text-align: center; 
 }
 .about-main > h1{
     width: 100%;
     padding: 0;
     margin: 0;
-    text-align: center;
     font-size: 2em;
 }
 #about-submain{
