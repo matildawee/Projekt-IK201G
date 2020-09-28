@@ -141,7 +141,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
                 '<p id="' + portfolio.id + '">' + portfolio.description + '</p>' +
             '</div>';
 
-        //adderar varje enskilt projekt-div till en variabel som innehåller alla dessa
+        //adderar varje enskild projekt-div till en variabel som innehåller alla dessa
         projectGroup += aProject;
 
         //för var fjärde div så adderas en slutdiv-tag för de fyra senast skapade projekt-divarna
@@ -151,8 +151,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
             projectGroup += endDiv;
             divList[divIndex] = projectGroup;
             divIndex++;
-            projectGroup = startDiv;    
-            
+            projectGroup = startDiv;               
         };       
         index++;     
     });
@@ -358,6 +357,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
 
     /*    <~~~ About-Page start ~~~~   */
 
+        //här hämtas utvecklarna som får varsin ruta med bild och info
         function displayAbout(person) {
             var allDevelopers = "";
             $.each(person, function (ind, employee) {                        
@@ -374,6 +374,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
             $('#about-submain').html(allDevelopers);
         };
 
+        //här är funktionen för att visa info om utvecklarna, när deras respektive inforuta klickas på
         $(".about-main").on("click", ".about-developer", function(event){
         // $('#about-submain').find("div").click(function (event) {
             event.preventDefault();
@@ -383,7 +384,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
 
             $("body").css({"overflow": "hidden"});
             
-            // Loads persons from about-data.json
+            //hämtas från en jsonfil
             $.getJSON(
                 'res/about-data.json',
                 function (data) {
@@ -392,79 +393,82 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
             );
         });
 
+        //här skapas en ruta över skärmen där info om utvecklarna presenteras
         function getDeveloper(person, id) {
             $.each(person, function (ind, employee) { 
-            
-                    if (employee.id == id)
-                    {
-                        var developerSquare = $(
-                            '<div class="person-content" id="personId' + ind + '">' + 
-                                '<div class="person-content-left">' +
-                                    '<span class="fas fa-times" id="close-person"></span>' +
-                                    '<img class="person-portrait" src="' + employee.portraitBig + '" title="developer" alt="developer">' +                                
-                                '</div>' +
-                                '<div class="person-content-right">' + 
-                                    '<h2> ' + employee.firstname + ' ' + employee.lastname + 
-                                    ' - ' + employee.title + '</h2>' + '<hr/>' +
-                                    '<p>' + employee.description +'</p>' + 
-                                    
-                                    '<div class="skills">' +        
-                                        '<p>JAVA: </p>' +  
-                                        '<div class="skill-meter">' +
-                                            '<div class="java-skills">' +
-                                            '&nbsp;&nbsp;' + employee.java + '&nbsp;&nbsp;' +
-                                            '</div>' +                                        
-                                        '</div>' +
-                                        '<p>HTML: </p>' +  
-                                        '<div class="skill-meter">' +
-                                            '<div class="html-skills">' +
-                                            '&nbsp;&nbsp;' + employee.html + '&nbsp;&nbsp;' +    
-                                            '</div>' +                                       
-                                        '</div>' +
-                                        '<p>JAVASCRIPT: </p>' + 
-                                        '<div class="skill-meter">' +
-                                            '<div class="javascript-skills">' +
-                                            '&nbsp;&nbsp;' + employee.javascript + '&nbsp;&nbsp;' +
-                                            '</div>' +                                       
-                                        '</div>' +
-                                        '<p>CSS: </p>' + 
-                                        '<div class="skill-meter">' +
-                                            '<div class="css-skills">' +
-                                            '&nbsp;&nbsp;' + employee.css + '&nbsp;&nbsp;' +
-                                            '</div>' +                                       
-                                        '</div>' +
-                                        '<p>SQL: </p>' + 
-                                        '<div class="skill-meter">' +
-                                            '<div class="sql-skills">' +
-                                            '&nbsp;&nbsp;' + employee.sql + '&nbsp;&nbsp;' +
-                                            '</div>' +                                       
-                                        '</div>' +
-                                        '<p>PHOTOSHOP: </p>' + 
-                                        '<div class="skill-meter">' +
-                                            '<div class="photoshop-skills">' +
-                                            '&nbsp;&nbsp;' + employee.photoshop + '&nbsp;&nbsp;' +
-                                            '</div>' +                                       
-                                        '</div>' +
+                //loopar igenom och skapar rutan för det valda id:t
+                if (employee.id == id)
+                {
+                    var developerSquare = $(
+                        '<div class="person-content" id="personId' + ind + '">' + 
+                            '<div class="person-content-left">' +
+                                '<span class="fas fa-times" id="close-person"></span>' +
+                                '<img class="person-portrait" src="' + employee.portraitBig + '" title="developer" alt="developer">' +                                
+                            '</div>' +
+                            '<div class="person-content-right">' + 
+                                '<h2> ' + employee.firstname + ' ' + employee.lastname + 
+                                ' - ' + employee.title + '</h2>' + '<hr/>' +
+                                '<p>' + employee.description +'</p>' + 
+                                
+                                '<div class="skills">' +        
+                                    '<p>JAVA: </p>' +  
+                                    '<div class="skill-meter">' +
+                                        '<div class="java-skills">' +
+                                        '&nbsp;&nbsp;' + employee.java + '&nbsp;&nbsp;' +
+                                        '</div>' +                                        
                                     '</div>' +
-
-                                    '<br/>' +
-                                    '<p>' + employee.email + '</p>' +
-                                    '<p>' + employee.telephone + '</p>' +
+                                    '<p>HTML: </p>' +  
+                                    '<div class="skill-meter">' +
+                                        '<div class="html-skills">' +
+                                        '&nbsp;&nbsp;' + employee.html + '&nbsp;&nbsp;' +    
+                                        '</div>' +                                       
+                                    '</div>' +
+                                    '<p>JAVASCRIPT: </p>' + 
+                                    '<div class="skill-meter">' +
+                                        '<div class="javascript-skills">' +
+                                        '&nbsp;&nbsp;' + employee.javascript + '&nbsp;&nbsp;' +
+                                        '</div>' +                                       
+                                    '</div>' +
+                                    '<p>CSS: </p>' + 
+                                    '<div class="skill-meter">' +
+                                        '<div class="css-skills">' +
+                                        '&nbsp;&nbsp;' + employee.css + '&nbsp;&nbsp;' +
+                                        '</div>' +                                       
+                                    '</div>' +
+                                    '<p>SQL: </p>' + 
+                                    '<div class="skill-meter">' +
+                                        '<div class="sql-skills">' +
+                                        '&nbsp;&nbsp;' + employee.sql + '&nbsp;&nbsp;' +
+                                        '</div>' +                                       
+                                    '</div>' +
+                                    '<p>PHOTOSHOP: </p>' + 
+                                    '<div class="skill-meter">' +
+                                        '<div class="photoshop-skills">' +
+                                        '&nbsp;&nbsp;' + employee.photoshop + '&nbsp;&nbsp;' +
+                                        '</div>' +                                       
+                                    '</div>' +
                                 '</div>' +
-                            '</div>'
-                        );
-                    $('.persondiv').html(developerSquare);
 
-                    $(".java-skills").css({"width": employee.java});   
-                    $(".html-skills").css({"width": employee.html}); 
-                    $(".javascript-skills").css({"width": employee.javascript});   
-                    $(".css-skills").css({"width": employee.css});  
-                    $(".sql-skills").css({"width": employee.sql});   
-                    $(".photoshop-skills").css({"width": employee.photoshop});   
-                    };
+                                '<br/>' +
+                                '<p>' + employee.email + '</p>' +
+                                '<p>' + employee.telephone + '</p>' +
+                            '</div>' +
+                        '</div>'
+                    );
+                $('.persondiv').html(developerSquare);
+
+                //här skapas "skill-meters:arna", genom att bredden på en färgad div inom en tom div sätts till den procent som utvecklarens skill-nivå har uppskattats till
+                $(".java-skills").css({"width": employee.java});   
+                $(".html-skills").css({"width": employee.html}); 
+                $(".javascript-skills").css({"width": employee.javascript});   
+                $(".css-skills").css({"width": employee.css});  
+                $(".sql-skills").css({"width": employee.sql});   
+                $(".photoshop-skills").css({"width": employee.photoshop});   
+                };
             });
         };
 
+        //stänger inforutan när krysset trycks
         $(".about-personal").on("click", "#close-person", function(event){
             if(event.target.id=="close-person"){
             event.preventDefault();
@@ -475,6 +479,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
             };
         });
 
+        //stänger inforutan när ytan utanför trycks
         $(".about-personal").on("click", "#thePersondiv", function(event){
             if(event.target.id=="thePersondiv"){
                 event.preventDefault();
