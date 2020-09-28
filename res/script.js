@@ -363,7 +363,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
             $.each(person, function (ind, employee) {                        
                 var personSquare = (
                     '<div class="about-developer" id="personId' + ind + '">' + 
-                    '<img id="personId' + ind + '" src="' + employee.portrait + '" title="developer" alt="developer">' +
+                    '<img id="personId' + ind + '" src="' + employee.portrait + '" title="developer" alt="developer" />' +
                         '<h2 id="personId' + ind + '">' + employee.firstname + '</h2>' +
                         '<p id="personId' + ind + '">' + employee.title + '</p>'+
                     '</div>'
@@ -401,7 +401,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
                             '<div class="person-content" id="personId' + ind + '">' + 
                                 '<div class="person-content-left">' +
                                     '<span class="fas fa-times" id="close-person"></span>' +
-                                    '<img class="person-portrait" src="' + employee.portraitBig + '" title="developer" alt="developer">' +                                
+                                    '<img class="person-portrait" src="' + employee.portraitBig + '" title="developer" alt="developer" />' +                                
                                 '</div>' +
                                 '<div class="person-content-right">' + 
                                     '<h2> ' + employee.firstname + ' ' + employee.lastname + 
