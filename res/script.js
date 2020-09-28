@@ -10,32 +10,30 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
 
     hidePageSections();
     $("#Home-Page").show();
-    $("#welcome").animate({opacity: '1'}, 1500);
+    $("#Home-Page").animate({opacity: '1'}, 1500);
 
-    // $('#page-content').load('./pages/start.html');
 
     function loadPage(clickedId, pageUrl, pageTitle){
         hidePageSections();
         $('#navBar-pageTitle').html(pageTitle);
         $('#' + clickedId + '-Page').show();
-        // $('#page-content').load(pageUrl);
         $('.menuBtn').removeClass('activePage');
         $('#'+clickedId).addClass('activePage');
-        // classToggle();
+        classToggle();
     }
 
     $('#Home').click(function (event) {
         event.preventDefault();
         loadPage('Home');
-        $("#welcome").css({"opacity": "0"});
-        $("#welcome").animate({opacity: '1'}, 1500);
+        $("#Home-Page").css({"opacity": "0"});
+        $("#Home-Page").animate({opacity: '1'}, 1500);
     });
 
     $('#header-logo').click(function (event) {
         event.preventDefault();
         loadPage('Home');
-        $("#welcome").css({"opacity": "0"});
-        $("#welcome").animate({opacity: '1'}, 1500);
+        $("#Home-Page").css({"opacity": "0"});
+        $("#Home-Page").animate({opacity: '1'}, 1500);
     });
 
     $('#Portfolio').click(function (event) {
@@ -81,7 +79,6 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
     $('#startUs').click(function (event) {
         event.preventDefault();
         loadPage('About');
-        // $('#page-content').load('./pages/about.html');
     });
 
 
@@ -456,7 +453,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
             $("#slideShowPlay").css({"visibility": "visible"});
         }
 
-        $(".slideshow-image").css({backgroundColor: "black"});
+        $(".slideshow-image").css({"background-color": "black"});
         $(".slideshow-image").css({"opacity": "0.8"});    
     });
     $(".about-project").on("mouseover", "#slideShowPlay", function(event){
