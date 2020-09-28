@@ -4,8 +4,7 @@ html, body{
     padding: 0;
     margin: 0;
     font-family:'Roboto', sans-serif; 
-    /* background: rgb(238, 238, 238); */
-    background: rgb(199, 46, 46);
+    background: rgb(238, 238, 238);
 }
 .page-content{
     width: 100%;
@@ -305,13 +304,13 @@ div.subPortfolio {
 .slideshow-image{
     width: auto;
     max-width: 90%;
-    margin: 10% 1% 10%;
+    margin: 10% 1% 2%;
     height: 200px;
     object-fit: cover;
 }
 .project-content-top{
     width: 100%;
-    height:auto;
+    height: 25%;
 }
 .fa-play, .fa-pause{ 
     visibility: hidden;
@@ -720,7 +719,7 @@ div.subPortfolio {
         margin: 4% 15%;
     }
     .slideshow-image{
-        margin: 5% 0 5% 0;
+        margin: 5% 0 2% 0;
         height: 400px;
     }
     /*    ~~~~ PORTFOLIO desktop end ~~~>   */
