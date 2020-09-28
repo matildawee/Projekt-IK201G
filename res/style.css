@@ -6,7 +6,7 @@ html, body{
     font-family:'Roboto', sans-serif; 
     background: rgb(238, 238, 238);
 }
-#page-content{
+.page-content{
     width: 100%;
     height: 100%;
     display: inline-block;
@@ -153,12 +153,12 @@ main{
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
-#welcome{
+#Home-Page{
     width: 100%;
     margin-top: 10em;
     opacity: 0; 
 }
-#welcome > h1{
+#Home-Page > h1{
     margin: 0 auto;
     height: auto;
     font-size: 4em;
@@ -788,7 +788,7 @@ div.subPortfolio {
     /*    ~~~~ FOOTER desktop end ~~~>   */
     
     /*    <~~~ HOME desktop start ~~~~     */    
-    #welcome > h1{
+    #Home-Page > h1{
         font-size: 6em;
     }
     .welcome-buttons > a{
@@ -804,7 +804,6 @@ div.subPortfolio {
         display: flex;
     }
     .contactPage > div {
-
         width: 50%;
     }
     .contactLeft{
