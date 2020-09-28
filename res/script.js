@@ -1,7 +1,8 @@
 /* This JavaScript need jQuery to run */
 $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har laddat klart. 
 
-    function hidePageSections() { //funktion som döljer alla sidor
+    //funktion som döljer alla sidor
+    function hidePageSections() { 
         $("#Home-Page").hide();
         $("#Portfolio-Page").hide();
         $("#About-Page").hide();
@@ -116,7 +117,6 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
     );
 
     //Här skapas divar som i sig innehåller upp till 4 divar, en per projekt. Detta lagras i en array
-    
     function displayPortfolio(projects) { 
 
     var startDiv = '<div id="portfolioGroup">';
@@ -161,7 +161,8 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         divList = '';      
     };
 
-    //Lägger till slut-div-tagg (detta sker ifall each-loopen har brutit på ett tal som inte är delbart med 4, isåfall har ingen sluttag skapats i loopen)
+    //Lägger till slut-div-tagg (detta sker ifall each-loopen har brutit på ett tal som inte är delbart med 4, 
+    //isåfall har ingen sluttag skapats i loopen)
     if ((index) % 4 != 0){
         projectGroup += endDiv;
         divList[divIndex] = projectGroup;          
@@ -257,7 +258,6 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
     
     //Loopar igenom slideshow-arrayen i portfolio-data.json och visar bildspel
     function slideshow(){
-        
         if (slideIndex == images.length){
             slideIndex=0;
         }    
@@ -297,9 +297,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         else {
             $("#slideShowPlay").css({"visibility": "visible"});
         }
-
         $(".slideshow-image").css({"filter": "brightness(75%)"});  
-
         // setTimeout(function() {
         //     $('#slideShowPlay').fadeOut();}, 2000);
         // });
@@ -313,9 +311,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         else {
             $("#slideShowPlay").css({"visibility": "visible"});
         }
-
         $(".slideshow-image").css({"filter": "brightness(75%)"});
-        
     });
     
     //Visar paus-knapp när man drar muspelaren över paus-knappen
@@ -326,18 +322,14 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         else {
             $("#slideShowPlay").css({"visibility": "visible"});
         }
-
         $(".slideshow-image").css({"filter": "brightness(75%)"});
-        
     });
     
     //Gömmer play- eller paus-knapp när muspekaren lämnar bilden
     $(".about-project").on("mouseleave", "#slideshow", function(event){
         $("#slideShowPlay").css({"visibility": "hidden"});
         $("#slideShowPause").css({"visibility": "hidden"});
-
         $(".slideshow-image").css({"filter": "brightness(100%)"});
-        
     });
 
     //Pausar bildspel, gömmer paus-knapp samt visar play-knapp
