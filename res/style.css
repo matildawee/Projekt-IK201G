@@ -151,7 +151,8 @@ main{
     width: 100%;
     background-image: url('../img/background.jpg');
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
+    background-position: center center;
 }
 #Home-Page{
     width: 100%;
@@ -239,7 +240,8 @@ div.subPortfolio {
     height: auto; 
     padding: 0.5%; 
     margin: 1em; 
-    background: rgba(255, 255, 255, 0.900);
+    background: rgba(34, 34, 34, 0.641);
+    color: white;
     text-align: center; 
     border-radius: 2%;
 }
@@ -271,16 +273,6 @@ div.subPortfolio {
 .fa-arrow-left:hover, .fa-arrow-right:hover{
     color:#cececeaf;
 }
-/* ---------------- ANVÄNDS DESSA???? -------------------
- .project-image{
-    width: 500px;
-    height: auto;
-    margin: 5% 0 0 0;
-    padding: 0;
-} 
- .btn-img:hover img { 
-    opacity: 0.8;
-} ------------------------------------------------------*/
 
 /*    <~~~ PROJECT info start ~~~~   */
 .projectdiv {
@@ -370,7 +362,7 @@ div.subPortfolio {
     margin: 2%;
     padding: 2% 3%;
     text-align: justify;
-    background: rgba(34, 34, 34, 0.541);
+    background: rgba(34, 34, 34, 0.641);
     color: white;
 }
 .about-description > h1{
@@ -381,7 +373,7 @@ div.subPortfolio {
     margin: 2%;
     padding: 2% 3%; 
     height: 100%;
-    background: rgba(34, 34, 34, 0.541);
+    background: rgba(34, 34, 34, 0.641);
     color: white;
 }
 .about-main > h1{
