@@ -270,17 +270,13 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
     /* end Contact.js */
 
 
-    /* start of Portfolio.js */
-
+    /*    <~~~ PORTFOLIO.JS start ~~~~   */
     var divList = [];
     var divIndex = 0;
     var index = 0;
     var playflag = false;
-
     var showIndex = 0;
 
-  
-    
     $.getJSON(
         'res/portfolio-data.json',
         function (data) {
@@ -288,24 +284,27 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         }
     );
 
-    function displayPortfolio(projects) {
+    // Creates one div for each project in portfolio.js
+    function displayPortfolio(projects) { 
 
     var startDiv = '<div id="portfolioGroup">';
     var endDiv = '</div>';
     var projectGroup = startDiv;
 
-    $.each(projects, function (i, portfolio) {          
+    $.each(projects, function (i, portfolio) {
+
+        if (portfolio.description.length > 170) {
+            portfolio.description = portfolio.description.substring(0, 170) + "...";
+          };
+                
         var aProject = 
             '<div class="subPortfolio" id="' + portfolio.id + '">' + 
             '<img class="project-img" id="' + portfolio.id + '"src="' + portfolio.image + '" title="Project" alt="Project">' +
                 '<h1 id="' + portfolio.id + '">' + portfolio.title + '</h1>' +
                 '<p id="' + portfolio.id + '">' + portfolio.description + '</p>' +
             '</div>';
-        
-        //skapar en div per projekt
 
         projectGroup += aProject;
-
 
         if (i > 0 && (i + 1) % 4 == 0){
             projectGroup += endDiv;
@@ -335,23 +334,15 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         //raderar en sista tom div som skapas när antalet projekt är delbart med 4
     }
     $('#portfolio-box').html(divList[0]);
-    
     };
 
     $('#arrowRight').click(function () {
-        
-        //$('#portfolio-box').fadeout();
-        //$("#portfolio-box").delay( 100 ).fadeIn( 100 );
-        //$("#portfolio-box").find("#portfolioGroup").fadeOut( 200 ).delay( 400 ).fadeIn( 200 );
         showIndex++;
 
         if (showIndex == divList.length){
             showIndex = 0;
         }
-
         $('#portfolio-box').html(divList[showIndex]);
-        //$('#portfolio-box').fadein();
-        
     });
 
     $('#arrowLeft').click(function () {
@@ -363,7 +354,6 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         }
 
         $('#portfolio-box').html(divList[showIndex]);
-        
     });
 
     $(".portfolioMain").on("click", ".subPortfolio", function(event){
@@ -513,7 +503,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         $("#slideShowPlay").css({"visibility": "hidden"});
     });
 
-    /* end of portfolio.js */
+    /*    ~~~ PORTFOLIO.JS end ~~~~>   */
 
 
     /* start of about-page */
