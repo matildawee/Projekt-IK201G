@@ -290,8 +290,6 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         }; 
     });
 
-    var screenWidth = window.innerWidth;
-    console.log(screenWidth);
 
     //Visar paus- eller play-knapp när man drar muspekaren över bilden
     $(".about-project").on("mouseover", "#slideshow", function(event){
@@ -304,11 +302,30 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         }
         $(".slideshow-image").css({"filter": "brightness(75%)"});  
 
+        var screenWidth = window.innerWidth;
+
         if (screenWidth<769){
-            console.log("wuuu");
             setTimeout(hideButton, 3000); 
         };
     });
+
+        //Visar paus- eller play-knapp när man trycker på bilden (för mobilvy)
+        $(".about-project").on("click", "#slideshow", function(event){
+
+            if (playflag == true){
+                $("#slideShowPause").css({"visibility": "visible"});
+            }
+            else {
+                $("#slideShowPlay").css({"visibility": "visible"});
+            }
+            $(".slideshow-image").css({"filter": "brightness(75%)"});  
+    
+            var screenWidth = window.innerWidth;
+
+            if (screenWidth<769){
+                setTimeout(hideButton, 3000); 
+            };
+        });
 
 
     //Visar paus- eller play-knapp när man drar muspekaren över bilden
