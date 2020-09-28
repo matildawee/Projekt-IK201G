@@ -229,7 +229,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
                             '<div class="project-content-top">' +
                                 '<span class="fas fa-times" id="close-portfolio"></span>' +                           
                                 '<div class="slideshowDiv">' +
-                                    '<img class="slideshow-image" id="slideshow" src="' + project.slideshow[0] + '" title="developer" alt="developer" />' + 
+                                    '<img class="slideshow-image" id="slideshow" src="' + project.slideshow[0] + '" alt=" ' + project.title + ' " />' + 
                                     '<span class="fas fa-pause" id="slideShowPause"></span>' + 
                                     '<span class="fas fa-play" id="slideShowPlay"></span>' + 
                                 '</div>' +                
@@ -289,8 +289,12 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         }; 
     });
 
+    var mouseX;
+    var mouseY; 
+
     //Visar paus- eller play-knapp när man drar muspekaren över bilden
-    $(".about-project").on("mouseover", "#slideshow", function(event){
+    $(".about-project").on("mousemove", "#slideshow", function(event){
+
         if (playflag == true){
             $("#slideShowPause").css({"visibility": "visible"});
         }
@@ -298,10 +302,47 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
             $("#slideShowPlay").css({"visibility": "visible"});
         }
         $(".slideshow-image").css({"filter": "brightness(75%)"});  
-        // setTimeout(function() {
-        //     $('#slideShowPlay').fadeOut();}, 2000);
-        // });
+
+        setTimeout(hideButton, 3000); 
     });
+
+    $(".about-project").on("mouseout", "#slideshow", function(event){
+
+        if (playflag == true){
+            $("#slideShowPause").css({"visibility": "hidden"});
+        }
+        else {
+            $("#slideShowPlay").css({"visibility": "hidden"});
+        }
+
+        $(".slideshow-image").css({"filter": "brightness(75%)"});  
+
+        setTimeout(hideButton, 3000); 
+    });
+
+    //Visar paus- eller play-knapp när man drar muspekaren över bilden
+    // $(".about-project").on("mousemove", "#slideshow", function(event){
+    //     if (playflag == true){
+    //         $("#slideShowPause").css({"visibility": "visible"});
+    //     }
+    //     else {
+    //         $("#slideShowPlay").css({"visibility": "visible"});
+    //     }
+
+    //     $(".slideshow-image").css({"filter": "brightness(75%)"});  
+
+    //     setTimeout(hideButton, 3000); 
+    // });
+
+    function hideButton() {     
+      
+        $("#slideShowPlay").css({"visibility": "hidden"});      
+        $("#slideShowPause").css({"visibility": "hidden"});
+        //$("#slideShowPause").fadeOut(1000);
+
+        $(".slideshow-image").css({"filter": "brightness(100%)"});
+     }
+    
 
     //Visar play-knapp när man drar muspelaren över play-knappen
     $(".about-project").on("mouseover", "#slideShowPlay", function(event){
