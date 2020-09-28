@@ -466,7 +466,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
             $("#slideShowPlay").css({"visibility": "visible"});
         }
 
-        $(".slideshow-image").css({backgroundColor: "black"});
+        $(".slideshow-image").css({"background-color": "black"});
         $(".slideshow-image").css({"opacity": "0.8"});    
     });
     $(".about-project").on("mouseover", "#slideShowPlay", function(event){
