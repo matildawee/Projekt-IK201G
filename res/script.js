@@ -68,6 +68,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
     $('#Contact').click(function (event) {
         event.preventDefault();
         loadPage('Contact');
+        $('#contactSubmitMessage').text("");
     });
 
     //funktion som lägger till respektive tar bort navBar-show när man klickar på navButton-toggle
