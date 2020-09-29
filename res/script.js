@@ -111,6 +111,14 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
     $('#startUs').click(function (event) {
         event.preventDefault();
         loadPage('About');
+
+        //laddar in utvecklarna
+        $.getJSON(
+            'res/about-data.json',
+            function (data) {
+                displayAbout(data.person);
+            }
+        );
     });
 
     /*    ~~~~ Home-Page end ~~~>   */
