@@ -297,7 +297,12 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
     var endDiv = '</div>';
     var projectGroup = startDiv;
 
-    $.each(projects, function (i, portfolio) {          
+    $.each(projects, function (i, portfolio) {     
+
+        if (portfolio.description.length > 110) {
+            portfolio.description = portfolio.description.substring(0, 110) + "...";
+          };
+        
         var aProject = 
             '<div class="subPortfolio" id="' + portfolio.id + '">' + 
             '<img class="project-img" id="' + portfolio.id + '"src="' + portfolio.image + '" title="Project" alt="Project">' +
@@ -466,8 +471,8 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
             $("#slideShowPlay").css({"visibility": "visible"});
         }
 
-        $(".slideshow-image").css({"background-color": "black"});
-        $(".slideshow-image").css({"opacity": "0.8"});    
+        $(".slideshow-image").css({"filter": "brightness(75%)"});
+        // $(".slideshow-image").css({"opacity": "0.5"});    
     });
     $(".about-project").on("mouseover", "#slideShowPlay", function(event){
         if (playflag == true){
@@ -477,8 +482,9 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
             $("#slideShowPlay").css({"visibility": "visible"});
         }
 
-        $(".slideshow-image").css({"background-color": "black"});
-        $(".slideshow-image").css({"opacity": "0.8"});
+        $(".slideshow-image").css({"filter": "brightness(75%)"});
+        // $(".slideshow-image").css({"background-color": "black"});
+        // $(".slideshow-image").css({"opacity": "0.8"});
         
     });
     $(".about-project").on("mouseover", "#slideShowPause", function(event){
@@ -489,16 +495,18 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
             $("#slideShowPlay").css({"visibility": "visible"});
         }
 
-        $(".slideshow-image").css({"background-color": "black"});
-        $(".slideshow-image").css({"opacity": "0.8"});
+        $(".slideshow-image").css({"filter": "brightness(75%)"});
+        // $(".slideshow-image").css({"background-color": "black"});
+        // $(".slideshow-image").css({"opacity": "0.8"});
         
     });
     $(".about-project").on("mouseleave", "#slideshow", function(event){
         $("#slideShowPlay").css({"visibility": "hidden"});
         $("#slideShowPause").css({"visibility": "hidden"});
 
-        $(".slideshow-image").css({"background-color": "rgba(0, 0, 0, 0)"});
-        $(".slideshow-image").css({"opacity": "1"});
+        $(".slideshow-image").css({"filter": "brightness(100%)"});
+        // $(".slideshow-image").css({"background-color": "rgba(0, 0, 0, 0)"});
+        // $(".slideshow-image").css({"opacity": "1"});
         
     });
 

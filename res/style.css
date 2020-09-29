@@ -4,6 +4,7 @@ html, body{
     padding: 0;
     margin: 0;
     font-family:'Roboto', sans-serif; 
+    font-family:'Roboto', sans-serif; 
     background: rgb(238, 238, 238);
 }
 #page-content{
@@ -151,7 +152,9 @@ main{
     width: 100%;
     background-image: url('../img/background.jpg');
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
+    background-position: center center;
+    /* background-size: 100% 100%; */
 }
 #welcome{
     width: 100%;
@@ -677,6 +680,8 @@ div.subPortfolio {
         margin: 1%;
         min-width: 250px;
         max-height: 400px;
+        /* text-overflow: ellipsis; */
+        word-wrap: break-word;
     }
 
     /* Denna behöver ses över - texten wrapar inte korrekt? Hur blir detta om bilderna är
@@ -688,7 +693,8 @@ div.subPortfolio {
         width: (20%); 
         overflow:hidden;
         /* white-space: nowrap; */
-        text-overflow: ellipsis;
+        /* text-overflow: ellipsis; */
+        word-wrap: break-word;
 
         /* word-wrap: hidden; */
     }
