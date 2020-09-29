@@ -585,6 +585,9 @@ div.subPortfolio {
 .contactInfo > div > p{
     font-size: 0.9em;
 }
+.contactTelephone > p > a{
+    color:#FFFFFF; 
+}
 .contactEmail > p > a{
     color:#FFFFFF; 
 }
