@@ -429,12 +429,6 @@ div.subPortfolio {
 .about-developer > p{
     margin: 0;
     padding: 0;
-}
-.person-content-right > h2{
-    text-align: center;
-}
-.person-content-right > hr{
-    width: 60%;
     color: rgb(0, 0, 0);
 }
 .person-content-right{
