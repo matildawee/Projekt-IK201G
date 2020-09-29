@@ -45,7 +45,7 @@
                     <a id="startProjects">Our projects</a>
                     <a id="startUs">This is us</a>
                 </div> <!-- /welcome-buttons -->
-            </section>
+            </section> <!-- /Home-Page -->
 
             <section id="Portfolio-Page" class="page-content">
                 <div class="portfolioMain">
@@ -54,25 +54,24 @@
                     </div> <!-- /portfolioLeft -->
                 
                     <div id="portfolio-box"> 
-                        <!-- Alla projekt kommer att laddas in i denna div från script.js -->
+                        <!-- Alla projekt kommer att laddas in i denna div från script.js, exempel nedan: -->
                         <div class="subPortfolio">
                             <img class="project-img" src="./img/projects/projects.jpg" title="Project" alt="Project" />
                             <h2>Ett projekt</h2>
                             <p>Projekten kommer att hamna här</p>
-                        </div>
-                    </div>
+                        </div> <!-- /subPortfolio -->
+                    </div> <!-- /portfolio-box -->
                 
                     <div class="about-project">
                         <div class="projectdiv" id="theProjectdiv"></div> <!-- Vad gör vi här? - 
-                        I denna div läggs diven som visar info om ett projekt, samt öppnar den genomskinliga
-                        rutan bakom -->
-                    </div>
+                        I denna div läggs diven som visar info om ett projekt, samt öppnar den genomskinliga rutan bakom -->
+                    </div> <!-- /about-project -->
                 
                     <div class="portfolioRight">
                         <i id="arrowRight" class="fas fa-arrow-right"></i>
                     </div> <!-- /portfolioRight -->
                 </div> <!-- /portfolioMain -->
-            </section>
+            </section> <!-- /Portfolio-Page -->
 
             <section id="About-Page" class="page-content">
                 <div class="about-description">
@@ -92,9 +91,16 @@
                     <div id="about-submain"></div>
                 </div> <!-- /about-main -->
                 <div class="about-personal">
-                    <div class="persondiv" id="thePersondiv"></div>
+                    <div id="thePersondiv" class="persondiv">
+                        <!-- Alla utvecklare kommer att laddas in i denna div från script.js, exempel nedan: -->
+                        <div class="about-developer">
+                            <img src="./img/portraits/woman-thumbnail.jpg" title="developer" alt="developer">
+                            <h2>Name</h2>
+                            <p>Projectrole</p>
+                        </div> <!-- /about-developer -->
+                    </div> <!-- /thePersondiv -->
                 </div> <!-- /about-personal -->
-            </section>
+            </section> <!-- /About-Page -->
 
             <section id="Contact-Page" class="page-content">
                 <div class="contactPage">
@@ -139,7 +145,7 @@
                         </div> <!-- /contactInfo -->
                     </div> <!-- /contactRight -->
                 </div> <!-- /contactPage -->
-            </section>
+            </section> <!-- /Contact-Page -->
 
         </main>
 
