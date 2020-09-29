@@ -251,6 +251,8 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         $(".portfolioMain").on("click", ".subPortfolio", function(event){
             event.preventDefault();
             var id = (event.target.id);
+
+            slideIndex = 1;
         
             $(".projectdiv").show();
             $(".project-content").show();
