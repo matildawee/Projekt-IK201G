@@ -199,8 +199,6 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
                 divList.splice(divList.length-1,1); 
             }
 
-            console.log(divList);
-
             //lägger in den första div-gruppen på sajten
             $('#portfolio-box').html(divList[0]);
         };
@@ -612,7 +610,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
 
         // console.log(localSavedJsonObject); //kommentera bort denna rad om ni vill se hela sparade JSON-objectet i loggen när sidan contact laddas.
 
-        
+
         $("#contactName").blur(function() { //När focus tappas av rutan med id "#contactName"
             validateOkOrError("#contactName"); //Ska valideringsfunktionen köras på "#contactName"
             saveToJSON(); //När focus tappats från fältet så körs också funktionen "saveToJSON()" (se längst ned i denna fil).
