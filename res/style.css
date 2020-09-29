@@ -682,34 +682,34 @@ div.subPortfolio {
     }
     /*    ~~~~ NAVIGATION desktop end ~~~>   */
 
-        /*    <~~~ FOOTER desktop start ~~~~     */
-        footer{
-            font-size: 1em;
-        }
-        .fa-envelope, .fa-phone, .fa-instagram, .fa-facebook-f{ 
-            font-size: 2em;  
-        }
-        .footer_left{
-            width:20%;
-            margin: 0 0 0 0;
-            float: left; 
-            text-align: center;
-        }
-        .footer_center{
-            width:60%;
-            margin: 0 0 0 0;
-            float:left;
-            display: grid;
-            place-items:center;
-            text-align: center;
-        }
-        .footer_right{
-            width:20%;
-            margin: 0 0 0 0;
-            float: right;
-            text-align: center;
-        }
-        /*    ~~~~ FOOTER desktop end ~~~>   */
+    /*    <~~~ FOOTER desktop start ~~~~     */
+    footer{
+        font-size: 1em;
+    }
+    .fa-envelope, .fa-phone, .fa-instagram, .fa-facebook-f{ 
+        font-size: 2em;  
+    }
+    .footer_left{
+        width:20%;
+        margin: 0 0 0 0;
+        float: left; 
+        text-align: center;
+    }
+    .footer_center{
+        width:60%;
+        margin: 0 0 0 0;
+        float:left;
+        display: grid;
+        place-items:center;
+        text-align: center;
+    }
+    .footer_right{
+        width:20%;
+        margin: 0 0 0 0;
+        float: right;
+        text-align: center;
+    }
+    /*    ~~~~ FOOTER desktop end ~~~>   */
 
     /*    <~~~ PORTFOLIO desktop start ~~~~   */
     .portfolioMain{
@@ -845,4 +845,4 @@ div.subPortfolio {
     .person-content{
         margin: 0% 15%;
     }
-} 
+}

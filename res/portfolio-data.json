@@ -6,7 +6,7 @@
           "date": "2020-01-01 - 2021-01-01",
           "description": "Projekt är uppdrag som utförs av tillfälliga arbetsorganisation för att åstadkomma ett i förväg bestämt resultat. ",
           "image": "./img/projects/projekt.jpg",
-          "slideshow": ["./img/projects/projekt.jpg", "./img/projects/forskare.jpg", "./img/projects/satisfiedcustomers.jpg" ]
+          "slideshow": ["./img/projects/projekt.jpg", "./img/projects/forskare.jpg", "./img/projects/satisfiedcustomers.jpg"]
         },
         {
             "id": "p2",

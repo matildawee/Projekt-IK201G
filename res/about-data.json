@@ -1,21 +1,21 @@
 {
     "person": [
         {
-          "id": "personId0",
-          "firstname": "Matilda",
-          "lastname": "Wennberg",
-          "title": "Developer",
-          "description": "Hej! Harum doloremque alias voluptatem in. Facilis illo in labore nemo? Molestiae ad rem, sint quibusdam alias in similique accusantium, deleniti explicabo optio voluptate, quos animi fugit eveniet nobis incidunt excepturi.",
-          "email": "example@example.com",
-          "telephone": "+46701740605",
-          "portrait": "./img/portraits/woman-thumbnail.jpg",
-          "portraitBig": "./img/portraits/woman.jpg",
-          "java": "80%",
-          "html": "60%",
-          "javascript": "50%",
-          "css": "60%",
-          "sql": "70%",
-          "photoshop": "0%"
+            "id": "personId0",
+            "firstname": "Matilda",
+            "lastname": "Wennberg",
+            "title": "Developer",
+            "description": "Hej! Harum doloremque alias voluptatem in. Facilis illo in labore nemo? Molestiae ad rem, sint quibusdam alias in similique accusantium, deleniti explicabo optio voluptate, quos animi fugit eveniet nobis incidunt excepturi.",
+            "email": "example@example.com",
+            "telephone": "+46701740605",
+            "portrait": "./img/portraits/woman-thumbnail.jpg",
+            "portraitBig": "./img/portraits/woman.jpg",
+            "java": "80%",
+            "html": "60%",
+            "javascript": "50%",
+            "css": "60%",
+            "sql": "70%",
+            "photoshop": "0%"
         },
         {
             "id": "personId1",
@@ -33,8 +33,8 @@
             "css": "60%",
             "sql": "60%",
             "photoshop": "50%"
-          },
-          {
+        },
+        {
             "id": "personId2",
             "firstname": "Oskar",
             "lastname": "Bendrik",
@@ -50,8 +50,8 @@
             "css": "30%",
             "sql": "70%",
             "photoshop": "1%"
-          },
-          {
+        },
+        {
             "id": "personId3",
             "firstname": "Jonas",
             "lastname": "Arvidson",
@@ -67,6 +67,6 @@
             "css": "70%",
             "sql": "80%",
             "photoshop": "80%"
-          }
+        }
     ]
 }
