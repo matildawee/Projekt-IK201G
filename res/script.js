@@ -36,6 +36,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         $("#Home-Page").animate({opacity: '1'}, 1500);
     });
 
+    //funktion som används när vi klickar på loggan i mobile eller desktop läge. 
     function loadLogoHomePage() {
         hidePageSections(); 
         $('#Home-Page').show();
