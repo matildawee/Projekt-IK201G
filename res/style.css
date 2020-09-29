@@ -3,7 +3,6 @@ html, body{
     height: 100%;
     padding: 0;
     margin: 0;
-    /* font-family:'Roboto', sans-serif;  */
     font-family:'Book Antiqua', sans-serif; 
     background: rgb(238, 238, 238);
 }
@@ -162,8 +161,7 @@ main{
 #Home-Page > h2{
     margin: 0 auto;
     height: auto;
-    font-size: 4em;
-    font-weight: bold;
+    font-size: 3.3em;
     letter-spacing: 0.1em;
     color: white;
     text-transform: uppercase;

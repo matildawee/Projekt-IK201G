@@ -6,8 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="./img/projectAB_favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" href="./res/style.css" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" />
-        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Consert one">
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> <!-- To see full jquery use: https://code.jquery.com/jquery-3.5.1.js -->
     </head>
@@ -46,7 +44,7 @@
                     <a id="startProjects">Our projects</a>
                     <a id="startUs">This is us</a>
                 </div> <!-- /welcome-buttons -->
-            </section>
+            </section> <!-- /Home-Page -->
 
             <section id="Portfolio-Page" class="page-content">
                 <div class="portfolioMain">
@@ -55,25 +53,24 @@
                     </div> <!-- /portfolioLeft -->
                 
                     <div id="portfolio-box"> 
-                        <!-- Alla projekt kommer att laddas in i denna div från script.js -->
+                        <!-- Alla projekt kommer att laddas in i denna div från script.js, exempel nedan: -->
                         <div class="subPortfolio">
                             <img class="project-img" src="./img/projects/projects.jpg" title="Project" alt="Project" />
                             <h2>Ett projekt</h2>
                             <p>Projekten kommer att hamna här</p>
-                        </div>
-                    </div>
+                        </div> <!-- /subPortfolio -->
+                    </div> <!-- /portfolio-box -->
                 
                     <div class="about-project">
                         <div class="projectdiv" id="theProjectdiv"></div> <!-- Vad gör vi här? - 
-                        I denna div läggs diven som visar info om ett projekt, samt öppnar den genomskinliga
-                        rutan bakom -->
-                    </div>
+                        I denna div läggs diven som visar info om ett projekt, samt öppnar den genomskinliga rutan bakom -->
+                    </div> <!-- /about-project -->
                 
                     <div class="portfolioRight">
                         <i id="arrowRight" class="fas fa-arrow-right"></i>
                     </div> <!-- /portfolioRight -->
                 </div> <!-- /portfolioMain -->
-            </section>
+            </section> <!-- /Portfolio-Page -->
 
             <section id="About-Page" class="page-content">
                 <div class="about-description">
@@ -93,9 +90,16 @@
                     <div id="about-submain"></div>
                 </div> <!-- /about-main -->
                 <div class="about-personal">
-                    <div class="persondiv" id="thePersondiv"></div>
+                    <div id="thePersondiv" class="persondiv">
+                        <!-- Alla utvecklare kommer att laddas in i denna div från script.js, exempel nedan: -->
+                        <div class="about-developer">
+                            <img src="./img/portraits/woman-thumbnail.jpg" title="developer" alt="developer">
+                            <h2>Name</h2>
+                            <p>Projectrole</p>
+                        </div> <!-- /about-developer -->
+                    </div> <!-- /thePersondiv -->
                 </div> <!-- /about-personal -->
-            </section>
+            </section> <!-- /About-Page -->
 
             <section id="Contact-Page" class="page-content">
                 <div class="contactPage">
@@ -140,7 +144,7 @@
                         </div> <!-- /contactInfo -->
                     </div> <!-- /contactRight -->
                 </div> <!-- /contactPage -->
-            </section>
+            </section> <!-- /Contact-Page -->
 
         </main>
 
@@ -156,8 +160,8 @@
                 </p>
             </div> <!-- /footer_center -->
             <div class="footer_right">
-                <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a> <!-- Instagram-ikon -->
-                <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"> </i></a> <!-- Facebook-ikon -->
+                <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a> <!-- Instagram-ikon -->
+                <a href="https://www.facebook.com/" target="_blank" rel="noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"> </i></a> <!-- Facebook-ikon -->
             </div> <!-- /footer_right -->
         </footer>
 
