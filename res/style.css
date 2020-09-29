@@ -429,10 +429,6 @@ div.subPortfolio {
 .about-developer > p{
     margin: 0;
     padding: 0;
-    color: rgb(0, 0, 0);
-}
-.person-content-right{
-    width: 80%;
     height: auto;
     margin: 1% 0 1% 1%;
     padding: 1% 4%;
