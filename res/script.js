@@ -267,10 +267,10 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
     function slideshow(){
         if (slideIndex >= images.length){
             slideIndex=0;
-        }    
+        };    
         document.getElementById('slideshow').src=images[slideIndex];
         slideIndex++;
-    }
+    };
 
     //Stänger projectdiv och project-content samt avslutar bildspel när knapp klickas
     $(".about-project").on("click", "#close-portfolio", function(event){

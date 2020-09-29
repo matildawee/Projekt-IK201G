@@ -3,7 +3,7 @@ html, body{
     height: 100%;
     padding: 0;
     margin: 0;
-    font-family:'Book Antiqua', sans-serif; 
+    font-family: sans-serif; 
     background: rgb(238, 238, 238);
 }
 .page-content{
@@ -125,6 +125,7 @@ footer{
     display: flex;
     justify-content: center;
     text-align: center;
+    font-size: 0.8em;
 }
 .fa-envelope, .fa-phone, .fa-instagram, .fa-facebook-f{ 
     margin: 0.6em;
@@ -616,6 +617,9 @@ div.subPortfolio {
     /*    ~~~~ NAVIGATION desktop end ~~~>   */
 
         /*    <~~~ FOOTER desktop start ~~~~     */
+        footer{
+            font-size: 1em;
+        }
         .fa-envelope, .fa-phone, .fa-instagram, .fa-facebook-f{ 
             font-size: 2em;  
         }
