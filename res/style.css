@@ -429,6 +429,7 @@ div.subPortfolio {
     font-size: 1.5em;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 .about-developer > p{
     margin: 0;
@@ -484,8 +485,7 @@ div.subPortfolio {
     padding: 1% 4%;
     right: 0px;
     top: 0px;
-    text-align: justify;
-    justify-content: center;
+    text-align: center;
 }
 #close-person{
     position: absolute;
@@ -671,6 +671,9 @@ div.subPortfolio {
     }
     nav > ul{
         width: auto;
+    }
+    nav > ul > li > a{
+        padding: 1em;
     }
     /*    ~~~~ NAVIGATION desktop end ~~~>   */
 
