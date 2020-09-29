@@ -4,7 +4,7 @@ html, body{
     padding: 0;
     margin: 0;
     font-family: sans-serif; 
-    background: rgb(238, 238, 238);
+    background: rgb(255, 255, 255);
 }
 .page-content{
     width: 100%;
@@ -17,7 +17,8 @@ html, body{
     width: 100%;
     display: inline-block;
     min-height: 55px;
-    background: rgb(238, 238, 238);
+    background: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgb(133, 129, 129); 
     justify-content: center;
 }
 .navBar-left{
@@ -124,7 +125,7 @@ nav > ul > li > a:hover{
 /*    <~~~ FOOTER start ~~~~   */
 footer{
     width: 100%;
-    background: rgb(238, 238, 238);
+    background: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     text-align: center;
@@ -154,7 +155,7 @@ main{
     width: 100%;
     background-image: url('../img/background.jpg');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: auto;
     background-position: center center;
 }
 #Home-Page{
