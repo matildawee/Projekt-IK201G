@@ -212,8 +212,30 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         $('#portfolio-box').html(divList[showIndex]);
     });
 
+    //Visar nästa div-grupp när knappen klickas
+    $('#arrowRight2').click(function () {
+        showIndex++;
+
+        if (showIndex == divList.length){
+            showIndex = 0;
+        }
+        $('#portfolio-box').html(divList[showIndex]);
+    });
+
     //Visar föregående div-grupp när knappen klickas
     $('#arrowLeft').click(function () {
+        
+        showIndex--;
+
+        if (showIndex < 0){
+            showIndex = divList.length - 1;
+        }
+
+        $('#portfolio-box').html(divList[showIndex]);
+    });
+
+    //Visar föregående div-grupp när knappen klickas
+    $('#arrowLeft2').click(function () {
         
         showIndex--;
 
