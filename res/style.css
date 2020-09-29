@@ -30,6 +30,11 @@ html, body{
     height: auto;
     margin: 0.2em 1em;
     cursor: pointer;
+    display: none;
+}
+#header-logo-mobile{
+    width: 50px;
+    height: auto;
 }
 .navBar-center{
     width: 40%;
@@ -601,6 +606,10 @@ div.subPortfolio {
     }
     #header-logo{
         width: 200px;
+        display: block;
+    }
+    #header-logo-mobile{
+        display: none;
     }
     .navBar-center{
         display: none;

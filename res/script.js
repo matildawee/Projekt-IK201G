@@ -50,6 +50,20 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         $("#Home-Page").animate({opacity: '1'}, 1500);
     });
 
+        //funktion som anropas när man klickar på loggan, dock mera hårdkodad.
+        $('#header-logo-mobile').click(function (event) {
+            event.preventDefault();
+            hidePageSections(); 
+            $('#Home-Page').show();
+            $('.menuBtn').removeClass('activePage');
+            $('#Home').addClass('activePage');
+    
+            $('#navBar-pageTitle').html('Home');
+            $('nav').removeClass('navBar-show');
+            $("#Home-Page").css({"opacity": "0"});
+            $("#Home-Page").animate({opacity: '1'}, 1500);
+        });
+
     //funktion som anropas när man klickar på Portfolio
     $('#Portfolio').click(function (event) {
         event.preventDefault();
