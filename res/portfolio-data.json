@@ -30,7 +30,7 @@
             "date": "2020-04-04 - 2021-04-04",
             "description": "Projekt är uppdrag som utförs av tillfälliga arbetsorganisation för att åstadkomma ett i förväg bestämt resultat.",
             "image": "./img/projects/vikomframtilldetta.jpg",
-            "slideshow": ["./img/projects/projekt.jpg", "./img/projects/vikomframtilldetta.jpg"] 
+            "slideshow": ["./img/projects/business.jpg", "./img/projects/vikomframtilldetta.jpg", "./img/projects/framgang.jpg"] 
         },
         {
             "id": "p5",
@@ -51,7 +51,7 @@
         {
             "id": "p7",
             "title": "Projekt 7",
-            "date": "2020-05-77 - 2021-05-77",
+            "date": "2020-07-07 - 2021-07-07",
             "description": "Projekt är uppdrag som utförs av tillfälliga arbetsorganisation för att åstadkomma ett i förväg bestämt resultat.",
             "image": "./img/projects/maskin.jpg",
             "slideshow": ["./img/projects/maskin.jpg", "./img/projects/konferens.jpg"]
@@ -75,7 +75,7 @@
         {
             "id": "p10",
             "title": "Projekt 10",
-            "date": "2020-09-09 - 2021-09-09",
+            "date": "2020-10-10 - 2021-10-10",
             "description": "Projekt är uppdrag som utförs av tillfälliga arbetsorganisation för att åstadkomma ett i förväg bestämt resultat.",
             "image": "./img/projects/spaceproject.jpg",
             "slideshow": ["./img/projects/projekt.jpg", "./img/projects/konferens.jpg"]
@@ -83,7 +83,7 @@
         {
             "id": "p11",
             "title": "Projekt 11",
-            "date": "2020-09-09 - 2021-09-09",
+            "date": "2020-11-11 - 2021-11-11",
             "description": "Projekt är uppdrag som utförs av tillfälliga arbetsorganisation för att åstadkomma ett i förväg bestämt resultat.",
             "image": "./img/projects/konferens.jpg",
             "slideshow": ["./img/projects/konferens.jpg", "./img/projects/projekt.jpg","./img/projects/maskin.jpg"]

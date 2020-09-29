@@ -3,7 +3,7 @@ html, body{
     height: 100%;
     padding: 0;
     margin: 0;
-    font-family: sans-serif; 
+    font-family:'Book Antiqua', sans-serif; 
     background: rgb(238, 238, 238);
 }
 .page-content{
@@ -584,9 +584,6 @@ div.subPortfolio {
 .contactInfo > div > p{
     font-size: 0.9em;
 }
-.contactTelephone > p > a{
-    color:#FFFFFF; 
-}
 .contactEmail > p > a{
     color:#FFFFFF; 
 }
@@ -814,7 +811,7 @@ div.subPortfolio {
 
 }/*    ~~~~ DESKTOP layout end ~~~>   */
 
-@media screen and (max-height: 550px) and (min-width: 768px) {
+@media screen and (max-height: 530px) and (min-width: 768px) {
     .project-content{
             margin: 0% 15%;
     }
