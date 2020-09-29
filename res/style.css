@@ -26,9 +26,10 @@ html, body{
 }
 #header-logo{
     display: inline-block;
-    width: 95%;
-    height: auto;
-    margin: 0.2em 1em;
+    width: auto;
+    height: 70px;
+    object-fit: cover;
+    margin: 0 1em;
     cursor: pointer;
     display: none;
 }
@@ -654,7 +655,7 @@ div.subPortfolio {
         width: 20%;
     }
     #header-logo{
-        width: 200px;
+        width: 150px;
         display: block;
     }
     #header-logo-mobile{
