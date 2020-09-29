@@ -365,7 +365,7 @@ div.subPortfolio {
 /*    ~~~~ ABOUT US page start ~~~>   */
 .about-description{
     width: 90%;
-    margin: 3%;
+    margin: 2%;
     padding: 2% 3%;
     text-align: justify;
     background: rgba(34, 34, 34, 0.641);
@@ -378,7 +378,7 @@ div.subPortfolio {
 }
 .about-main{
     width: 90%;
-    margin: 1%;
+    margin: 2%;
     padding: 2% 3%; 
     height: 100%;
     background: rgba(34, 34, 34, 0.641);
