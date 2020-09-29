@@ -20,7 +20,7 @@
                     <h1 id="navBar-pageTitle">Home</h1>
                 </div> <!-- /navBar-center -->
                 <div class="navBar-right">
-                    <button type="button" title="Show menu" class="navButton-toggle">
+                    <button type="button" title="Show menu" id="navButton-toggle">
                         <span class="navButton-Line"></span>
                         <span class="navButton-Line"></span>
                         <span class="navButton-Line"></span>
@@ -38,104 +38,109 @@
         </header>
 
         <main>
-            <div id="page-content">
 
-                <section id="Home-Page">
-                    <div id="welcome"> 
-                        <h1> Welcome</h1>
-                        <div class="welcome-buttons">
-                            <a id="startProjects">Our projects</a>
-                            <a id="startUs">This is us</a>
-                        </div> <!-- /welcome-buttons -->
-                    </div> <!-- /welcome -->
-                </section>
+            <section id="Home-Page" class="page-content">
+                <h2>Welcome</h2>
+                <div class="welcome-buttons">
+                    <a id="startProjects">Our projects</a>
+                    <a id="startUs">This is us</a>
+                </div> <!-- /welcome-buttons -->
+            </section>
 
-                <section id="Portfolio-Page">
-                    <div class="portfolioMain">
-                        <div class="portfolioLeft">
-                            <i id="arrowLeft" class="fas fa-arrow-left"></i>
-                        </div> <!-- /portfolioLeft -->
-                    
-                        <div id="portfolio-box"></div>
-                    
-                        <div class="about-project">
-                            <div class="projectdiv" id="theProjectdiv"></div> <!-- Vad gör vi här? - 
-                            I denna div läggs diven som visar info om ett projekt, samt öppnar den genomskinliga
-                            rutan bakom -->
+            <section id="Portfolio-Page" class="page-content">
+                <div class="portfolioMain">
+                    <div class="portfolioLeft">
+                        <i id="arrowLeft" class="fas fa-arrow-left"></i>
+                    </div> <!-- /portfolioLeft -->
+                
+                    <div id="portfolio-box"> 
+                        <!-- Alla projekt kommer att laddas in i denna div från script.js -->
+                        <div class="subPortfolio">
+                            <img class="project-img" src="./img/projects/stortprojekt.jpg" title="Project" alt="Project" />
+                            <h2>Ett projekt</h2>
+                            <p>Projekten kommer att hamna här</p>
                         </div>
-                    
-                        <div class="portfolioRight">
-                            <i id="arrowRight" class="fas fa-arrow-right"></i>
-                        </div> <!-- /portfolioRight -->
-                    </div> <!-- /portfolioMain -->
-                </section>
+                    </div>
+                
+                    <div class="about-project">
+                        <div class="projectdiv" id="theProjectdiv"></div> <!-- Vad gör vi här? - 
+                        I denna div läggs diven som visar info om ett projekt, samt öppnar den genomskinliga
+                        rutan bakom -->
+                    </div>
+                
+                    <div class="portfolioRight">
+                        <i id="arrowRight" class="fas fa-arrow-right"></i>
+                    </div> <!-- /portfolioRight -->
+                </div> <!-- /portfolioMain -->
+            </section>
 
-                <section id="About-Page">
-                    <div class="about-description">
-                        <h1>This is us</h1>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod 
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
-                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-                            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-                        </p>
-                    </div> <!-- /about-description -->
-                    <div class="about-main">
-                        <h1>Our team</h1>
-                        <div id="about-submain"></div>
-                    </div> <!-- /about-main -->
-                    <div class="about-personal">
-                        <div class="persondiv" id="thePersondiv"></div>
-                    </div> <!-- /about-personal -->
-                </section>
+            <section id="About-Page" class="page-content">
+                <div class="about-description">
+                    <h2>This is us</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod 
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+                    </p>
+                </div> <!-- /about-description -->
+                <div class="about-main">
+                    <h2>Our team</h2>
+                    <p>Read more about our awsome team members below.</p>
+                    <div id="about-submain"></div>
+                </div> <!-- /about-main -->
+                <div class="about-personal">
+                    <div class="persondiv" id="thePersondiv"></div>
+                </div> <!-- /about-personal -->
+            </section>
 
-                <section id="Contact-Page">
-                    <div class="contactPage">
-                        <div class="contactLeft">
-                            <form>
-                                <label for="contactName" class="contactLabel">Name:</label> <span id="contactNameError"></span><br />
-                                <input type="text" id="contactName" class="contactForm" name="name" placeholder="Firstname Lastname"/><br />
-                                <label for="contactPhone" class="contactLabel">Phone:</label> <span id="contactPhoneError"></span><br />
-                                <input type="text" id="contactPhone" class="contactForm" name="phone" placeholder="+46712345678" /><br />
-                                <label for="contactEmail" class="contactLabel">E-mail:</label> <span id="contactEmailError"></span><br />
-                                <input type="text" id="contactEmail" class="contactForm" name="email" placeholder="mail@domain.com" /><br />
-                                <label for="contactSubject" class="contactLabel">Subject:</label> <span id="contactSubjectError"></span><br />
-                                <input type="text" id="contactSubject" class="contactForm" name="subject" placeholder="Your subject" /><br />
-                                <label for="contactMessage" class="contactLabel">Message:</label> <span id="contactMessageError"></span><br />
-                                <textarea id="contactMessage" rows="6" class="contactForm" name="message" placeholder="Enter your message here..."></textarea><br />
-                                <span id="contactSubmitMessage"></span><br />
-                                <button id="contactSubmit" type="submit" value="Submit">Send</button>
-                            </form>
-                        </div> <!-- /contactLeft -->
-                        <div class="contactRight">
-                            <div class="contactMap">
-                                <!-- Google map - embedded code -->
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1019.8616021336173!2d15.2447578!3d59.2540657!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465c145b713177e1%3A0xb58158694ee8b2cd!2sNovahuset%20%C3%96rebro%20Universitet!5e0!3m2!1ssv!2sse!4v1600254528493!5m2!1ssv!2sse" width="500" height="335" style="border:0; width: 100%;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                            </div> <!-- /contactMap -->
-                            <div class="contactInfo">
-                                <div class="contantFindUs">
-                                    <h3>Adress:</h3>
-                                    <p>Novahuset Örebro Universitet</p>
-                                    <p>702 81 Örebro</p>
-                                    <p>Sweden</p>
-                                </div> <!-- /contantFindUs -->
-                                <div class="contactTelephone">
-                                    <h3>Phone:</h3>
-                                    <p>+46712345678</p>
-                                    <p>+4619123456</p>
-                                </div> <!-- /contactTelephone -->
-                                <div class="contactEmail">
-                                    <h3>E-mail:</h3>
-                                    <p><a href="mailto:info@">Info@domain.com</a></p>
-                                    <p></p>
-                                </div> <!-- /contactEmail -->
-                            </div> <!-- /contactInfo -->
-                        </div> <!-- /contactRight -->
-                    </div> <!-- /contactPage -->
-                </section>
-            </div> <!-- /page-content -->
+            <section id="Contact-Page" class="page-content">
+                <div class="contactPage">
+                    <div class="contactLeft">
+                        <form>
+                            <label for="contactName" class="contactLabel">Name:</label> <span id="contactNameError"></span><br />
+                            <input type="text" id="contactName" class="contactForm" name="name" placeholder="Firstname Lastname"/><br />
+                            <label for="contactPhone" class="contactLabel">Phone:</label> <span id="contactPhoneError"></span><br />
+                            <input type="text" id="contactPhone" class="contactForm" name="phone" placeholder="+46712345678" /><br />
+                            <label for="contactEmail" class="contactLabel">E-mail:</label> <span id="contactEmailError"></span><br />
+                            <input type="text" id="contactEmail" class="contactForm" name="email" placeholder="mail@domain.com" /><br />
+                            <label for="contactSubject" class="contactLabel">Subject:</label> <span id="contactSubjectError"></span><br />
+                            <input type="text" id="contactSubject" class="contactForm" name="subject" placeholder="Your subject" /><br />
+                            <label for="contactMessage" class="contactLabel">Message:</label> <span id="contactMessageError"></span><br />
+                            <textarea id="contactMessage" rows="6" class="contactForm" name="message" placeholder="Enter your message here..."></textarea><br />
+                            <span id="contactSubmitMessage"></span><br />
+                            <button id="contactSubmit" type="submit" value="Submit">Send</button>
+                        </form>
+                    </div> <!-- /contactLeft -->
+                    <div class="contactRight">
+                        <div class="contactMap">
+                            <!-- Google map - embedded code -->
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1019.8616021336173!2d15.2447578!3d59.2540657!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465c145b713177e1%3A0xb58158694ee8b2cd!2sNovahuset%20%C3%96rebro%20Universitet!5e0!3m2!1ssv!2sse!4v1600254528493!5m2!1ssv!2sse" width="500" height="335" style="border:0; width: 100%;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        </div> <!-- /contactMap -->
+                        <div class="contactInfo">
+                            <div class="contantFindUs">
+                                <h3>Adress:</h3>
+                                <p>Novahuset Örebro Universitet</p>
+                                <p>702 81 Örebro</p>
+                                <p>Sweden</p>
+                            </div> <!-- /contantFindUs -->
+                            <div class="contactTelephone">
+                                <h3>Phone:</h3>
+                                <p>+46712345678</p>
+                                <p>+4619123456</p>
+                            </div> <!-- /contactTelephone -->
+                            <div class="contactEmail">
+                                <h3>E-mail:</h3>
+                                <p><a href="mailto:info@">Info@domain.com</a></p>
+                                <p></p>
+                            </div> <!-- /contactEmail -->
+                        </div> <!-- /contactInfo -->
+                    </div> <!-- /contactRight -->
+                </div> <!-- /contactPage -->
+            </section>
+
         </main>
 
         <footer>

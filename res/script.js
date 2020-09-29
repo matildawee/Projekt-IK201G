@@ -1,53 +1,67 @@
 /* This JavaScript need jQuery to run */
 $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har laddat klart. 
 
-    function hidePageSections() {
+    //funktion som döljer alla sidor
+    function hidePageSections() { 
         $("#Home-Page").hide();
         $("#Portfolio-Page").hide();
         $("#About-Page").hide();
         $("#Contact-Page").hide();
     }
 
-    hidePageSections();
-    $("#Home-Page").show();
-    $("#welcome").animate({opacity: '1'}, 1500);
+    hidePageSections(); //vid första laddning av webbsidan, döljs alla sidor med funktionen ovan
+    $("#Home-Page").show(); //visar startsida vid första laddning
+    $("#Home-Page").animate({opacity: '1'}, 1500); //animera fram "Welcome" vid första laddning
 
-    // $('#page-content').load('./pages/start.html');
+    
+    /*    <~~~ Navigering start ~~~~   */
 
-    function loadPage(clickedId, pageUrl, pageTitle){
-        hidePageSections();
-        $('#navBar-pageTitle').html(pageTitle);
+    //funktion som anropas när man klickar på olika navigeringslänkar, döljer alla sidor, uppdaterar vilken sida som är aktiv just nu,
+    //visar och uppdaterar Page-Title i mobilvyn visar och döljer navbar i mobilvyn
+    function loadPage(clickedId){ 
+        hidePageSections(); 
         $('#' + clickedId + '-Page').show();
-        // $('#page-content').load(pageUrl);
         $('.menuBtn').removeClass('activePage');
         $('#'+clickedId).addClass('activePage');
-        // classToggle();
+
+        $('#navBar-pageTitle').html(clickedId);
+        classToggle();
     }
 
+    //funktion som anropas när man klickar på Home
     $('#Home').click(function (event) {
         event.preventDefault();
         loadPage('Home');
-        $("#welcome").css({"opacity": "0"});
-        $("#welcome").animate({opacity: '1'}, 1500);
+        $("#Home-Page").css({"opacity": "0"});
+        $("#Home-Page").animate({opacity: '1'}, 1500);
     });
 
+    //funktion som anropas när man klickar på loggan, dock mera hårdkodad.
     $('#header-logo').click(function (event) {
         event.preventDefault();
-        loadPage('Home');
-        $("#welcome").css({"opacity": "0"});
-        $("#welcome").animate({opacity: '1'}, 1500);
+        hidePageSections(); 
+        $('#Home-Page').show();
+        $('.menuBtn').removeClass('activePage');
+        $('#Home').addClass('activePage');
+
+        $('#navBar-pageTitle').html('Home');
+        $('nav').removeClass('navBar-show');
+        $("#Home-Page").css({"opacity": "0"});
+        $("#Home-Page").animate({opacity: '1'}, 1500);
     });
 
+    //funktion som anropas när man klickar på Portfolio
     $('#Portfolio').click(function (event) {
         event.preventDefault();
         loadPage('Portfolio');
     });
 
+    //funktion som anropas när man klickar på About us
     $('#About').click(function (event) {
         event.preventDefault();
         loadPage('About');
 
-        // laddar in utvecklarna
+        //laddar in utvecklarna
         $.getJSON(
             'res/about-data.json',
             function (data) {
@@ -56,43 +70,468 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         );
     });
 
+    //funktion som anropas när man klickar på Contact
     $('#Contact').click(function (event) {
         event.preventDefault();
         loadPage('Contact');
+        $('#contactSubmitMessage').text("");
     });
 
+    //funktion som lägger till respektive tar bort navBar-show när man klickar på navButton-toggle
     function classToggle() {
-        // $("nav").slideToggle();
-        // $("nav").animate({'height': 'toggle'}, 'slow');
         const navs = document.querySelectorAll('nav');
         navs.forEach(nav => nav.classList.toggle('navBar-show'));
-      }
+    }
       
-      document.querySelector('.navButton-toggle')
-        .addEventListener('click', classToggle);
+    //anropar funktionen ovanför
+    document.querySelector('#navButton-toggle').addEventListener('click', classToggle);
 
-    /* <~~~~~ knapparna på startsidan - dessa knappar finns också i extrascript ~~~~~~ */    
+    /*    ~~~~ Navigering end ~~~>   */
 
+
+    /*    <~~~ Home-Page start ~~~~   */
+
+    //funktion som visar Portfolio när man klickat på knappen på Startsidan
     $('#startProjects').click(function (event) {
         event.preventDefault();
         loadPage('Portfolio');
     });
 
+    //funktion som visar About us när man klickat på knappen på Startsidan
     $('#startUs').click(function (event) {
         event.preventDefault();
         loadPage('About');
-        // $('#page-content').load('./pages/about.html');
+    });
+
+    /*    ~~~~ Home-Page end ~~~>   */
+
+    
+    /*    <~~~ Portfolio-Page start ~~~~   */
+
+    //Deklarerar variabler som används i funktioner för portfoliosidan
+    var divList = [];
+    var divIndex = 0;
+    var index = 0;
+    var playflag = false;
+    var showIndex = 0;
+
+    // Laddar in project från portfolio-data.json
+    $.getJSON(
+        'res/portfolio-data.json',
+        function (data) {
+            displayPortfolio(data.projects);
+        }
+    );
+
+    //Här skapas divar som i sig innehåller upp till 4 divar, en per projekt. Detta lagras i en array
+    function displayPortfolio(projects) { 
+
+    var startDiv = '<div id="portfolioGroup">';
+    var endDiv = '</div>';
+
+    //startar den yttre diven med startdiv-taggen
+    var projectGroup = startDiv;
+    
+    //loopar igenom projekten och lägger varje projekt i en inre div
+    $.each(projects, function (i, portfolio) {
+
+        if (portfolio.description.length > 170) {
+            portfolio.description = portfolio.description.substring(0, 170) + "...";
+          };
+           
+          
+        //skapar div för varje projekt
+        var aProject = 
+            '<div class="subPortfolio" id="' + portfolio.id + '">' + 
+            '<img class="project-img" id="' + portfolio.id + '"src="' + portfolio.image + '" title="Project" alt="Project" />' +
+                '<h2 id="' + portfolio.id + '">' + portfolio.title + '</h2>' +
+                '<p id="' + portfolio.id + '">' + portfolio.description + '</p>' +
+            '</div>';
+
+        //adderar varje enskild projekt-div till en variabel som innehåller alla dessa
+        projectGroup += aProject;
+
+        //för var fjärde div så adderas en slutdiv-tag för de fyra senast skapade projekt-divarna
+        //sedan läggs de i en array. Exempel på array-rad med två projekt: <div><div>*ett projekt*</div><div>*ett till projekt*</div></div>
+        //sedan påbörjas en ny, tom yttre div
+        if (i > 0 && (i + 1) % 4 == 0){
+            projectGroup += endDiv;
+            divList[divIndex] = projectGroup;
+            divIndex++;
+            projectGroup = startDiv;               
+        };       
+        index++;     
+    });
+
+    //Tömmer arrayen om inga projekt finns
+    if (index == 0){
+        divList = '';      
+    };
+
+    //Lägger till slut-div-tagg (detta sker ifall each-loopen har brutit på ett tal som inte är delbart med 4, 
+    //isåfall har ingen sluttag skapats i loopen)
+    if ((index) % 4 != 0){
+        projectGroup += endDiv;
+        divList[divIndex] = projectGroup;          
+    };
+
+    //Raderar en sista tom div som skapas när antalet projekt är delbart med 4
+    if (divList[divList.length-1] == '<div id="portfolioGroup"></div>'){
+        divList.splice(divList.length-1,1); 
+    }
+    
+    //lägger in den första div-gruppen på sajten
+    $('#portfolio-box').html(divList[0]);
+    };
+
+    //Visar nästa div-grupp när knappen klickas
+    $('#arrowRight').click(function () {
+        showIndex++;
+
+        if (showIndex == divList.length){
+            showIndex = 0;
+        }
+        $('#portfolio-box').html(divList[showIndex]);
+    });
+
+    //Visar föregående div-grupp när knappen klickas
+    $('#arrowLeft').click(function () {
+        
+        showIndex--;
+
+        if (showIndex < 0){
+            showIndex = divList.length - 1;
+        }
+
+        $('#portfolio-box').html(divList[showIndex]);
+    });
+
+    //Här är funktionen för att trycka på de olika projekten för att få upp mer info
+    $(".portfolioMain").on("click", ".subPortfolio", function(event){
+        event.preventDefault();
+        var id = (event.target.id);
+    
+        $(".projectdiv").show();
+        $(".project-content").show();
+    
+        $("body").css({"overflow-y": "auto"});
+        
+        // Laddar projekt från portfolio-data.json
+        $.getJSON(
+            'res/portfolio-data.json',
+            function (data) {
+                getProject(data.projects, id);
+            }
+        );
+    });
+    
+    //Skapar en div för det valda projektet med data från portfolio-data.json
+    function getProject(projects, id) {
+        $.each(projects, function (ind, project) {
+            //loopas igenom, när det valda id:t hittas i filen så skapas en ruta med info
+                if (project.id == id) {              
+                    
+                    var projectSquare = $(
+                        '<div class="project-content" id="' + project.id + '">' + 
+                            '<div class="project-content-top">' +
+                                '<span class="fas fa-times" id="close-portfolio"></span>' +                           
+                                '<div class="slideshowDiv">' +
+                                    '<img class="slideshow-image" id="slideshow" src="' + project.slideshow[0] + '" alt=" ' + project.title + ' " />' + 
+                                    '<span class="fas fa-pause" id="slideShowPause"></span>' + 
+                                    '<span class="fas fa-play" id="slideShowPlay"></span>' + 
+                                '</div>' +                
+                            '</div>' +
+                            '<div class="project-content-bottom">' + 
+                                '<h2> ' + project.title + '</h2>' + 
+                                '<p>' + project.date + '</p>' +  '<hr/>' +
+                                '<p>' + project.description +'</p>' + 
+                            '</div>' +
+                                '<br/>' +                           
+                        '</div>'
+                    );
+    
+                images = project.slideshow;
+                $('.projectdiv').html(projectSquare);  
+                $("body").css({"overflow": "hidden"}); 
+                
+                //Startar intervall för bildspel
+                slideshowInterval = setInterval(slideshow, 2000); 
+                playflag = true;
+                };
+        });
+    };
+
+    var slideIndex = 1;
+    
+    //Loopar igenom slideshow-arrayen i portfolio-data.json och visar bildspel
+    function slideshow(){
+        if (slideIndex == images.length){
+            slideIndex=0;
+        }    
+        document.getElementById('slideshow').src=images[slideIndex];
+        slideIndex++;
+    }
+
+    //Stänger projectdiv och project-content samt avslutar bildspel när knapp klickas
+    $(".about-project").on("click", "#close-portfolio", function(event){
+        event.preventDefault();
+        $('.projectdiv').html('');
+        $(".project-content").hide();
+        $(".projectdiv").hide(); 
+        clearInterval(slideshowInterval); 
+        playflag = true;
+        $("body").css({"overflow": "auto"});
+    });
+
+    //Stänger projectdiv och project-content samt avslutar bildspel när man klickar utanför rutan
+    $(".about-project").on("click", "#theProjectdiv", function(event){
+        if(event.target.id=="theProjectdiv"){
+            event.preventDefault();
+            $('.projectdiv').html('');
+            $(".project-content").hide();
+            $(".projectdiv").hide(); 
+            clearInterval(slideshowInterval); 
+            playflag = true; 
+            $("body").css({"overflow": "auto"});
+        }; 
     });
 
 
+    //Visar paus- eller play-knapp när man drar muspekaren över bilden
+    $(".about-project").on("mouseover", "#slideshow", function(event){
+
+        if (playflag == true){
+            $("#slideShowPause").css({"visibility": "visible"});
+        }
+        else {
+            $("#slideShowPlay").css({"visibility": "visible"});
+        }
+        $(".slideshow-image").css({"filter": "brightness(75%)"});  
+
+        var screenWidth = window.innerWidth;
+        //vid mobilvy så fade:ar knapparna bort efter 3 sekunder
+        if (screenWidth<769){
+            setTimeout(hideButton, 3000); 
+        };
+    });
+
+        //Visar paus- eller play-knapp när man trycker på bilden (för mobilvy)
+        $(".about-project").on("click", "#slideshow", function(event){
+
+            if (playflag == true){
+                $("#slideShowPause").css({"visibility": "visible"});
+            }
+            else {
+                $("#slideShowPlay").css({"visibility": "visible"});
+            }
+            $(".slideshow-image").css({"filter": "brightness(75%)"});  
+    
+            var screenWidth = window.innerWidth;
+            //vid mobilvy så fade:ar knapparna bort efter 3 sekunder
+            if (screenWidth<769){
+                setTimeout(hideButton, 3000); 
+            };
+        });
 
 
-    /* ~~~~~~ knapparna på startsidan ~~~~~~> */  
+    //gömmer knapparna
+    function hideButton() {     
+      
+        $("#slideShowPlay").css({"visibility": "hidden"});      
+        $("#slideShowPause").css({"visibility": "hidden"});
+        //$("#slideShowPlay").fadeOut(1000);
+        //$("#slideShowPause").fadeOut(1000);
+
+        $(".slideshow-image").css({"filter": "brightness(100%)"});
+     }
+    
+
+    //Visar play-knapp när man drar muspelaren över play-knappen
+    $(".about-project").on("mouseover", "#slideShowPlay", function(event){
+        if (playflag == true){
+            $("#slideShowPause").css({"visibility": "visible"});
+        }
+        else {
+            $("#slideShowPlay").css({"visibility": "visible"});
+        }
+        $(".slideshow-image").css({"filter": "brightness(75%)"});
+    });
+    
+    //Visar paus-knapp när man drar muspelaren över paus-knappen
+    $(".about-project").on("mouseover", "#slideShowPause", function(event){
+        if (playflag == true){
+            $("#slideShowPause").css({"visibility": "visible"});
+        }
+        else {
+            $("#slideShowPlay").css({"visibility": "visible"});
+        }
+        $(".slideshow-image").css({"filter": "brightness(75%)"});
+    });
+    
+    //Gömmer play- eller paus-knapp när muspekaren lämnar bilden
+    $(".about-project").on("mouseleave", "#slideshow", function(event){
+        $("#slideShowPlay").css({"visibility": "hidden"});
+        $("#slideShowPause").css({"visibility": "hidden"});
+        $(".slideshow-image").css({"filter": "brightness(100%)"});
+    });
+
+    //Pausar bildspel, gömmer paus-knapp samt visar play-knapp
+    $(".about-project").on("click", "#slideShowPause", function(event){
+        clearInterval(slideshowInterval);
+        playflag = false; 
+        $("#slideShowPause").css({"visibility": "hidden"});
+        $("#slideShowPlay").css({"visibility": "visible"});
+    });
+
+    //Pausar bildspel, gömmer play-knapp samt visar paus-knapp
+    $(".about-project").on("click", "#slideShowPlay", function(event){
+        slideshowInterval = setInterval(slideshow, 2000); 
+        playflag = true;
+        $("#slideShowPause").css({"visibility": "visible"});
+        $("#slideShowPlay").css({"visibility": "hidden"});
+    });
+
+    /*    ~~~ Portfolio-Page end ~~~~>   */
 
 
-    /* start Contact.js */
+    /*    <~~~ About-Page start ~~~~   */
 
-        /* Start Contact load from JSON */
+        //här hämtas utvecklarna som får varsin ruta med bild och info
+        function displayAbout(person) {
+            var allDevelopers = "";
+            $.each(person, function (ind, employee) {                        
+                var personSquare = (
+                    '<div class="about-developer" id="personId' + ind + '">' + 
+                    '<img id="personId' + ind + '" src="' + employee.portrait + '" title="developer" alt="developer" />' +
+                        '<h2 id="personId' + ind + '">' + employee.firstname + '</h2>' +
+                        '<p id="personId' + ind + '">' + employee.title + '</p>'+
+                    '</div>'
+                );        
+                    
+                allDevelopers+=personSquare;
+            });
+            $('#about-submain').html(allDevelopers);
+        };
+
+        //här är funktionen för att visa info om utvecklarna, när deras respektive inforuta klickas på
+        $(".about-main").on("click", ".about-developer", function(event){
+        // $('#about-submain').find("div").click(function (event) {
+            event.preventDefault();
+            var id = (event.target.id);
+            $(".persondiv").show();
+            $(".person-content").show();
+
+            $("body").css({"overflow": "hidden"});
+            
+            //hämtas från en jsonfil
+            $.getJSON(
+                'res/about-data.json',
+                function (data) {
+                    getDeveloper(data.person, id);
+                }
+            );
+        });
+
+        //här skapas en ruta över skärmen där info om utvecklarna presenteras
+        function getDeveloper(person, id) {
+            $.each(person, function (ind, employee) { 
+                //loopar igenom och skapar rutan för det valda id:t
+                if (employee.id == id)
+                {
+                    var developerSquare = $(
+                        '<div class="person-content" id="personId' + ind + '">' + 
+                            '<div class="person-content-left">' +
+                                '<span class="fas fa-times" id="close-person"></span>' +
+                                '<img class="person-portrait" src="' + employee.portraitBig + '" title="developer" alt="developer" />' +                                
+                            '</div>' +
+                            '<div class="person-content-right">' + 
+                                '<h2> ' + employee.firstname + ' ' + employee.lastname + 
+                                ' - ' + employee.title + '</h2>' + '<hr/>' +
+                                '<p>' + employee.description +'</p>' + 
+                                
+                                '<div class="skills">' +        
+                                    '<p>JAVA: </p>' +  
+                                    '<div class="skill-meter">' +
+                                        '<div class="java-skills">' +
+                                        '&nbsp;&nbsp;' + employee.java + '&nbsp;&nbsp;' +
+                                        '</div>' +                                        
+                                    '</div>' +
+                                    '<p>HTML: </p>' +  
+                                    '<div class="skill-meter">' +
+                                        '<div class="html-skills">' +
+                                        '&nbsp;&nbsp;' + employee.html + '&nbsp;&nbsp;' +    
+                                        '</div>' +                                       
+                                    '</div>' +
+                                    '<p>JAVASCRIPT: </p>' + 
+                                    '<div class="skill-meter">' +
+                                        '<div class="javascript-skills">' +
+                                        '&nbsp;&nbsp;' + employee.javascript + '&nbsp;&nbsp;' +
+                                        '</div>' +                                       
+                                    '</div>' +
+                                    '<p>CSS: </p>' + 
+                                    '<div class="skill-meter">' +
+                                        '<div class="css-skills">' +
+                                        '&nbsp;&nbsp;' + employee.css + '&nbsp;&nbsp;' +
+                                        '</div>' +                                       
+                                    '</div>' +
+                                    '<p>SQL: </p>' + 
+                                    '<div class="skill-meter">' +
+                                        '<div class="sql-skills">' +
+                                        '&nbsp;&nbsp;' + employee.sql + '&nbsp;&nbsp;' +
+                                        '</div>' +                                       
+                                    '</div>' +
+                                    '<p>PHOTOSHOP: </p>' + 
+                                    '<div class="skill-meter">' +
+                                        '<div class="photoshop-skills">' +
+                                        '&nbsp;&nbsp;' + employee.photoshop + '&nbsp;&nbsp;' +
+                                        '</div>' +                                       
+                                    '</div>' +
+                                '</div>' +
+
+                                '<br/>' +
+                                '<p>' + employee.email + '</p>' +
+                                '<p>' + employee.telephone + '</p>' +
+                            '</div>' +
+                        '</div>'
+                    );
+                $('.persondiv').html(developerSquare);
+
+                //här skapas "skill-meters:arna", genom att bredden på en färgad div inom en tom div sätts till den procent som utvecklarens skill-nivå har uppskattats till
+                $(".java-skills").css({"width": employee.java});   
+                $(".html-skills").css({"width": employee.html}); 
+                $(".javascript-skills").css({"width": employee.javascript});   
+                $(".css-skills").css({"width": employee.css});  
+                $(".sql-skills").css({"width": employee.sql});   
+                $(".photoshop-skills").css({"width": employee.photoshop});   
+                };
+            });
+        };
+
+        //stänger inforutan när krysset trycks
+        $(".about-personal").on("click", "#close-person", function(event){
+            if(event.target.id=="close-person"){
+            event.preventDefault();
+            $('.persondiv').html('');
+            $(".person-content").hide();
+            $(".persondiv").hide(); 
+            $("body").css({"overflow-y": "auto"});
+            };
+        });
+
+        //stänger inforutan när ytan utanför trycks
+        $(".about-personal").on("click", "#thePersondiv", function(event){
+            if(event.target.id=="thePersondiv"){
+                event.preventDefault();
+                $('.persondiv').html('');
+                $(".person-content").hide();
+                $(".persondiv").hide();
+                $("body").css({"overflow-y": "auto"});
+            }; 
+        });
+
+     /*    ~~~ About-Page end ~~~~>   */
+
+     /*    <~~~ Contact-Page start ~~~~   */
         
             // Hämtar det sparade JSON-objectet: "savedJsonObject" , som en string vi gör om till ett JSON-object med JSON.parse() och sparar i variablen "localSavedJsonObject".
             var localSavedJsonObject = JSON.parse(localStorage.getItem('savedJsonObject'));
@@ -126,14 +565,11 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
                     if (getJsonMessage.contactMessage != ""){
                         validateOkOrError("#contactMessage");
                     }
-                } //slut på IF-sats som kollar om getJsonMessage
-            }; //slut på Funktionen loadMessageToForm(getJsonMessage)
+                } 
+            }; 
         
             // console.log(localSavedJsonObject); //kommentera bort denna rad om ni vill se hela sparade JSON-objectet i loggen när sidan contact laddas.
-        
-        /* End Contact load from JSON */
-        
-        /* Start Contact validate */
+
         
             $("#contactName").blur(function() { //När focus tappas av rutan med id "#contactName"
                 validateOkOrError("#contactName"); //Ska valideringsfunktionen köras på "#contactName"
@@ -179,7 +615,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
                     $('#contactSubmitMessage').removeClass("contactError contactOk").addClass("contactError"); //Tar bort css klasserna: "contactError" och "contactOk" , sedan lägger till endast "contactError". 
                 } //slut på IF-sats som kollar valideringar
                 event.preventDefault(); //Ignorerar Default med preventDefault() , så inte sidan ska laddas om. 
-            }); //Slut på funktionen #contactSubmit.click
+            }); 
         
             //Tömmer alla input-fält
             function clearContactForm(){
@@ -216,8 +652,8 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
                 } else { //Annars om det är data i input-fältet och den inte validerat OK, så skrivs det ut "Unvalid".
                     result.text("Unvalid"); //Skriver ut "Unvalid" som error meddelande på samma span-error idt
                     result.addClass("contactError"); //Lägger till css klassen .contactError på t.ex. #contactNameError
-                } //slut på IF-satsen ovan. 
-            } //slut på Funktionen validateOkOrError()
+                } 
+            } 
         
             //Funktion för att validera med regular expression:
             function validate(inputId, value) {
@@ -244,11 +680,10 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
                 return regEx.test(value);
             }
         
-        /* End Contact validate */
+
         
-        /* Start Contact save to JSON */
-        
-        function saveToJSON() {
+        //funktion som sparar värdena från alla inputs till localStorage som JSON på användarens enhet
+        function saveToJSON() { 
             var name = $('#contactName').val();
             var phone = $('#contactPhone').val();
             var email = $('#contactEmail').val();
@@ -266,397 +701,8 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
             //Lagrar ned messageJsonObject i localStorage med namnet: "savedJsonObject" på användarens dator. 
             localStorage.setItem('savedJsonObject', JSON.stringify(messageJsonObject));
         }
-        /* End Contact save to JSON */
-        
-        
 
-    /* end Contact.js */
+    /*    ~~~~ Contact-Page end ~~~>   */
 
-
-    /* start of Portfolio.js */
-
-    var divList = [];
-    var divIndex = 0;
-    var index = 0;
-    var playflag = false;
-
-    var showIndex = 0;
-
-  
-    
-    $.getJSON(
-        'res/portfolio-data.json',
-        function (data) {
-            displayPortfolio(data.projects);
-        }
-    );
-
-    function displayPortfolio(projects) {
-
-    var startDiv = '<div id="portfolioGroup">';
-    var endDiv = '</div>';
-    var projectGroup = startDiv;
-
-    $.each(projects, function (i, portfolio) {     
-
-        if (portfolio.description.length > 110) {
-            portfolio.description = portfolio.description.substring(0, 110) + "...";
-          };
-        
-        var aProject = 
-            '<div class="subPortfolio" id="' + portfolio.id + '">' + 
-            '<img class="project-img" id="' + portfolio.id + '"src="' + portfolio.image + '" title="Project" alt="Project">' +
-                '<h1 id="' + portfolio.id + '">' + portfolio.title + '</h1>' +
-                '<p id="' + portfolio.id + '">' + portfolio.description + '</p>' +
-            '</div>';
-        
-        //skapar en div per projekt
-
-        projectGroup += aProject;
-
-
-        if (i > 0 && (i + 1) % 4 == 0){
-            projectGroup += endDiv;
-            divList[divIndex] = projectGroup;
-            divIndex++;
-            projectGroup = startDiv;    
-            //för var fjärde div så skapas en slut-tag, sen lagras 4 divar i en yttre div
-        };       
-        index++;     
-    });
-
-    if (index == 0){
-        divList = '';
-        //tömmer diven ifall inga projekt finns
-    };
-
-    if ((index) % 4 != 0){
-        projectGroup += endDiv;
-        divList[divIndex] = projectGroup;    
-        //lägger till slut-div-tagg       
-    };
-    
-    console.log(divList);
-
-    if (divList[divList.length-1] == '<div id="portfolioGroup"></div>'){
-        divList.splice(divList.length-1,1); 
-        //raderar en sista tom div som skapas när antalet projekt är delbart med 4
-    }
-    $('#portfolio-box').html(divList[0]);
-    
-    };
-
-    $('#arrowRight').click(function () {
-        
-        //$('#portfolio-box').fadeout();
-        //$("#portfolio-box").delay( 100 ).fadeIn( 100 );
-        //$("#portfolio-box").find("#portfolioGroup").fadeOut( 200 ).delay( 400 ).fadeIn( 200 );
-        showIndex++;
-
-        if (showIndex == divList.length){
-            showIndex = 0;
-        }
-
-        $('#portfolio-box').html(divList[showIndex]);
-        //$('#portfolio-box').fadein();
-        
-    });
-
-    $('#arrowLeft').click(function () {
-        
-        showIndex--;
-
-        if (showIndex < 0){
-            showIndex = divList.length - 1;
-        }
-
-        $('#portfolio-box').html(divList[showIndex]);
-        
-    });
-
-    $(".portfolioMain").on("click", ".subPortfolio", function(event){
-        event.preventDefault();
-        var id = (event.target.id);
-    
-        $(".projectdiv").show();
-        $(".project-content").show();
-    
-        $("body").css({"overflow-y": "auto"});
-        
-        // Loads persons from about-data.json
-        $.getJSON(
-            'res/portfolio-data.json',
-            function (data) {
-                getProject(data.projects, id);
-            }
-        );
-    });
-    
-    function getProject(projects, id) {
-        $.each(projects, function (ind, project) {
-                if (project.id == id) {              
-                    
-                    var projectSquare = $(
-                        '<div class="project-content" id="' + project.id + '">' + 
-                            '<div class="project-content-top">' +
-                                '<span class="fas fa-times" id="close-portfolio"></span>' +                           
-                                //'<div class="slideshowDiv">' +
-                                    '<img class="slideshow-image" id="slideshow" src="' + project.slideshow[0] + '" title="developer" alt="developer">' + 
-                                    '<span class="fas fa-pause" id="slideShowPause"></span>' + 
-                                    '<span class="fas fa-play" id="slideShowPlay"></span>' + 
-                                //'</div>' +                
-                            '</div>' +
-                            '<div class="project-content-bottom">' + 
-                                '<h2> ' + project.title + '</h2>' + 
-                                '<p>' + project.date + '</p>' +  '<hr/>' +
-                                '<p>' + project.description +'</p>' + 
-                                
-                            '</div>' +
-                                '<br/>' +
-                                                           
-                        '</div>'
-                        
-                    );
-    
-                images = project.slideshow;
-                $('.projectdiv').html(projectSquare);  
-    
-                
-    
-                slideshowInterval = setInterval(slideshow, 2000); 
-                playflag = true;
-                };
-        });
-    };
-
-        
-    var slideIndex = 1;
-
-    function slideshow(){
-        
-        if (slideIndex == images.length){
-            slideIndex=0;
-        }    
-        document.getElementById('slideshow').src=images[slideIndex];
-        slideIndex++;
-    }
-
-    $(".about-project").on("click", "#close-portfolio", function(event){
-        event.preventDefault();
-        $('.projectdiv').html('');
-        $(".project-content").hide();
-        $(".projectdiv").hide(); 
-        clearInterval(slideshowInterval); 
-        playflag = true;
-        $("body").css({"overflow": "auto"});
-    });
-
-    $(".about-project").on("click", "#theProjectdiv", function(event){
-        if(event.target.id=="theProjectdiv"){
-            event.preventDefault();
-            $('.projectdiv').html('');
-            $(".project-content").hide();
-            $(".projectdiv").hide(); 
-            clearInterval(slideshowInterval); 
-            playflag = true; 
-            $("body").css({"overflow": "auto"});
-        }; 
-    });
-
-    $(".about-project").on("mouseover", "#slideshow", function(event){
-        if (playflag == true){
-            $("#slideShowPause").css({"visibility": "visible"});
-        }
-        else {
-            $("#slideShowPlay").css({"visibility": "visible"});
-        }
-
-        $(".slideshow-image").css({"filter": "brightness(75%)"});
-        // $(".slideshow-image").css({"opacity": "0.5"});    
-    });
-    $(".about-project").on("mouseover", "#slideShowPlay", function(event){
-        if (playflag == true){
-            $("#slideShowPause").css({"visibility": "visible"});
-        }
-        else {
-            $("#slideShowPlay").css({"visibility": "visible"});
-        }
-
-        $(".slideshow-image").css({"filter": "brightness(75%)"});
-        // $(".slideshow-image").css({"background-color": "black"});
-        // $(".slideshow-image").css({"opacity": "0.8"});
-        
-    });
-    $(".about-project").on("mouseover", "#slideShowPause", function(event){
-        if (playflag == true){
-            $("#slideShowPause").css({"visibility": "visible"});
-        }
-        else {
-            $("#slideShowPlay").css({"visibility": "visible"});
-        }
-
-        $(".slideshow-image").css({"filter": "brightness(75%)"});
-        // $(".slideshow-image").css({"background-color": "black"});
-        // $(".slideshow-image").css({"opacity": "0.8"});
-        
-    });
-    $(".about-project").on("mouseleave", "#slideshow", function(event){
-        $("#slideShowPlay").css({"visibility": "hidden"});
-        $("#slideShowPause").css({"visibility": "hidden"});
-
-        $(".slideshow-image").css({"filter": "brightness(100%)"});
-        // $(".slideshow-image").css({"background-color": "rgba(0, 0, 0, 0)"});
-        // $(".slideshow-image").css({"opacity": "1"});
-        
-    });
-
-    $(".about-project").on("click", "#slideShowPause", function(event){
-        clearInterval(slideshowInterval);
-        playflag = false; 
-        $("#slideShowPause").css({"visibility": "hidden"});
-        $("#slideShowPlay").css({"visibility": "visible"});
-    });
-
-    $(".about-project").on("click", "#slideShowPlay", function(event){
-        slideshowInterval = setInterval(slideshow, 2000); 
-        playflag = true;
-        $("#slideShowPause").css({"visibility": "visible"});
-        $("#slideShowPlay").css({"visibility": "hidden"});
-    });
-
-    /* end of portfolio.js */
-
-
-    /* start of about-page */
-    
-
-        function displayAbout(person) {
-            var allDevelopers = "";
-            $.each(person, function (ind, employee) {                        
-                var personSquare = (
-                    '<div class="about-developer" id="personId' + ind + '">' + 
-                    '<img id="personId' + ind + '" src="' + employee.portrait + '" title="developer" alt="developer">' +
-                        '<h1 id="personId' + ind + '">' + employee.firstname + '</h1>' +
-                        '<p id="personId' + ind + '">' + employee.title + '</p>'+
-                    '</div>'
-                );        
-                    
-                allDevelopers+=personSquare;
-            });
-            $('#about-submain').html(allDevelopers);
-        };
-
-        $(".about-main").on("click", ".about-developer", function(event){
-        // $('#about-submain').find("div").click(function (event) {
-            event.preventDefault();
-            var id = (event.target.id);
-            $(".persondiv").show();
-            $(".person-content").show();
-
-            $("body").css({"overflow": "hidden"});
-            
-            // Loads persons from about-data.json
-            $.getJSON(
-                'res/about-data.json',
-                function (data) {
-                    getDeveloper(data.person, id);
-                }
-            );
-        });
-
-        function getDeveloper(person, id) {
-            $.each(person, function (ind, employee) { 
-            
-                    if (employee.id == id)
-                    {
-                        var developerSquare = $(
-                            '<div class="person-content" id="personId' + ind + '">' + 
-                                '<div class="person-content-left">' +
-                                    '<span class="fas fa-times" id="close-person"></span>' +
-                                    '<img class="person-portrait" src="' + employee.portraitBig + '" title="developer" alt="developer">' +                                
-                                '</div>' +
-                                '<div class="person-content-right">' + 
-                                    '<h2> ' + employee.firstname + ' ' + employee.lastname + 
-                                    ' - ' + employee.title + '</h2>' + '<hr/>' +
-                                    '<p>' + employee.description +'</p>' + 
-                                    
-                                    '<div class="skills">' +        
-                                        '<p>JAVA: </p>' +  
-                                        '<div class="skill-meter">' +
-                                            '<div class="java-skills">' +
-                                            '&nbsp;&nbsp;' + employee.java + '&nbsp;&nbsp;' +
-                                            '</div>' +                                        
-                                        '</div>' +
-                                        '<p>HTML: </p>' +  
-                                        '<div class="skill-meter">' +
-                                            '<div class="html-skills">' +
-                                            '&nbsp;&nbsp;' + employee.html + '&nbsp;&nbsp;' +    
-                                            '</div>' +                                       
-                                        '</div>' +
-                                        '<p>JAVASCRIPT: </p>' + 
-                                        '<div class="skill-meter">' +
-                                            '<div class="javascript-skills">' +
-                                            '&nbsp;&nbsp;' + employee.javascript + '&nbsp;&nbsp;' +
-                                            '</div>' +                                       
-                                        '</div>' +
-                                        '<p>CSS: </p>' + 
-                                        '<div class="skill-meter">' +
-                                            '<div class="css-skills">' +
-                                            '&nbsp;&nbsp;' + employee.css + '&nbsp;&nbsp;' +
-                                            '</div>' +                                       
-                                        '</div>' +
-                                        '<p>SQL: </p>' + 
-                                        '<div class="skill-meter">' +
-                                            '<div class="sql-skills">' +
-                                            '&nbsp;&nbsp;' + employee.sql + '&nbsp;&nbsp;' +
-                                            '</div>' +                                       
-                                        '</div>' +
-                                        '<p>PHOTOSHOP: </p>' + 
-                                        '<div class="skill-meter">' +
-                                            '<div class="photoshop-skills">' +
-                                            '&nbsp;&nbsp;' + employee.photoshop + '&nbsp;&nbsp;' +
-                                            '</div>' +                                       
-                                        '</div>' +
-                                    '</div>' +
-
-                                    '<br/>' +
-                                    '<p>' + employee.email + '</p>' +
-                                    '<p>' + employee.telephone + '</p>' +
-                                '</div>' +
-                            '</div>'
-                        );
-                    $('.persondiv').html(developerSquare);
-
-                    $(".java-skills").css({"width": employee.java});   
-                    $(".html-skills").css({"width": employee.html}); 
-                    $(".javascript-skills").css({"width": employee.javascript});   
-                    $(".css-skills").css({"width": employee.css});  
-                    $(".sql-skills").css({"width": employee.sql});   
-                    $(".photoshop-skills").css({"width": employee.photoshop});   
-                    };
-            });
-        };
-
-        $(".about-personal").on("click", "#close-person", function(event){
-            if(event.target.id=="close-person"){
-            event.preventDefault();
-            $('.persondiv').html('');
-            $(".person-content").hide();
-            $(".persondiv").hide(); 
-            $("body").css({"overflow-y": "auto"});
-            };
-        });
-
-        $(".about-personal").on("click", "#thePersondiv", function(event){
-            if(event.target.id=="thePersondiv"){
-                event.preventDefault();
-                $('.persondiv').html('');
-                $(".person-content").hide();
-                $(".persondiv").hide();
-                $("body").css({"overflow-y": "auto"});
-            }; 
-        });
-
-    /* end of about.js */
 
  });
