@@ -273,9 +273,9 @@ div.subPortfolio {
     opacity: 0.5;
     font-size: 3em;
 }
-.fa-arrow-left:hover, .fa-arrow-right:hover{
+/* .fa-arrow-left:hover, .fa-arrow-right:hover{
     color:#cececeaf;
-}
+} */
 
 /*    <~~~ PROJECT info start ~~~~   */
 .projectdiv {
@@ -741,6 +741,9 @@ div.subPortfolio {
     .slideshow-image{
         margin: 5% 0 2% 0;
         height: 400px;
+    }
+    .fa-arrow-left:hover, .fa-arrow-right:hover{
+        color:#cececeaf;
     }
     .portfolioLeft > #arrowRight2, .portfolioRight > #arrowLeft2{
         display: none;
