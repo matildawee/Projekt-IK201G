@@ -353,9 +353,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
 
 
     //gömmer knapparna
-    function hideButton() {           
-        // $("#slideShowPlay").css({"visibility": "hidden"});      
-        // $("#slideShowPause").css({"visibility": "hidden"});
+    function hideButton() {
         $("#slideShowPlay").fadeOut(800);
         $("#slideShowPause").fadeOut(800);
 
@@ -441,7 +439,6 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
 
         //här är funktionen för att visa info om utvecklarna, när deras respektive inforuta klickas på
         $(".about-main").on("click", ".about-developer", function(event){
-        // $('#about-submain').find("div").click(function (event) {
             event.preventDefault();
             var id = (event.target.id);
             $(".persondiv").show();
