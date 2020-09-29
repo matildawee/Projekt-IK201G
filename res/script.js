@@ -213,7 +213,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
     });
 
     //Visar nästa div-grupp när knappen klickas
-    $('#arrowRight2').click(function () {
+    $('#arrowRightMobile').click(function () {
         showIndex++;
 
         if (showIndex == divList.length){
@@ -235,7 +235,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
     });
 
     //Visar föregående div-grupp när knappen klickas
-    $('#arrowLeft2').click(function () {
+    $('#arrowLeftMobile').click(function () {
         
         showIndex--;
 

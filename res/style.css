@@ -748,7 +748,7 @@ div.subPortfolio {
     .fa-arrow-left:hover, .fa-arrow-right:hover{
         color:#cececeaf;
     }
-    .portfolioLeft > #arrowRight2, .portfolioRight > #arrowLeft2{
+    .portfolioLeft > #arrowRightMobile, .portfolioRight > #arrowLeftMobile{
         display: none;
     }
 
