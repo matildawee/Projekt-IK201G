@@ -4,7 +4,7 @@
           "id": "p1",
           "title": "Projekt 1",
           "date": "2020-01-01 - 2021-01-01",
-          "description": "Projekt är ett uppdrag som utförs av en tillfällig arbetsorganisation för att åstadkomma ett i förväg bestämt resultat. Det latinska ordet för projekt projicere betyder egentligen utkast och betydde ursprungligen en plan. ",
+          "description": "Projekt är uppdrag som utförs av tillfälliga arbetsorganisation för att åstadkomma ett i förväg bestämt resultat. ",
           "image": "./img/projects/projekt.jpg",
           "slideshow": ["./img/projects/projekt.jpg","./img/projects/hugeproject.jpg", "./img/projects/stortprojekt.jpg", "./img/projects/forskare.jpg", "./img/projects/satisfiedcustomers.jpg" ]
         },
@@ -12,7 +12,7 @@
             "id": "p2",
             "title": "Projekt 2",
             "date": "2020-02-02 - 2021-02-02",
-            "description": "Projekt är ett uppdrag som utförs av en tillfällig arbetsorganisation för att åstadkomma ett i förväg bestämt resultat. Det latinska ordet för projekt projicere betyder egentligen utkast och betydde ursprungligen en plan. ",
+            "description": "Projekt är uppdrag som utförs av tillfälliga arbetsorganisation för att åstadkomma ett i förväg bestämt resultat.",
             "image": "./img/projects/stortprojekt.jpg" ,
             "slideshow": ["./img/projects/projekt.jpg", "./img/projects/progress.jpg", "./img/projects/spaceproject.jpg", "./img/projects/succe.jpg"]
         },
@@ -20,7 +20,7 @@
             "id": "p3",
             "title": "Projekt 3",
             "date": "2020-03-03 - 2021-03-03",
-            "description": "Projekt är ett uppdrag som utförs av en tillfällig arbetsorganisation för att åstadkomma ett i förväg bestämt resultat. Det latinska ordet för projekt projicere betyder egentligen utkast och betydde ursprungligen en plan. ",
+            "description": "Projekt är uppdrag som utförs av tillfälliga arbetsorganisation för att åstadkomma ett i förväg bestämt resultat.",
             "image": "./img/projects/hugeproject.jpg",
             "slideshow": ["./img/projects/people.jpg", "./img/projects/smallproject.png", "./img/projects/stortprojekt.jpg", "./img/projects/redovisning.jpg", "./img/projects/celebrate.jpg"]
         },
@@ -28,7 +28,7 @@
             "id": "p4",
             "title": "Projekt 4",
             "date": "2020-04-04 - 2021-04-04",
-            "description": "Projekt är ett uppdrag som utförs av en tillfällig arbetsorganisation för att åstadkomma ett i förväg bestämt resultat. Det latinska ordet för projekt projicere betyder egentligen utkast och betydde ursprungligen en plan. ",
+            "description": "Projekt är uppdrag som utförs av tillfälliga arbetsorganisation för att åstadkomma ett i förväg bestämt resultat.",
             "image": "./img/projects/smallproject.png",
             "slideshow": ["./img/projects/projekt.jpg", "./img/projects/stortprojekt.jpg", "./img/projects/vikomframtilldetta.jpg"]
         },
@@ -36,7 +36,7 @@
             "id": "p5",
             "title": "Projekt 5",
             "date": "2020-05-05 - 2021-05-05",
-            "description": "Projekt är ett uppdrag som utförs av en tillfällig arbetsorganisation för att åstadkomma ett i förväg bestämt resultat. Det latinska ordet för projekt projicere betyder egentligen utkast och betydde ursprungligen en plan. ",
+            "description": "Projekt är uppdrag som utförs av tillfälliga arbetsorganisation för att åstadkomma ett i förväg bestämt resultat.",
             "image": "./img/projects/facebookproject.jpg",
             "slideshow": ["./img/projects/projekt.jpg","./img/projects/maskin.jpg", "./img/projects/konferens.jpg"]
         },
@@ -44,7 +44,7 @@
             "id": "p6",
             "title": "Projekt 6",
             "date": "2020-06-06 - 2021-06-06",
-            "description": "Projekt är ett uppdrag som utförs av en tillfällig arbetsorganisation för att åstadkomma ett i förväg bestämt resultat. Det latinska ordet för projekt projicere betyder egentligen utkast och betydde ursprungligen en plan. ",
+            "description": "Projekt är uppdrag som utförs av tillfälliga arbetsorganisation för att åstadkomma ett i förväg bestämt resultat.",
             "image": "./img/projects/projects.jpg",
             "slideshow": ["./img/projects/projekt.jpg","./img/projects/konferens.jpg", "./img/projects/hugeproject.jpg"]
         },
@@ -52,7 +52,7 @@
             "id": "p7",
             "title": "Projekt 7",
             "date": "2020-05-77 - 2021-05-77",
-            "description": "Projekt är ett uppdrag som utförs av en tillfällig arbetsorganisation för att åstadkomma ett i förväg bestämt resultat. Det latinska ordet för projekt projicere betyder egentligen utkast och betydde ursprungligen en plan. ",
+            "description": "Projekt är uppdrag som utförs av tillfälliga arbetsorganisation för att åstadkomma ett i förväg bestämt resultat.",
             "image": "./img/projects/maskin.jpg",
             "slideshow": ["./img/projects/maskin.jpg","./img/projects/stortprojekt.jpg", "./img/projects/hugeproject.jpg"]
         },
@@ -60,7 +60,7 @@
             "id": "p8",
             "title": "Projekt 8",
             "date": "2020-08-08 - 2021-08 08",
-            "description": "Projekt är ett uppdrag som utförs av en tillfällig arbetsorganisation för att åstadkomma ett i förväg bestämt resultat. Det latinska ordet för projekt projicere betyder egentligen utkast och betydde ursprungligen en plan. ",
+            "description": "Projekt är uppdrag som utförs av tillfälliga arbetsorganisation för att åstadkomma ett i förväg bestämt resultat.",
             "image": "./img/projects/projekt.jpg",
             "slideshow": ["./img/projects/stortprojekt.jpg", "./img/projects/hugeproject.jpg"]
         },
@@ -68,7 +68,7 @@
             "id": "p9",
             "title": "Projekt 9",
             "date": "2020-09-09 - 2021-09-09",
-            "description": "Projekt är ett uppdrag som utförs av en tillfällig arbetsorganisation för att åstadkomma ett i förväg bestämt resultat. Det latinska ordet för projekt projicere betyder egentligen utkast och betydde ursprungligen en plan. ",
+            "description": "Projekt är uppdrag som utförs av tillfälliga arbetsorganisation för att åstadkomma ett i förväg bestämt resultat.",
             "image": "./img/projects/projekt.jpg",
             "slideshow": ["./img/projects/projekt.jpg","./img/projects/stortprojekt.jpg", "./img/projects/vikomframtilldetta.jpg"]
         },
@@ -76,7 +76,7 @@
             "id": "p10",
             "title": "Projekt 10",
             "date": "2020-09-09 - 2021-09-09",
-            "description": "Projekt är ett uppdrag som utförs av en tillfällig arbetsorganisation för att åstadkomma ett i förväg bestämt resultat. Det latinska ordet för projekt projicere betyder egentligen utkast och betydde ursprungligen en plan. ",
+            "description": "Projekt är uppdrag som utförs av tillfälliga arbetsorganisation för att åstadkomma ett i förväg bestämt resultat.",
             "image": "./img/projects/projekt.jpg",
             "slideshow": ["./img/projects/projekt.jpg","./img/projects/stortprojekt.jpg"]
         },
@@ -84,7 +84,7 @@
             "id": "p11",
             "title": "Projekt 11",
             "date": "2020-09-09 - 2021-09-09",
-            "description": "Projekt är ett uppdrag som utförs av en tillfällig arbetsorganisation för att åstadkomma ett i förväg bestämt resultat. Det latinska ordet för projekt projicere betyder egentligen utkast och betydde ursprungligen en plan. ",
+            "description": "Projekt är uppdrag som utförs av tillfälliga arbetsorganisation för att åstadkomma ett i förväg bestämt resultat.",
             "image": "./img/projects/stortprojekt.jpg",
             "slideshow": ["./img/projects/stortprojekt.jpg", "./img/projects/hugeproject.jpg"]
         }
