@@ -678,15 +678,15 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         }
     
         //Exempel indata: validateOkOrError("#contactName") för att skicka in label id för namn (behöver även en tillhörande span med id: contactNameError)
-        function validateOkOrError(contactLabelId) {
-            var textToValidate = $(contactLabelId).val(); //Exempel indata "#contactName" , samt val() = value
-            var result = $(contactLabelId+"Error"); //"#contactNameError" , för att skriva ut OK eller Unvalid i den <span> som ligger efter label
+        function validateOkOrError(contactInputId) {
+            var textToValidate = $(contactInputId).val(); //Exempel indata "#contactName" , samt val() = value
+            var result = $(contactInputId+"Error"); //"#contactNameError" , för att skriva ut OK eller Unvalid i den <span> som ligger efter label
             
             result.removeClass("contactError"); //rensar bort Classen contactError, om den finns på span där error ska skrivas ut.
             result.removeClass("contactOk"); //rensar bort Classen contactOk, om den finns. 
             result.text(""); //Tömmer meddelandet som stod i span för Error-meddelandet
     
-            if (validate(contactLabelId, textToValidate)) { //Kollar om valideringen har gått OK
+            if (validate(contactInputId, textToValidate)) { //Kollar om valideringen har gått OK
                 result.text("OK"); //Skriver ut OK som span meddelande för t.ex. id: #contactNameError 
                 result.addClass("contactOk"); //Lägger till css klassen .contactOk på span-idt. 
             } else if (textToValidate == "") { //Om det inte finns något skriver i input-fältet, så sätts felmeddelandet i span-error till blankt. 
