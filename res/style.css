@@ -3,7 +3,7 @@ html, body{
     height: 100%;
     padding: 0;
     margin: 0;
-    font-family:'Book Antiqua', sans-serif; 
+    font-family: sans-serif; 
     background: rgb(238, 238, 238);
 }
 .page-content{
@@ -125,6 +125,7 @@ footer{
     display: flex;
     justify-content: center;
     text-align: center;
+    font-size: 0.8em;
 }
 .fa-envelope, .fa-phone, .fa-instagram, .fa-facebook-f{ 
     margin: 0.6em;
@@ -427,55 +428,6 @@ div.subPortfolio {
 .about-developer > p{
     margin: 0;
     padding: 0;
-}
-.persondiv {
-    width: 100%;
-    height: 100%; 
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    background-color: rgba(0, 0, 0, 0.432);
-    display: none;
-}
-.person-content{
-    background: rgba(255, 255, 255, 0.900);
-    width: 100%;
-    height: auto;
-    position: fixed;
-    padding: 0;
-    margin:0;
-    z-index: 2;
-    justify-content: center;
-    display: flex;
-    flex-wrap: wrap;
-    overflow-y: auto; 
-    max-height: 100%;
-}
-.person-portrait{
-    width: 80%;
-    height: auto;
-    margin: 5% 10%;
-    display: flex;
-    justify-content: center;
-}
-.person-content-right > h2, .person-content-right > h3, .person-content-right > p{
-    width: 100%;
-    padding: 0;
-    margin: 0;
-}
-.person-content-right > h2{
-    text-align: center;
-}
-.person-content-right > hr{
-    width: 60%;
-    color: rgb(0, 0, 0);
-}
-.person-content-right{
-    width: 80%;
-    height: auto;
-    margin: 1% 0 1% 1%;
-    padding: 1% 4%;
     right: 0px;
     top: 0px;
     text-align: justify;
@@ -665,6 +617,9 @@ div.subPortfolio {
     /*    ~~~~ NAVIGATION desktop end ~~~>   */
 
         /*    <~~~ FOOTER desktop start ~~~~     */
+        footer{
+            font-size: 1em;
+        }
         .fa-envelope, .fa-phone, .fa-instagram, .fa-facebook-f{ 
             font-size: 2em;  
         }
