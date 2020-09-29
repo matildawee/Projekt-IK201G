@@ -45,7 +45,7 @@ html, body{
 }
 #navBar-pageTitle {
     margin: 0 auto;
-    font-size: 2em;
+    font-size: 1.3em;
     font-weight: bold;
 }
 .navBar-right{
@@ -55,8 +55,8 @@ html, body{
     height: auto;
 }
 #navButton-toggle{
-    height: 44px;
-    width: 44px;
+    height: 33px;
+    width: 33px;
     position: relative;
     display: block;
     margin: 0.5em 0.5em;
@@ -70,10 +70,10 @@ html, body{
 .navButton-Line{
     background:#555;
     display: block;
-    width: 26px;
+    width: 15px;
     height: 3px;
     border-radius: 1px;
-    margin: 5px 0;
+    margin: 3px 0;
 }
 .navBar-show{
     display: inline-block;
@@ -108,7 +108,7 @@ nav > ul > li{
 }
 nav > ul > li > a{
     display: inline-block;
-    padding: 0.8em;
+    padding: 0.5em;
     text-align: center;
 }
 nav > ul > li > a:hover{
