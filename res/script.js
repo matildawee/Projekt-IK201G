@@ -335,14 +335,22 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
 
 
     //gömmer knapparna
-    function hideButton() {     
-      
-        $("#slideShowPlay").css({"visibility": "hidden"});      
-        $("#slideShowPause").css({"visibility": "hidden"});
-        //$("#slideShowPlay").fadeOut(1000);
-        //$("#slideShowPause").fadeOut(1000);
+    function hideButton() {           
+        // $("#slideShowPlay").css({"visibility": "hidden"});      
+        // $("#slideShowPause").css({"visibility": "hidden"});
+        $("#slideShowPlay").fadeOut(800);
+        $("#slideShowPause").fadeOut(800);
 
         $(".slideshow-image").css({"filter": "brightness(100%)"});
+
+        setTimeout(fadeBack, 800);        
+     }
+    //dom måste fade:a tillbaka för annars
+     function fadeBack() {      
+        $("#slideShowPlay").css({"visibility": "hidden"});      
+        $("#slideShowPause").css({"visibility": "hidden"});
+        $("#slideShowPlay").fadeIn(0);
+        $("#slideShowPause").fadeIn(0);
      }
     
 
