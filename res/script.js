@@ -345,7 +345,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
 
         setTimeout(fadeBack, 800);        
      }
-    //dom måste fade:a tillbaka för annars
+    //dom måste fade:a tillbaka för annars kommer dom inte tillbaka via "visibilty: visible"
      function fadeBack() {      
         $("#slideShowPlay").css({"visibility": "hidden"});      
         $("#slideShowPause").css({"visibility": "hidden"});
