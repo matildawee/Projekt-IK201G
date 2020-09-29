@@ -594,6 +594,9 @@ div.subPortfolio {
 .contactTelephone > p > a {
     color:#FFFFFF; 
 }
+#contactMessage{
+    resize: none;
+}
 #contactSubmit {
     width: 8em;
     height: 3em; 
