@@ -88,13 +88,13 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         $('#contactSubmitMessage').text("");
     });
 
-    //funktion som lägger till respektive tar bort navBar-show när man klickar på navButton-toggle
+    //funktion som lägger till respektive tar bort navBar-show, dvs. döljer eller visar navigerings-menyn
     function classToggle() {
         const navs = document.querySelectorAll('nav');
         navs.forEach(nav => nav.classList.toggle('navBar-show'));
     }
       
-    //anropar funktionen ovanför
+    //När man klickar på hamburgermenu-knappen i mobil-vy, så anropas funktionen ovanför som visar/döljer navigeringen
     document.querySelector('#navButton-toggle').addEventListener('click', classToggle);
 
     /*    ~~~~ Navigering end ~~~>   */
@@ -124,7 +124,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
 
     /*    ~~~~ Home-Page end ~~~>   */
 
-    
+
     /*    <~~~ Portfolio-Page start ~~~~   */
 
     //Deklarerar variabler som används i funktioner för portfoliosidan
@@ -145,62 +145,64 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
     //Här skapas divar som i sig innehåller upp till 4 divar, en per projekt. Detta lagras i en array
     function displayPortfolio(projects) { 
 
-    var startDiv = '<div id="portfolioGroup">';
-    var endDiv = '</div>';
+        var startDiv = '<div id="portfolioGroup">';
+        var endDiv = '</div>';
 
-    //startar den yttre diven med startdiv-taggen
-    var projectGroup = startDiv;
-    
-    //loopar igenom projekten och lägger varje projekt i en inre div
-    $.each(projects, function (i, portfolio) {
+        //startar den yttre diven med startdiv-taggen
+        var projectGroup = startDiv;
+        
+        //loopar igenom projekten och lägger varje projekt i en inre div
+        $.each(projects, function (i, portfolio) {
 
-        if (portfolio.description.length > 170) {
-            portfolio.description = portfolio.description.substring(0, 170) + "...";
-          };
-           
-          
-        //skapar div för varje projekt
-        var aProject = 
-            '<div class="subPortfolio" id="' + portfolio.id + '">' + 
-            '<img class="project-img" id="' + portfolio.id + '"src="' + portfolio.image + '" title="Project" alt="Project" />' +
-                '<h2 id="' + portfolio.id + '">' + portfolio.title + '</h2>' +
-                '<p id="' + portfolio.id + '">' + portfolio.description + '</p>' +
-            '</div>';
+            //Om det är mer än 170 tecken i description på portfolio-sidan, så skrivs det på slutet "..." och man måste trycka på projektet för att läsa hela beskrivningen. 
+            if (portfolio.description.length > 170) {
+                portfolio.description = portfolio.description.substring(0, 170) + "...";
+            };
 
-        //adderar varje enskild projekt-div till en variabel som innehåller alla dessa
-        projectGroup += aProject;
+            //skapar div för varje projekt
+            var aProject = 
+                '<div class="subPortfolio" id="' + portfolio.id + '">' + 
+                '<img class="project-img" id="' + portfolio.id + '"src="' + portfolio.image + '" title="Project" alt="Project" />' +
+                    '<h2 id="' + portfolio.id + '">' + portfolio.title + '</h2>' +
+                    '<p id="' + portfolio.id + '">' + portfolio.description + '</p>' +
+                '</div>';
 
-        //för var fjärde div så adderas en slutdiv-tag för de fyra senast skapade projekt-divarna
-        //sedan läggs de i en array. Exempel på array-rad med två projekt: <div><div>*ett projekt*</div><div>*ett till projekt*</div></div>
-        //sedan påbörjas en ny, tom yttre div
-        if (i > 0 && (i + 1) % 4 == 0){
+            //adderar varje enskild projekt-div till en variabel som innehåller alla dessa
+            projectGroup += aProject;
+
+            //för var fjärde div så adderas en slutdiv-tag för de fyra senast skapade projekt-divarna
+            //sedan läggs de i en array. Exempel på array-rad med två projekt: <div><div>*ett projekt*</div><div>*ett till projekt*</div></div>
+            //sedan påbörjas en ny, tom yttre div
+            if (i > 0 && (i + 1) % 4 == 0){
+                projectGroup += endDiv;
+                divList[divIndex] = projectGroup;
+                divIndex++;
+                projectGroup = startDiv;               
+            };       
+            index++;     
+        });
+
+        //Tömmer arrayen om inga projekt finns
+        if (index == 0){
+            divList = '';      
+        };
+
+        //Lägger till slut-div-tagg (detta sker ifall each-loopen har brutit på ett tal som inte är delbart med 4, 
+        //isåfall har ingen sluttag skapats i loopen)
+        if ((index) % 4 != 0){
             projectGroup += endDiv;
-            divList[divIndex] = projectGroup;
-            divIndex++;
-            projectGroup = startDiv;               
-        };       
-        index++;     
-    });
+            divList[divIndex] = projectGroup;          
+        };
 
-    //Tömmer arrayen om inga projekt finns
-    if (index == 0){
-        divList = '';      
-    };
+        //Raderar en sista tom div som skapas när antalet projekt är delbart med 4
+        if (divList[divList.length-1] == '<div id="portfolioGroup"></div>'){
+            divList.splice(divList.length-1,1); 
+        }
 
-    //Lägger till slut-div-tagg (detta sker ifall each-loopen har brutit på ett tal som inte är delbart med 4, 
-    //isåfall har ingen sluttag skapats i loopen)
-    if ((index) % 4 != 0){
-        projectGroup += endDiv;
-        divList[divIndex] = projectGroup;          
-    };
+        console.log(divList);
 
-    //Raderar en sista tom div som skapas när antalet projekt är delbart med 4
-    if (divList[divList.length-1] == '<div id="portfolioGroup"></div>'){
-        divList.splice(divList.length-1,1); 
-    }
-    
-    //lägger in den första div-gruppen på sajten
-    $('#portfolio-box').html(divList[0]);
+        //lägger in den första div-gruppen på sajten
+        $('#portfolio-box').html(divList[0]);
     };
 
     //Visar nästa div-grupp när knappen klickas
@@ -453,7 +455,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
                         '<h2 id="personId' + ind + '">' + employee.firstname + '</h2>' +
                         '<p id="personId' + ind + '">' + employee.title + '</p>'+
                     '</div>'
-                );        
+                );
                     
                 allDevelopers+=personSquare;
             });
@@ -495,42 +497,42 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
                                 ' - ' + employee.title + '</h2>' + '<hr/>' +
                                 '<p>' + employee.description +'</p>' + 
                                 
-                                '<div class="skills">' +        
-                                    '<p>JAVA: </p>' +  
+                                '<div class="skills">' +
+                                    '<p>JAVA: </p>' +
                                     '<div class="skill-meter">' +
                                         '<div class="java-skills">' +
                                         '&nbsp;&nbsp;' + employee.java + '&nbsp;&nbsp;' +
-                                        '</div>' +                                        
+                                        '</div>' +
                                     '</div>' +
                                     '<p>HTML: </p>' +  
                                     '<div class="skill-meter">' +
                                         '<div class="html-skills">' +
-                                        '&nbsp;&nbsp;' + employee.html + '&nbsp;&nbsp;' +    
-                                        '</div>' +                                       
+                                        '&nbsp;&nbsp;' + employee.html + '&nbsp;&nbsp;' +
+                                        '</div>' +
                                     '</div>' +
                                     '<p>JAVASCRIPT: </p>' + 
                                     '<div class="skill-meter">' +
                                         '<div class="javascript-skills">' +
                                         '&nbsp;&nbsp;' + employee.javascript + '&nbsp;&nbsp;' +
-                                        '</div>' +                                       
+                                        '</div>' +
                                     '</div>' +
                                     '<p>CSS: </p>' + 
                                     '<div class="skill-meter">' +
                                         '<div class="css-skills">' +
                                         '&nbsp;&nbsp;' + employee.css + '&nbsp;&nbsp;' +
-                                        '</div>' +                                       
+                                        '</div>' +
                                     '</div>' +
                                     '<p>SQL: </p>' + 
                                     '<div class="skill-meter">' +
                                         '<div class="sql-skills">' +
                                         '&nbsp;&nbsp;' + employee.sql + '&nbsp;&nbsp;' +
-                                        '</div>' +                                       
+                                        '</div>' +
                                     '</div>' +
                                     '<p>PHOTOSHOP: </p>' + 
                                     '<div class="skill-meter">' +
                                         '<div class="photoshop-skills">' +
                                         '&nbsp;&nbsp;' + employee.photoshop + '&nbsp;&nbsp;' +
-                                        '</div>' +                                       
+                                        '</div>' +
                                     '</div>' +
                                 '</div>' +
 
@@ -572,19 +574,19 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
                 $(".person-content").hide();
                 $(".persondiv").hide();
                 $("body").css({"overflow-y": "auto"});
-            }; 
+            };
         });
 
      /*    ~~~ About-Page end ~~~~>   */
 
      /*    <~~~ Contact-Page start ~~~~   */
-        
+
             // Hämtar det sparade JSON-objectet: "savedJsonObject" , som en string vi gör om till ett JSON-object med JSON.parse() och sparar i variablen "localSavedJsonObject".
             var localSavedJsonObject = JSON.parse(localStorage.getItem('savedJsonObject'));
-        
+
             // Anropar funktionen "loadMessageToForm" och skickar med JSON-objectet ifrån ovan.  
             loadMessageToForm(localSavedJsonObject);
-        
+
             //Skapar en funktion som laddar in all data till formuläret ifrån localStorage via variabeln localSavedJsonObject.
             function loadMessageToForm(getJsonMessage) {  
                 if (getJsonMessage != null){ //Kollar om det finns någon JSON data lagrad sedan tidigare.
@@ -594,7 +596,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
                     $('#contactEmail').val(getJsonMessage.contactEmail);
                     $('#contactSubject').val(getJsonMessage.contactSubject);
                     $('#contactMessage').val(getJsonMessage.contactMessage);
-        
+
                     //Om JSON-objectets värde är tomt, så händer inget nedan, men om det är skiljt ifrån tomt (!=) så ska valideringen "validateOkOrError" köras på fälten.
                     if (getJsonMessage.contactName != ""){
                         validateOkOrError("#contactName");
@@ -613,7 +615,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
                     }
                 } 
             }; 
-        
+
             // console.log(localSavedJsonObject); //kommentera bort denna rad om ni vill se hela sparade JSON-objectet i loggen när sidan contact laddas.
 
         
