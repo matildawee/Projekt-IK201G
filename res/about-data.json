@@ -27,12 +27,12 @@
             "telephone": "+46701740610",
             "portrait": "./img/portraits/woman-thumbnail.jpg",
             "portraitBig": "./img/portraits/woman.jpg",
-            "java": "100%",
+            "java": "80%",
             "html": "50%",
-            "javascript": "20%",
-            "css": "50%",
-            "sql": "80%",
-            "photoshop": "0%"
+            "javascript": "80%",
+            "css": "60%",
+            "sql": "60%",
+            "photoshop": "50%"
           },
           {
             "id": "personId2",
