@@ -591,6 +591,9 @@ div.subPortfolio {
 .contactEmail > p > a{
     color:#FFFFFF; 
 }
+.contactTelephone > p > a {
+    color:#FFFFFF; 
+}
 #contactSubmit {
     width: 8em;
     height: 3em; 
