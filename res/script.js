@@ -36,9 +36,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         $("#Home-Page").animate({opacity: '1'}, 1500);
     });
 
-    //funktion som anropas när man klickar på loggan, dock mera hårdkodad.
-    $('#header-logo').click(function (event) {
-        event.preventDefault();
+    function loadLogoHomePage() {
         hidePageSections(); 
         $('#Home-Page').show();
         $('.menuBtn').removeClass('activePage');
@@ -48,21 +46,19 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         $('nav').removeClass('navBar-show');
         $("#Home-Page").css({"opacity": "0"});
         $("#Home-Page").animate({opacity: '1'}, 1500);
+    }
+
+    //funktion som anropas när man klickar på loggan, dock mera hårdkodad.
+    $('#header-logo').click(function (event) {
+        event.preventDefault();
+        loadLogoHomePage();
     });
 
-        //funktion som anropas när man klickar på loggan, dock mera hårdkodad.
-        $('#header-logo-mobile').click(function (event) {
-            event.preventDefault();
-            hidePageSections(); 
-            $('#Home-Page').show();
-            $('.menuBtn').removeClass('activePage');
-            $('#Home').addClass('activePage');
-    
-            $('#navBar-pageTitle').html('Home');
-            $('nav').removeClass('navBar-show');
-            $("#Home-Page").css({"opacity": "0"});
-            $("#Home-Page").animate({opacity: '1'}, 1500);
-        });
+    //funktion som anropas när man klickar på loggan, dock mera hårdkodad.
+    $('#header-logo-mobile').click(function (event) {
+        event.preventDefault();
+        loadLogoHomePage();
+    });
 
     //funktion som anropas när man klickar på Portfolio
     $('#Portfolio').click(function (event) {
@@ -464,7 +460,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
                         '<div class="person-content" id="personId' + ind + '">' + 
                             '<div class="person-content-left">' +
                                 '<span class="fas fa-times" id="close-person"></span>' +
-                                '<img class="person-portrait" src="' + employee.portraitBig + '" title="developer" alt="developer" />' +                                
+                                '<img class="person-portrait" src="' + employee.portraitBig + '" title="developer" alt="developer">' +                                
                             '</div>' +
                             '<div class="person-content-right">' + 
                                 '<h2> ' + employee.firstname + ' ' + employee.lastname + 
