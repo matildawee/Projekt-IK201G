@@ -65,6 +65,8 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         $('#Portfolio').click(function (event) {
             event.preventDefault();
             loadPage('Portfolio');
+            // Laddar in project från portfolio-data.json
+            displayPortfolio(projects);
         });
 
         //funktion som anropas när man klickar på About us
@@ -73,12 +75,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
             loadPage('About');
 
             //laddar in utvecklarna
-            $.getJSON(
-                'res/about-data.json',
-                function (data) {
-                    displayAbout(data.person);
-                }
-            );
+            displayAbout(person);
         });
 
         //funktion som anropas när man klickar på Contact
@@ -106,6 +103,9 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         $('#startProjects').click(function (event) {
             event.preventDefault();
             loadPage('Portfolio');
+
+            // Laddar in project från portfolio-data.json
+            displayPortfolio(projects);
         });
 
         //funktion som visar About us när man klickat på knappen på Startsidan
@@ -114,12 +114,8 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
             loadPage('About');
 
             //laddar in utvecklarna
-            $.getJSON(
-                'res/about-data.json',
-                function (data) {
-                    displayAbout(data.person);
-                }
-            );
+            displayAbout(person);
+
         });
         
     /*    ~~~~ Home-Page end ~~~>   */
@@ -134,13 +130,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         var playflag = false;
         var showIndex = 0;
 
-        // Laddar in project från portfolio-data.json
-        $.getJSON(
-            'res/portfolio-data.json',
-            function (data) {
-                displayPortfolio(data.projects);
-            }
-        );
+        
 
         //Här skapas divar som i sig innehåller upp till 4 divar, en per projekt. Detta lagras i en array
         function displayPortfolio(projects) { 
@@ -152,19 +142,19 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
             var projectGroup = startDiv;
             
             //loopar igenom projekten och lägger varje projekt i en inre div
-            $.each(projects, function (i, portfolio) {
+            $.each(projects, function (i, projects) {
 
                 //Om det är mer än 170 tecken i description på portfolio-sidan, så skrivs det på slutet "..." och man måste trycka på projektet för att läsa hela beskrivningen. 
-                if (portfolio.description.length > 170) {
-                    portfolio.description = portfolio.description.substring(0, 170) + "...";
+                if (projects.description.length > 170) {
+                    projects.description = projects.description.substring(0, 170) + "...";
                 };
 
                 //skapar div för varje projekt
                 var aProject = 
-                    '<div class="subPortfolio" id="' + portfolio.id + '">' + 
-                    '<img class="project-img" id="' + portfolio.id + '"src="' + portfolio.image + '" title="Project" alt="Project" />' +
-                        '<h2 id="' + portfolio.id + '">' + portfolio.title + '</h2>' +
-                        '<p id="' + portfolio.id + '">' + portfolio.description + '</p>' +
+                    '<div class="subPortfolio" id="' + projects.id + '">' + 
+                    '<img class="project-img" id="' + projects.id + '"src="' + projects.image + '" title="Project" alt="Project" />' +
+                        '<h2 id="' + projects.id + '">' + projects.title + '</h2>' +
+                        '<p id="' + projects.id + '">' + projects.description + '</p>' +
                     '</div>';
 
                 //adderar varje enskild projekt-div till en variabel som innehåller alla dessa
@@ -260,40 +250,35 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
             $("body").css({"overflow-y": "auto"});
             
             // Laddar projekt från portfolio-data.json
-            $.getJSON(
-                'res/portfolio-data.json',
-                function (data) {
-                    getProject(data.projects, id);
-                }
-            );
+            getProject(projects, id);
         });
         
         //Skapar en div för det valda projektet med data från portfolio-data.json
         function getProject(projects, id) {
-            $.each(projects, function (ind, project) {
+            $.each(projects, function (ind, projects) {
                 //loopas igenom, när det valda id:t hittas i filen så skapas en ruta med info
-                    if (project.id == id) {              
+                    if (projects.id == id) {              
                         
                         var projectSquare = $(
-                            '<div class="project-content" id="' + project.id + '">' + 
+                            '<div class="project-content" id="' + projects.id + '">' + 
                                 '<div class="project-content-top">' +
                                     '<span class="fas fa-times" id="close-portfolio"></span>' +                           
                                     '<div class="slideshowDiv">' +
-                                        '<img class="slideshow-image" id="slideshow" src="' + project.slideshow[0] + '" alt=" ' + project.title + ' " />' + 
+                                        '<img class="slideshow-image" id="slideshow" src="' + projects.slideshow[0] + '" alt=" ' + project.title + ' " />' + 
                                         '<span class="fas fa-pause" id="slideShowPause"></span>' + 
                                         '<span class="fas fa-play" id="slideShowPlay"></span>' + 
                                     '</div>' +                
                                 '</div>' +
                                 '<div class="project-content-bottom">' + 
-                                    '<h2> ' + project.title + '</h2>' + 
-                                    '<p>' + project.date + '</p>' +  '<hr/>' +
-                                    '<p>' + project.description +'</p>' + 
+                                    '<h2> ' + projects.title + '</h2>' + 
+                                    '<p>' + projects.date + '</p>' +  '<hr/>' +
+                                    '<p>' + projects.description +'</p>' + 
                                 '</div>' +
                                     '<br/>' +                           
                             '</div>'
                         );
         
-                    images = project.slideshow;
+                    images = projects.slideshow;
                     $('.projectdiv').html(projectSquare);  
                     $("body").css({"overflow": "hidden"}); 
                     
@@ -466,12 +451,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
             $("body").css({"overflow": "hidden"});
             
             //hämtas från en jsonfil
-            $.getJSON(
-                'res/about-data.json',
-                function (data) {
-                    getDeveloper(data.person, id);
-                }
-            );
+            getDeveloper(person, id);
         });
 
         //här skapas en ruta över skärmen där info om utvecklarna presenteras
@@ -743,5 +723,173 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
         }
 
     /*    ~~~~ Contact-Page end ~~~>   */
+
+    /* hårdkodad about-data.json i detta java-script för att fungera att köra filen lokalt på datorn */
+    var person = [
+            {
+                "id": "personId0",
+                "firstname": "Matilda",
+                "lastname": "Wennberg",
+                "title": "Developer",
+                "description": "Hej! Harum doloremque alias voluptatem in. Facilis illo in labore nemo? Molestiae ad rem, sint quibusdam alias in similique accusantium, deleniti explicabo optio voluptate, quos animi fugit eveniet nobis incidunt excepturi.",
+                "email": "example@example.com",
+                "telephone": "+46701740605",
+                "portrait": "./img/portraits/woman-thumbnail.jpg",
+                "portraitBig": "./img/portraits/woman.jpg",
+                "java": "80%",
+                "html": "60%",
+                "javascript": "50%",
+                "css": "60%",
+                "sql": "70%",
+                "photoshop": "0%"
+            },
+            {
+                "id": "personId1",
+                "firstname": "Selda",
+                "lastname": "Garabedian",
+                "title": "Developer",
+                "description": "Hej! Eveniet repellendus iste magnam deserunt, saepe, error, magni quibusdam officiis amet consequatur dolorem tenetur natus nobis soluta dignissimos dolorum ad placeat aspernatur! Exercitationem tenetur nostrum ipsam sapiente assumenda excepturi dolores?",
+                "email": "example@example.com",
+                "telephone": "+46701740610",
+                "portrait": "./img/portraits/woman-thumbnail.jpg",
+                "portraitBig": "./img/portraits/woman.jpg",
+                "java": "80%",
+                "html": "50%",
+                "javascript": "80%",
+                "css": "60%",
+                "sql": "60%",
+                "photoshop": "50%"
+            },
+            {
+                "id": "personId2",
+                "firstname": "Oskar",
+                "lastname": "Bendrik",
+                "title": "Developer",
+                "description": "Hej! Optio accusantium magnam repellendus ratione quidem, cupiditate, magni quam possimus accusamus eaque quas sint voluptatem consequatur. Iusto aspernatur voluptatibus, quaerat accusamus provident sapiente rerum magni excepturi minus cum quam nobis.",
+                "email": "example@example.com",
+                "telephone": "+46701740616",
+                "portrait": "./img/portraits/man-thumbnail.jpg",
+                "portraitBig": "./img/portraits/man.jpg",
+                "java": "80%",
+                "html": "70%",
+                "javascript": "70%",
+                "css": "30%",
+                "sql": "70%",
+                "photoshop": "1%"
+            },
+            {
+                "id": "personId3",
+                "firstname": "Jonas",
+                "lastname": "Arvidson",
+                "title": "Developer",
+                "description": "Hej! Illo quidem asperiores consectetur esse eius nostrum, perferendis sint, illum alias impedit necessitatibus cumque hic nulla ducimus laboriosam fugit vitae obcaecati explicabo commodi, iste totam. Laudantium possimus dolor sed ducimus?",
+                "email": "example@example.com",
+                "telephone": "+46701740699",
+                "portrait": "./img/portraits/man-thumbnail.jpg",
+                "portraitBig": "./img/portraits/man.jpg",
+                "java": "100%",
+                "html": "90%",
+                "javascript": "80%",
+                "css": "70%",
+                "sql": "80%",
+                "photoshop": "80%"
+            }
+        ]
+    /* end about-data.json */
+
+    /* start hårdkodad portfolio-data.json */
+        var projects = [
+            {
+            "id": "p1",
+            "title": "Projekt 1",
+            "date": "2020-01-01 - 2021-01-01",
+            "description": "Projekt är uppdrag som utförs av tillfälliga arbetsorganisation för att åstadkomma ett i förväg bestämt resultat. ",
+            "image": "./img/projects/projekt.jpg",
+            "slideshow": ["./img/projects/projekt.jpg", "./img/projects/forskare.jpg", "./img/projects/satisfiedcustomers.jpg"]
+            },
+            {
+                "id": "p2",
+                "title": "Projekt 2",
+                "date": "2020-02-02 - 2021-02-02",
+                "description": "Projekt är uppdrag som utförs av tillfälliga arbetsorganisation för att åstadkomma ett i förväg bestämt resultat.",
+                "image": "./img/projects/progress.jpg",
+                "slideshow": ["./img/projects/projekt.jpg", "./img/projects/progress.jpg", "./img/projects/spaceproject.jpg", "./img/projects/succe.jpg"]
+            },
+            {
+                "id": "p3",
+                "title": "Projekt 3",
+                "date": "2020-03-03 - 2021-03-03",
+                "description": "Projekt är uppdrag som utförs av tillfälliga arbetsorganisation för att åstadkomma ett i förväg bestämt resultat.",
+                "image": "./img/projects/redovisning.jpg",
+                "slideshow": ["./img/projects/people.jpg", "./img/projects/redovisning.jpg", "./img/projects/celebrate.jpg"] 
+            },
+            {
+                "id": "p4",
+                "title": "Projekt 4",
+                "date": "2020-04-04 - 2021-04-04",
+                "description": "Projekt är uppdrag som utförs av tillfälliga arbetsorganisation för att åstadkomma ett i förväg bestämt resultat.",
+                "image": "./img/projects/vikomframtilldetta.jpg",
+                "slideshow": ["./img/projects/business.jpg", "./img/projects/vikomframtilldetta.jpg", "./img/projects/framgang.jpg"] 
+            },
+            {
+                "id": "p5",
+                "title": "Projekt 5",
+                "date": "2020-05-05 - 2021-05-05",
+                "description": "Projekt är uppdrag som utförs av tillfälliga arbetsorganisation för att åstadkomma ett i förväg bestämt resultat.",
+                "image": "./img/projects/material.jpg",
+                "slideshow": ["./img/projects/projekt.jpg","./img/projects/maskin.jpg", "./img/projects/konferens.jpg"]
+            },
+            {
+                "id": "p6",
+                "title": "Projekt 6",
+                "date": "2020-06-06 - 2021-06-06",
+                "description": "Projekt är uppdrag som utförs av tillfälliga arbetsorganisation för att åstadkomma ett i förväg bestämt resultat.",
+                "image": "./img/projects/projects.jpg",
+                "slideshow": ["./img/projects/projekt.jpg","./img/projects/konferens.jpg"]
+            },
+            {
+                "id": "p7",
+                "title": "Projekt 7",
+                "date": "2020-07-07 - 2021-07-07",
+                "description": "Projekt är uppdrag som utförs av tillfälliga arbetsorganisation för att åstadkomma ett i förväg bestämt resultat.",
+                "image": "./img/projects/maskin.jpg",
+                "slideshow": ["./img/projects/maskin.jpg", "./img/projects/konferens.jpg"]
+            },
+            {
+                "id": "p8",
+                "title": "Projekt 8",
+                "date": "2020-08-08 - 2021-08 08",
+                "description": "Projekt är uppdrag som utförs av tillfälliga arbetsorganisation för att åstadkomma ett i förväg bestämt resultat.",
+                "image": "./img/projects/celebrate.jpg",
+                "slideshow": ["./img/projects/vikomframtilldetta.jpg", "./img/projects/projekt.jpg"]
+            },
+            {
+                "id": "p9",
+                "title": "Projekt 9",
+                "date": "2020-09-09 - 2021-09-09",
+                "description": "Projekt är uppdrag som utförs av tillfälliga arbetsorganisation för att åstadkomma ett i förväg bestämt resultat.",
+                "image": "./img/projects/forskare.jpg",
+                "slideshow": ["./img/projects/projekt.jpg", "./img/projects/vikomframtilldetta.jpg"]
+            },
+            {
+                "id": "p10",
+                "title": "Projekt 10",
+                "date": "2020-10-10 - 2021-10-10",
+                "description": "Projekt är uppdrag som utförs av tillfälliga arbetsorganisation för att åstadkomma ett i förväg bestämt resultat.",
+                "image": "./img/projects/spaceproject.jpg",
+                "slideshow": ["./img/projects/projekt.jpg", "./img/projects/konferens.jpg"]
+            },
+            {
+                "id": "p11",
+                "title": "Projekt 11",
+                "date": "2020-11-11 - 2021-11-11",
+                "description": "Projekt är uppdrag som utförs av tillfälliga arbetsorganisation för att åstadkomma ett i förväg bestämt resultat.",
+                "image": "./img/projects/konferens.jpg",
+                "slideshow": ["./img/projects/konferens.jpg", "./img/projects/projekt.jpg","./img/projects/maskin.jpg"]
+            }
+        ]
+    /* end portfolio-data.json */
+    
+
 
  });
