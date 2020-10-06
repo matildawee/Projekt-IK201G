@@ -25,7 +25,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
             $('#'+clickedId).addClass('activePage');
 
             $('#navBar-pageTitle').html(clickedId);
-            classToggle();
+            closeNavbar();
         }
 
         //funktion som anropas när man klickar på Home
@@ -93,9 +93,21 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
             const navs = document.querySelectorAll('nav');
             navs.forEach(nav => nav.classList.toggle('navBar-show'));
         }
+
+        //funktion som tar bort att navigeringen är öppen
+        function closeNavbar() {
+            $('#navButton-toggle').removeClass('activeHamburgerBtn');
+            const navs = document.querySelectorAll('nav');
+            navs.forEach(nav => nav.classList.remove('navBar-show')); 
+        }
         
         //När man klickar på hamburgermenu-knappen i mobil-vy, så anropas funktionen ovanför som visar/döljer navigeringen
         document.querySelector('#navButton-toggle').addEventListener('click', classToggle);
+
+        //funktion som anropas när man klickar på hamburger-knappen, och då sätter den som aktiv och animerar fram ett X i CSS
+        $('#navButton-toggle').click(function (){
+            $('#navButton-toggle').toggleClass('activeHamburgerBtn'); //Aktiverar animeringen på hamburger-ikonen
+        })
 
     /*    ~~~~ Navigering end ~~~>   */
 
