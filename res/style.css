@@ -69,11 +69,29 @@ html, body{
 .navButton-Line{
     background:#555;
     display: block;
+    position: relative; /* Verkar som den måste vara relativ för animering */
     width: 15px;
     height: 3px;
     border-radius: 1px;
-    margin: 3px 0;
+    margin: 2px 0;
+    transition: 0.5s; /* Animering behövs för att animera tillbaka till ursprung */
+    transform: translate(0%, 0%); /* Tillhör också animeringen */
 }
+
+.activeHamburgerBtn .navButton-Line:nth-of-type(1) {
+    transform: rotate(45deg); /* Vrider den övre linjen 45 grader */
+    top: 5px;
+}
+.activeHamburgerBtn .navButton-Line:nth-of-type(2) {
+    background-color: rgba(85, 85, 85, 0); /* Animerar ned till 0 i transparens (sista 0an) */
+    transform: translateX(-9px); /* Flyttar linjen 9 pixlar åt vänster på X-axeln, så den animerar bort */
+    transition: 0.4s; /* Hur lång tid det ska ta för linjen att glida åt vänster */
+}
+.activeHamburgerBtn .navButton-Line:nth-of-type(3) {
+    transform: rotate(-45deg); /* Vrider den undre linjen -45 grader, eller +135grader går också */
+    top: -5px;
+}
+
 .navBar-show{
     display: inline-block;
     animation-duration: 0.5s;
