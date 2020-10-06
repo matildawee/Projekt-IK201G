@@ -44,7 +44,7 @@ $(document).ready(function() { //JavaScriptet nedan körs när HTML-sidan har la
             $('#Home').addClass('activePage');
 
             $('#navBar-pageTitle').html('Home');
-            $('nav').removeClass('navBar-show');
+            closeNavbar();
             $("#Home-Page").css({"opacity": "0"});
             $("#Home-Page").animate({opacity: '1'}, 1500);
         }
